@@ -1,0 +1,43 @@
+#!/bin/ksh
+#
+# validate_files
+# This script makes sure data files are complete, uncompressed, and
+# have the correct permissions
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "validate_files plugin running" 1
+  x=0
+  while [[ $x < $NUMSOURCE ]]; do
+    # make sure the files are writable
+    find ${ldir[$x]} -type f -mtime -3 -exec chmod 644 {} \; \
+      > /dev/null 2>&1
+    # uncompress gzip'd files
+    logwrite "Uncompressing ${source[$x]} Files" 1
+    NUM=`ls ${ldir[$x]}/*gz 2>/dev/null | wc -l`
+    logwrite "${NUM} compressed files found" 1
+    find ${ldir[$x]} -name \*.gz -mtime -3 -exec gunzip -f {} \; \
+      > /dev/null 2>&1
+    NUM=`ls ${ldir[$x]}/*gz 2>/dev/null | wc -l`
+    logwrite "${NUM} compressed files remain" 1
+    x=$((${x}+1))
+    # Make sure HTML files are complete
+    for FN in `find ${ldir[$x]} -type f -mtime -3 -name \*html -print`; do
+      if grep -i "/html" $FN > /dev/null ; then
+       #echo "${FN} is complete" ##DEBUG
+       true
+      else
+       logwrite "${FN} is only partial, removing" 1
+       rm -f ${FN}
+      fi
+    done
+  done
+  logwrite "validate_files plugin complete" 1
+}
+# EOF

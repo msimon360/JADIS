@@ -1,0 +1,29 @@
+#!/bin/ksh
+#
+# retry_timeouts
+#
+# This script pulls all hosts from the Status file that had an Access
+# value of Timeout and trys them again by running a Collector with
+# a higher Timeout value.
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "retry_timeouts plugin running" 1
+  # pull all hosts that had timeout and put in a new hostlist
+
+  # remove them from the Status file
+
+  # run a new Collector
+
+  # wait for the Collector to finish or timeout
+
+  # add the output to the Staus File
+  logwrite "retry_timeouts plugin complete" 1
+}
+# EOF

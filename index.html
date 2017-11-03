@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>JADIS Test</TITLE>
+<SCRIPT src="/JADIS/etc/table.js"></SCRIPT>
+<LINK rel="stylesheet" media="all" type="text/css" href="/JADIS/etc/default_house.css" >
+</HEAD><BODY>
+<div class="header">
+<table class="header">
+   <tr>
+        <th width=20% style='background:white;padding:.75pt .75pt .75pt .75pt'>
+        <p align="middle">
+        <a HREF="http://ncdcwss.northcentralnetworks.com/sites/unix/">
+        <img src="/JADIS/icons/frontierLogo_RGB.gif" border=0 alt="Frontier" align="middle" height="32px"/>
+        </p>
+        </th>
+        <th width="10%">
+        <p align="middle">
+        <img src="/JADIS/icons/sign_divider.gif" border="0" align="middle"/>
+        </p>
+        </th>
+        <th width=70% style="white-space: nowrap;">
+        <p align="middle">
+        <font color="#D00000" size="5">System Data for </font>
+        <font color="#D00000" size="5">JADIS Test</font>
+        </p>
+        </th>
+        <th width=10%>
+        <a HREF="http://lnxfwi01.northcentralnetworks.com/JADIS_DEV/JADIS/summary.html">
+        <img src="/JADIS/icons/btn_summary.gif" border="0" alt="Summary Report" align="middle"/></a>
+        </th>
+        <th width=10%>
+        <a HREF="http://lnxfwi01.northcentralnetworks.com/JADIS_DEV/JADIS/cgi-bin/gen_req.pl">
+        <img src="/JADIS/icons/btn_custom.gif" border=0 alt="Generate a Custom Report" align="middle"/></a>
+        </th>
+	<th>&nbsp;</th>
+   </tr>
+   <tr>
+	<th colspan="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Header Text to Sort, Enter Text in Boxes to Filter, Filter Counts at Bottom.</th>
+   </tr>
+</table>
+</div>
+<div class="outer">
+<div class="innera">
+<TABLE id="t1" class="table-autosort:0 table-autofilter table-stripeclass:alternate table-filtered-rowcount:t1filtercount table-rowcount:t1allcount" width="100%">
+<thead>
+<tr>
+	   <th class="filter firstcell">
+	   <img src="/JADIS/icons/divider_nav.gif" align="left" height="24px"/>
+	     &nbsp;&nbsp;&nbsp;
+	   <input name="filter" size="8" onkeyup="Table.filter(this,this)"></input>
+	   </th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+</tr>
+<tr valign="top"><th class="filterable table-sortable:default firstcell">
+               <img src="/JADIS/icons/divider_nav.gif" align="left" height="24px"/>
+               <img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hostname&nbsp;&nbsp;&nbsp;</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Access</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>ApplID</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Critical</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Env</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>ExternalSerial#</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Group</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>IP</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>OS</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>RemoteIP</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Site</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>cfg2html</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+  <td colspan="16"><font color="black" >
+  <b><span id="t1filtercount">
+  </span></b>&nbsp;of <b>
+  <span id="t1allcount">
+  </span></b>&nbsp;rows match filter(s)</font></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=a7app01" target="_blank">a7app01</a></td>
+<td>ssh</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>USM0009L8T</td>
+<td>Legacy</td>
+<td>10.160.66.51</td>
+<td>HP-UX</td>
+<td>not_found</td>
+<td>RDC</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_a7app01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=a7server" target="_blank">a7server</a></td>
+<td>ssh</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>USM9950JVW</td>
+<td>Legacy</td>
+<td>10.160.66.50</td>
+<td>HP-UX</td>
+<td>not_found</td>
+<td>RDC</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=aavfwp01" target="_blank">aavfwp01</a></td>
+<td>ssh</td>
+<td>AAVN</td>
+<td>MC</td>
+<td>Prod</td>
+<td>USE843H8NK</td>
+<td>Ftr13</td>
+<td>144.70.110.11</td>
+<td>HP-UX</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_aavfwp01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=adslnms" target="_blank">adslnms</a></td>
+<td>none</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>Idle</td>
+<td>943H431E</td>
+<td>Legacy</td>
+<td>10.160.90.104</td>
+<td>SunOS</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=adxfwp01" target="_blank">adxfwp01</a></td>
+<td>ssh</td>
+<td>ADXN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>F816PH1</td>
+<td>Ftr13</td>
+<td>138.83.135.95</td>
+<td>Linux</td>
+<td>159.161.226.236</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_adxfwp01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=adxfwp02" target="_blank">adxfwp02</a></td>
+<td>ssh</td>
+<td>ADXN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>H816PH1</td>
+<td>Ftr13</td>
+<td>138.83.135.96</td>
+<td>Linux</td>
+<td>159.161.226.237</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_adxfwp02_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=adxfwp03" target="_blank">adxfwp03</a></td>
+<td>ssh</td>
+<td>ADXN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>GC9PVH1</td>
+<td>Ftr13</td>
+<td>138.83.135.150</td>
+<td>Linux</td>
+<td>10.72.24.189</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_adxfwp03_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=appdev01" target="_blank">appdev01</a></td>
+<td>noDNS</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>Idle</td>
+<td>6024DKY5D350</td>
+<td>Legacy</td>
+<td>0.0.0.0</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=argon" target="_blank">argon</a></td>
+<td>none</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>Idle</td>
+<td>048C0E02</td>
+<td>Legacy</td>
+<td>209.74.63.148</td>
+<td>SunOS</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=busropv04" target="_blank">busropv04</a></td>
+<td>ssh</td>
+<td>BUSF</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>VMware-42</td>
+<td>Legacy</td>
+<td>10.164.66.186</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>RDC</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_busropv04_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=csgftwp09" target="_blank">csgftwp09</a></td>
+<td>ssh</td>
+<td>NNCN</td>
+<td>MC</td>
+<td>Prod</td>
+<td>10BD142</td>
+<td>Ftr13</td>
+<td>138.83.154.65</td>
+<td>AIX</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_csgftwp09_20120321.html target="_blank">20120321</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=cxfwgp01" target="_blank">cxfwgp01</a></td>
+<td>ssh</td>
+<td>TIVN</td>
+<td>NC</td>
+<td>Prod</td>
+<td>USC41172ED</td>
+<td>Ftr13</td>
+<td>159.161.125.58</td>
+<td>HP-UX</td>
+<td>112.32.90.65</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_cxfwgp01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=ebcfwp01" target="_blank">ebcfwp01</a></td>
+<td>ssh</td>
+<td>EBCN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>VMware-42</td>
+<td>Ftr13</td>
+<td>138.83.10.202</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_ebcfwp01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=elidcs2" target="_blank">elidcs2</a></td>
+<td>ssh</td>
+<td> U</td>
+<td>NC</td>
+<td>Dev</td>
+<td>USR4218KBY</td>
+<td>Legacy</td>
+<td>10.161.65.41</td>
+<td>HP-UX</td>
+<td>not_found</td>
+<td>RDC</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=ewftwp33" target="_blank">ewftwp33</a></td>
+<td>ssh</td>
+<td>EWBN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>not_found</td>
+<td>Ftr13</td>
+<td>138.83.147.38</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_ewftwp33_20120302.html target="_blank">20120302</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=ftpsdwhprd-cg4" target="_blank">ftpsdwhprd-cg4</a></td>
+<td>ssh</td>
+<td>BJ4N</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>_unknown</td>
+<td>Ftr13</td>
+<td>138.83.142.108</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_ftpsdwhprd-cg4_20120302.html target="_blank">20120302</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=inftwxenh1" target="_blank">inftwxenh1</a></td>
+<td>ssh</td>
+<td>PHNN</td>
+<td>not_found</td>
+<td>Prod</td>
+<td>USE7507MMN</td>
+<td>Ftr13</td>
+<td>138.83.142.147</td>
+<td>Linux</td>
+<td>not_found</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_inftwxenh1_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=lnxfwi01" target="_blank">lnxfwi01</a></td>
+<td>ssh</td>
+<td>LNXN</td>
+<td>not_found</td>
+<td>IT</td>
+<td>VMware-42</td>
+<td>Ftr13</td>
+<td>138.83.10.169</td>
+<td>Linux</td>
+<td>138.83.8.21</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_lnxfwi01_20120301.html target="_blank">20120301</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=nshfwpa2" target="_blank">nshfwpa2</a></td>
+<td>ssh</td>
+<td>NSHN</td>
+<td>NC</td>
+<td>Prod</td>
+<td>USE4450MDL</td>
+<td>not_found</td>
+<td>192.110.106.117</td>
+<td>HP-UX</td>
+<td>112.32.92.54</td>
+<td>FTW</td>
+<td><a href=/JADIS/data/cfg2html/cfg2html_nshfwpa2_2012030.html target="_blank">2012030</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=nyrofcsol29" target="_blank">nyrofcsol29</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=omefwp01" target="_blank">omefwp01</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=rcfwsp05" target="_blank">rcfwsp05</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=scrambler" target="_blank">scrambler</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=unxfwi03" target="_blank">unxfwi03</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=wbnfwpd1" target="_blank">wbnfwpd1</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=webftwp01b" target="_blank">webftwp01b</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=wkbfwpa1" target="_blank">wkbfwpa1</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+<tr>
+<td><a href="/JADIS/cgi-bin/gen_host.pl?hostname=xrmfwp06" target="_blank">xrmfwp06</a></td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td>_unknown</td>
+<td>not_found</td>
+<td>not_found</td>
+<td><a href=not_found target="_blank">not_found</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="rpt_last_line">
+&nbsp;
+</div>
+<div class="reportfooter">
+Updated 11:47 03/21/2012 by JADIS ver 6.00.00
+</div>
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+Disk /dev/sdc doesn't contain a valid partition table
+Disk /dev/sdd doesn't contain a valid partition table
+Disk /dev/sde doesn't contain a valid partition table
+Disk /dev/sdf doesn't contain a valid partition table
+Disk /dev/sdg doesn't contain a valid partition table
+Disk /dev/sdh doesn't contain a valid partition table
+Disk /dev/sdi doesn't contain a valid partition table
+Disk /dev/sdj doesn't contain a valid partition table
+Disk /dev/sdk doesn't contain a valid partition table
+Disk /dev/dm-9 doesn't contain a valid partition table
+Disk /dev/dm-10 doesn't contain a valid partition table
+Disk /dev/dm-11 doesn't contain a valid partition table
+Disk /dev/dm-12 doesn't contain a valid partition table
+Disk /dev/dm-13 doesn't contain a valid partition table
+Disk /dev/dm-15 doesn't contain a valid partition table
+Disk /dev/dm-16 doesn't contain a valid partition table
+Disk /dev/dm-17 doesn't contain a valid partition table
+Disk /dev/dm-18 doesn't contain a valid partition table
+Disk /dev/dm-19 doesn't contain a valid partition table
+Disk /dev/dm-20 doesn't contain a valid partition table
+/usr/bin/cfg2html-linux: line 1989: [: missing `]'
+doesn't contain a valid partition table
+    Disk /dev/dm-18 doesn't contain a valid partition table
+    Disk /dev/dm-19 doesn't contain a valid partition table
+    Disk /dev/dm-20 doesn't contain a valid partition table
+stderr output from "/sbin/fdisk -l|sed 's/8e \ Unknown/8e \ LVM/g'":
+    Disk /dev/sdc doesn't contain a valid partition table
+    Disk /dev/sdd doesn't contain a valid partition table
+    Disk /dev/sde doesn't contain a valid partition table
+    Disk /dev/sdf doesn't contain a valid partition table
+    Disk /dev/sdg doesn't contain a valid partition table
+    Disk /dev/sdh doesn't contain a valid partition table
+    Disk /dev/sdi doesn't contain a valid partition table
+    Disk /dev/sdj doesn't contain a valid partition table
+    Disk /dev/sdk doesn't contain a valid partition table
+    Disk /dev/dm-9 doesn't contain a valid partition table
+    Disk /dev/dm-10 doesn't contain a valid partition table
+    Disk /dev/dm-11 doesn't contain a valid partition table
+    Disk /dev/dm-12 doesn't contain a valid partition table
+    Disk /dev/dm-13 doesn't contain a valid partition table
+    Disk /dev/dm-15 doesn't contain a valid partition table
+    Disk /dev/dm-16 doesn't contain a valid partition table
+    Disk /dev/dm-17 doesn't contain a valid partition table
+    Disk /dev/dm-18 doesn't contain a valid partition table
+    Disk /dev/dm-19 doesn't contain a valid partition table
+    Disk /dev/dm-20 doesn't contain a valid partition table
+stderr output from "lvm version":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -s | awk -F\" '{print $2}'":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -v":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "PVDisplay":
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Using physical volume(s) on command line
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Using physical volume(s) on command line
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Using physical volume(s) on command line
+      WARNING: Ignoring duplicate config node: filter (seeking filter)
+        Using physical volume(s) on command line
+stderr output from "/sbin/mii-tool -v":
+    SIOCGMIIPHY on 'eth5' failed: Resource temporarily unavailable
+    SIOCGMIIPHY on 'eth6' failed: Resource temporarily unavailable
+stderr output from "/sbin/ldconfig -vN":
+    /sbin/ldconfig: Cannot stat /usr/X11R6/lib/libGLU.so: No such file or directory
+    /sbin/ldconfig: Cannot stat /usr/lib/libGLU.so: No such file or directory
+stderr output from "/usr/openv/netbackup/bin/bpclntcmd -pn":
+    expecting response from server ebuftwspa01
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found

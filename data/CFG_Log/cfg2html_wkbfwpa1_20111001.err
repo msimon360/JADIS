@@ -1,0 +1,79 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lshw in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+Disk /dev/sdb doesn't contain a valid partition table
+Disk /dev/sdc doesn't contain a valid partition table
+Disk /dev/dm-6 doesn't contain a valid partition table
+rsion information
+        -Z     show SELinux security contexts
+        pid    start at pid, default 1 (init))
+        user   show only trees rooted at processes of that user
+    
+stderr output from "/sbin/chkconfig":
+    chkconfig version 1.3.13.5.EL4 - Copyright (C) 1997-2000 Red Hat, Inc.
+    This may be freely redistributed under the terms of the GNU Public License.
+    
+    usage:   chkconfig --list [name]
+             chkconfig --add <name>
+             chkconfig --del <name>
+             chkconfig [--level <levels>] <name> <on|off|reset>
+stderr output from "/sbin/chkconfig -l --deps":
+    -l: unknown option
+stderr output from "/usr/bin/lshal":
+    lshal version 0.4.2
+    libhal.c 644 : Error connecting to system bus: Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory
+    error: hal_initialize failed
+stderr output from "PartitionDump":
+    Disk /dev/sdb doesn't contain a valid partition table
+    Disk /dev/sdc doesn't contain a valid partition table
+    Disk /dev/dm-6 doesn't contain a valid partition table
+stderr output from "/sbin/fdisk -l|sed 's/8e \ Unknown/8e \ LVM/g'":
+    Disk /dev/sdb doesn't contain a valid partition table
+    Disk /dev/sdc doesn't contain a valid partition table
+    Disk /dev/dm-6 doesn't contain a valid partition table
+stderr output from "chkconfig --list multipathd":
+    error reading information on service multipathd: No such file or directory
+stderr output from "/sbin/multipath -v2 -d -ll":
+    /usr/bin/cfg2html-linux: line 453: /sbin/multipath: No such file or directory
+stderr output from "/sbin/multipath -v3 -d -ll":
+    /usr/bin/cfg2html-linux: line 453: /sbin/multipath: No such file or directory
+stderr output from "grep -vE '^#|^ *$' /etc/multipath.conf":
+    grep: /etc/multipath.conf: No such file or directory
+stderr output from "for MultiPath in $(/sbin/multipath -v1 -d -l); do ls -l /dev/mapper/${MultiPath}; done":
+    /usr/bin/cfg2html-linux: line 453: /sbin/multipath: No such file or directory
+stderr output from "cat /var/lib/multipath/bindings":
+    cat: /var/lib/multipath/bindings: No such file or directory
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "vgswap"
+        Finding volume group "vgroot"
+        Fixing up missing size (49.75 GB) for PV /dev/sda2
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "vgswap"
+        Finding volume group "vgroot"
+        Fixing up missing size (49.75 GB) for PV /dev/sda2
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+        Finding volume group "vgswap"
+        Finding volume group "vgroot"
+        Fixing up missing size (49.75 GB) for PV /dev/sda2
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+        Using physical volume(s) on command line
+        Fixing up missing size (49.75 GB) for PV /dev/sda2
+        Fixing up missing size (49.75 GB) for PV /dev/sda2
+stderr output from "if grep -q '' /etc/sysconfig/network-scripts/route-*; then for RouteCfgFile in /etc/sysconfig/network-scripts/route-*; do printf "\n\n$(basename ${RouteCfgFile}):\n\n"; cat ${RouteCfgFile}; done; fi":
+    grep: /etc/sysconfig/network-scripts/route-*: No such file or directory
+stderr output from "/sbin/ldconfig -vN":
+    /sbin/ldconfig: Cannot stat /usr/lib/libcawinext.so: No such file or directory
+    /sbin/ldconfig: Cannot stat /usr/lib/libcawinextTS.so: No such file or directory
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found

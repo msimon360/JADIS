@@ -1,0 +1,11 @@
+# Gather System Data Files and Generate Web Reports
+/apps/opt/jadis_dev/JADIS/bin/gather_data.ksh -H sys.HPUX   \
+  > /apps/opt/jadis_dev/JADIS/logs/gather_data_HPUX.log  2>&1 &
+/apps/opt/jadis_dev/JADIS/bin/gather_data.ksh -H sys.HMC -r \
+  > /apps/opt/jadis_dev/JADIS/logs/gather_data_HMC.log  2>&1 &
+/apps/opt/jadis_dev/JADIS/bin/gather_data.ksh -H sys.Linux  \
+  > /apps/opt/jadis_dev/JADIS/logs/gather_data_Linux.log 2>&1 &
+/apps/opt/jadis_dev/JADIS/bin/gather_data.ksh -H sys.AIX    \
+  > /apps/opt/jadis_dev/JADIS/logs/gather_data_AIX.log   2>&1 &
+/apps/opt/jadis_dev/JADIS/bin/gather_data.ksh -H sys.Legacy \
+  > /apps/opt/jadis_dev/JADIS/logs/gather_data_Legacy.log   2>&1 &

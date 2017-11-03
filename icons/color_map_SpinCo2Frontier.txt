@@ -1,0 +1,17 @@
+Color    SpinCo    Frontier
+Red      #D00000	
+Dr Red
+Blue
+Lt Blue
+Grey
+Lt Grey
+
+#F2F3F4
+#0060C0
+#D00000
+#D0D0D0
+#B00000
+#CBE3F0
+#EEE
+#F0F0F0
+

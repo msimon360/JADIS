@@ -1,0 +1,25 @@
+#!/bin/ksh
+#
+# xfr_files
+#
+# This script transfers collected files to the Central JADIS Master
+# This is only run on a Remote Master
+# A Remote Master may be needed where some servers are behind a
+# firewall and the Remote Master is a gateway server that can access
+# both sides of the firewall.
+#
+# Another reason to use a Remote Master is where ssh keys are setup
+# from a server that is not the Central JADIS Master
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "xfr_files plugin running" 1
+  # xfer Files to Central JADIS Master
+  logwrite "xfr_files plugin complete" 1
+}
+# EOF

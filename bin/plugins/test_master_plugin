@@ -1,0 +1,23 @@
+function logwrite
+{
+  # Write a formatted string to the logfile
+  DATESTAMP=`date +"%Y%m%d %H:%M"`
+  echo "##LOG:${DATESTAMP}: ${1}"
+  return 0
+}
+
+### MAIN ###
+plugin=$1
+x=0
+ruser[$x]="root"
+TIMEOUT=10
+OUTPUT_DEFAULT="false"
+ACCESS=ssh
+DATADIR=/infra/opt/jadis_dev/JADIS/data
+#
+. ./${plugin}
+
+touch testout
+output_source >> testout
+gather_source 
+#EOF

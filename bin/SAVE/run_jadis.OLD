@@ -1,0 +1,925 @@
+#!/bin/ksh
+#
+# Title:         run_jadis (based on gather_data.ksh by Mark Simon
+#                which was based on gen_sysinfo_idx by Peter Lundquist)
+# Author:        Mark Simon
+################################################################
+#
+#   run_jadis collects files from remote systems and generates
+#   files based on commands run aginst the list of hosts.
+#   run_jadis is designed to be run from root's (or an admin account)
+#   daily from cron
+#   Here is a sample cron enrty
+# # Gather JADIS Files and Generate Reports
+# 0 4 * * * /apps/opt/JADIS/bin/run_jadis > /apps/opt/JADIS/logs/gather_data.log 2>&1
+#
+################################################################
+# Modification History:
+# 20120203 Major rewrite, Master/Slave processes run plugins
+# 20120103 Fixed OS and OSVer not cleared in function copy_files (Mts)
+# 20091021 Removed references to RUSER and used ruser[$x] from remote.lis (Mts)
+# 20091014 Made a run_auto_update function, run if access = ssh or rsh. (Mts)
+# 3.00 20090522 Remove all report generation. rename to run_jadis(Mts)
+# 2.09 20090410 Gen lists sys.<user>.*rsh (Mts)
+# 2.08 20090225 Fix bug head->tail in download check (Mts)
+# 2.07 20090218 Reversed sort on Model list in footer (Mts)
+# 2.06 20090217 Fix for html without TOC (Mts)
+# 2.05 20090210 cleaned up HTML with CSS, added version to output (Mts)
+# 01-27-2009 Many fixes found in fresh install, added link to Model (Mts)
+# 10-13-2008 added SRCDIR, gunzip, (Mts)
+# 08-10-2008 changed link to dynamic Data Request Form, added
+#             bg_not_complete_before_timeout function to prevent
+#             hangs on ssh commands
+# 08-26-2008 Added link to Data Request Form (Mts)
+# 06-24-2008 Added ACCESS column (Mts)
+# 04-24-2008 Added idle servers (Mts)
+# 04-17-2008 Change MODEL names to uppercase. (Mts)
+# 03-25-2008 Changed temp files to use process ID (Mts)
+# 03-13-2008 New CSS working, adding command line options. (Mts)
+# 03-03-2008 Added convert non-html files to html (Mts)
+# 02-25-2008 Major CSS update to aprox Verizon House Layout (Mts)
+# 02-25-2008 Added SERIAL # or SYSTEM ID to Model count (Mts)
+#             Added missing to host count.
+# 02-04-2008 Fixed problem with permissions and Model. (Mts)
+# 01-31-2008 Added convert to frames. (Mts)
+# 01-10-2008 Moved to omzrsi, changed directories.
+# 09-27-2007 Added test for ssh via sysadm account for servers
+#             where root ssh is disabled. Local copy no longer
+#             needed. Moved chmod, chown out of loop. Changed
+#             chmod, chown to use find. (Mts)
+# 09-26-2007 Modifications to get Model from cfg2html on Itanium
+#             Added local copy for central server (Mark Simon)
+# 09-25-2007 Changed Title to Verizon (Mark Simon)
+# 08-09-2006 Changed ftp section to scp due to server hardening
+# 04-05-2004 Change background color from lightblue to white
+# 11-19-2003 Modifications to fix display of workstation model
+#             Add cascading style sheet properties
+# 10-26-2003 Modifications to archival/removal routines
+# 10-20-2003 Added symlinks to hostname.sysinfo.latest.html
+# 07-10-2003 Corrected chmod from 555 to 644
+# 07-09-2003 Updated SIDIR to reflect new directory
+# 07-08-2003 Changed font from "Arial" to "Arial, Sans-Serif"
+# 06-20-2003 Added redirects for errors to /dev/null
+# 06-19-2003 Date created
+################################################################
+
+function usage
+{
+  echo "Usage: run_jadis [-f] [-h] [-H hostlist] [-m] [-r]"
+  echo "-f Force new summary file creation"
+  echo "-h Help, this text"
+  echo "-H <hostlist> list of hosts to run against" 
+  echo "-m Master process"
+  echo "-r Report only, do not gather new files"
+}
+
+function initialize
+{
+# Can't use logwrite until after variables are initialized
+#logwrite "Initializing Variables" 1
+# 
+#  Source SITE CUSTOM file  #
+#  The following are needed in the Site Custom File
+#TIMEOUT - Timeout value for remote commands
+
+BASE=`dirname $1`
+if [ "${BASE}x" = ".x" ];then
+  BASE="`pwd`"
+fi
+BASE=`dirname $BASE`
+. $BASE/etc/JADIS.init
+
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/seos/bin:/bin:/usr/bin:/etc:/usr/sbin:/usr/ucb:/home/v807156/bin:/usr/bin/X11:/sbin:/usr/seos/bin:.:$BASE/bin:$BASE/cgi-bin
+export PATH
+
+today=`date +'%Y%m%d'`
+
+# name of output file
+INDEX=${TOPDIR}/index.html
+
+# Model Document List
+MODLIS=${TOPDIR}/etc/Model.lis
+
+# List Dir
+LISTDIR=${TOPDIR}/lists
+
+# Master host list
+ALLHOSTLST=${LISTDIR}/sys.all
+
+# Auto Update script
+AUTOUD=${TOPDIR}/bin/auto_update
+
+# Plugins Directory
+PLUGINS=${TOPDIR}/bin/plugins
+
+# Log File
+LOGFILE=${TOPDIR}/logs/run_jadis.log
+
+THISHOST=`hostname | cut -d"." -f1`
+
+# initialize remote file list
+init_rfiles
+
+return 0
+}
+
+
+function init_rfiles # Added OS in ver 6.0
+{
+  logwrite "Initializing Remote File List" 1
+  # Read the Remote file list into arrays
+  PFS="${IFS}"
+  IFS=,
+  x=0
+  cat $RFLIST | while read ros[$x] source[$x] rfile[$x] ldir[$x] ruser[$x];  do
+    x=$((${x}+1))
+  done
+  NUMSOURCE=$x
+  IFS="${PFS}"
+  logwrite "Initializing Remote File List - complete" 1
+}
+
+function print_rfiles
+{
+  logwrite "Printing Remote Files" 1
+  x=0
+  while [ $x < $NUMSOURCE ]; do
+    print "${source[$x]} ${rfile[$x]} ${ldir[$x]} ${ruser[$x]}"
+    x=$((${x}+1))
+  done 
+  logwrite "Printing Remote Files - complete" 1
+}
+
+function logwrite
+{
+  MSG="${1}"
+  let LEVEL=$2
+  # Write a formatted string to the logfile
+  DATESTAMP=`date +"%Y%m%d %H:%M"`
+  if (( $LEVEL < $LOGLEVEL )); then
+    echo "##LOG:${DATESTAMP}: ${MSG}" >> $LOGFILE
+  fi
+  return 0
+}
+
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        echo "  Waiting $count more seconds for completion."
+        sleep 6
+        let count="count - 6"
+      else
+        echo "! Failed to complete after $1 seconds."
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+
+# This should be a plugin if needed
+#function run_auto_update
+#{
+#  ############ THIS IS FOR AUTO UPDATES ####
+#  if [ -x ${AUTOUD} ]; then
+#    logwrite "Performing Auto Update" 1
+#    . ${AUTOUD}
+#  fi
+#}
+
+# This is now a plugin
+#function chk_seos
+#{
+#    # Check SeOS Software
+#    print "Checking SeOS Software"
+#    SEOS="_none"
+#    touch /tmp/seos$$
+#    case $ACCESS in
+#      ssh)
+#        ssh -o BatchMode=yes ${ruser[$x]}@${hostname} \
+#          "PATH=$PATH:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin;seversion" > /tmp/seos$$ 2>&1 &
+#      ;;
+#      rsh)
+#        rsh ${hostname} -l ${ruser[$x]} \
+#          "PATH=$PATH:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin;seversion" > /tmp/seos$$ \
+#	  2>&1 &
+#      ;;
+#    esac
+#    if bg_not_complete_before_timeout ${TIMEOUT}; then
+#      echo "failed to connect to ${hostname} after ${TIMEOUT} sec"
+#      kill $!
+#    else
+#      if grep -i "seversion " /tmp/seos$$ >/dev/null ; then
+#	SEOS=`grep -i "seversion " /tmp/seos$$ | head -1 | \
+#          sed 's/^.*seversion //i;s/ .*//' `
+#      fi
+#    fi
+#    #cat /tmp/seos$$ # DEBUG
+#    #echo "Host:${HN} SeOS:${SEOS}" # DEBUG
+#    rm /tmp/seos$$
+#}
+
+# This is now a plugin
+#function parse_uname
+#{
+#    # Get uname -a and parse
+#    print "Checking uname string"
+#    touch /tmp/uname$$
+#    case $ACCESS in
+#      ssh)
+#        ssh -o BatchMode=yes ${ruser[$x]}@${hostname} \
+#          "uname -a" > /tmp/uname$$ 2>&1 &
+#      ;;
+#      rsh)
+#        rsh ${hostname} -l ${ruser[$x]} \
+#          "uname -a" > /tmp/uname$$ 2>&1 &
+#      ;;
+#    esac
+#    if bg_not_complete_before_timeout ${TIMEOUT}; then
+#      echo "failed to connect to ${hostname} after ${TIMEOUT} sec"
+#      kill $!
+#    else
+#      if grep -i "${hostname}" /tmp/uname$$ >/dev/null ; then
+#        OS=`grep -i "${hostname}" /tmp/uname$$ | cut -d" " -f1`
+#        OSVer=`grep -i "${hostname}" /tmp/uname$$ | cut -d" " -f3`
+#      fi
+#    fi
+#    #cat /tmp/uname$$ # DEBUG
+#    #echo "Host:${HN} OS:${OS}" # DEBUG
+#    rm /tmp/uname$$
+#}
+
+# This is now a plugin (if needed)
+#function check_sudo
+#{
+#    # Check SuDo Privilages
+#    print "Checking Sudo privilages"
+#    PRIV="_none"
+#    touch /tmp/sudo$$
+#    case $ACCESS in
+#      ssh)
+#        ssh -o BatchMode=yes ${ruser[$x]}@${hostname} \
+#          "sudo -l" > /tmp/sudo$$ 2>/dev/null &
+#      ;;
+#      rsh)
+#        rsh ${hostname} -l ${ruser[$x]} "sudo -l" > /tmp/sudo$$ \
+#	  2>/dev/null &
+#      ;;
+#    esac
+#    if bg_not_complete_before_timeout ${TIMEOUT}; then
+#      echo "failed to connect to ${hostname} after ${TIMEOUT} sec"
+#      kill $!
+#    else
+#      if grep -e "ALL.*NOPASSWD" /tmp/sudo$$ >/dev/null ; then
+#	PRIV=ALL_NOPASS
+#      fi
+#      if grep -e "root.*NOPASSWD" /tmp/sudo$$ >/dev/null ; then
+#	PRIV=ROOT_NOPASS
+#      fi
+#    fi
+#    #cat /tmp/sudo$$ # DEBUG
+#    #echo "Host:${HN} Priv:${PRIV}" # DEBUG
+#    rm /tmp/sudo$$
+#    #echo "${hostname},$ACCESS,$PRIV" >> $STATFILE
+#}
+
+# This is now a plugin
+#function start_collectors
+#{
+#  # The Master process divides up the hostlist into multiple lists
+#  # and starts a collector process for each to speed collection
+#  let line_count=1
+#  let file_count=1
+#  cat ${HOSTLST} | while read line ; do
+#    echo "${line}" >> /tmp/host_list${file_count}
+#    let line_count="line_count + 1"
+#    if (( ${line_count} == ${HOST_COUNT} )); then
+#      echo "run process for /tmp/host_list${file_count}"
+#      let line_count=1
+#      let file_count="file_count + 1"
+#    fi
+#  done
+#  echo "${line}" >> /tmp/host_list${file_count}
+#}
+#
+# This is now a plugin
+#function copy_files
+#{
+#  logwrite "Copying Remote Files"
+#  if [[ "${JADIS_NOCOPY}x" = "x" ]];then
+#    JADIS_NOCOPY=false
+#  fi
+#
+#  echo "NOCOPY flag is set to ${JADIS_NOCOPY}"
+#  # Loop for all hosts in Host List
+#  NUM_HOSTS=`wc -l ${HOSTLST} | cut -d" " -f1`
+#  let HCOUNT=0
+#  logwrite "Processing Hostlist ${HOSTLST} with $NUM_HOSTS entries"
+#  for hostname in `cat ${HOSTLST} `
+#  do
+#    let HCOUNT=${HCOUNT}+1
+#    STATUS="missing"
+#    ACCESS="_none"
+#    IPADDR="_none"
+#    SEOS="_none"
+#    OS="unk"
+#    OSVer="unk"
+#    x=0
+#    logwrite "Connecting to $hostname host $HCOUNT of $NUM_HOSTS"
+#    # Check for connection problems
+#    check_access "${hostname}"
+#    # If Host is accessable run auto update and check seos
+#    if [[ "${ACCESS}x" = "sshx" ]] || [[ "${ACCESS}x" = "rshx" ]]; then
+#      run_auto_update
+#      chk_seos
+#      parse_uname
+#      #check_sudo # Not used in Frontier
+#    fi
+#    echo "${hostname},$ACCESS,$IPADDR,$SEOS,$OS,$OSVer" >> $STATFILE
+#    #
+#    # For each remote file source defined
+#    # If JADIS_NOCOPY is true skip copy files from remote servers
+#    while [[ $x < $NUMSOURCE ]]&&[ "${JADIS_NOCOPY}x" = "falsex" ]; do
+#      #print "${source[$x]} ${rfile[$x]} ${ldir[$x]} ${ruser[$x]}" #DEBUG
+#      # Replace meta tags with wildcards in the pattern to match
+#      RMPAT=`echo ${rfile[$x]} | sed 's/%YYY/????/;s/%m/??/;s/%d/??/'`
+#      RMPAT=`echo ${RMPAT} | sed "s/%H/${hostname}/"`
+#      echo "lcd ${ldir[$x]}" > /tmp/get_${source[$x]}
+#      echo "mget ${RMPAT}" >> /tmp/get_${source[$x]}
+#      echo "bye" >> /tmp/get_${source[$x]}
+#      echo " " >>  /tmp/get_${source[$x]}
+#      case $ACCESS in
+#        down)
+#          true # don't waste time trying anything else
+#          ;;
+#        ssh)
+#          echo "Collecting ${source[$x]} files from ${hostname}"
+#            # Frist see if we already have the latest file
+#            ssh -o BatchMode=yes ${ruser[$x]}@${hostname} \
+#              "ls ${RMPAT} ${RMPAT}.gz 2>/dev/null" | tail -1 > /tmp/rmfile$$
+#            RMFILE=`cat /tmp/rmfile$$`
+#            RMFILE=`basename $RMFILE .gz`
+#            cd ${ldir[$x]}
+#            if [ -r $RMFILE ]; then
+#              # file already here
+#              echo "$RMFILE already collected"
+#            else # newest file not downloaded
+#              # Copy files matching the pattern and with .gz added for compressed
+#              # files ending in .gz, this does not pick up html_config_files.tar
+#              test_scp ${hostname} ${ruser[$x]}
+#              case $SCP in
+#              scp )
+#                # Had to add the timeout check, scp somtimes hung.
+#                echo "Copying ${RMPAT} to ${ldir[$x]} with scp"
+#                scp -B ${ruser[$x]}@${hostname}:${RMPAT} ${ldir[$x]} &
+#                if bg_not_complete_before_timeout ${TIMEOUT}; then
+#                  echo "scp failed to ${hostname} after ${TIMEOUT} sec"
+#                  kill $!
+#                fi
+#                ## Commented out *gz files to speed script
+#                #scp -B ${ruser[$x]}@${hostname}:${RMPAT}.gz ${ldir[$x]} &
+#                #if bg_not_complete_before_timeout ${TIMEOUT}; then
+#                #  echo "scp failed to ${hostname} after ${TIMEOUT} sec"
+#                #  kill $!
+#                #fi
+#                ;;
+#              sftp )
+#                # try sftp where scp1/2 compatability problems
+#                echo "Copying ${RMPAT} to ${ldir[$x]} with sftp"
+#                sftp ${ruser[$x]}@${hostname}:${RMPAT} ${ldir[$x]}
+#                ;;
+#              esac
+#            fi
+#          ;;
+#        rsh)
+#          echo "Collecting files from ${hostname} using rcp"
+#            # Frist see if we already have the files
+#            rsh ${hostname} -l ${ruser[$x]} \
+#              "ls ${RMPAT} ${RMPAT}.gz" 2>/dev/null | tail -1 > /tmp/rmfile$$
+#            RMFILE=`cat /tmp/rmfile$$`
+#            RMFILE=`basename $RMFILE .gz`
+#            cd ${ldir[$x]}
+#            if [ -r $RMFILE ]; then
+#              # file already here
+#              echo "$RMFILE already collected"
+#            else # newest file not downloaded
+#              echo "Copying ${RMPAT}* to ${ldir[$x]} with rcp"
+#              rcp ${ruser[$x]}@${hostname}:${RMPAT} ${ldir[$x]}
+#              ## Commented out *gz files to speed script
+#              #rcp ${ruser[$x]}@${hostname}:${RMPAT}.gz ${ldir[$x]}
+#            fi
+#          ;;
+#        *)
+#            echo "No remote access found"
+#          ;;
+#      esac
+#      # If this is not the JADIS server continue
+#      # loop for next source file
+#      if $XFR ; then
+#        x=$((${x}+1))
+#	continue
+#      fi
+#      x=$((${x}+1))
+#    done # Loop for all sources
+#  done # Loop for all Hosts
+#  logwrite "Copying Remote Files - complete"
+#}
+#
+# This is now a plugin
+#function test_scp
+#{
+#  HNAME=$1
+#  USER=$2
+#  SCP="none"
+#  rm /tmp/junk$$ > /dev/null 2>&1
+#  # Try scp
+#  echo "trying scp"
+#  scp -B ${USER}@${HNAME}:/etc/resolv.conf /tmp/junk$$ \
+#    2>/dev/null &
+#  if bg_not_complete_before_timeout ${TIMEOUT}; then
+#    echo "scp failed to connect to ${hostname} after ${TIMEOUT} sec"
+#    kill $!
+#    SCP=sftp
+#  else # scp command completed
+#    # Now see if it was successful
+#    if [ -r /tmp/junk$$ ]; then
+#      echo "scp succeeded"
+#      SCP=scp
+#    else
+#      echo "scp failed"
+#      SCP=sftp
+#    fi
+#  fi # scp timeout
+#  rm /tmp/junk$$ > /dev/null 2>&1
+#}
+#
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        echo "  Waiting $count more seconds for completion."
+        sleep 6
+        let count="count - 6"
+      else
+        echo "! Failed to complete after $1 seconds."
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+#
+# This is now a plugin
+#function validate_files
+#{
+#  logwrite "Validating Data Files"
+#  x=0
+#  while [[ $x < $NUMSOURCE ]]; do
+#    # make sure the files are writable
+#    find ${ldir[$x]} -type f -mtime -3 -exec chmod 644 {} \; \
+#      > /dev/null 2>&1
+#    # uncompress gzip'd files
+#    logwrite "Uncompressing ${source[$x]} Files"
+#    NUM=`ls ${ldir[$x]}/*gz | wc -l`
+#    logwrite "${NUM} compressed files found"
+#    find ${ldir[$x]} -name \*.gz -mtime -3 -exec gunzip -f {} \; \
+#      > /dev/null 2>&1
+#    NUM=`ls ${ldir[$x]}/*gz | wc -l`
+#    logwrite "${NUM} compressed files remain"
+#    x=$((${x}+1))
+#    # Make sure HTML files are complete
+#    for FN in `find ${ldir[$x]} -type f -mtime -3 -name \*html -print`; do
+#      if grep -i "/html" $FN > /dev/null ; then
+#       #echo "${FN} is complete" ##DEBUG
+#       true
+#      else
+#       echo "${FN} is only partial, removing"
+#       rm -f ${FN}
+#      fi
+#    done
+#  done
+#  logwrite "Validating Data Files - complete"
+#}
+#
+# This is now a plugin
+#function combine_status
+#{
+#  logwrite "Combine Status Files"
+#  cd ${TOPDIR}/data/Status
+#  head -1 ${THISHOST}_${THISLIST}_status${today}.csv > status${today}.csv
+#  for FN in `ls *_status${today}.csv`; do
+#    tail -n +2 $FN >> status${today}.csv
+#  done
+#  logwrite "Combine Status Files Complete"
+#}
+#
+# This is now a plugin
+#function test_rsh
+#{
+#  HNAME=$1
+#  # Try rsh
+#  echo "trying rsh"
+#  rsh ${HNAME} -l ${ruser[$x]} 'uname -n' > /tmp/hostname$$ \
+#    2>/dev/null &
+#  if bg_not_complete_before_timeout ${TIMEOUT}; then
+#    echo "rsh failed to connect to ${hostname} after ${TIMEOUT} sec"
+#    kill $!
+#  else # rsh command completed
+#    if grep "^${HNAME}" /tmp/hostname$$ > /dev/null 2>&1; then
+#      echo "rsh login succeeded"
+#      ACCESS="rsh"
+#    else
+#      echo "rsh to ${HNAME} failed `cat /tmp/hostname$$` returned"
+#    fi # rsh returned hostname
+#  fi # rsh timeout
+#}
+#
+# This is now a plugin
+#function check_access
+#{
+#  HNAME="$1"
+#  # first see if it is online
+#  ping ${HNAME} -c 3 -i 2 > /tmp/ping$$ 2>&1
+#  if grep -e unknown /tmp/ping$$ > /dev/null;then
+#    ACCESS="noDNS"
+#    echo "${HNAME} address not resolved"
+#    IPADDR="0.0.0.0"
+#    return 0
+#  else
+#    IPADDR=`grep "^PING " /tmp/ping$$ | sed 's/^.* (//1;s/).*//'`
+#  fi
+#  if grep -e "100%" /tmp/ping$$ > /dev/null;then
+#    ACCESS="down"
+#    echo "${HNAME} does not respond to ping"
+#    return 0
+#  fi
+#  # ping succeeded
+#  echo "${HNAME} is up"
+#  IPADDR=`grep "^PING " /tmp/ping$$ | sed 's/^.* (//1;s/).*//'`
+#  echo "trying ssh"
+#  ssh -o BatchMode=yes -o StrictHostKeyChecking=no \
+#    ${ruser[$x]}@${HNAME} 'uname -n' \
+#    2>/tmp/sshout$$ > /tmp/hostname$$ &
+#  if bg_not_complete_before_timeout ${TIMEOUT}; then
+#    echo "ssh failed to connect to ${HNAME} after ${TIMEOUT} sec"
+#    kill $!
+#    ACCESS="timeout"
+#    # Try rsh for hosts that fail ssh
+#    test_rsh ${HNAME}
+#  else # ssh connection succeeded
+#    if grep "Name" /tmp/sshout$$ > /dev/null 2>&1; then
+#      ACCESS="noDNS"
+#	echo "${HNAME} not in DNS"
+#    else
+#      if grep "^${HNAME}" /tmp/hostname$$ > /dev/null 2>&1; then
+#        # ssh login succeeded
+#        ACCESS="ssh"
+#	  echo "ssh login succeeded"
+#      else # ssh did not return hostname match
+#        ACCESS="none"
+#	  logwrite "${HNAME} does not match output of `cat /tmp/hostname$$`"
+#        test_rsh ${HNAME}
+#      fi # ssh returns hostname
+#    fi # name not in DNS
+#  fi # if ssh timeout
+#  return 0
+#}
+#
+# This is now a plugin
+#function check_ITI_hosts {
+#  # Check master list
+#  sed 's/ $//;s/	$//' $ALLHOSTLST > /tmp/hostlist$$
+#  #ls -l /tmp/hostlist$$ # DEBUG
+#  linenum=0
+#  cat ${TOPDIR}/data/ITI/ITI_NCDC_${today}.csv | while read line ; do
+#    # Skip over first line
+#    if (( $linenum < 1 )); then
+#      linenum=$(( ${linenum}+1))
+#      continue
+#    fi
+#    #echo "Raw:${line}" # DEBUG
+#    hostname=`echo $line | cut -d"," -f1`
+#    # remove blanks and convert to lowercase
+#    hostname=`echo ${hostname} | tr A-Z a-z  | sed 's/ //g;s/	//g'`
+#    # strip off fully qualified names
+#    hostname=`echo ${hostname} | sed 's/\..*//g'`
+#    #echo "HOST:${hostname}" # DEBUG
+#    if `grep -e "^${hostname}$" /tmp/hostlist$$ > /dev/null`; then
+#      true # Alread there
+#    else
+#      logwrite "# Adding ${hostname} found in ITI_NCDC_${today}.csv to ${ALLHOSTLST}"
+#      echo ${hostname} >> /tmp/hostlist$$
+#    fi
+#  done
+#  grep -v "^$" /tmp/hostlist$$ | tr A-Z a-z | sort -u > $ALLHOSTLST
+#}
+#
+#
+#
+#
+# This is now a plugin
+#function get_teamdoc
+#{
+#  logwrite "# Get Excel Spreadsheet from Team Website"
+######### Had to use wget with passwd now that site is protected
+##  # Try curl
+##  FOUND=`whence curl`
+##  if [ "${FOUND}x" != "x" ]; then
+##    curl --silent --show-error --user=mark.simon --password="Sjs&Mts11knApr" \
+##      $EXLFILE \
+##    ${TOPDIR}/data/Teamsite/Team.xls
+##  else
+##    # if curl not found try wget
+##    FOUND=`whence wget`
+##    if [ "${FOUND}x" != "x" ]; then
+#      wget --no-proxy --tries=1 --user=mark.simon --password="Sjs8Mt\$12knMar" \
+#      $EXLFILE \
+#      -O ${TOPDIR}/data/Teamsite/Team.xls
+##    else
+##      echo "## No curl or wget found. Exiting."
+##      exit 1
+##    fi
+##  fi
+#  echo "# Translate Excel file into CSV for columns we want"
+#  xlt_team_xls.pl ${TOPDIR}/data/Teamsite/Team.xls \
+#    ${TOPDIR}/data/Teamsite/NC${today}.tmp
+#  #ls -l ${TOPDIR}/data/Teamsite/NC${today}.csv # DEBUG
+#  # This is a cludge it should be moved to xlt_team_xls.pl
+#  sed 's/ \,/\,/' ${TOPDIR}/data/Teamsite/NC${today}.tmp > \
+#    ${TOPDIR}/data/Teamsite/NC${today}.csv
+#  rm ${TOPDIR}/data/Teamsite/NC${today}.tmp
+#  chmod 666 ${TOPDIR}/data/Teamsite/NC${today}.csv
+#  # Check master list
+#  sed 's/ $//;s/	$//' $ALLHOSTLST > /tmp/hostlist$$
+#  #ls -l /tmp/hostlist$$ # DEBUG
+#  linenum=0
+#  cat ${TOPDIR}/data/Teamsite/NC${today}.csv | while read line ; do
+#    # Skip over first line
+#    if (( $linenum < 1 )); then
+#      linenum=$(( ${linenum}+1))
+#      continue
+#    fi
+#    #echo "Raw:${line}" # DEBUG
+#    hostname=`echo $line | cut -d"," -f1`
+#    # remove blanks and convert to lowercase
+#    hostname=`echo ${hostname} | tr A-Z a-z  | sed 's/ //g;s/	//g'`
+#    # strip off fully qualified names
+#    hostname=`echo ${hostname} | sed 's/\..*//g'`
+#    #echo "HOST:${hostname}" # DEBUG
+#    if `grep -e "^${hostname}$" /tmp/hostlist$$ > /dev/null`; then
+#      true # Alread there
+#    else
+#      logwrite "# Adding ${hostname} found in NC${today}.csv to ${ALLHOSTLST}"
+#      echo ${hostname} >> /tmp/hostlist$$
+#    fi
+#  done
+#  grep -v "^$" /tmp/hostlist$$ | tr A-Z a-z | sort -u > $ALLHOSTLST
+#  logwrite "# Get Excel Spreadsheet from Team Website - complete"
+#}
+#
+# This is now a plugin
+#function gen_csv
+#{
+#  # This function runs the gen_data.pl script with the options to create a
+#  # comma seperated value (csv) file of all hosts and all parameters
+#  # parsed from the SysInfo files. It is ment to be run daily from cron.
+#  # The gen_data.pl cgi script then uses the csv file to run interactive
+#  # reports.
+#  logwrite "Generating Summary Data File"
+#
+#  # Must use a temp file for output so gen_data does not open the empty file
+#  TMPFILE=/tmp/sysinfo_${today}.csv
+#  OUTFILE=${TOPDIR}/summary_files/sysinfo_${today}.csv
+#
+#  echo "# Generate datafile $OUTFILE"
+#  # If run with the -f option remove the current csv file to force generation.
+#  if [ "${FORCE_CSV}" != "true" ]; then
+#    rm $OUTFILE ${TOPDIR}/summary_files/sysinfo_latest.csv
+#  fi
+#  
+#  ${TOPDIR}/cgi-bin/gen_data.pl -b -c -H sys.all -p all -o csv > \
+#    ${TMPFILE} 2> ${TOPDIR}/logs/gen_data.log
+#  mv ${TMPFILE} ${OUTFILE}
+#  chmod 644 ${OUTFILE}
+#  # Make a link for use by gen_data.pl
+#  ln -fs ${OUTFILE} ${TOPDIR}/summary_files/sysinfo_latest.csv
+#  chmod 644 ${TOPDIR}/summary_files/sysinfo_latest.csv
+#  logwrite "Generating Summary Data File - complete"
+#}
+#
+# This is now a plugin
+#function gen_summary
+#{
+#  logwrite "# Generate webpage ${TOPDIR}/summary.html"
+#
+#  ${TOPDIR}/cgi-bin/gen_data.pl -b -o hsum \
+#    -p "${SUMMARY_FIELDS}" \
+#    2> ${TOPDIR}/logs/gen_summary.log | \
+#    tail -n +2 > ${TOPDIR}/summary.html
+#  logwrite "# Generate summary - complete"
+#}
+#
+# This is now a plugin
+#function gen_dflt_report
+#{
+#  logwrite "# Generate webpage ${TOPDIR}/index.html"
+#
+#  ${TOPDIR}/cgi-bin/gen_data.pl -b -o html \
+#    -p "${DEFAULT_FIELDS}" \
+#    2> ${TOPDIR}/logs/gen_dflt_report.log | \
+#    tail -n +2 > ${TOPDIR}/index.html
+#  logwrite "# Generate dflt_report - complete"
+#}
+#
+#
+# This is now a plugin
+#function cleanup
+#{
+#  # cleanup temp files
+#  rm -f /tmp/*$$ > /dev/null 2>&1
+#  return 0
+#}
+#
+# This is now a plugin
+#function wait_for_collectors
+#{
+#  logwrite "Waiting for Remote Server processes"
+#  # Enter Potentially Infinite Loop
+#  while true; do
+#    (( ALL_DONE=1 ))
+#    for SERVER in $RMSERVERS ; do
+#      if [[ -r ${TOPDIR}/tmp/${SERVER}_complete ]]; then
+#        (( ALL_DONE=$ALL_DONE * 1 ))
+#      else
+#        (( ALL_DONE=$ALL_DONE * 0 ))
+#      fi
+#    done # loop for all remote servers
+#    if (( $ALL_DONE == 1 )) ;then
+#      rm ${TOPDIR}/tmp/*_complete
+#      return 0
+#    fi
+#    sleep 60
+#  done # not so Infinite Loop
+#  logwrite "Waiting is over"
+#}
+
+function init_data_list # Need to add OS
+{
+  logwrite "Init Data Sources List" 1
+  # Read the Remote file list into arrays
+  PFS="${IFS}"
+  IFS=,
+  x=0
+  cat $DLIST | while read source[$x] ldir[$x] datatype[$x];  do
+    ldir[$x]=`dirname ${ldir[$x]}`
+    x=$((${x}+1))
+  done
+  NUMSOURCE=$x
+  IFS="${PFS}"
+  logwrite "Init Data Sources List complete" 1
+}
+
+# This is now a plugin
+#function xfr_files
+#{
+#  logwrite "Transfer Files"
+#  # If this process is on the JADIS Host skip transfer
+#  if [ "${THISHOST}x" != "${JADISHOST}x" ]; then
+#    init_data_list
+#    # Use rsync to transfer files to the JADIS master Host
+#    # For each remote file source defined
+#    # Uncompress any GZip'd files first so rsync will match
+#    validate_files
+#    x=0
+#    while [[ $x < $NUMSOURCE ]]; do
+#      logwrite "rsync of ${source[$x]} starting"
+#      rsync -avz --size-only \
+#        ${TOPDIR}/data/${source[$x]}/ \
+#        ${JADISHOST}:${JADISDIR}/data/${source[$x]}
+#      logwrite "rsync of ${source[$x]} complete"
+#      x=$((${x}+1))
+#    done
+#  fi
+#  #
+#  # Set flag file so Master Server Process can Proceed
+#  ssh ${JADISHOST} "touch ${JADISDIR}/tmp/${THISHOST}_${THISLIST}_complete"
+#  logwrite "Transfer Files - complete"
+#}
+#
+# This is now a plugin
+#function copy_to_datafeed
+#{
+#  logwrite "# Generate csv for MySQL"
+#
+#  ${TOPDIR}/cgi-bin/gen_data.pl -b -o csv \
+#    -p "Cabinet# Cluster Complex Cores CPU# CPU_bits CPU_Rev CPU_Speed CPU_Type FWRev Ignite IP Memory Model NPAR OS OS_bits OS_rel Serial# SSH SysID Vendor VPAR VzPatch" \
+#    2> ${TOPDIR}/logs/gen_mysql_report.log | \
+#    > ${TOPDIR}/mysql_report.csv
+#  logwrite "# Generate mysql_report - complete"
+#  scp  ${TOPDIR}/mysql_report.csv \
+#    vzpncdc@nctss:/apps/opt/var/datafeed/
+#}
+
+#### MAIN script ####
+initialize $0
+# Get command line options
+set -x
+while [ $# -gt 0 ]; do
+  case $1 in
+    -f )  FORCE_CSV=force_new_csv
+          shift;;
+    -h )  usage; exit 0
+          ;;
+    -\? )  usage; exit 0
+          ;;
+    -H )  shift
+          THISLIST=$1
+          shift;;
+    -m )  JADISMSTR="true"
+          shift;;
+    -r )  REPORT_ONLY=report_only
+          shift;;
+    -t )  TEAMDOC=true
+          shift;;
+    * )
+       echo "Option $1 not recognized, exiting.";usage;exit 1
+       ;;
+  esac
+done
+
+if [ "${THISLIST}x" = "x" ];then
+  logwrite "No Host List given. Defaulting to ${JADISLIST}" 1
+  THISLIST=${JADISLIST}
+fi
+
+#
+# If there is a settings file for this list source it
+#
+if [ -r ${TOPDIR}/etc/JADIS_${THISLIST}.init ]; then
+  . ${TOPDIR}/etc/JADIS_${THISLIST}.init
+fi
+
+# Determin if this is the Master Process
+if [ "${JADISMSTR}" = "true" ]; then
+  logwrite "This process ${THISHOST}_${THISLIST} is the JADIS master" 1
+  # source Master Plugins and call functions
+  for master_file in `ls ${PLUGINS}/M* ` ; do
+    if [ -x ${master_file} ];then
+      . ${master_file}
+      ## ENHANCMENT - gather_source should return the date of the source
+      ## if it is not newer than the latest Summary File do not add
+      ## output_source to source.lis
+      gather_source
+      output_source >> ${TOPDIR}/tmp/source.lis
+    fi
+  done # processing Master Plugins
+  # end Master Process
+else # Slave Process
+  logwrite "This process ${THISHOST}_${THISLIST} is not the JADIS master" 1
+  # source Host Plugins and build header
+  STATFILE=${TOPDIR}/data/Status/${THISHOST}_${THISLIST}_status${today}.csv
+  STATUS_HEADER="Hostname"
+  for host_file in `ls ${PLUGINS}/H* ` ; do
+true
+#    if [ -x ${host_file} ];then
+#      . ${PLUGINS}/${host_file}
+#      OUTPUT=`output_header`
+#      STATUS_HEADER=`${STATUS_HEADER}${OUTPUT}`
+#    fi
+#  done # processing Host Plugins for headers
+#  echo "${STATUS_HEADER} > $STATFILE
+#  # Loop for all hosts in Host List
+#  NUM_HOSTS=`wc -l ${HOSTLST} | cut -d" " -f1`
+#  let HCOUNT=0
+#  logwrite "Processing Hostlist ${HOSTLST} with $NUM_HOSTS entries" 1
+#  for hostname in `cat ${HOSTLST} `; do
+#    STATUS_VALUES="${hostname}"
+#    let HCOUNT=${HCOUNT}+1
+#    logwrite "Running Host Plugins for $hostname host $HCOUNT of $NUM_HOSTS" 1
+#    # source Host Plugins and output_value
+#    for host_file in `ls ${PLUGINS}/H*`; do
+#      if [ -x ${host_file} ];then
+#        . ${PLUGINS}/${host_file}
+#        OUTPUT=`output_value`
+#        STATUS_VALUES=`${STATUS_VALUES}${OUTPUT}`
+#      fi
+#    done # processing Host Plugins for values
+#    echo "${STATUS_VALUES} >> $STATFILE
+  done # processing Hostlist
+fi # Slave Process
+exit 0

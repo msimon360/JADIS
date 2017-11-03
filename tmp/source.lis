@@ -1,0 +1,5 @@
+ITI,/infra/opt/jadis_dev/JADIS/data/ITI/ITI_NCDC_%YYY%m%d.csv,CSV
+ASSETMGMT,/infra/opt/jadis_dev/JADIS/data/asset_mgmt/Asset_mgmt.csv,CSV
+Teamsite,/infra/opt/jadis_dev/JADIS/data/Teamsite/NC%YYY%m%d.csv,CSV
+cfg2html,/infra/opt/jadis_dev/JADIS/data/cfg2html/cfg2html_%H_%YYY%m%d.html,cfg2html.key
+Status,/infra/opt/jadis_dev/JADIS/data/Status/status%YYY%m%d.csv,CSV

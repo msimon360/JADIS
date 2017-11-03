@@ -1,0 +1,50 @@
+* - indicates changes in progress
+
+Need to exclude partial (SysInfo) file downloads in gather_data.ksh
+
+Make the files in etc (remote.lis, source.lis) use variables 
+
+Add Platform (unique Model/Serial#) count to Summary.
+(even better make a syntax to count combined columns, OS/Virtual, Model/Serial#)
+
+Make Admin a link to contact info. (link to Teamsite or HR lookup)
+
+Make App a link to contact info. (get's this from Spreadsheet?, link to website)
+
+Make Site a link to contact info.
+
+Parse App Summary for boxes with multiple Apps.
+
+Add mouse over notes and Help/Doc button.
+
+Use DBM interface in place of CSV interface. (or not since CSV is editable)
+
+Have the gen_req.pl read the source.lis to get parms into seperate
+groups by source. Add a select all for each source.
+
+* Use div instead of FRAME, 1 html file, much simpiler. (not working in firefox :-( )
+
+Run the remote file collection in parallel. (much faster,
+use Parallel::ForkManager or Proc::ParallelLoop)
+
+Make the wait_for_remote function run from a list of remote servers.
+
+Make the config files group dependent. If you run the gather script with
+VzB as an option then it would use sys.VzB as the hostlist, source.VzB
+and remote.VzB, etc. This way I could handle boxes setup differently
+(like /tools/sysadm/bin v/s /apps/support/sysinfo/bin ) from the same
+JADIS Server.
+
+JADIS needs to show Decomd boxes and ADR-In-Progress boxes. Maybe in the spreadsheet. Run summary file generator against all hosts current+decomd then generate webpage against current only. We can run a report on Decom'd boxes.
+
+JADIS should email reports to SA's to update missing or wrong info. Like
+boxes that are down but not marked Idle. or Missing SysInfo or no dpphpux
+access. With links to how to fix.
+
+Do date math to highlight source file dates over a configured age.
+
+Cleanup the JADIS.ini file for unused settings.
+
+Install script should update etc files in an inteligent way.
+
+Put back a link to most recent files for host. ?? Some SA's saved links to old files in bookmarks.

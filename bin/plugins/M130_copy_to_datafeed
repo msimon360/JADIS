@@ -1,0 +1,26 @@
+#!/bin/ksh
+#
+# copy_to_datafeed
+#
+# This script runs the gen_data.pl script with the options to create a
+# csv file with parameters needed for the MySQL database load. It then
+# copies the output to the MySQL Server (nctss).
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "copy_to_datafeed plugin running" 1
+  ${TOPDIR}/cgi-bin/gen_data.pl -b -o csv \
+    -p "Cabinet# Cluster Complex Cores CPU# CPU_bits CPU_Rev CPU_Speed CPU_Type FWRev Ignite IP Memory Model NPAR OS OS_bits OS_rel Serial# SSH SysID Vendor VPAR VzPatch" \
+    2> ${TOPDIR}/logs/gen_mysql_report.log | \
+    > ${TOPDIR}/mysql_report.csv
+  scp  ${TOPDIR}/mysql_report.csv \
+    vzpncdc@nctss:/apps/opt/var/datafeed/ 2>/dev/null
+  logwrite "copy_to_datafeed plugin complete" 1
+}
+# EOF

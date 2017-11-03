@@ -1,0 +1,564 @@
+##LOG:20120321 11:29: Initializing Remote File List
+##LOG:20120321 11:29: Initializing Remote File List - complete
+##LOG:20120321 11:29:  Initializing Variables complete
+##LOG:20120321 11:29: This process lnxfwi01_Collector_1 is not the JADIS master
+##LOG:20120321 11:29: Processing Hostlist Collector_1 with 28 entries
+##LOG:20120321 11:29: Running Host Plugins for a7app01 host 1 of 28
+##LOG:20120321 11:29: check_access plugin running
+##LOG:20120321 11:29:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:29: check_access plugin complete
+##LOG:20120321 11:29: parse_uname plugin running
+##LOG:20120321 11:29:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:29: parse_uname plugin complete
+##LOG:20120321 11:29: chk_seos plugin running
+##LOG:20120321 11:29:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:29: chk_seos plugin complete
+##LOG:20120321 11:29: chk_ssh plugin running
+##LOG:20120321 11:29:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:29: chk_ssh plugin complete
+##LOG:20120321 11:29: gather_files plugin running
+##LOG:20120321 11:29: Collecting SysInfo files from a7app01
+##LOG:20120321 11:29: Copying /infra/support/sysinfo/data/sysinfo_a7app01_????????.html to /infra/opt/jadis_dev/JADIS/data/SysInfo with sftp
+##LOG:20120321 11:29: Collecting SI_Log files from a7app01
+##LOG:20120321 11:30: Copying /infra/support/sysinfo/data/sysinfo_a7app01_????????.output to /infra/opt/jadis_dev/JADIS/data/SI_Log with sftp
+##LOG:20120321 11:30: Collecting cfg2html files from a7app01
+##LOG:20120321 11:30: cfg2html_a7app01_20120301.html already collected
+##LOG:20120321 11:30: Collecting CFG_Log files from a7app01
+##LOG:20120321 11:30: cfg2html_a7app01_20120301.err already collected
+##LOG:20120321 11:30: Collecting CFG_txt files from a7app01
+##LOG:20120321 11:30: cfg2html_a7app01_20120301.txt already collected
+##LOG:20120321 11:30: gather_files plugin complete
+##LOG:20120321 11:30: websvr plugin running
+##LOG:20120321 11:30: websvr plugin complete
+##LOG:20120321 11:30: Running Host Plugins for a7server host 2 of 28
+##LOG:20120321 11:30: check_access plugin running
+##LOG:20120321 11:30:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:30: check_access plugin complete
+##LOG:20120321 11:30: parse_uname plugin running
+##LOG:20120321 11:30:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:30: parse_uname plugin complete
+##LOG:20120321 11:30: chk_seos plugin running
+##LOG:20120321 11:30:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:30: chk_seos plugin complete
+##LOG:20120321 11:30: chk_ssh plugin running
+##LOG:20120321 11:30:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:30: chk_ssh plugin complete
+##LOG:20120321 11:30: gather_files plugin running
+##LOG:20120321 11:30: Collecting SysInfo files from a7server
+##LOG:20120321 11:30: Copying /infra/support/sysinfo/data/sysinfo_a7server_????????.html to /infra/opt/jadis_dev/JADIS/data/SysInfo with sftp
+##LOG:20120321 11:30: Collecting SI_Log files from a7server
+##LOG:20120321 11:30: Copying /infra/support/sysinfo/data/sysinfo_a7server_????????.output to /infra/opt/jadis_dev/JADIS/data/SI_Log with sftp
+##LOG:20120321 11:30: Collecting cfg2html files from a7server
+##LOG:20120321 11:30: Copying /infra/opt/cfg2html/data/cfg2html_a7server_????????.html to /infra/opt/jadis_dev/JADIS/data/cfg2html with sftp
+##LOG:20120321 11:30: Collecting CFG_Log files from a7server
+##LOG:20120321 11:30: cfg2html_a7server_20120301.err already collected
+##LOG:20120321 11:30: Collecting CFG_txt files from a7server
+##LOG:20120321 11:30: cfg2html_a7server_20120301.txt already collected
+##LOG:20120321 11:30: gather_files plugin complete
+##LOG:20120321 11:30: websvr plugin running
+##LOG:20120321 11:30: websvr plugin complete
+##LOG:20120321 11:30: Running Host Plugins for aavfwp01 host 3 of 28
+##LOG:20120321 11:30: check_access plugin running
+##LOG:20120321 11:30: check_access plugin complete
+##LOG:20120321 11:30: parse_uname plugin running
+##LOG:20120321 11:30: parse_uname plugin complete
+##LOG:20120321 11:30: chk_seos plugin running
+##LOG:20120321 11:31: chk_seos plugin complete
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: chk_ssh plugin complete
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: Collecting SysInfo files from aavfwp01
+##LOG:20120321 11:31: sysinfo_aavfwp01_20110302.html already collected
+##LOG:20120321 11:31: Collecting SI_Log files from aavfwp01
+##LOG:20120321 11:31: sysinfo_aavfwp01_20110302.output already collected
+##LOG:20120321 11:31: Collecting cfg2html files from aavfwp01
+##LOG:20120321 11:31: cfg2html_aavfwp01_20120301.html already collected
+##LOG:20120321 11:31: Collecting CFG_Log files from aavfwp01
+##LOG:20120321 11:31: cfg2html_aavfwp01_20120301.err already collected
+##LOG:20120321 11:31: Collecting CFG_txt files from aavfwp01
+##LOG:20120321 11:31: cfg2html_aavfwp01_20120301.txt already collected
+##LOG:20120321 11:31: gather_files plugin complete
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for adslnms host 4 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for adxfwp01 host 5 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: parse_uname plugin complete
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_seos plugin complete
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: chk_ssh plugin complete
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: Collecting cfg2html files from adxfwp01
+##LOG:20120321 11:31: cfg2html_adxfwp01_20120301.html already collected
+##LOG:20120321 11:31: Collecting CFG_Log files from adxfwp01
+##LOG:20120321 11:31: cfg2html_adxfwp01_20120301.err already collected
+##LOG:20120321 11:31: Collecting CFG_txt files from adxfwp01
+##LOG:20120321 11:31: cfg2html_adxfwp01_20120301.txt already collected
+##LOG:20120321 11:31: gather_files plugin complete
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for adxfwp02 host 6 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: parse_uname plugin complete
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_seos plugin complete
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: chk_ssh plugin complete
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: Collecting cfg2html files from adxfwp02
+##LOG:20120321 11:31: cfg2html_adxfwp02_20120301.html already collected
+##LOG:20120321 11:31: Collecting CFG_Log files from adxfwp02
+##LOG:20120321 11:31: cfg2html_adxfwp02_20120301.err already collected
+##LOG:20120321 11:31: Collecting CFG_txt files from adxfwp02
+##LOG:20120321 11:31: cfg2html_adxfwp02_20120301.txt already collected
+##LOG:20120321 11:31: gather_files plugin complete
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for adxfwp03 host 7 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: parse_uname plugin complete
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_seos plugin complete
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: chk_ssh plugin complete
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: Collecting cfg2html files from adxfwp03
+##LOG:20120321 11:31: cfg2html_adxfwp03_20120301.html already collected
+##LOG:20120321 11:31: Collecting CFG_Log files from adxfwp03
+##LOG:20120321 11:31: cfg2html_adxfwp03_20120301.err already collected
+##LOG:20120321 11:31: Collecting CFG_txt files from adxfwp03
+##LOG:20120321 11:31: cfg2html_adxfwp03_20120301.txt already collected
+##LOG:20120321 11:31: gather_files plugin complete
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for appdev01 host 8 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for argon host 9 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:31:   Waiting 4 more seconds for completion.
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:31: chk_ssh plugin running
+##LOG:20120321 11:31: gather_files plugin running
+##LOG:20120321 11:31: websvr plugin running
+##LOG:20120321 11:31: websvr plugin complete
+##LOG:20120321 11:31: Running Host Plugins for busropv04 host 10 of 28
+##LOG:20120321 11:31: check_access plugin running
+##LOG:20120321 11:31: check_access plugin complete
+##LOG:20120321 11:31: parse_uname plugin running
+##LOG:20120321 11:31: parse_uname plugin complete
+##LOG:20120321 11:31: chk_seos plugin running
+##LOG:20120321 11:32: chk_seos plugin complete
+##LOG:20120321 11:32: chk_ssh plugin running
+##LOG:20120321 11:32: chk_ssh plugin complete
+##LOG:20120321 11:32: gather_files plugin running
+##LOG:20120321 11:32: Collecting cfg2html files from busropv04
+##LOG:20120321 11:32: cfg2html_busropv04_20120301.html already collected
+##LOG:20120321 11:32: Collecting CFG_Log files from busropv04
+##LOG:20120321 11:32: cfg2html_busropv04_20120301.err already collected
+##LOG:20120321 11:32: Collecting CFG_txt files from busropv04
+##LOG:20120321 11:32: cfg2html_busropv04_20120301.txt already collected
+##LOG:20120321 11:32: gather_files plugin complete
+##LOG:20120321 11:32: websvr plugin running
+##LOG:20120321 11:32: websvr plugin complete
+##LOG:20120321 11:32: Running Host Plugins for csgftwp09 host 11 of 28
+##LOG:20120321 11:32: check_access plugin running
+##LOG:20120321 11:32: check_access plugin complete
+##LOG:20120321 11:32: parse_uname plugin running
+##LOG:20120321 11:32: parse_uname plugin complete
+##LOG:20120321 11:32: chk_seos plugin running
+##LOG:20120321 11:32: chk_seos plugin complete
+##LOG:20120321 11:32: chk_ssh plugin running
+##LOG:20120321 11:32: chk_ssh plugin complete
+##LOG:20120321 11:32: gather_files plugin running
+##LOG:20120321 11:32: Collecting cfg2html files from csgftwp09
+##LOG:20120321 11:32: cfg2html_csgftwp09_20120321.html already collected
+##LOG:20120321 11:32: Collecting CFG_Log files from csgftwp09
+##LOG:20120321 11:32: cfg2html_csgftwp09_20120321.err already collected
+##LOG:20120321 11:32: Collecting CFG_txt files from csgftwp09
+##LOG:20120321 11:32: cfg2html_csgftwp09_20120321.txt already collected
+##LOG:20120321 11:32: gather_files plugin complete
+##LOG:20120321 11:32: websvr plugin running
+##LOG:20120321 11:32: websvr plugin complete
+##LOG:20120321 11:32: Running Host Plugins for cxfwgp01 host 12 of 28
+##LOG:20120321 11:32: check_access plugin running
+##LOG:20120321 11:32:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:32: check_access plugin complete
+##LOG:20120321 11:32: parse_uname plugin running
+##LOG:20120321 11:32:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:32: parse_uname plugin complete
+##LOG:20120321 11:32: chk_seos plugin running
+##LOG:20120321 11:32:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:32: chk_seos plugin complete
+##LOG:20120321 11:32: chk_ssh plugin running
+##LOG:20120321 11:32:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:32: chk_ssh plugin complete
+##LOG:20120321 11:32: gather_files plugin running
+##LOG:20120321 11:32: Collecting SysInfo files from cxfwgp01
+##LOG:20120321 11:32: sysinfo_cxfwgp01_20110202.html already collected
+##LOG:20120321 11:32: Collecting SI_Log files from cxfwgp01
+##LOG:20120321 11:32: sysinfo_cxfwgp01_20110202.output already collected
+##LOG:20120321 11:32: Collecting cfg2html files from cxfwgp01
+##LOG:20120321 11:32: cfg2html_cxfwgp01_20120301.html already collected
+##LOG:20120321 11:32: Collecting CFG_Log files from cxfwgp01
+##LOG:20120321 11:32: cfg2html_cxfwgp01_20120301.err already collected
+##LOG:20120321 11:32: Collecting CFG_txt files from cxfwgp01
+##LOG:20120321 11:32: cfg2html_cxfwgp01_20120301.txt already collected
+##LOG:20120321 11:32: gather_files plugin complete
+##LOG:20120321 11:32: websvr plugin running
+##LOG:20120321 11:32: websvr plugin complete
+##LOG:20120321 11:32: Running Host Plugins for ebcfwp01 host 13 of 28
+##LOG:20120321 11:32: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting cfg2html files from ebcfwp01
+##LOG:20120321 11:33: cfg2html_ebcfwp01_20120301.html already collected
+##LOG:20120321 11:33: Collecting CFG_Log files from ebcfwp01
+##LOG:20120321 11:33: cfg2html_ebcfwp01_20120301.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from ebcfwp01
+##LOG:20120321 11:33: cfg2html_ebcfwp01_20120301.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for elidcs2 host 14 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting SysInfo files from elidcs2
+##LOG:20120321 11:33: Copying /infra/support/sysinfo/data/sysinfo_elidcs2_????????.html to /infra/opt/jadis_dev/JADIS/data/SysInfo with sftp
+##LOG:20120321 11:33: Collecting SI_Log files from elidcs2
+##LOG:20120321 11:33: Copying /infra/support/sysinfo/data/sysinfo_elidcs2_????????.output to /infra/opt/jadis_dev/JADIS/data/SI_Log with sftp
+##LOG:20120321 11:33: Collecting cfg2html files from elidcs2
+##LOG:20120321 11:33: Copying /infra/opt/cfg2html/data/cfg2html_elidcs2_????????.html to /infra/opt/jadis_dev/JADIS/data/cfg2html with sftp
+##LOG:20120321 11:33: Collecting CFG_Log files from elidcs2
+##LOG:20120321 11:33: cfg2html_elidcs2_20120301.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from elidcs2
+##LOG:20120321 11:33: cfg2html_elidcs2_20120301.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for ewftwp33 host 15 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting cfg2html files from ewftwp33
+##LOG:20120321 11:33: cfg2html_ewftwp33_20120302.html already collected
+##LOG:20120321 11:33: Collecting CFG_Log files from ewftwp33
+##LOG:20120321 11:33: cfg2html_ewftwp33_20120302.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from ewftwp33
+##LOG:20120321 11:33: cfg2html_ewftwp33_20120302.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for ftpsdwhprd-cg4 host 16 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting cfg2html files from ftpsdwhprd-cg4
+##LOG:20120321 11:33: cfg2html_ftpsdwhprd-cg4_20120302.html already collected
+##LOG:20120321 11:33: Collecting CFG_Log files from ftpsdwhprd-cg4
+##LOG:20120321 11:33: cfg2html_ftpsdwhprd-cg4_20120302.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from ftpsdwhprd-cg4
+##LOG:20120321 11:33: cfg2html_ftpsdwhprd-cg4_20120302.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for inftwxenh1 host 17 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting cfg2html files from inftwxenh1
+##LOG:20120321 11:33: cfg2html_inftwxenh1_20120301.html already collected
+##LOG:20120321 11:33: Collecting CFG_Log files from inftwxenh1
+##LOG:20120321 11:33: cfg2html_inftwxenh1_20120301.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from inftwxenh1
+##LOG:20120321 11:33: cfg2html_inftwxenh1_20120301.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for lnxfwi01 host 18 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:33: check_access plugin complete
+##LOG:20120321 11:33: parse_uname plugin running
+##LOG:20120321 11:33: parse_uname plugin complete
+##LOG:20120321 11:33: chk_seos plugin running
+##LOG:20120321 11:33: chk_seos plugin complete
+##LOG:20120321 11:33: chk_ssh plugin running
+##LOG:20120321 11:33: chk_ssh plugin complete
+##LOG:20120321 11:33: gather_files plugin running
+##LOG:20120321 11:33: Collecting cfg2html files from lnxfwi01
+##LOG:20120321 11:33: cfg2html_lnxfwi01_20120301.html already collected
+##LOG:20120321 11:33: Collecting CFG_Log files from lnxfwi01
+##LOG:20120321 11:33: cfg2html_lnxfwi01_20120301.err already collected
+##LOG:20120321 11:33: Collecting CFG_txt files from lnxfwi01
+##LOG:20120321 11:33: cfg2html_lnxfwi01_20120301.txt already collected
+##LOG:20120321 11:33: gather_files plugin complete
+##LOG:20120321 11:33: websvr plugin running
+##LOG:20120321 11:33: websvr plugin complete
+##LOG:20120321 11:33: Running Host Plugins for nshfwpa2 host 19 of 28
+##LOG:20120321 11:33: check_access plugin running
+##LOG:20120321 11:34: check_access plugin complete
+##LOG:20120321 11:34: parse_uname plugin running
+##LOG:20120321 11:34: parse_uname plugin complete
+##LOG:20120321 11:34: chk_seos plugin running
+##LOG:20120321 11:34: chk_seos plugin complete
+##LOG:20120321 11:34: chk_ssh plugin running
+##LOG:20120321 11:34: chk_ssh plugin complete
+##LOG:20120321 11:34: gather_files plugin running
+##LOG:20120321 11:34: Collecting SysInfo files from nshfwpa2
+##LOG:20120321 11:34: sysinfo_nshfwpa2_20110302.html already collected
+##LOG:20120321 11:34: Collecting SI_Log files from nshfwpa2
+##LOG:20120321 11:34: sysinfo_nshfwpa2_20110302.output already collected
+##LOG:20120321 11:34: Collecting cfg2html files from nshfwpa2
+##LOG:20120321 11:34: cfg2html_nshfwpa2_20120301.html already collected
+##LOG:20120321 11:34: Collecting CFG_Log files from nshfwpa2
+##LOG:20120321 11:34: cfg2html_nshfwpa2_20120301.err already collected
+##LOG:20120321 11:34: Collecting CFG_txt files from nshfwpa2
+##LOG:20120321 11:34: cfg2html_nshfwpa2_20120301.txt already collected
+##LOG:20120321 11:34: gather_files plugin complete
+##LOG:20120321 11:34: websvr plugin running
+##LOG:20120321 11:34: websvr plugin complete
+##LOG:20120321 11:34: Running Host Plugins for nyrofcsol29 host 20 of 28
+##LOG:20120321 11:34: check_access plugin running
+##LOG:20120321 11:34: check_access plugin complete
+##LOG:20120321 11:34: parse_uname plugin running
+##LOG:20120321 11:34: parse_uname plugin complete
+##LOG:20120321 11:34: chk_seos plugin running
+##LOG:20120321 11:34: chk_seos plugin complete
+##LOG:20120321 11:34: chk_ssh plugin running
+##LOG:20120321 11:34: chk_ssh plugin complete
+##LOG:20120321 11:34: gather_files plugin running
+##LOG:20120321 11:34: Collecting cfg2html files from nyrofcsol29
+##LOG:20120321 11:34: cfg2html_nyrofcsol29_20120301.html already collected
+##LOG:20120321 11:34: Collecting CFG_Log files from nyrofcsol29
+##LOG:20120321 11:34: cfg2html_nyrofcsol29_20120301.err already collected
+##LOG:20120321 11:34: Collecting CFG_txt files from nyrofcsol29
+##LOG:20120321 11:34: cfg2html_nyrofcsol29_20120301.txt already collected
+##LOG:20120321 11:34: gather_files plugin complete
+##LOG:20120321 11:34: websvr plugin running
+##LOG:20120321 11:34: websvr plugin complete
+##LOG:20120321 11:34: Running Host Plugins for omefwp01 host 21 of 28
+##LOG:20120321 11:34: check_access plugin running
+##LOG:20120321 11:34: check_access plugin complete
+##LOG:20120321 11:34: parse_uname plugin running
+##LOG:20120321 11:34: parse_uname plugin complete
+##LOG:20120321 11:34: chk_seos plugin running
+##LOG:20120321 11:34: chk_seos plugin complete
+##LOG:20120321 11:34: chk_ssh plugin running
+##LOG:20120321 11:34: chk_ssh plugin complete
+##LOG:20120321 11:34: gather_files plugin running
+##LOG:20120321 11:34: Collecting SysInfo files from omefwp01
+##LOG:20120321 11:34: sysinfo_omefwp01_20110302.html already collected
+##LOG:20120321 11:34: Collecting SI_Log files from omefwp01
+##LOG:20120321 11:34: sysinfo_omefwp01_20110302.output already collected
+##LOG:20120321 11:34: Collecting cfg2html files from omefwp01
+##LOG:20120321 11:34: cfg2html_omefwp01_20120301.html already collected
+##LOG:20120321 11:34: Collecting CFG_Log files from omefwp01
+##LOG:20120321 11:34: cfg2html_omefwp01_20120301.err already collected
+##LOG:20120321 11:34: Collecting CFG_txt files from omefwp01
+##LOG:20120321 11:34: cfg2html_omefwp01_20120301.txt already collected
+##LOG:20120321 11:34: gather_files plugin complete
+##LOG:20120321 11:34: websvr plugin running
+##LOG:20120321 11:34: websvr plugin complete
+##LOG:20120321 11:34: Running Host Plugins for rcfwsp05 host 22 of 28
+##LOG:20120321 11:34: check_access plugin running
+##LOG:20120321 11:34:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:34: check_access plugin complete
+##LOG:20120321 11:34: parse_uname plugin running
+##LOG:20120321 11:34:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:34: parse_uname plugin complete
+##LOG:20120321 11:34: chk_seos plugin running
+##LOG:20120321 11:34:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:34: chk_seos plugin complete
+##LOG:20120321 11:34: chk_ssh plugin running
+##LOG:20120321 11:34:   Waiting 10 more seconds for completion.
+##LOG:20120321 11:35: chk_ssh plugin complete
+##LOG:20120321 11:35: gather_files plugin running
+##LOG:20120321 11:35: Collecting cfg2html files from rcfwsp05
+##LOG:20120321 11:35: cfg2html_rcfwsp05_20120321.html already collected
+##LOG:20120321 11:35: Collecting CFG_Log files from rcfwsp05
+##LOG:20120321 11:35: cfg2html_rcfwsp05_20120321.err already collected
+##LOG:20120321 11:35: Collecting CFG_txt files from rcfwsp05
+##LOG:20120321 11:35: cfg2html_rcfwsp05_20120321.txt already collected
+##LOG:20120321 11:35: gather_files plugin complete
+##LOG:20120321 11:35: websvr plugin running
+##LOG:20120321 11:35: websvr plugin complete
+##LOG:20120321 11:35: Running Host Plugins for scrambler host 23 of 28
+##LOG:20120321 11:35: check_access plugin running
+##LOG:20120321 11:35: check_access plugin complete
+##LOG:20120321 11:35: parse_uname plugin running
+##LOG:20120321 11:35: parse_uname plugin complete
+##LOG:20120321 11:35: chk_seos plugin running
+##LOG:20120321 11:35: chk_seos plugin complete
+##LOG:20120321 11:35: chk_ssh plugin running
+##LOG:20120321 11:35: chk_ssh plugin complete
+##LOG:20120321 11:35: gather_files plugin running
+##LOG:20120321 11:35: Collecting cfg2html files from scrambler
+##LOG:20120321 11:35: cfg2html_scrambler_20120301.html already collected
+##LOG:20120321 11:35: Collecting CFG_Log files from scrambler
+##LOG:20120321 11:35: cfg2html_scrambler_20120301.err already collected
+##LOG:20120321 11:35: Collecting CFG_txt files from scrambler
+##LOG:20120321 11:35: cfg2html_scrambler_20120301.txt already collected
+##LOG:20120321 11:35: gather_files plugin complete
+##LOG:20120321 11:35: websvr plugin running
+##LOG:20120321 11:35: websvr plugin complete
+##LOG:20120321 11:35: Running Host Plugins for unxfwi03 host 24 of 28
+##LOG:20120321 11:35: check_access plugin running
+##LOG:20120321 11:35: check_access plugin complete
+##LOG:20120321 11:35: parse_uname plugin running
+##LOG:20120321 11:35: parse_uname plugin complete
+##LOG:20120321 11:35: chk_seos plugin running
+##LOG:20120321 11:35: chk_seos plugin complete
+##LOG:20120321 11:35: chk_ssh plugin running
+##LOG:20120321 11:35: chk_ssh plugin complete
+##LOG:20120321 11:35: gather_files plugin running
+##LOG:20120321 11:35: Collecting SysInfo files from unxfwi03
+##LOG:20120321 11:35: Copying /infra/support/sysinfo/data/sysinfo_unxfwi03_????????.html to /infra/opt/jadis_dev/JADIS/data/SysInfo with sftp
+##LOG:20120321 11:35: Collecting SI_Log files from unxfwi03
+##LOG:20120321 11:35: Copying /infra/support/sysinfo/data/sysinfo_unxfwi03_????????.output to /infra/opt/jadis_dev/JADIS/data/SI_Log with sftp
+##LOG:20120321 11:35: Collecting cfg2html files from unxfwi03
+##LOG:20120321 11:35: Copying /infra/opt/cfg2html/data/cfg2html_unxfwi03_????????.html to /infra/opt/jadis_dev/JADIS/data/cfg2html with sftp
+##LOG:20120321 11:35: Collecting CFG_Log files from unxfwi03
+##LOG:20120321 11:35: cfg2html_unxfwi03_20120301.err already collected
+##LOG:20120321 11:35: Collecting CFG_txt files from unxfwi03
+##LOG:20120321 11:35: cfg2html_unxfwi03_20120301.txt already collected
+##LOG:20120321 11:35: gather_files plugin complete
+##LOG:20120321 11:35: websvr plugin running
+##LOG:20120321 11:35: websvr plugin complete
+##LOG:20120321 11:35: Running Host Plugins for wbnfwpd1 host 25 of 28
+##LOG:20120321 11:35: check_access plugin running
+##LOG:20120321 11:35: check_access plugin complete
+##LOG:20120321 11:35: parse_uname plugin running
+##LOG:20120321 11:35: parse_uname plugin complete
+##LOG:20120321 11:35: chk_seos plugin running
+##LOG:20120321 11:35: chk_seos plugin complete
+##LOG:20120321 11:35: chk_ssh plugin running
+##LOG:20120321 11:35: chk_ssh plugin complete
+##LOG:20120321 11:35: gather_files plugin running
+##LOG:20120321 11:35: Collecting SysInfo files from wbnfwpd1
+##LOG:20120321 11:35: sysinfo_wbnfwpd1_20110302.html already collected
+##LOG:20120321 11:35: Collecting SI_Log files from wbnfwpd1
+##LOG:20120321 11:35: sysinfo_wbnfwpd1_20110302.output already collected
+##LOG:20120321 11:35: Collecting cfg2html files from wbnfwpd1
+##LOG:20120321 11:35: cfg2html_wbnfwpd1_20120301.html already collected
+##LOG:20120321 11:35: Collecting CFG_Log files from wbnfwpd1
+##LOG:20120321 11:35: cfg2html_wbnfwpd1_20120301.err already collected
+##LOG:20120321 11:35: Collecting CFG_txt files from wbnfwpd1
+##LOG:20120321 11:35: cfg2html_wbnfwpd1_20120301.txt already collected
+##LOG:20120321 11:35: gather_files plugin complete
+##LOG:20120321 11:35: websvr plugin running
+##LOG:20120321 11:35: websvr plugin complete
+##LOG:20120321 11:35: Running Host Plugins for webftwp01b host 26 of 28
+##LOG:20120321 11:35: check_access plugin running
+##LOG:20120321 11:35: check_access plugin complete
+##LOG:20120321 11:35: parse_uname plugin running
+##LOG:20120321 11:35: parse_uname plugin complete
+##LOG:20120321 11:35: chk_seos plugin running
+##LOG:20120321 11:35: chk_seos plugin complete
+##LOG:20120321 11:35: chk_ssh plugin running
+##LOG:20120321 11:35: chk_ssh plugin complete
+##LOG:20120321 11:35: gather_files plugin running
+##LOG:20120321 11:35: Collecting cfg2html files from webftwp01b
+##LOG:20120321 11:35: cfg2html_webftwp01b_20120321.html already collected
+##LOG:20120321 11:35: Collecting CFG_Log files from webftwp01b
+##LOG:20120321 11:35: cfg2html_webftwp01b_20120321.err already collected
+##LOG:20120321 11:35: Collecting CFG_txt files from webftwp01b
+##LOG:20120321 11:35: cfg2html_webftwp01b_20120321.txt already collected
+##LOG:20120321 11:35: gather_files plugin complete
+##LOG:20120321 11:35: websvr plugin running
+##LOG:20120321 11:35: websvr plugin complete
+##LOG:20120321 11:35: Running Host Plugins for wkbfwpa1 host 27 of 28
+##LOG:20120321 11:35: check_access plugin running
+##LOG:20120321 11:36: check_access plugin complete
+##LOG:20120321 11:36: parse_uname plugin running
+##LOG:20120321 11:36: parse_uname plugin complete
+##LOG:20120321 11:36: chk_seos plugin running
+##LOG:20120321 11:36: chk_seos plugin complete
+##LOG:20120321 11:36: chk_ssh plugin running
+##LOG:20120321 11:36: chk_ssh plugin complete
+##LOG:20120321 11:36: gather_files plugin running
+##LOG:20120321 11:36: Collecting cfg2html files from wkbfwpa1
+##LOG:20120321 11:36: cfg2html_wkbfwpa1_20120302.html already collected
+##LOG:20120321 11:36: Collecting CFG_Log files from wkbfwpa1
+##LOG:20120321 11:36: cfg2html_wkbfwpa1_20120302.err already collected
+##LOG:20120321 11:36: Collecting CFG_txt files from wkbfwpa1
+##LOG:20120321 11:36: cfg2html_wkbfwpa1_20120302.txt already collected
+##LOG:20120321 11:36: gather_files plugin complete
+##LOG:20120321 11:36: websvr plugin running
+##LOG:20120321 11:36: websvr plugin complete
+##LOG:20120321 11:36: Running Host Plugins for xrmfwp06 host 28 of 28
+##LOG:20120321 11:36: check_access plugin running
+##LOG:20120321 11:36: check_access plugin complete
+##LOG:20120321 11:36: parse_uname plugin running
+##LOG:20120321 11:36: parse_uname plugin complete
+##LOG:20120321 11:36: chk_seos plugin running
+##LOG:20120321 11:36: chk_seos plugin complete
+##LOG:20120321 11:36: chk_ssh plugin running
+##LOG:20120321 11:36: chk_ssh plugin complete
+##LOG:20120321 11:36: gather_files plugin running
+##LOG:20120321 11:36: Collecting SysInfo files from xrmfwp06
+##LOG:20120321 11:36: sysinfo_xrmfwp06_20110302.html already collected
+##LOG:20120321 11:36: Collecting SI_Log files from xrmfwp06
+##LOG:20120321 11:36: sysinfo_xrmfwp06_20110302.output already collected
+##LOG:20120321 11:36: Collecting cfg2html files from xrmfwp06
+##LOG:20120321 11:36: cfg2html_xrmfwp06_20120301.html already collected
+##LOG:20120321 11:36: Collecting CFG_Log files from xrmfwp06
+##LOG:20120321 11:36: cfg2html_xrmfwp06_20120301.err already collected
+##LOG:20120321 11:36: Collecting CFG_txt files from xrmfwp06
+##LOG:20120321 11:36: cfg2html_xrmfwp06_20120301.txt already collected
+##LOG:20120321 11:36: gather_files plugin complete
+##LOG:20120321 11:36: websvr plugin running
+##LOG:20120321 11:36: websvr plugin complete

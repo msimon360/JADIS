@@ -1,0 +1,24 @@
+<style type="text/css">
+  A:link { text-decoration: none; }
+  A:visited { text-decoration: none; }
+  A:hover { text-decoration: underline; }
+  body {background:#FFF url(/JADIS/icons/form_bg.png) repeat-x 0px 25px; font-family:arial, sans-serif;}
+
+hr { 
+color: #F2F3F4;
+}
+
+h1 {
+color: #F2F3F4;
+}
+
+h2 {
+color: white;
+}
+
+#button {
+color: white;
+background: #F2F3F4;
+}
+
+</style>

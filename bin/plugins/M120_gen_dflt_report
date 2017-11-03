@@ -1,0 +1,24 @@
+#!/bin/ksh
+#
+# gen_dflt_report
+#
+# This script runs the gen_data.pl script with the options to create a
+# Default Report Webpage.
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "gen_dflt_report plugin running" 1
+  logwrite "# Generate webpage ${INDEX}" 1
+  ${TOPDIR}/cgi-bin/gen_data.pl -b -o html \
+    -p "${DEFAULT_FIELDS}" \
+    2> ${TOPDIR}/logs/gen_dflt_report.log | \
+    tail -n +2 > ${INDEX}
+  logwrite "gen_dflt_report plugin complete" 1
+}
+# EOF

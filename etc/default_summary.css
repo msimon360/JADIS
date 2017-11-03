@@ -1,0 +1,192 @@
+<style type="text/css">
+  * {margin:0;padding:0}
+  body{margin:0;padding:0}
+  p {margin:0 0 1em 0;padding:0}
+  h1{margin:0 0 0 0;padding:0}
+  form {margin:0;padding:0}
+  input {font-family: Arial; font-size:9pt; }
+  td {font-family: Courier; font-size:9pt; color: #0060C0; }
+  th {font-family: Arial; font-size:9pt; text-align:left; }
+  A:link { text-decoration: none; }
+  A:visited { text-decoration: none; }
+  A:hover { text-decoration: underline; }
+  body {background:#FFF url(/JADIS/icons/grad_bg.jpg) repeat-x 0px 28px;
+  font-family:arial, sans-serif; line-height=105%; }
+
+table.summary {
+\* Table for each Parameter *\
+width: 300px;
+margin: 0;
+}
+
+table.summary td {
+padding: 0;
+border-width: 2px;
+border-style: solid;
+border-color: #D0D0D0;
+}
+
+table.summary th {
+/* First line of summary's */
+text-indent: 17px;
+background-color: #D00000;
+border-width: 2px;
+border-style: solid;
+border-color: #D0D0D0;
+border-collapse: collapse;
+}
+
+.summary tfoot td {
+/* Last line of summary's table */
+  background: #D0D0D0;
+  color: black;
+}
+
+table.header {
+border-width: 0px;
+border-color: #D0D0D0;
+border-collapse: collapse;
+}
+
+table.header th {
+border-width: 0px;
+line-height=105%;
+margin: 0;
+border-color: #D0D0D0;
+}
+
+table.header td {
+border-width: 0px;
+margin: 0;
+border-style: solid;
+border-color: #D0D0D0;
+}
+
+/* Striping */
+
+tr.alternate {
+background-color: #D0D0D0;
+}
+
+/* Sort Headers */
+
+th.table-sortable {
+background-color: transparent;
+background-image: url("/JADIS/icons/sortable.gif");
+background-position:top left;
+background-repeat:no-repeat;
+color: white;
+}
+
+th.table-sorted-asc {
+background-color: #B00000;
+background-image: url("/JADIS/icons/sorted_up.gif");
+background-position:top left;
+background-repeat:no-repeat;
+}
+
+th.table-sorted-desc {
+background-color: #B00000;
+background-image: url("/JADIS/icons/sorted_dn.gif");
+background-position:top left;
+background-repeat:no-repeat;
+}
+
+th.firstcell {
+padding-left: 0px;
+background-padding-left: 5px;
+}
+
+/ Divs */
+
+div.header {
+position:relative;
+width:90%;
+/* height:94px; */
+left:5%;
+float: top;
+margin:0 0 0 0;
+font-size:9pt;
+color: #0060C0;
+align: center;
+valign: center;
+}
+
+div.summary {
+ position:relative;
+ float: left;
+ width: 21em;
+ padding: 10px;
+ background-color: #F0F0F0;
+\* border:0.1em solid #f0f; *\
+}
+
+div.summaryfooter {
+\* Line across the bottom of the page *\
+position:relative;
+float: right;
+top: 0em;
+width:100%;
+font-size:9pt;
+text-indent: 5%;
+color: white;
+margin:0;
+padding:0;
+background-color: #D00000;
+\* border:0.1em solid #f0f; *\
+}
+
+div.sumouter {
+position:relative;
+background: transparent;
+z-index:1;
+padding:4em 0 3em 0;
+width:89%;
+left:0;
+font-size:9pt;
+margin:0 auto 3em auto;
+\* border:0.1em solid green; *\
+}
+
+div.model {
+/* Box around each summary */
+position:relative;
+background: transparent;
+z-index:1;
+top: 0;
+padding:3em 0 0 0;
+width:89%;
+font-size:9pt;
+margin:0 0 0 0;
+\* border:0.1em solid #f0f; *\
+border:0.1em solid #909090;
+}
+
+div.innerb {
+z-index:2;
+overflow-y:auto;
+background: transparent;
+width:100%;
+height: 15em;
+margin: 0 0 0 0;
+scrollbar-track-color: #EEE;
+\* border:0.1em solid #ff0; *\
+}
+
+table.summary thead tr {
+position:absolute;
+z-index:5;
+top: 0em;
+height:2em;
+font-size:9pt;
+}
+
+.outer tfoot td {
+position:absolute;
+width: 100%;
+color:white;
+background: transparent;
+bottom: 1em;
+}
+
+</style>

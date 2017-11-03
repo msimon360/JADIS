@@ -1,0 +1,42 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lshw in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+/usr/bin/cfg2html-linux: line 1989: [: missing `]'
+ps":
+    -l: unknown option
+stderr output from "cat /var/lib/multipath/bindings":
+    cat: /var/lib/multipath/bindings: No such file or directory
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+        Finding all volume groups
+      /dev/cdrom: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "bvgroot"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -s | awk -F\" '{print $2}'":
+      /dev/cdrom: open failed: No medium found
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+      /dev/cdrom: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "bvgroot"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+      /dev/cdrom: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "bvgroot"
+        Finding volume group "vgroot"
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+      /dev/cdrom: open failed: No medium found
+        Using physical volume(s) on command line
+      /dev/cdrom: open failed: No medium found
+        Using physical volume(s) on command line
+      /dev/cdrom: open failed: No medium found
+stderr output from "if grep -q '' /etc/sysconfig/network-scripts/route-*; then for RouteCfgFile in /etc/sysconfig/network-scripts/route-*; do printf "\n\n$(basename ${RouteCfgFile}):\n\n"; cat ${RouteCfgFile}; done; fi":
+    grep: /etc/sysconfig/network-scripts/route-*: No such file or directory
+stderr output from "/sbin/mii-diag -a":
+    Using the default interface 'eth0'.
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found

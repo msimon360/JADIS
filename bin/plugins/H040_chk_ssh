@@ -1,0 +1,30 @@
+# chk_ssh returns SSH revision
+#
+function output_header
+{
+  echo -n ",SSH"
+}
+
+function output_value
+{
+  logwrite "chk_ssh plugin running" 1
+  SSHREV="unk"
+  # if the Default Flag is set output defaults
+  if [ "${OUTPUT_DEFAULT}x" = "truex" ];then
+    echo -n ",${SSHREV}"
+    return 0
+  fi
+  # Check SSH Revision
+  touch ${TMP}/sshout$$
+  ${SSH} ${ruser[$x]}@${hostname} \
+    'ssh -V' > ${TMP}/sshout$$ 2>&1 &
+  if bg_not_complete_before_timeout ${TIMEOUT}; then
+    kill $!
+  else # ssh completed
+    SSHREV=`grep -i SSH ${TMP}/sshout$$ | \
+      sed 's/.*SSH_//;s/,.*//;s/^.*SSH.//;s/.*IT //;s/ .*//;s/+.*//'`
+  fi # if ssh timeout
+  echo -n ",${SSH}"
+  logwrite "chk_ssh plugin complete" 1
+  return 0
+}

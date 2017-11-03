@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML> <HEAD>
+
+ <META NAME="AUTHOR" CONTENT="ROSE SWE, Ralph Roth">
+ <META NAME="CREATED" CONTENT="ROSE SWE, Ralph Roth">
+ <META NAME="CHANGED" CONTENT="Ralph Roth">
+ <META NAME="DESCRIPTION" CONTENT="@(#) $Id: head01.html,v 3.16 2010/02/04 10:13:23 ralproth Exp $">
+ <META NAME="subject" CONTENT="$VERSION on $RECHNER by ROSE_SWE_at_hotmail_dot_com">
+
+<style type="text/css">
+/* (c) 2001-2010 by ROSE SWE, Ralph Roth - http://come.to/rose_swe
+ * CSS for cfg2html.sh, 12.04.2001
+ */
+
+Pre		{Font-Family: Courier-New, Courier;Font-Size: 10pt}
+BODY		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif; FONT-SIZE: 12pt;}
+A		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif}
+A:link 		{text-decoration: none}
+A:visited 	{text-decoration: none}
+A:hover 	{text-decoration: underline}
+A:active 	{color: red; text-decoration: none}
+
+H1		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif;FONT-SIZE: 20pt}
+H2		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif;FONT-SIZE: 14pt}
+H3		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif;FONT-SIZE: 12pt}
+DIV, P, OL, UL, SPAN, TD
+		{FONT-FAMILY: Arial, Verdana, Helvetica, Sans-serif;FONT-SIZE: 11pt}
+ </style>
+
+
+
+<TITLE>a7app01 - Documentation - cfg2html/HP-UX version 3.75a</TITLE></HEAD>
+
+<BODY LINK="#0000ff" VLINK="#800080" BACKGROUND="cfg2html_back.jpg"><center><hr>
+<FONT COLOR=blue>
+<br><h1><B>a7app01 - HP-UX B.11.00 System Documentation</b><br></H1>
+
+<hr><small>Created 2012-03-01 01:16:15 with  cfg2html/HP-UX version 3.75a <br>
+
+<!-- @(#) $Id: head02.html,v 3.14 2008/12/11 08:55:29 ralproth Exp $ -->
+<P>To use advanced features like CSS and screen tips we recommend to use MS IE 5+, FireFox/Mozilla or Opera 7+
+</P>
+<P><B>cfg2html home page</B>:
+	<A href="http://come.to/cfg2html">http://come.to/cfg2html</A> or
+	<A href="http://www.cfg2html.com">www.cfg2html.com</A>, for my HP internal web page, see <B>doc/cfg2html.html</B>
+</P>
+<P>
+	<!-- Kommentar/Sponsor:  -->
+	
+	
+	<!-- text links -->
+	</CENTER>
+</P>
+<P>
+</P>
+<HR><H1>Quick System Overview</H1>
+<PRE></FONT>
+<!-- end of head02.html -->
+Hostname           a7app01
+Model              9000/803/D220
+uname -a           HP-UX a7app01 B.11.00 A 9000/803 2012293003 two-user license
+Software ID         (not available on every machine)
+# CPUs             1 (may include iCOD CPUs)
+# disks            1
+Memory            
+Deviceswap         800 MB
+Memory swapable    187 MB
+<!-- @(#) $Id: head03.html,v 3.11 2008/12/11 08:55:30 ralproth Exp $ -->
+<hr></pre><p>
+<FONT COLOR=blue>
+<H1>Contents</H1>
+</font>
+<UL type='square'>
+
+<A NAME="Inhalt-HP-UX/System"></A><A HREF="#HP-UX/System">HP-UX/System</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Model"></A><A HREF="#Model" title="PrintModel">Model</A>
+
+<LI><A NAME="Inhalt-PA-RISC Type (11.x)"></A><A HREF="#PA-RISC Type (11.x)" title="(grep "D220" /usr/sam/lib/mo/sched.models)">PA-RISC Type (11.x)</A>
+
+<LI><A NAME="Inhalt-Supported Bits (32/64)"></A><A HREF="#Supported Bits (32/64)" title="grep 9000/803/D220 (no description) /etc/.supported_bits">Supported Bits (32/64)</A>
+
+<LI><A NAME="Inhalt-uname and hostname"></A><A HREF="#uname and hostname" title="HostNames">uname and hostname</A>
+
+<LI><A NAME="Inhalt-POSIX Standards/Settings"></A><A HREF="#POSIX Standards/Settings" title="posixversion">POSIX Standards/Settings</A>
+
+<LI><A NAME="Inhalt-Locale"></A><A HREF="#Locale" title="locale">Locale</A>
+
+<LI><A NAME="Inhalt-/etc/PATH"></A><A HREF="#/etc/PATH" title="cat /etc/PATH | tr ':' '
+'">/etc/PATH</A>
+
+<LI><A NAME="Inhalt-/etc/MANPATH"></A><A HREF="#/etc/MANPATH" title="cat /etc/MANPATH | tr ':' '
+'">/etc/MANPATH</A>
+
+<LI><A NAME="Inhalt-Soft User limits"></A><A HREF="#Soft User limits" title="ulimit -aS">Soft User limits</A>
+
+<LI><A NAME="Inhalt-Hard User limits"></A><A HREF="#Hard User limits" title="ulimit -aH">Hard User limits</A>
+
+<LI><A NAME="Inhalt-Uptime, Load and SAR"></A><A HREF="#Uptime, Load and SAR" title="uptime;sar 1 9">Uptime, Load and SAR</A>
+
+<LI><A NAME="Inhalt-Hierarchical Process View"></A><A HREF="#Hierarchical Process View" title="ps -Hef; echo 
+Process table: 5.62 percent used.">Hierarchical Process View</A>
+
+<LI><A NAME="Inhalt-Process View, incl. PRM Groups"></A><A HREF="#Process View, incl. PRM Groups" title="ps -efP">Process View, incl. PRM Groups</A>
+
+<LI><A NAME="Inhalt-Top 25 CPU Processes"></A><A HREF="#Top 25 CPU Processes" title="ps -ef | cut -c42- | sort -nr | head -25 | awk '{ printf("%10s   %s
+", $1, $2); }'">Top 25 CPU Processes</A>
+
+<LI><A NAME="Inhalt-Top 25 Memory Processes"></A><A HREF="#Top 25 Memory Processes" title="TopMemProcs">Top 25 Memory Processes</A>
+
+<LI><A NAME="Inhalt-Top output"></A><A HREF="#Top output" title="cat /tmp/topcfg.7916">Top output</A>
+
+<LI><A NAME="Inhalt-Buffer Activity"></A><A HREF="#Buffer Activity" title="sar -b 1 9">Buffer Activity</A>
+
+<LI><A NAME="Inhalt-VM-Statistics"></A><A HREF="#VM-Statistics" title="vmstat -dnS;vmstat -f">VM-Statistics</A>
+
+<LI><A NAME="Inhalt-Crontab and AT scheduler"></A><A HREF="#Crontab and AT scheduler" title="/opt/cfg2html/plugins/crontab_collect.sh">Crontab and AT scheduler</A>
+
+<LI><A NAME="Inhalt-inittab"></A><A HREF="#inittab" title="cat /etc/inittab">inittab</A>
+
+<LI><A NAME="Inhalt-Runlevel Settings"></A><A HREF="#Runlevel Settings" title=" grep -v ^# /etc/rc.config.d/* | grep '=[/0-9]'">Runlevel Settings</A>
+
+<LI><A NAME="Inhalt-User accounts"></A><A HREF="#User accounts" title="/opt/cfg2html/plugins/getpwd.hppa">User accounts</A>
+
+<LI><A NAME="Inhalt-Groups"></A><A HREF="#Groups" title="/opt/cfg2html/plugins/getpwd.hppa -g">Groups</A>
+
+</UL>
+
+<A NAME="Inhalt-Hardware"></A><A HREF="#Hardware">Hardware</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Hardware with H/W-Path"></A><A HREF="#Hardware with H/W-Path" title="ioscan -fnk; echo; ioscan -fk">Hardware with H/W-Path</A>
+
+<LI><A NAME="Inhalt-Physical Memory"></A><A HREF="#Physical Memory" title=" head -l -n 1200 /var/adm/syslog/syslog.log|grep Physical|grep avail|cut -c 35-|dos2ux">Physical Memory</A>
+
+<LI><A NAME="Inhalt-Console Keyboard Layout"></A><A HREF="#Console Keyboard Layout" title="cat /etc/kbdlang;echo">Console Keyboard Layout</A>
+
+<LI><A NAME="Inhalt-Diagnostics Tool Statistics"></A><A HREF="#Diagnostics Tool Statistics" title="cat /var/stm/logs/tool_stat.txt">Diagnostics Tool Statistics</A>
+
+<LI><A NAME="Inhalt-Installed Hardware (cstm)"></A><A HREF="#Installed Hardware (cstm)" title="cat cstm_res2.7916">Installed Hardware (cstm)</A>
+
+<LI><A NAME="Inhalt-Last PDCINFO Tombstone"></A><A HREF="#Last PDCINFO Tombstone" title="dos2ux /var/tombstones/ts99">Last PDCINFO Tombstone</A>
+
+<LI><A NAME="Inhalt-Previous PDCINFO Tombstone"></A><A HREF="#Previous PDCINFO Tombstone" title="dos2ux /var/tombstones/ts98">Previous PDCINFO Tombstone</A>
+
+<LI><A NAME="Inhalt-EMS Event Log"></A><A HREF="#EMS Event Log" title="grep -e 'Event data from monitor' -e 'Event Time.' -e 'Severity.' -e 'Monitor.............: ' -e 'Event #.' /var/opt/resmon/log/event.log | dos2ux | grep -v Version">EMS Event Log</A>
+
+<LI><A NAME="Inhalt-EMS Hardware Monitors"></A><A HREF="#EMS Hardware Monitors" title="/opt/resmon/bin/resls /">EMS Hardware Monitors</A>
+
+<LI><A NAME="Inhalt-EMS Hardware Monitor Setup"></A><A HREF="#EMS Hardware Monitor Setup" title="/etc/opt/resmon/lbin/moncheck">EMS Hardware Monitor Setup</A>
+
+<LI><A NAME="Inhalt-EMS Down States"></A><A HREF="#EMS Down States" title="/etc/opt/resmon/lbin/set_fixed -Lv">EMS Down States</A>
+
+<LI><A NAME="Inhalt-Disk Firmware Revision"></A><A HREF="#Disk Firmware Revision" title="/opt/cfg2html/plugins/firmware_collect.sh">Disk Firmware Revision</A>
+
+<LI><A NAME="Inhalt-L+N Class Elroy Check"></A><A HREF="#L+N Class Elroy Check" title="/opt/cfg2html/plugins/check_elroy.sh">L+N Class Elroy Check</A>
+
+<LI><A NAME="Inhalt-SureStore E Disk Array XP Disk Mechanisms"></A><A HREF="#SureStore E Disk Array XP Disk Mechanisms" title="/usr/bin/xpinfo -r|grep -v Scanning">SureStore E Disk Array XP Disk Mechanisms</A>
+
+<LI><A NAME="Inhalt-SureStore E Disk Array XP Identification Information"></A><A HREF="#SureStore E Disk Array XP Identification Information" title="cat /var/tmp/a7app01_xpinfo.txt">SureStore E Disk Array XP Identification Information</A>
+
+<LI><A NAME="Inhalt-SureStore E Disk Array XP (Continuous Access and Business Copy)"></A><A HREF="#SureStore E Disk Array XP (Continuous Access and Business Copy)" title="/usr/bin/xpinfo -c|grep -v Scanning">SureStore E Disk Array XP (Continuous Access and Business Copy)</A>
+
+<LI><A NAME="Inhalt-XP LUNs visible/not mapped"></A><A HREF="#XP LUNs visible/not mapped" title="/opt/cfg2html/plugins/find_non_lvm_luns.sh">XP LUNs visible/not mapped</A>
+
+<LI><A NAME="Inhalt-SureStore E Disk Array XP (Port Summary)"></A><A HREF="#SureStore E Disk Array XP (Port Summary)" title="/opt/cfg2html/plugins/get_xpsum.sh /var/tmp/a7app01_xpinfo.txt">SureStore E Disk Array XP (Port Summary)</A>
+
+<LI><A NAME="Inhalt-SureStore E Disk Array XP (LUNs Summary)"></A><A HREF="#SureStore E Disk Array XP (LUNs Summary)" title="/opt/cfg2html/plugins/get_xpluns.sh /var/tmp/a7app01_xpinfo.txt">SureStore E Disk Array XP (LUNs Summary)</A>
+
+<LI><A NAME="Inhalt-HP SureStore 12 AutoRAID"></A><A HREF="#HP SureStore 12 AutoRAID" title="/opt/hparray/bin/arraydsp -i 2>/dev/null">HP SureStore 12 AutoRAID</A>
+
+<LI><A NAME="Inhalt-HP SureStore FC60 Disk Array"></A><A HREF="#HP SureStore FC60 Disk Array" title="/opt/hparray/bin/amdsp -i 2>/dev/null">HP SureStore FC60 Disk Array</A>
+
+</UL>
+
+<A NAME="Inhalt-Software"></A><A HREF="#Software">Software</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Registered Depots"></A><A HREF="#Registered Depots" title="swlist -l depot 2>/dev/null|grep -v Initiali">Registered Depots</A>
+
+<LI><A NAME="Inhalt-Installed Software"></A><A HREF="#Installed Software" title="swlist|tail +6">Installed Software</A>
+
+<LI><A NAME="Inhalt-Software Installation Date"></A><A HREF="#Software Installation Date" title="swlist -a date -a title -a revision|tail +6">Software Installation Date</A>
+
+<LI><A NAME="Inhalt-Last Software Jobs"></A><A HREF="#Last Software Jobs" title="swjob | tail">Last Software Jobs</A>
+
+<LI><A NAME="Inhalt-Installed Products"></A><A HREF="#Installed Products" title="swlist -l product | tail +6|grep -v -e PHNE_ -e PHSS_ -e PHKL_ -e PHCO_">Installed Products</A>
+
+<LI><A NAME="Inhalt-Unconfigured/Corrupted Software"></A><A HREF="#Unconfigured/Corrupted Software" title="swlist -a state  -l fileset | grep -v -e configured -e ^#">Unconfigured/Corrupted Software</A>
+
+<LI><A NAME="Inhalt-Patches and Patch Statistic"></A><A HREF="#Patches and Patch Statistic" title="patch_stat">Patches and Patch Statistic</A>
+
+</UL>
+
+<A NAME="Inhalt-Filesystems, Dump- and Swapconfiguration"></A><A HREF="#Filesystems, Dump- and Swapconfiguration">Filesystems, Dump- and Swapconfiguration</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Filesystems and Usage"></A><A HREF="#Filesystems and Usage" title="bdf -i">Filesystems and Usage</A>
+
+<LI><A NAME="Inhalt-Filesystem Settings"></A><A HREF="#Filesystem Settings" title="df -g">Filesystem Settings</A>
+
+<LI><A NAME="Inhalt-Mountpoint (fstab)"></A><A HREF="#Mountpoint (fstab)" title="cat /etc/fstab|grep -v '^#'">Mountpoint (fstab)</A>
+
+<LI><A NAME="Inhalt-Active Local Mountpoints"></A><A HREF="#Active Local Mountpoints" title="mount -lp">Active Local Mountpoints</A>
+
+<LI><A NAME="Inhalt-Swap Info"></A><A HREF="#Swap Info" title="swapinfo -tam">Swap Info</A>
+
+<LI><A NAME="Inhalt-Dump Configuration"></A><A HREF="#Dump Configuration" title="/sbin/crashconf">Dump Configuration</A>
+
+<LI><A NAME="Inhalt-HFS Superblocks"></A><A HREF="#HFS Superblocks" title="cat /var/adm/sbtab">HFS Superblocks</A>
+
+</UL>
+
+<A NAME="Inhalt-LVM"></A><A HREF="#LVM">LVM</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-LVM Volumegroup and Filesystem Quick Overview"></A><A HREF="#LVM Volumegroup and Filesystem Quick Overview" title="/opt/cfg2html/plugins/check_space.sh">LVM Volumegroup and Filesystem Quick Overview</A>
+
+<LI><A NAME="Inhalt-LVM Overview"></A><A HREF="#LVM Overview" title="/opt/cfg2html/plugins/get_lvm_info.sh">LVM Overview</A>
+
+<LI><A NAME="Inhalt-LVM Tab Dump"></A><A HREF="#LVM Tab Dump" title="/opt/cfg2html/plugins/dumplvmtab.hppa">LVM Tab Dump</A>
+
+<LI><A NAME="Inhalt-Detailed Volumegroups"></A><A HREF="#Detailed Volumegroups" title="vgdisplay -v">Detailed Volumegroups</A>
+
+<LI><A NAME="Inhalt-VG Group Device Files"></A><A HREF="#VG Group Device Files" title="ll /dev/*/group|sort -k 6">VG Group Device Files</A>
+
+<LI><A NAME="Inhalt-PVG-Filter"></A><A HREF="#PVG-Filter" title="vgdisplay -v |grep Name | /opt/cfg2html/plugins/pvgfilter.hppa">PVG-Filter</A>
+
+<LI><A NAME="Inhalt-Auto VG Activation (/etc/lvmrc)"></A><A HREF="#Auto VG Activation (/etc/lvmrc)" title="grep -v -e ^# -e ^$ /etc/lvmrc">Auto VG Activation (/etc/lvmrc)</A>
+
+<LI><A NAME="Inhalt-Boot LVs (lvlnboot)"></A><A HREF="#Boot LVs (lvlnboot)" title="lvlnboot -v vg00">Boot LVs (lvlnboot)</A>
+
+<LI><A NAME="Inhalt-Physical Devices used for LVM"></A><A HREF="#Physical Devices used for LVM" title="PVDisplay">Physical Devices used for LVM</A>
+
+<LI><A NAME="Inhalt-Bootinformation/LIF"></A><A HREF="#Bootinformation/LIF" title="get_LIF">Bootinformation/LIF</A>
+
+<LI><A NAME="Inhalt-Boot Device Configuration Table"></A><A HREF="#Boot Device Configuration Table" title="cat /stand/bootconf|grep -v ^#">Boot Device Configuration Table</A>
+
+<LI><A NAME="Inhalt-IO Statistics (iostat)"></A><A HREF="#IO Statistics (iostat)" title="iostat">IO Statistics (iostat)</A>
+
+<LI><A NAME="Inhalt-IO Statistics (sar)"></A><A HREF="#IO Statistics (sar)" title="sar -d 10 1">IO Statistics (sar)</A>
+
+</UL>
+
+<A NAME="Inhalt-Network Settings/Network Interface Cards"></A><A HREF="#Network Settings/Network Interface Cards">Network Settings/Network Interface Cards</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-NIC Description"></A><A HREF="#NIC Description" title="/opt/cfg2html/plugins/get_lan_desc.sh">NIC Description</A>
+
+<LI><A NAME="Inhalt-NIC Overview"></A><A HREF="#NIC Overview" title="/opt/cfg2html/plugins/qlan.sh">NIC Overview</A>
+
+<LI><A NAME="Inhalt-NIC Details"></A><A HREF="#NIC Details" title="/opt/cfg2html/plugins/qlan.sh -v">NIC Details</A>
+
+<LI><A NAME="Inhalt-Netconf Settings"></A><A HREF="#Netconf Settings" title="grep -v ^# /etc/rc.config.d/netconf|grep -v ^$">Netconf Settings</A>
+
+<LI><A NAME="Inhalt-LAN Core Patch Level"></A><A HREF="#LAN Core Patch Level" title="what /usr/conf/lib/liblan.a">LAN Core Patch Level</A>
+
+<LI><A NAME="Inhalt-Routing Tables"></A><A HREF="#Routing Tables" title="netstat -r;echo;netstat -rnv">Routing Tables</A>
+
+<LI><A NAME="Inhalt-TCP/IP Stack and Protocol Statistics"></A><A HREF="#TCP/IP Stack and Protocol Statistics" title="netstat -gin;echo;netstat -s;echo;netstat -Ms">TCP/IP Stack and Protocol Statistics</A>
+
+<LI><A NAME="Inhalt-Number of TCP/IP Sockets in the same State"></A><A HREF="#Number of TCP/IP Sockets in the same State" title="netstat -an | grep tcp | awk '{print $6}' | sort | uniq -c">Number of TCP/IP Sockets in the same State</A>
+
+</UL>
+
+<A NAME="Inhalt-Network Subsystems"></A><A HREF="#Network Subsystems">Network Subsystems</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Gate Daemon Settings"></A><A HREF="#Gate Daemon Settings" title="cat /etc/gated.conf|grep -v ^#">Gate Daemon Settings</A>
+
+<LI><A NAME="Inhalt-Networking Daemon Patchlevel"></A><A HREF="#Networking Daemon Patchlevel" title="what /usr/lbin/*pd">Networking Daemon Patchlevel</A>
+
+<LI><A NAME="Inhalt-BOOTP Daemon Configuration"></A><A HREF="#BOOTP Daemon Configuration" title="cat /etc/bootptab|grep -v -E '^#'">BOOTP Daemon Configuration</A>
+
+<LI><A NAME="Inhalt-Internet Daemon Configuration"></A><A HREF="#Internet Daemon Configuration" title="cat /etc/inetd.conf|grep -v -E '^#|^
+'">Internet Daemon Configuration</A>
+
+<LI><A NAME="Inhalt-Files in /usr/lib/security (PAM Kerberos)"></A><A HREF="#Files in /usr/lib/security (PAM Kerberos)" title="ll /usr/lib/security">Files in /usr/lib/security (PAM Kerberos)</A>
+
+<LI><A NAME="Inhalt-PAM Configuration"></A><A HREF="#PAM Configuration" title="cat /etc/pam.conf|grep -v ^#">PAM Configuration</A>
+
+<LI><A NAME="Inhalt-Internet Daemon Services"></A><A HREF="#Internet Daemon Services" title="cat /etc/services">Internet Daemon Services</A>
+
+<LI><A NAME="Inhalt-DNS and Names"></A><A HREF="#DNS and Names" title="cat /etc/resolv.conf;echo; ( [ -f /etc/nsswitch.conf ] && cat /etc/nsswitch.conf)">DNS and Names</A>
+
+<LI><A NAME="Inhalt-Sendmail Versions"></A><A HREF="#Sendmail Versions" title="(what /usr/sbin/sendmail|grep -i version);  grep ^DZ /etc/mail/sendmail.cf /usr/newconfig/etc/mail/sendmail.cf">Sendmail Versions</A>
+
+<LI><A NAME="Inhalt-Detailed Sendmail Configuration"></A><A HREF="#Detailed Sendmail Configuration" title="echo $Z|/usr/sbin/sendmail -bt -d">Detailed Sendmail Configuration</A>
+
+<LI><A NAME="Inhalt-Sendmail Aliases local"></A><A HREF="#Sendmail Aliases local" title="praliases">Sendmail Aliases local</A>
+
+<LI><A NAME="Inhalt-NFS settings"></A><A HREF="#NFS settings" title="grep -v -e ^# -e ^$ /etc/rc.config.d/nfsconf">NFS settings</A>
+
+<LI><A NAME="Inhalt-NFSD and BIOD utilisation"></A><A HREF="#NFSD and BIOD utilisation" title="ps -ef|grep -e nfsd -e biod | grep -v grep">NFSD and BIOD utilisation</A>
+
+<LI><A NAME="Inhalt-NSFD responds to RPC requests"></A><A HREF="#NSFD responds to RPC requests" title="rpcinfo -u 127.0.0.1 100003">NSFD responds to RPC requests</A>
+
+<LI><A NAME="Inhalt-Mounted NFS File Systems"></A><A HREF="#Mounted NFS File Systems" title="showmount -a">Mounted NFS File Systems</A>
+
+<LI><A NAME="Inhalt-NFS Automounter Settings"></A><A HREF="#NFS Automounter Settings" title="cat /etc/auto_master">NFS Automounter Settings</A>
+
+<LI><A NAME="Inhalt-NFS Statistics"></A><A HREF="#NFS Statistics" title="nfsstat;echo ;nfsstat -m;echo;netstat -an|grep -e Proto -e 2049">NFS Statistics</A>
+
+<LI><A NAME="Inhalt-NFS Core Patch Level"></A><A HREF="#NFS Core Patch Level" title="what /usr/conf/lib/libnfs.a">NFS Core Patch Level</A>
+
+<LI><A NAME="Inhalt-RPC"></A><A HREF="#RPC" title="rpcinfo -p ">RPC</A>
+
+<LI><A NAME="Inhalt-IPC Status"></A><A HREF="#IPC Status" title="ipcs -mob">IPC Status</A>
+
+<LI><A NAME="Inhalt-XNTP Time Protocol Daemon"></A><A HREF="#XNTP Time Protocol Daemon" title="ntpq -p">XNTP Time Protocol Daemon</A>
+
+<LI><A NAME="Inhalt-Simple Network Management Protocol (SNMP)"></A><A HREF="#Simple Network Management Protocol (SNMP)" title="grep -v ^# /etc/SnmpAgent.d/snmpd.conf">Simple Network Management Protocol (SNMP)</A>
+
+</UL>
+
+<A NAME="Inhalt-Fibre Channel"></A><A HREF="#Fibre Channel">Fibre Channel</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Fibre Channel Driver"></A><A HREF="#Fibre Channel Driver" title="what /usr/conf/lib/libfcms.a">Fibre Channel Driver</A>
+
+<LI><A NAME="Inhalt-FCMS Util Revision"></A><A HREF="#FCMS Util Revision" title="what /opt/fcms/bin/fcmsutil">FCMS Util Revision</A>
+
+</UL>
+
+<A NAME="Inhalt-Kernel"></A><A HREF="#Kernel">Kernel</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Last 150 lines of dmesg(1m)"></A><A HREF="#Last 150 lines of dmesg(1m)" title="dmesg | tail -150">Last 150 lines of dmesg(1m)</A>
+
+<LI><A NAME="Inhalt-Kernel paging events"></A><A HREF="#Kernel paging events" title="vmstat -s">Kernel paging events</A>
+
+<LI><A NAME="Inhalt-Status Kernel Processes"></A><A HREF="#Status Kernel Processes" title="sar -v 1 5">Status Kernel Processes</A>
+
+<LI><A NAME="Inhalt-Kernel Parameter from /stand/system"></A><A HREF="#Kernel Parameter from /stand/system" title="cat /stand/system|grep -v -E "^\*"|pr -2t">Kernel Parameter from /stand/system</A>
+
+<LI><A NAME="Inhalt-Current Kernel Parameters"></A><A HREF="#Current Kernel Parameters" title="/usr/sbin/sysdef">Current Kernel Parameters</A>
+
+<LI><A NAME="Inhalt-kmtune(1) System Parameter"></A><A HREF="#kmtune(1) System Parameter" title="/usr/sbin/kmtune">kmtune(1) System Parameter</A>
+
+<LI><A NAME="Inhalt-Kernel Module Configuration"></A><A HREF="#Kernel Module Configuration" title="/usr/sbin/kmsystem">Kernel Module Configuration</A>
+
+<LI><A NAME="Inhalt-Current Device Drivers"></A><A HREF="#Current Device Drivers" title="/usr/sbin/lsdev">Current Device Drivers</A>
+
+<LI><A NAME="Inhalt-HP-UX Core Patch Level"></A><A HREF="#HP-UX Core Patch Level" title="what /usr/conf/lib/libhp-ux.a">HP-UX Core Patch Level</A>
+
+</UL>
+
+<A NAME="Inhalt-Systemenhancements"></A><A HREF="#Systemenhancements">Systemenhancements</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-SAM version"></A><A HREF="#SAM version" title="what /usr/sbin/sam;what /usr/sam/lib/C/sam.ui">SAM version</A>
+
+<LI><A NAME="Inhalt-Special Group Attributes"></A><A HREF="#Special Group Attributes" title="getprivgrp">Special Group Attributes</A>
+
+</UL>
+
+<A NAME="Inhalt-Applications And Subsystems"></A><A HREF="#Applications And Subsystems">Applications And Subsystems</A>
+<UL type='square'>
+
+<LI><A NAME="Inhalt-Files in /usr/local/bin"></A><A HREF="#Files in /usr/local/bin" title="ls -lisa /usr/local/bin">Files in /usr/local/bin</A>
+
+<LI><A NAME="Inhalt-Files in /usr/lbin"></A><A HREF="#Files in /usr/lbin" title="ls -lisa /usr/lbin">Files in /usr/lbin</A>
+
+<LI><A NAME="Inhalt-iFOR"></A><A HREF="#iFOR" title="i4_collect">iFOR</A>
+
+<LI><A NAME="Inhalt-Installed Performance Software"></A><A HREF="#Installed Performance Software" title="perf_tools">Installed Performance Software</A>
+
+<LI><A NAME="Inhalt-Ignite/UX - Print_Manifest"></A><A HREF="#Ignite/UX - Print_Manifest" title="/opt/ignite/bin/print_manifest 2>/dev/null">Ignite/UX - Print_Manifest</A>
+
+<LI><A NAME="Inhalt-Network Node Manager/ITO"></A><A HREF="#Network Node Manager/ITO" title="/opt/OV/bin/ovstatus -c">Network Node Manager/ITO</A>
+
+<LI><A NAME="Inhalt-Contents of OVW Database"></A><A HREF="#Contents of OVW Database" title="/opt/OV/bin/ovobjprint -S">Contents of OVW Database</A>
+
+<LI><A NAME="Inhalt-Printer Spooler and Printers"></A><A HREF="#Printer Spooler and Printers" title="/opt/cfg2html/plugins/getlp.sh">Printer Spooler and Printers</A>
+
+<LI><A NAME="Inhalt-JetDirect"></A><A HREF="#JetDirect" title="JetDirect">JetDirect</A>
+
+<A NAME="Inhalt-Veritas Licenses/Veritas Volume Manager (VxVM)"></A><A HREF="#Veritas Licenses/Veritas Volume Manager (VxVM)">Veritas Licenses/Veritas Volume Manager (VxVM)</A>
+<UL type='square'>
+
+</UL>
+
+</UL>
+
+</UL>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html">
+<TITLE>Frontier 13</TITLE>
+<SCRIPT src="/JADIS/etc/table.js"></SCRIPT>
+<LINK rel="stylesheet" media="all" type="text/css" href="/JADIS/etc/default_house.css" >
+</HEAD><BODY>
+<div class="header">
+<table class="header">
+   <tr>
+        <th width=20% style='background:white;padding:.75pt .75pt .75pt .75pt'>
+        <p align="middle">
+        <a HREF="http://ncdcwss.northcentralnetworks.com/sites/unix/">
+        <img src="/JADIS/icons/frontierLogo_RGB.gif" border=0 alt="Frontier" align="middle" height="32px"/>
+        </p>
+        </th>
+        <th width="10%">
+        <p align="middle">
+        <img src="/JADIS/icons/sign_divider.gif" border="0" align="middle"/>
+        </p>
+        </th>
+        <th width=70% style="white-space: nowrap;">
+        <p align="middle">
+        <font color="#D00000" size="5">System Data for </font>
+        <font color="#D00000" size="5">Frontier 13</font>
+        </p>
+        </th>
+        <th width=10%>
+        <a HREF="http://lnxfwi01.northcentralnetworks.com/JADIS/summary.html">
+        <img src="/JADIS/icons/btn_summary.gif" border="0" alt="Summary Report" align="middle"/></a>
+        </th>
+        <th width=10%>
+        <a HREF="http://lnxfwi01.northcentralnetworks.com/JADIS/cgi-bin/gen_req.pl">
+        <img src="/JADIS/icons/btn_custom.gif" border=0 alt="Generate a Custom Report" align="middle"/></a>
+        </th>
+	<th>&nbsp;</th>
+   </tr>
+   <tr>
+	<th colspan="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Header Text to Sort, Enter Text in Boxes to Filter, Filter Counts at Bottom.</th>
+   </tr>
+</table>
+</div>
+<div class="outer">
+<div class="innera">
+<TABLE id="t1" class="table-autosort:0 table-autofilter table-stripeclass:alternate table-filtered-rowcount:t1filtercount table-rowcount:t1allcount" width="100%">
+<thead>
+<tr>
+	   <th class="filter firstcell">
+	   <img src="/JADIS/icons/divider_nav.gif" align="left" height="24px"/>
+	     &nbsp;&nbsp;&nbsp;
+	   <input name="filter" size="8" onkeyup="Table.filter(this,this)"></input>
+	   </th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+<th class="filter"><input name="filter" size="8" onkeyup="Table.filter(this,this)"></input></th>
+</tr>
+<tr valign="top"><th class="filterable table-sortable:default firstcell">
+               <img src="/JADIS/icons/divider_nav.gif" align="left" height="24px"/>
+               <img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hostname&nbsp;&nbsp;&nbsp;</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Access</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>AppID</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Critical</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Group</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>Model#</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>OS</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>OSver</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>RemoteIP</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>SysInfo</th>
+<th class="filterable table-sortable:default"><img src="/JADIS/icons/divider_nav.gif" align="right" height="24px"/>cfg2html</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+  <td colspan="16">
+  <b><span id="t1filtercount">
+  </span></b>&nbsp;of <b>
+  <span id="t1allcount">
+  </span></b>&nbsp;rows match filter(s)</td>
+</tr>
+</tfoot>
+<tbody>

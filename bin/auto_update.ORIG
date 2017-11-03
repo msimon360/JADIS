@@ -1,0 +1,33 @@
+#
+# This script copies files to remote hosts and runs them
+# to update JADIS scripts. NOTE: This script is sourced
+# not run so all VARs are available, also an exit here will
+# exit the data collection script that calls it so, that is
+# a bad idea.
+#
+# You can use this as a template to run any script by naming
+# it auto_update, making it executable, putting it in this directory
+# remember it will run on all servers of any OS.
+# That makes this a bad example as it is HP-UX specific.
+#
+
+from_file=${TOPDIR}/etc/update_files/run_sysinfo
+
+# Note: I did not include /home in the PATH because the NCPS boxes use NIS to
+# Automount /home and it causes this to fail with a long timeout.
+case $ACCESS in
+  ssh)
+    to_file=`ssh -o BatchMode=yes ${RUSER}@${hostname} \
+    'PATH=/tools/sysadm/bin:/tools/sysadm/bin:~${RUSER}/bin:${PATH};which run_sysinfo'`
+    scp -B $from_file ${RUSER}@${hostname}:$to_file
+    ssh -o BatchMode=yes ${RUSER}@${hostname} 'echo "" | sudo -S rm -f /tmp/.run_sysinfo'
+  ;;
+  rsh)
+    to_file=`remsh ${hostname} -l ${RUSER} \
+    'PATH=/tools/sysadm/bin:/tools/sysadm/bin:~${RUSER}/bin:${PATH};which run_sysinfo'`
+    rcp $from_file ${RUSER}@${hostname}:$to_file
+    remsh ${hostname} -l ${RUSER} 'echo "" | sudo -S rm -f /tmp/.run_sysinfo'
+  ;;
+esac
+
+set +x

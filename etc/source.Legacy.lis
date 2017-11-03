@@ -1,0 +1,4 @@
+cfg2html,/infra/opt/JADIS/data/cfg2html/cfg2html_%H_%YYY%m%d.html,cfg2html.key
+CFG_Log,/infra/opt/JADIS/data/CFG_Log/cfg2html_%H_%YYY%m%d.err,DATA
+Status,/infra/opt/JADIS/data/Status/status%YYY%m%d.csv,CSV
+Teamsite,/infra/opt/JADIS/data/Teamsite/NC%YYY%m%d.csv,CSV

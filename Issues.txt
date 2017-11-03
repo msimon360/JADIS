@@ -1,0 +1,3 @@
+Mon Nov 22 14:44:11 EST 2010 - Linux box saftwp18 hangs on getting disk
+info. I added -H to the cfg2html script to skip Hardware Config Data
+Collection. There are hung processes that will not die.

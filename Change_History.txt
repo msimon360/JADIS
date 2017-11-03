@@ -1,0 +1,38 @@
+4.01.06  20091103 - fixed xfer issues added init_data_list function
+4.01.05  20091021 - removed references to RUSER use value in remote.lis
+	 instead,
+4.01.04  20091016 - uncompress files before rsync, auto_update only run
+	 if ACCESS is rsh or ssh,
+4.01.03  20091013 - Modify VzPatch string for leading spaces.
+4.01.02  20091012 - Stop using FRAMES in html and use DIVs instead. Major
+         change because we no longer mess with .main and .index files. Added
+         cleanup_SysInfo.ksh script to help after upgrade.
+3.01.03  20090818 - Use rsync to push files from remote JADIS server(s)
+	 to the master (can't use pull because of Open-SSH v/s SeOS SSH).
+3.01.02  20090807 - Added wait_for_remote so Master Server will wait
+	 for all Remote Servers to transfer their files before generating
+	 the summary file and index files.
+3.01.01  20090803 - Modified to work with combined VzT/VzB Spreadsheet. 
+	 Added STDERR logging to *.pl scripts, Added JADISHOST=omzrsi
+	 JADISDIR=/apps/opt/JADIS to JADIS.init so the same script can
+	 be used on a remote server for collection only.
+3.01.00  20090724 - Now downloads Excel from Team website for all non-server
+	 data (Location, App, Admin, etc.) Model is now uppercase. Added
+	 PERMONTH var to JADIS.init. If set will delete all but the latest
+	 source data file for each month.
+3.00.03  20090605 - Fixed comment lines in host_list, sort hsum output
+3.00.02  20090603 - Added sort unique for host_list
+3.00.01  20090602 - bug fixes
+3.00.00  20090527 - Major Change, removed index gereration from
+	 gen_sysinfo_idx and renamed gather_data.ksh. Modified gen_data.pl
+	 to work from a list of source files. New gen_summary.ksh script
+	 builds new index page with tables summarizing each parm.
+2.10.03  20090507 - Moved the Export button to the second page of the form.
+	 Export now works on selected data, is now handled in gen_data.pl.
+2.10.02  20090506 - Added a button to the Request Form to Export to Excel.
+	 Removed <hr> (Horz Rule) tags and used <div> with background color,
+	 works in both IE6 and FireFox.
+2.10.01  20090504 - Implimented parse_patch to convert Vz Patch strings
+	 into date formatted strings. Output the newest patch date string.
+	 Changed table data to fixed width font. Set Version in common init
+	 file. Started Change_History file.

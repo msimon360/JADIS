@@ -1,0 +1,224 @@
+which: no lshw in (/infra/opt/cfg2html/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/lib/news/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no setserial in (/infra/opt/cfg2html/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/lib/news/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+ /dev/dm-0: unrecognized partition table type
+No partitions found
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+ /dev/dm-1: unrecognized partition table type
+No partitions found
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+ /dev/dm-2: unrecognized partition table type
+No partitions found
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+ /dev/dm-3: unrecognized partition table type
+No partitions found
+Disk /dev/dm-0 doesn't contain a valid partition table
+Disk /dev/dm-1 doesn't contain a valid partition table
+Disk /dev/dm-2 doesn't contain a valid partition table
+Disk /dev/dm-3 doesn't contain a valid partition table
+cp: cannot stat `/var/log/messages.1': No such file or directory
+cp: cannot stat `/var/log/messages.2': No such file or directory
+cp: cannot stat `/var/log/boot.log.1': No such file or directory
+cp: cannot stat `/var/log/boot.log.2': No such file or directory
+Disk /dev/dm-0 doesn't contain a valid partition table
+Disk /dev/dm-1 doesn't contain a valid partition table
+Disk /dev/dm-2 doesn't contain a valid partition table
+Disk /dev/dm-3 doesn't contain a valid partition table
+/usr/bin/cfg2html-linux: line 2261: hplog: command not found
+tar: Removing leading `/' from member names
+lation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper ps":
+    Unknown command 'ps'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper lr --details":
+    Unknown command 'lr'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper lu":
+    Restoring system sources...
+    Parsing RPM database...
+stderr output from "zypper lp":
+    Unknown command 'lp'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper pa":
+    Unknown command 'pa'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper pa --installed-only":
+    Unknown command 'pa'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "zypper pa --uninstalled-only":
+    Unknown command 'pa'.
+    
+      Commands:
+    	help			Help
+    	shell, sh		Accept multiple commands at once
+    	install, in		Install packages or resolvables
+    	remove, rm		Remove packages or resolvables
+    	search, se		Search for packages matching a pattern
+    	service-list, sl	List services, also called installation sources
+    	service-add, sa		Add a new service
+    	service-delete, sd	Delete a service
+    	service-rename, sr	Rename a service
+    	refresh, ref		Refresh all installation sources
+    	patch-check, pchk	Check for patches
+    	patches, pch		List patches
+    	list-updates, lu	List updates
+    	update, up		Update packages
+    	info, if		Show full information for packages
+    	patch-info		Show full information for patches
+stderr output from "PartitionDump":
+    Disk /dev/dm-0 doesn't contain a valid partition table
+    Disk /dev/dm-1 doesn't contain a valid partition table
+    Disk /dev/dm-2 doesn't contain a valid partition table
+    Disk /dev/dm-3 doesn't contain a valid partition table
+stderr output from "/sbin/fdisk -l|sed 's/8e \ Unknown/8e \ LVM/g'":
+    Disk /dev/dm-0 doesn't contain a valid partition table
+    Disk /dev/dm-1 doesn't contain a valid partition table
+    Disk /dev/dm-2 doesn't contain a valid partition table
+    Disk /dev/dm-3 doesn't contain a valid partition table
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+stderr output from "/usr/sbin/tcpdchk -v":
+    Cannot find your inetd.conf or tlid.conf file.
+    Please specify its location.
+stderr output from "/usr/sbin/tcpdchk -a":
+    Cannot find your inetd.conf or tlid.conf file.
+    Please specify its location.
+stderr output from "/sbin/ldconfig -vN":
+    /sbin/ldconfig: Can't stat /usr/X11R6/lib64/Xaw3d: No such file or directory
+    /sbin/ldconfig: Can't stat /usr/X11R6/lib/Xaw3d: No such file or directory
+    /sbin/ldconfig: Can't stat /opt/kde3/lib: No such file or directory
+    /sbin/ldconfig: Can't stat /opt/kde3/lib64: No such file or directory
+    /sbin/ldconfig: Path `/lib' given more than once
+    /sbin/ldconfig: Path `/lib64' given more than once
+    /sbin/ldconfig: Path `/usr/lib' given more than once
+    /sbin/ldconfig: Path `/usr/lib64' given more than once
+    /sbin/ldconfig: Cannot stat /usr/lib64/libbfrpm.so: No such file or directory
+    /sbin/ldconfig: Cannot stat /usr/lib64/libbfrpmio.so: No such file or directory
+    /sbin/ldconfig: Cannot stat /usr/lib64/libbfrpmdb.so: No such file or directory
+stderr output from "/sbin/sysctl -a | sort -u":
+    error: "Operation not permitted" reading key "net.ipv6.route.flush"
+    error: "Operation not permitted" reading key "net.ipv4.route.flush"
+stderr output from "gconftool-2 -R /system":
+    /usr/bin/cfg2html-linux: line 453: gconftool-2: command not found
+stderr output from "/usr/bin/lpstat -t":
+    lpstat: Unable to connect to server: Connection refused
+stderr output from "for NetBuServer in  ebuftwspa01-ebu etttvpcm01 ebuftwspa01 ebuftwspa11-ebu ebuftwspa12-ebu ewftwp33 ebuftwspa01 ebuftwspa11 ebuftwspa12; do ping -c 3 ${NetBuServer} && echo ""; done":
+    ping: unknown host etttvpcm01
+stderr output from "/usr/openv/netbackup/bin/bpclntcmd -pn":
+    expecting response from server ebuftwspa01-ebu
+stderr output from "/sbin/fdisk -l":
+    Disk /dev/dm-0 doesn't contain a valid partition table
+    Disk /dev/dm-1 doesn't contain a valid partition table
+    Disk /dev/dm-2 doesn't contain a valid partition table
+    Disk /dev/dm-3 doesn't contain a valid partition table
+stderr output from "cfg2html_plugin":
+    cat: /usr/openv/netbackup/exclude*: No such file or directory
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/lib/news/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found
+stderr output from "cfg2html_plugin":
+    which: no seversion in (/infra/opt/cfg2html/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/lib/news/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin)

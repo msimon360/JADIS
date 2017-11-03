@@ -1,0 +1,61 @@
+<style type="text/css">
+  * {margin:0;padding:0}
+  body{margin:0;padding:0}
+  p {margin:0 0 1em 0;padding:0}
+  h1{margin:0 0 0 0;padding:0}
+  form {margin:0;padding:0}
+  input {font-family: Arial; font-size:9pt; }
+  td {font-family: Courier; font-size:9pt; color: #0060C0; }
+  th {font-family: Arial; font-size:9pt; text-align:left; }
+  A:link { text-decoration: none; }
+  A:visited { text-decoration: none; }
+  A:hover { text-decoration: underline; }
+  body {background:#F0F url(/JADIS/icons/InsideFrontier_banner_sized.png) background-repeat: no-repeat ;
+  font-family:arial, sans-serif; line-height=105%; }
+
+hr { 
+color: #ef573f;
+height: 6px;
+}
+
+hr.bottom_line {
+ position:relative;
+ top: -4.5em;
+ height:17px;
+}
+
+hr#bottom {
+ position:relative;
+ top: -2.5em;
+}
+
+hr#model {
+ position:relative;
+ top: 0em;
+ height:28px;
+}
+
+hr#mainbottom {
+ position:relative;
+ top: -4.5em;
+ height:17px;
+}
+
+p#totalplatforms {
+ position:relative;
+ top: -5em;
+}
+
+table.header {
+border-width: 0px;
+border-style: none;
+border-color: #FF9932;
+border-collapse: collapse;
+}
+
+table.header th {
+border-width: 0px;
+line-height=105%;
+margin: 0;
+border-style: none;
+border-color: #FF9932;

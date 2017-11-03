@@ -1,0 +1,41 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lshw in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+Usage: ping [-LRUbdfnqrvVaA] [-c count] [-i interval] [-w deadline]
+            [-p pattern] [-s packetsize] [-t ttl] [-I interface or address]
+            [-M mtu discovery hint] [-S sndbuf]
+            [ -T timestamp option ] [ -Q tos ] [hop1 ...] destination
+/usr/bin/cfg2html-linux: line 1989: [: missing `]'
+hdc: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -s | awk -F\" '{print $2}'":
+      /dev/hdc: open failed: No medium found
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+      /dev/hdc: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+      /dev/hdc: open failed: No medium found
+        Finding volume group "vgapp"
+        Finding volume group "vgroot"
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+      /dev/hdc: open failed: No medium found
+        Using physical volume(s) on command line
+      /dev/hdc: open failed: No medium found
+stderr output from "if grep -q '' /etc/sysconfig/network-scripts/route-*; then for RouteCfgFile in /etc/sysconfig/network-scripts/route-*; do printf "\n\n$(basename ${RouteCfgFile}):\n\n"; cat ${RouteCfgFile}; done; fi":
+    grep: /etc/sysconfig/network-scripts/route-*: No such file or directory
+stderr output from "/sbin/mii-diag -a":
+    Using the default interface 'eth0'.
+stderr output from "cfg2html_plugin":
+    /apps/ibm/HTTPServer/bin/httpd: error while loading shared libraries: libaprutil-1.so.0: cannot open shared object file: No such file or directory
+stderr output from "cfg2html_plugin":
+    cat: /usr/openv/netbackup/exclude*: No such file or directory
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found
+stderr output from "cfg2html_plugin":
+    which: no seversion in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin)

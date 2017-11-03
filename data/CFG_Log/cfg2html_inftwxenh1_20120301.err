@@ -1,0 +1,56 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lshw in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+/usr/bin/cfg2html-linux: line 1989: [: missing `]'
+ps":
+    -l: unknown option
+stderr output from "/bin/setserial -a /dev/ttyS0":
+    Cannot get serial info: Invalid argument
+stderr output from "/bin/setserial -a /dev/ttyS1":
+    /dev/ttyS1: No such device or address
+stderr output from "cat /var/lib/multipath/bindings":
+    cat: /var/lib/multipath/bindings: No such file or directory
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+        Finding volume group "rootvg"
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+stderr output from "/usr/sbin/ethtool vif0.0 2>/dev/null; /usr/sbin/ethtool -i vif0.0":
+    Cannot get driver information: Operation not supported
+stderr output from "/usr/sbin/ethtool vif9.0 2>/dev/null; /usr/sbin/ethtool -i vif9.0":
+    Cannot get driver information: Operation not supported
+stderr output from "/usr/sbin/ethtool vif10.0 2>/dev/null; /usr/sbin/ethtool -i vif10.0":
+    Cannot get driver information: Operation not supported
+stderr output from "/usr/sbin/ethtool vif35.0 2>/dev/null; /usr/sbin/ethtool -i vif35.0":
+    Cannot get driver information: Operation not supported
+stderr output from "/usr/sbin/ethtool vif37.0 2>/dev/null; /usr/sbin/ethtool -i vif37.0":
+    Cannot get driver information: Operation not supported
+stderr output from "if grep -q '' /etc/sysconfig/network-scripts/route-*; then for RouteCfgFile in /etc/sysconfig/network-scripts/route-*; do printf "\n\n$(basename ${RouteCfgFile}):\n\n"; cat ${RouteCfgFile}; done; fi":
+    grep: /etc/sysconfig/network-scripts/route-*: No such file or directory
+stderr output from "/sbin/mii-tool -v":
+    SIOCGMIIPHY on 'eth0' failed: Operation not supported
+    SIOCGMIIPHY on 'eth1' failed: Resource temporarily unavailable
+stderr output from "/sbin/mii-diag -a":
+    Using the default interface 'eth0'.
+    SIOCGMIIPHY on eth0 failed: Operation not supported
+stderr output from "/sbin/ldconfig -vN":
+    /sbin/ldconfig: /etc/ld.so.conf.d/kernelcap-2.6.18-92.1.1.el5.conf:6: duplicate hwcap 0 nosegneg
+stderr output from "/usr/bin/lpstat -t":
+    lpstat: No destinations added.
+    lpstat: No destinations added.
+    lpstat: No destinations added.
+    lpstat: No destinations added.
+stderr output from "echo q | /usr/bin/hp-info -i | 	 	/usr/bin/col":
+    [31;01merror: No devices found.[0m
+    [31;01merror: Error occured during interactive mode. Exiting.[0m
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found
+stderr output from "cfg2html_plugin":
+    which: no seversion in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin)

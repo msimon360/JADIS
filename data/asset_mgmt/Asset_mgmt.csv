@@ -1,0 +1,8 @@
+HostName,City,Address,Group,ExternalSerial#,Grid,Env,Vendor,OS,OSVer,OS_bits,Model#,Hardware_ID,CPU_cores,Memory,DAS_Tot,Installed,Comments
+a7app01,Rochester,180SClinton,Legacy,USM0009L8T,rack_08,Prod,HP,HP-UX,HPUX_11.00,32bit,D220,2012293003,1,256,9.2,11/29/01,SS7 Intellegence Server J Caputo 32bit
+a7server,Rochester,180SClinton,Legacy,USM9950JVW,rack_08,Prod,HP,HP-UX,HPUX_11.00,32bit,D320,2008422283,1,512,9.1,11/29/01,SS7 Intellegence Server J Caputo 32bit
+adslnms,unk,unk,Legacy,943H431E,unk,Idle,SUN,SunOS,SunOS_6,,E250,80b18421,2,1024,36,01/01/99,unk
+appdev01,unk,unk,Legacy,6024DKY5D350,unk,Idle,Compaq,Linux,RH_3,,DeskPro,7f0100,1,0,,04/25/03,unk
+argon,unk,unk,Legacy,048C0E02,unk,Idle,SUN,SunOS,SunOS_7,,NetraT110x,80f99c50,1,512,,04/17/03,unk
+elidcs2,Rochester,180S Clinton,Legacy,USR4218KBY,rack_01,Dev,HP,HP-UX,HPUX_11.11,,L2000,,1,512,,07/02/03,Intec InterMediatE Development J Caputo
+scrambler,Rochester,180 S Clinton,Legacy,0335HH31B2,rack_38,Prod,SUN,SunOS,SunOS_8,,F6800,8307684a,4,16384,36,11/05/03,Domain A on honda M Burgio

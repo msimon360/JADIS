@@ -1,0 +1,44 @@
+#!/bin/ksh
+#
+# start_collectors
+#
+# This script parses the Master Host List and starts Slave Collector processes
+# to Collect files from Hosts
+#
+
+function output_source
+{
+  echo "cfg2html,${DATADIR}/cfg2html/cfg2html_%H_%YYY%m%d.html,cfg2html.key"
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "start_collectors plugin running" 1
+  # Output Master Host List
+  sort -u ${TMP}/hostlist$$ > ${ALLHOSTLST}
+  # Start a Slave Collector for every HOSTS_PER_COLL in Master Host List
+  let COLL_NUM=1
+  let x=0
+  cat ${ALLHOSTLST} | while read hostname ; do
+    if (( $x < ${HOSTS_PER_COLL} )); then
+      echo "${hostname}" >> ${LISTDIR}/Collector_${COLL_NUM}
+      let x="x + 1"
+    else
+      # Start a Slave Collector
+      ${TOPDIR}/bin/run_jadis -H Collector_${COLL_NUM} &
+      # Add to Slave Server List
+      RMSERVERS="${THISHOST}_Collector_${COLL_NUM} ${RMSERVERS}"
+      # reset line counter
+      let x=0
+      # increment Slave Collector counter
+      let COLL_NUM="COLL_NUM + 1"
+read junk      
+    fi
+  done
+  # Start Slave Collector for remaining Hosts
+  ${TOPDIR}/bin/run_jadis -H Collector_${COLL_NUM} &
+  RMSERVERS="${THISHOST}_Collector_${COLL_NUM} ${RMSERVERS}"
+  logwrite "start_collectors plugin complete" 1
+}
+# EOF

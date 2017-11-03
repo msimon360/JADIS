@@ -1,0 +1,17 @@
+#
+# This script pulls Volumn Group info from cfg2html files
+# and outputs a summary
+#
+set -x
+
+HOST=$1
+CFGFILE=`ls -tr /infra/opt/JADIS/data/cfg2html/cfg2html_${HOST}_*html | \
+tail -1`
+
+if [ -r ${CFGFILE} ]; then
+  grep "^Unallocated capac. in Volumegroup" ${CFGFILE} | \
+    cut -d" " -f 5-
+else
+  echo "${CFGFILE} is not readable, exiting"
+fi
+

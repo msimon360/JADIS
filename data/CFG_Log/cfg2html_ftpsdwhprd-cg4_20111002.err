@@ -1,0 +1,137 @@
+which: no hwinfo in (/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/apps/support/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lshw in (/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/apps/support/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/apps/support/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+Disk /dev/sda doesn't contain a valid partition table
+Disk /dev/sdb doesn't contain a valid partition table
+Disk /dev/sdc doesn't contain a valid partition table
+Disk /dev/sdd doesn't contain a valid partition table
+Disk /dev/sde doesn't contain a valid partition table
+Disk /dev/sdf doesn't contain a valid partition table
+Disk /dev/sdg doesn't contain a valid partition table
+Disk /dev/sdh doesn't contain a valid partition table
+Disk /dev/dm-4 doesn't contain a valid partition table
+Disk /dev/dm-5 doesn't contain a valid partition table
+Disk /dev/dm-6 doesn't contain a valid partition table
+Disk /dev/dm-7 doesn't contain a valid partition table
+mount: none already mounted or /proc/bus/usb busy
+mount: according to mtab, usbfs is already mounted on /proc/bus/usb
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+freeglut (./vidmode): failed to open display ''
+Disk /dev/sda doesn't contain a valid partition table
+Disk /dev/sdb doesn't contain a valid partition table
+Disk /dev/sdc doesn't contain a valid partition table
+Disk /dev/sdd doesn't contain a valid partition table
+Disk /dev/sde doesn't contain a valid partition table
+Disk /dev/sdf doesn't contain a valid partition table
+Disk /dev/sdg doesn't contain a valid partition table
+Disk /dev/sdh doesn't contain a valid partition table
+Disk /dev/dm-4 doesn't contain a valid partition table
+Disk /dev/dm-5 doesn't contain a valid partition table
+Disk /dev/dm-6 doesn't contain a valid partition table
+Disk /dev/dm-7 doesn't contain a valid partition table
+hplog: Cannot open /dev/cdt.
+The Health Monitor may not be activated.
+hplog: Unable to open the /dev/cpqhealth/cevt file.
+tar: Removing leading `/' from member names
+/sdc doesn't contain a valid partition table
+    Disk /dev/sdd doesn't contain a valid partition table
+    Disk /dev/sde doesn't contain a valid partition table
+    Disk /dev/sdf doesn't contain a valid partition table
+    Disk /dev/sdg doesn't contain a valid partition table
+    Disk /dev/sdh doesn't contain a valid partition table
+    Disk /dev/dm-4 doesn't contain a valid partition table
+    Disk /dev/dm-5 doesn't contain a valid partition table
+    Disk /dev/dm-6 doesn't contain a valid partition table
+    Disk /dev/dm-7 doesn't contain a valid partition table
+stderr output from "cfg2html_plugin":
+    grep: Xvnc: No such file or directory
+    grep: Xvnc: No such file or directory
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/usr/bin:/bin:/usr/local/bin:/usr/local/sbin:/apps/support/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found

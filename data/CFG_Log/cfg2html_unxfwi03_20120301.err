@@ -1,0 +1,96 @@
+[HP ARIES32]: Core file for 32-bit PA-RISC application
+[HP ARIES32]: 	/opt/cfg2html/plugins/syssmall.hppa saved to /vzenghpux/core.syssmall.hppa.
+Error 0
+cat: Cannot write to output.
+Error 0
+cat: Cannot write to output.
+eminfo.hppa":
+    [HP ARIES32]: Core file for 32-bit PA-RISC application
+    [HP ARIES32]: 	/opt/cfg2html/plugins/meminfo.hppa saved to /vzenghpux/core.meminfo.hppa.
+    exec_command[8]: 22549 Memory fault(coredump)
+stderr output from "osinfo":
+    osinfo error: HTTP Error (500 Internal Server Error).
+stderr output from "/opt/cfg2html/plugins/get_sasinfo.sh":
+    ERROR: No devices connected: Not a typewriter
+    ERROR: No devices connected: Not a typewriter
+stderr output from "/opt/cfg2html/plugins/dumplvmtab.hppa":
+    [HP ARIES32]: Core file for 32-bit PA-RISC application
+    [HP ARIES32]: 	/opt/cfg2html/plugins/dumplvmtab.hppa saved to /vzenghpux/core.dumplvmtab.hppa.
+    exec_command[8]: 25353 Memory fault(coredump)
+stderr output from "vgdisplay -v |grep Name | /opt/cfg2html/plugins/pvgfilter.ia64":
+    /usr/lib/hpux32/dld.so: Unsatisfied data symbol '__iob' in load module '/opt/cfg2html/plugins/pvgfilter.ia64'.
+    /usr/lib/hpux32/dld.so: Unsatisfied data symbol '__iob' in load module '/opt/cfg2html/plugins/pvgfilter.ia64'.
+    exec_command[8]: 25380 Killed
+stderr output from "lvlnboot -v vg00":
+    lvlnboot: Volume group "/dev/vg00" does not exist in the "/etc/lvmtab" file.
+stderr output from "rpcinfo -u 127.0.0.1 100003":
+    rpcinfo: RPC: Rpcbind failure - RPC: Unable to receive
+stderr output from "showmount -a":
+    showmount: unxfwi03: RPC: Rpcbind failure - RPC: Unable to receive
+stderr output from "rpcinfo -p ":
+    rpcinfo: can't contact portmapper: RPC: Rpcbind failure - RPC: Failed (unspecified error)
+20120301 running run_cfg2html.ksh
+
+=======  03/01/12 01:15:00 EST  BEGIN swinstall SESSION
+         (non-interactive) (jobid=unxfwi03-0557)
+
+       * Session started for user "root@unxfwi03".
+         
+       * Beginning Selection
+ERROR:   Internal error.  Unexpected failure in file write.  No space
+         left on device (28).  This error occurred in function
+         "UTIL_RpcSetClientForLocalServer", source file "r_client.c",
+         line 1002.  Please give this information to your
+         Hewlett-Packard support contact.
+ERROR:   "unxfwi03:/":  You do not have the required permissions to
+         select this target.  Check permissions using the "swacl"
+         command or see your system administrator for assistance.  Or,
+         to manage applications designed and packaged for nonprivileged
+         mode, see the "run_as_superuser" option in the "sd" man page.
+       * Target connection failed for "unxfwi03:/".
+ERROR:   More information may be found in the daemon logfile on this
+         target (default location is
+         unxfwi03:/var/adm/sw/swagentd.log).
+       * Selection had errors.
+         
+         
+
+=======  03/01/12 01:15:01 EST  END swinstall SESSION (non-interactive)
+         (jobid=unxfwi03-0557)
+
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Starting          cfg2html/HP-UX version 5.13 on a ia64 hp server rx6600 box
+Path to cfg2Html  /opt/cfg2html/cfg2html_hpux.sh
+Path to plug-ins  /opt/cfg2html/plugins Arch=ia64
+HTML Output File  /var/tmp/unxfwi03.html
+Text Output File  /var/tmp/unxfwi03.txt
+Errors logged to  /var/tmp/unxfwi03.err
+Started at        2012-03-01 01:15:01
+Command line used -o /var/tmp -P
+Problem           If cfg2html hangs on Hardware, press twice ENTER, Ctrl-D or
+                  Crtl-\. Then check your Diagnostics (A.42++ and PHKL_29798)!
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+USE AT YOUR OWN RISK! (for details read /opt/cfg2html/doc/cfg2html.html)
+Online help: run cfg2html_hpux.sh -h for help or look at the ~/doc directory
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+Collecting:  HP-UX/System  .......................
+Collecting:  Hardware  ............Diag...............................................
+Collecting:  Software  .........
+Collecting:  Filesystems, Dump and Swap Configuration  .......
+Collecting:  LVM  .................
+Collecting:  Network Settings/Network Interface Cards  .........
+Collecting:  Network Subsystems  .......................
+Collecting:  Fibre Channel  .....
+Collecting:  Kernel  ..............
+Collecting:  System Enhancements  ......
+Collecting:  Applications And Subsystems  ........
+Collecting:  Symantec Licenses/Symantec Volume Manager (VxVM)  .....
+Collecting:  Custom plugins  ..................
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Completed

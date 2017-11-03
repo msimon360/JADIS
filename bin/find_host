@@ -1,0 +1,42 @@
+#
+# This script looks in source files for a hostname
+#
+#set -x
+hostname=$1
+
+TOP="/infra/opt/JADIS"
+Y=`date +%Y`
+m=`date +%m`
+
+sources="data/asset_mgmt/Asset_mgmt.csv
+data/ITI/ITI_NCDC_${Y}${m}*
+data/Teamsite/NC${Y}${m}*"
+
+source_dirs="data/cfg2html
+data/decom"
+
+cd ${TOP}
+for FN in $sources
+do
+#echo "Checking ${FN}"
+  line=`grep "^${hostname}," ${FN} 2>/dev/null`
+  if [ "${line}x" != "x" ]; then
+    echo ${FN}
+    echo $line
+    echo ""
+  fi
+done
+
+for DIR in $source_dirs
+do
+#echo "Checking ${DIR}"
+  files=`ls ${DIR}/*_${hostname}_* 2>/dev/null`
+  if [ "${files}x" != "x" ]; then
+    echo ${DIR}
+    echo $files
+    echo ""
+  fi
+done
+
+grep "^${hostname}$" lists/sys*
+echo ""

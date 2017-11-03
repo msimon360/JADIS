@@ -1,0 +1,122 @@
+getconf MACHINE_SERIAL: Invalid argument
+grep: can't open (no
+grep: can't open description)
+/opt/cfg2html/cfg2html_hpux.sh[2011]: cmversion:  not found
+/opt/cfg2html/cfg2html_hpux.sh[2045]: 14.:  not found
+/opt/cfg2html/cfg2html_hpux.sh[2045]: syntax error at line 2068 : `then' unexpected
+e Manager is not configured
+stderr output from "/opt/cfg2html/plugins/get_emcluns.sh":
+    EmcInfo[19]: sympd:  not found
+    EmcInfo[35]: symdg:  not found
+stderr output from "/opt/cfg2html/plugins/get_lvm_info.sh":
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgappl01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata02".
+stderr output from "vgdisplay -v":
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgappl01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata02".
+stderr output from "vgdisplay -v |grep Name | /opt/cfg2html/plugins/pvgfilter.hppa":
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgappl01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata01".
+    vgdisplay: Volume group not activated.
+    vgdisplay: Cannot display volume group "/dev/nvgdata02".
+stderr output from "PVDisplay":
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d3":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d4":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Couldn't query the list of physical volumes.
+    pvdisplay: Couldn't retrieve the names of the physical volumes
+    belonging to volume group "/dev/nvgappl01".
+    pvdisplay: Cannot display physical volume "/dev/dsk/c44t3d3".
+    diskinfo: can't open /dev/rdsk/c44t3d3: No such device or address
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d3":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d4":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Couldn't query the list of physical volumes.
+    pvdisplay: Couldn't retrieve the names of the physical volumes
+    belonging to volume group "/dev/nvgappl01".
+    pvdisplay: Cannot display physical volume "/dev/dsk/c44t3d4".
+    diskinfo: can't open /dev/rdsk/c44t3d4: No such device or address
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d5":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Couldn't query the list of physical volumes.
+    pvdisplay: Couldn't retrieve the names of the physical volumes
+    belonging to volume group "/dev/nvgdata01".
+    pvdisplay: Cannot display physical volume "/dev/dsk/c44t3d5".
+    diskinfo: can't open /dev/rdsk/c44t3d5: No such device or address
+    pvdisplay: Warning: couldn't query physical volume "/dev/dsk/c44t3d6":
+    The specified path does not correspond to physical volume attached to 
+     this volume group
+    pvdisplay: Couldn't query the list of physical volumes.
+    pvdisplay: Couldn't retrieve the names of the physical volumes
+    belonging to volume group "/dev/nvgdata02".
+    pvdisplay: Cannot display physical volume "/dev/dsk/c44t3d6".
+    diskinfo: can't open /dev/rdsk/c44t3d6: No such device or address
+stderr output from "get_LIF":
+    /usr/sbin/setboot: illegal option -- v
+    usage: setboot [-p primary_path] [-a alternate_path] [-b on|off] [-s on|off]
+stderr output from "/opt/cfg2html/plugins/get_fcold.sh":
+    could not open device file.: No such file or directory
+    could not open device file.: No such file or directory
+    could not open device file.: No such file or directory
+stderr output from "cmquerycl -v":
+    cmquerycl  : Unable to find any configuration information
+stderr output from "cmviewcl -v":
+    Error: Permission denied to 127.0.0.1
+    cmviewcl  : Cannot view the cluster configuration. Either this node is not configured in a cluster, or else there is some obstacle to viewing the configuration. Check the syslog file for more information.  For a list of possible causes, see the ServiceGuard manual for cmviewcl.
+stderr output from "cmviewconf":
+    cmviewconf: Binary file does not exist.
+stderr output from "cmscancl -s":
+    cmviewconf: Binary file does not exist.
+stderr output from "netstat -inw":
+    netstat: illegal option -- w
+20120301 running run_cfg2html.ksh
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Starting          cfg2html/HP-UX version 3.75a on a 9000/800/L2000-5X box
+Path to cfg2Html  /opt/cfg2html/cfg2html_hpux.sh
+Path to plugins   /opt/cfg2html/plugins
+HTML Output File  /var/tmp/elidcs2.html
+Text Output File  /var/tmp/elidcs2.txt
+Errors logged to  /var/tmp/elidcs2.err
+Started at        2012-03-01 01:15:49
+Commandline used  -o /var/tmp -P
+Problem           If cfg2html hangs on Hardware, press twice ENTER, Ctrl-D or
+                  Crtl-\. Then check your Diagnostics (A.42++ and PHKL_29798)!
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+USE AT YOUR OWN RISK! (see /opt/cfg2html/doc/cfg2html.html)
+Online help: run cfg2html_hpux.sh -h for help or see ~/doc directory
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+Collecting:  HP-UX/System  .........................
+Collecting:  Hardware  .....Diag.........................
+Collecting:  Software  .........
+Collecting:  Filesystems, Dump- and Swapconfiguration  .........
+Collecting:  LVM  ...............
+Collecting:  Network Settings/Network Interface Cards  .........
+Collecting:  Network Subsystems  ..........................
+Collecting:  Fibre Channel  ......
+Collecting:  Kernel  ..........
+Collecting:  Systemenhancements  ...
+Collecting:  Applications And Subsystems  .........
+Collecting:  Veritas Licenses/Veritas Volume Manager (VxVM)  .
+Collecting:  Serviceguard ()  .........Completed

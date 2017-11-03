@@ -1,0 +1,312 @@
+2011-10-24 - 01:15:01 Cfg2Html -AIX- Version 2.72
+2011-10-24 - 01:15:01 User...: root
+2011-10-24 - 01:15:01 ProcID.: 491702
+2011-10-24 - 01:15:01 TERM...: dumb
+2011-10-24 - 01:15:01 MYSELF.: /infra/opt/cfg2html/bin/cfg2html
+2011-10-24 - 01:15:01 PLUGINS: /infra/opt/cfg2html/bin/plugins
+2011-10-24 - 01:15:07 OSLEVEL_R=5200-10
+2011-10-24 - 01:15:07 You are at TECHNOLOGY  LEVEL 10
+2011-10-24 - 01:15:08 Node...: webftwp01b
+2011-10-24 - 01:15:09 C2H020I ulimit -d is set to 'unlimited'. No action required.
+2011-10-24 - 01:15:09 C2H021I ulimit -c is 2097151
+2011-10-24 - 01:15:09 C2H021I ulimit -f is unlimited
+2011-10-24 - 01:15:09 C2H021I ulimit -m is unlimited
+2011-10-24 - 01:15:09 C2H021I ulimit -n is 2000
+2011-10-24 - 01:15:09 C2H021I ulimit -s is 32768
+2011-10-24 - 01:15:09 C2H021I ulimit -t is unlimited
+2011-10-24 - 01:15:09 DT-0 2011-10-24 - 01:15:09
+2011-10-24 - 01:15:10 : PROC_Type=PowerPC_POWER5
+2011-10-24 - 01:15:10 : POWER5=YES
+2011-10-24 - 01:15:10 : POWER6=NO
+2011-10-24 - 01:15:13 : SysModel=IBM,9113-550
+2011-10-24 - 01:15:17 : PROC_Type2=PowerPC_POWER5
+2011-10-24 - 01:15:18 : CPU_Type=64-bit
+2011-10-24 - 01:15:18 : KERNEL_Type=64-bit
+2011-10-24 - 01:15:18 : 64BIT=YES
+2011-10-24 - 01:15:18 DT-1 2011-10-24 - 01:15:18
+2011-10-24 - 01:15:18 C2H100I RSCT installed: 2.3.11.0
+2011-10-24 - 01:15:19 C2H101W CSM NOT installed RC=1
+2011-10-24 - 01:15:19 DT-2 2011-10-24 - 01:15:19
+========================================================================================================================
+stderr output from "prtconf":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+2011-10-24 - 01:15:31 %%% multiproc %%%%%%%%%
+2011-10-24 - 01:15:31 %%% multiproc %%%%%%%%%
+2011-10-24 - 01:15:33 %%% w ; sar %%%%%%%%%
+2011-10-24 - 01:15:34 %%% w ; sar %%%%%%%%%
+2011-10-24 - 01:15:35 C2H201I SUMA NOT available
+2011-10-24 - 01:15:36 : vmtune **
+2011-10-24 - 01:15:36 C2H903I package for cmd 'vmtune' not set.
+2011-10-24 - 01:15:36 C2H904I lslpp shows 'bos.adt.samples'.
+========================================================================================================================
+stderr output from "lspv | grep -v none | awk '{print }' | while read hd ;       do lspv $hd; echo $SEP90; done | uniq | sed '$d'":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+========================================================================================================================
+stderr output from "lspv | grep -v none | awk '{print }' | while read hd ;       do lspv -p $hd; echo $SEP100; done | uniq | sed '$d'":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+========================================================================================================================
+stderr output from "lsvg | while read i; do      lsvg -l $i; echo $SEP80; done | uniq | sed '$d'":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+========================================================================================================================
+stderr output from "PrtLayout":
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+ 
+========================================================================================================================
+stderr output from "PrintLVM":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+========================================================================================================================
+stderr output from "nfso -a":
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local lockd.
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local statd.
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local statd.
+ 
+2011-10-24 - 01:17:13 C2H101W NIS n/a or not configured!
+2011-10-24 - 01:17:18 C2H260W File 'dsm.sys' NOT Found.
+========================================================================================================================
+stderr output from "ls -al /var/log/*":
+    ls: 0653-341 The file /var/log/* does not exist.
+ 
+2011-10-24 - 01:17:42 C2H221I This system is a NIM Client
+2011-10-24 - 01:17:42 C2H101W i4cfg NOT FOUND
+2011-10-24 - 01:17:42 %%% APACHE %%%%%%%%%
+2011-10-24 - 01:17:43 %%% APACHE %%%%%%%%%
+2011-10-24 - 01:17:43 %%% SAMBA %%%%%%%%%
+2011-10-24 - 01:17:43 %%% SAMBA %%%%%%%%%
+2011-10-24 - 01:17:43 C2H080I file "/etc/oratab" found. Looks like you are using Oracle.
+2011-10-24 - 01:17:43 :---------------------------------------
+2011-10-24 - 01:17:43 EXP 001
+2011-10-24 - 01:17:43 :---------------------------------------
+2011-10-24 - 01:17:43 : EXPERIMENTAL
+2011-10-24 - 01:17:43 C2H704I Plugin 'c2h_plugin_0' has EXECUTE Bit ON.
+2011-10-24 - 01:17:43 C2H706I START Plugin 'c2h_plugin_0'.
+2011-10-24 - 01:17:44 C2H903I package for cmd 'c2h_plugin_0' not set.
+2011-10-24 - 01:17:44 C2H904I lslpp shows ''.
+2011-10-24 - 01:17:46 C2H707I END   Plugin 'c2h_plugin_0'.
+2011-10-24 - 01:17:49 C2H903I package for cmd 'aioo' not set.
+2011-10-24 - 01:17:49 C2H904I lslpp shows 'bos.rte.aio'.
+2011-10-24 - 01:17:52 C2H101W HOSTATTACHMENT NOT installed RC=1
+2011-10-24 - 01:17:52 C2H253I neither SDD nor SDDPCM installed
+2011-10-24 - 01:17:52 ...checking for IBM ESS
+2011-10-24 - 01:17:53 ...checking for FAStT
+2011-10-24 - 01:17:53 ...checking for EMC/Powerpath
+2011-10-24 - 01:17:54 ...checking for Veritas
+2011-10-24 - 01:17:54 C2H103I Veritas - Don't know how to check ! Please help.
+2011-10-24 - 01:17:54 ...checking for HACMP
+2011-10-24 - 01:17:54 C2H903I package for cmd 'cltopinfo' not set.
+2011-10-24 - 01:17:54 C2H904I lslpp shows 'cluster.es.server.utils'.
+2011-10-24 - 01:17:55 C2H903I package for cmd 'cldump' not set.
+2011-10-24 - 01:17:55 C2H904I lslpp shows 'cluster.es.server.utils'.
+2011-10-24 - 01:17:56 %%% gcc %%%%%%%%%
+2011-10-24 - 01:17:56 : gcc not found wx=
+2011-10-24 - 01:17:56 %%% gcc %%%%%%%%%
+2011-10-24 - 01:17:57 EXP 994
+2011-10-24 - 01:17:57 EXP 995
+2011-10-24 - 01:17:59 C2H040I CMD 'pmcycles' not found in path.
+2011-10-24 - 01:17:59 C2H041I You need to install package 'bos.pmapi.tools' to use cmd 'pmcycles'
+2011-10-24 - 01:17:59 C2H043I CMD 'pmcycles' NOT EXECUTED!
+2011-10-24 - 01:18:00 EXP 996
+2011-10-24 - 01:18:00 AWINFO=<
+2011-10-24 - 01:18:00 AWINFO=DUMMY<
+2011-10-24 - 01:18:00 File DUMMY NOT Found<
+2011-10-24 - 01:18:00 EXP 997
+2011-10-24 - 01:18:01 EXP 998
+2011-10-24 - 01:18:02 :---------------------------------------
+2011-10-24 - 01:18:02 EXP 999
+2011-10-24 - 01:18:02 C2H101W HP OpenView not installed.
+2011-10-24 - 01:18:02 :---------------------------------------
+2011-10-24 - 01:18:02 JAVA 001
+2011-10-24 - 01:18:02 :---------------------------------------
+2011-10-24 - 01:18:02 : JAVA
+2011-10-24 - 01:18:02 FIX=IY96843 RC=0 TXT=Java 1.4.2 32-Bit Update 1.4.2.150 SR8
+2011-10-24 - 01:18:03 J5_32=<
+2011-10-24 - 01:18:03 J5_64=5.0.0.75<
+2011-10-24 - 01:18:04 : JAVA_131_32=NO => UNSUPPORTED
+2011-10-24 - 01:18:04 : JAVA_131_64=NO => UNSUPPORTED
+2011-10-24 - 01:18:04 : JAVA_141_32=NO => UNSUPPORTED
+2011-10-24 - 01:18:04 : JAVA_142_32=YES               
+2011-10-24 - 01:18:04 : JAVA_142_64=NO               
+2011-10-24 - 01:18:04 : JAVA_500_32=NO               
+2011-10-24 - 01:18:04 : JAVA_500_64=YES               
+2011-10-24 - 01:18:04 : JAVA_600_32=NO               
+2011-10-24 - 01:18:05 : JAVA_600_64=NO               
+2011-10-24 - 01:18:05 JAVA 998
+2011-10-24 - 01:18:05 :---------------------------------------
+2011-10-24 - 01:18:05 JAVA 999
+========================================================================================================================
+C2H950I now performing cleanup...(1)
+ps -ef
+ls -la /tmp/c2h/awaw_491702
+C2H090I Duration in seconds: 184
+C2H091I Runtime 00:03:04
+20111024 running run_cfg2html.ksh
+error: skipping http://138.83.10.169/tools/FTR_cfg2html.rpm - transfer failed - Unknown or unexpected error
+Retrieving http://138.83.10.169/tools/FTR_cfg2html.rpm
+No output file found, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+Starting up Cfg2Html -AIX- Version 2.72
+
+  >> Use option '[-x]' for 'Extended' output <<
+
+2011-10-24 - 01:15:01 AW000I OUTDIR=/var/tmp
+2011-10-24 - 01:15:01 AW000I OUTDIR_ENV=
+2011-10-24 - 01:15:01 AW000I TERM=dumb
+2011-10-24 - 01:15:01 AW000I LANG=en_US
+2011-10-24 - 01:15:01 AW000I DISPLAY=
+AWTRACE: CBR 003  (run-once) MYSELF=/infra/opt/cfg2html/bin/cfg2html 0=/infra/opt/cfg2html/bin/cfg2html B= P=491702
+    root  491702  766048   2 01:15:00      -  0:00 /bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e 
+AWTRACE: CBR 004 B= P=491702
+C2H070I aquired lock; continuing
+AWTRACE: CBR 005  491702
+AWTRACE: CCC 001 ls
+AWTRACE: CCC 002 rm
+AWTRACE: CCC 003 xx
+2011-10-24 - 01:15:01 Cfg2Html -AIX- Version 2.72
+
+C2H034W ATTENTION: Version 2.72 of this script is the last to support AIX 5.2 !
+
+C2H035I Note: This Version of AIX has NOT been testet with this version of the script !
+
+WARNING NOT TESTESD ON AIX 5.2
+AWTRACE: CBR 999
+2011-10-24 - 01:15:13 : PRTCONF1
+2011-10-24 - 01:15:17 : PRTCONF2
+lslpp: 0504-132  Fileset csm.core not installed.
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+Starting........: Cfg2Html -AIX- Version 2.72 on an AIX box
+Path to Cfg2Html: /infra/opt/cfg2html/bin/cfg2html
+Path to plugins.: /infra/opt/cfg2html/bin/plugins
+Node............: webftwp01b
+SysModel........: IBM,9113-550
+OSLevel.........: 5200-10
+ServicePac......: 5200-10-07-0902
+User............: root
+ProcessID.......: 491702
+HTML Output File: ///var/tmp/webftwp01b.html
+Text Output File: ///var/tmp/webftwp01b.txt
+Errors logged to: ///var/tmp/webftwp01b.err
+Started at......: 2011-10-24 - 01:15:01
+Commandline used: -o /var/tmp -e
+Problem         : If Cfg2Html hangs on Hardware, press twice ENTER
+                  or Ctrl-D. Then check or update your Diagnostics!
+WARNING.........: USE AT YOUR OWN RISK!!! :-))
+License.........: Freeware
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+
+-=[ Run-Collection ]=-
+
+
+Collecting: AIX/System .....................................
+Collecting: Kernel .................
+Collecting: Hardware ....
+Collecting: Filesystems, Dump- and Paging-configuration ..................
+Collecting: Devices .......0516-010 : Volume group must be varied on; use varyonvg command.
+..0516-010 : Volume group must be varied on; use varyonvg command.
+....
+Collecting: LVM ......0516-010 : Volume group must be varied on; use varyonvg command.
+0516-010 : Volume group must be varied on; use varyonvg command.
+.
+Collecting: Users & Groups ..........
+Collecting: Network Settings ....................
+Collecting: Disk Quota .
+Collecting: Current Fragmentation State .
+Collecting: Cron and At .....
+Collecting: Password and Group .
+Collecting: Software .......
+Collecting: Files ....................................................
+Collecting: NIM - Network Installation Management .
+Collecting: LUM - License Use Manager ...
+Collecting: APPLICATIONS .
+Collecting: EXPERIMENTAL .
+== PLUGIN 0 ==
+.
+== lsslot ==
+...
+== aio ==
+.....
+== SDD/SDDPCM ==
+..
+== IBM ESS ==
+...
+== FAStT ==
+
+== EMC PowerPath ==
+.
+== HACMP ==
+..
+== gcc ==
+.......
+== AWINFO-v ==
+
+== AWINFO-n ==
+....
+Collecting: HP OpenView .
+Collecting: JAVA .
+== JAVA ==
+
+== Java 1.4.2 32-Bit==
+C2H803W Note: You are running a 64-Bit Kernel but your Java is 32-Bit
+C2H809I Consider installing 64-Bit Version of Java 1.4.2
+
+== check Fixes for Java 1.4.2 32-Bit ==
+Instfix RC=249 ==> FIX (IZ23124) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.225 SR11)
+Instfix RC=249 ==> FIX (IZ14148) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.200 SR10)
+Instfix RC=249 ==> FIX (IZ01176) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.175 SR9)
+
+== Java 1.4.2 64-Bit==
+
+== Java 5.0.0 32-Bit==
+
+== Java 5.0.0 64-Bit==
+
+== check Fixes for Java 5.0.0 64-Bit ==
+Instfix RC=249 ==> FIX (IZ18003) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.175 SR7)
+Instfix RC=249 ==> FIX (IZ07646) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.160 SR6)
+Instfix RC=249 ==> FIX (IZ02875) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.130 SR5a)
+Instfix RC=249 ==> FIX (IY98586) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.125 SR5)
+Instfix RC=249 ==> FIX (IY94335) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.100 SR4)
+Instfix RC=249 ==> FIX (IY90295) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.75 SR3)
+Instfix RC=249 ==> FIX (IY84055) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.50 SR2)
+Instfix RC=249 ==> FIX (IY82254) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.25 SR1)
+Instfix RC=249 ==> FIX (IY80650) NOT Installed ! (TXT=Java 5.0.0 64-Bit Update 5.0.0.10 n/a)
+
+== Java 32/64-Bit==
+
+== Java version==
+..
+
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+C2H950I now performing cleanup...(1)
+2011-10-24 - 01:18:05 PROCID=491702
+    root  491702  766048  58 01:15:00      -  0:29 /bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e 
+======
+======
+ls -la /tmp/c2h/awaw_491702
+C2H090I Duration in seconds: 184
+C2H091I Runtime 00:03:04
+Finished Cfg2Html -AIX- Version 2.72 at 2011-10-24 - 01:18:05. RC=0
+Completed

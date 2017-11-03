@@ -1,0 +1,332 @@
+2011-10-24 - 01:15:05 Cfg2Html -AIX- Version 2.72
+2011-10-24 - 01:15:05 User...: root
+2011-10-24 - 01:15:05 ProcID.: 70256
+2011-10-24 - 01:15:05 TERM...: dumb
+2011-10-24 - 01:15:05 MYSELF.: /infra/opt/cfg2html/bin/cfg2html
+2011-10-24 - 01:15:05 PLUGINS: /infra/opt/cfg2html/bin/plugins
+2011-10-24 - 01:15:14 OSLEVEL_R=5200-05
+2011-10-24 - 01:15:15 You are at MAINTENANCE LEVEL 05
+2011-10-24 - 01:15:15 Node...: rcfwsp03
+2011-10-24 - 01:15:16 C2H020I ulimit -d was 131072 now set to 524288
+2011-10-24 - 01:15:16 C2H021I ulimit -c is 2048
+2011-10-24 - 01:15:16 C2H021I ulimit -f is unlimited
+2011-10-24 - 01:15:16 C2H021I ulimit -m is 32768
+2011-10-24 - 01:15:16 C2H021I ulimit -n is 2000
+2011-10-24 - 01:15:16 C2H021I ulimit -s is 32768
+2011-10-24 - 01:15:17 C2H021I ulimit -t is unlimited
+2011-10-24 - 01:15:17 DT-0 2011-10-24 - 01:15:17
+2011-10-24 - 01:15:18 : PROC_Type=PowerPC_RS64-II
+2011-10-24 - 01:15:18 : POWER5=NO
+2011-10-24 - 01:15:18 : POWER6=NO
+2011-10-24 - 01:15:23 : SysModel=IBM,7026-H70
+2011-10-24 - 01:15:28 : PROC_Type2=PowerPC_RS64-II
+2011-10-24 - 01:15:29 : CPU_Type=64-bit
+2011-10-24 - 01:15:30 : KERNEL_Type=32-bit
+2011-10-24 - 01:15:30 : 64BIT=NO
+
+C2H051W Warning ! You are running a 32-bit-Kernel on a 64-bit-CPU !
+2011-10-24 - 01:15:30 DT-1 2011-10-24 - 01:15:30
+2011-10-24 - 01:15:31 C2H100I RSCT installed: 2.3.5.0
+2011-10-24 - 01:15:31 C2H100I CSM installed: 1.4.0.13
+2011-10-24 - 01:15:31 DT-2 2011-10-24 - 01:15:31
+2011-10-24 - 01:15:52 %%% multiproc %%%%%%%%%
+2011-10-24 - 01:15:52 %%% multiproc %%%%%%%%%
+2011-10-24 - 01:15:58 %%% w ; sar %%%%%%%%%
+2011-10-24 - 01:16:00 %%% w ; sar %%%%%%%%%
+2011-10-24 - 01:16:04 C2H201I SUMA NOT available
+2011-10-24 - 01:16:08 
+C2H005W CMD 'vmtune' not found.
+2011-10-24 - 01:16:08 C2H043I CMD '/usr/samples/kernel/vmtune' NOT EXECUTED!
+========================================================================================================================
+stderr output from "lsrsrc":
+    2610-601 A severe library or system error occurred in ../../../../../src/rsct/rmc/rmcapi/mc_i18n.c, 1.6, at line 185.
+ 
+========================================================================================================================
+stderr output from "lspv | grep -v none | awk '{print }' | while read hd ;       do lspv $hd; echo $SEP90; done | uniq | sed '$d'":
+    0516-320 : Physical volume hdisk2 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume hdisk4 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume hdisk5 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume hdiskpower2 is not assigned to
+    	a volume group.
+ 
+========================================================================================================================
+stderr output from "lspv | grep -v none | awk '{print }' | while read hd ;       do lspv -p $hd; echo $SEP100; done | uniq | sed '$d'":
+    0516-320 : Physical volume 00009575d598a3fd0000000000000000 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume 00009575af53ca1b0000000000000000 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume 00009575093fecfb0000000000000000 is not assigned to
+    	a volume group.
+    0516-320 : Physical volume 00009575dfd327720000000000000000 is not assigned to
+    	a volume group.
+ 
+========================================================================================================================
+stderr output from "PrtLayout":
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+    expr: 0402-046 A specified operator requires numeric parameters.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_1.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_2.
+    cat: 0652-050 Cannot open /tmp/c2h/PV_3.
+ 
+========================================================================================================================
+stderr output from "nfso -a":
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local lockd.
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local statd.
+    RPC: 1832-011 Program unavailable: nfso: cannot contact local statd.
+ 
+2011-10-24 - 01:24:05 C2H101W NIS n/a or not configured!
+2011-10-24 - 01:24:23 C2H260W File 'dsm.sys' NOT Found.
+2011-10-24 - 01:25:37 C2H221I This system is a NIM Client
+2011-10-24 - 01:25:41 C2H101W i4cfg NOT FOUND
+2011-10-24 - 01:25:44 %%% APACHE %%%%%%%%%
+2011-10-24 - 01:25:44 %%% APACHE %%%%%%%%%
+2011-10-24 - 01:25:44 %%% SAMBA %%%%%%%%%
+2011-10-24 - 01:25:45 %%% SAMBA %%%%%%%%%
+2011-10-24 - 01:25:45 C2H080I file "/etc/oratab" found. Looks like you are using Oracle.
+2011-10-24 - 01:25:45 :---------------------------------------
+2011-10-24 - 01:25:45 EXP 001
+2011-10-24 - 01:25:45 :---------------------------------------
+2011-10-24 - 01:25:46 : EXPERIMENTAL
+2011-10-24 - 01:25:46 C2H704I Plugin 'c2h_plugin_0' has EXECUTE Bit ON.
+2011-10-24 - 01:25:46 C2H706I START Plugin 'c2h_plugin_0'.
+2011-10-24 - 01:25:48 C2H903I package for cmd 'c2h_plugin_0' not set.
+2011-10-24 - 01:25:48 C2H904I lslpp shows ''.
+========================================================================================================================
+stderr output from "/infra/opt/cfg2html/bin/plugins/c2h_plugin_0":
+    cat: 0652-050 Cannot open /usr/openv/netbackup/exclude*.
+ 
+2011-10-24 - 01:25:59 C2H707I END   Plugin 'c2h_plugin_0'.
+2011-10-24 - 01:26:09 C2H903I package for cmd 'aioo' not set.
+2011-10-24 - 01:26:09 C2H904I lslpp shows 'bos.rte.aio'.
+2011-10-24 - 01:26:16 C2H101W HOSTATTACHMENT NOT installed RC=1
+2011-10-24 - 01:26:16 C2H253I neither SDD nor SDDPCM installed
+2011-10-24 - 01:26:17 ...checking for IBM ESS
+2011-10-24 - 01:26:22 ...checking for FAStT
+2011-10-24 - 01:26:22 ...checking for EMC/Powerpath
+2011-10-24 - 01:26:24 ...checking for Veritas
+2011-10-24 - 01:26:24 C2H103I Veritas - Don't know how to check ! Please help.
+2011-10-24 - 01:26:24 ...checking for HACMP
+2011-10-24 - 01:26:24 C2H101W HACMP cltopinfo Not Found !
+2011-10-24 - 01:26:24 %%% gcc %%%%%%%%%
+2011-10-24 - 01:26:25 : gcc not found wx=
+2011-10-24 - 01:26:25 %%% gcc %%%%%%%%%
+2011-10-24 - 01:26:25 EXP 994
+2011-10-24 - 01:26:26 C2H040I CMD 'proctree' not found in path.
+2011-10-24 - 01:26:26 C2H041I You need to install package 'bos.rte.commands' to use cmd 'proctree'
+2011-10-24 - 01:26:27 C2H043I CMD 'proctree' NOT EXECUTED!
+2011-10-24 - 01:26:28 C2H040I CMD 'proctree' not found in path.
+2011-10-24 - 01:26:28 C2H041I You need to install package 'bos.rte.commands' to use cmd 'proctree'
+2011-10-24 - 01:26:28 C2H043I CMD 'proctree' NOT EXECUTED!
+2011-10-24 - 01:26:28 EXP 995
+2011-10-24 - 01:26:33 C2H040I CMD 'pmcycles' not found in path.
+2011-10-24 - 01:26:33 C2H041I You need to install package 'bos.pmapi.tools' to use cmd 'pmcycles'
+2011-10-24 - 01:26:34 C2H043I CMD 'pmcycles' NOT EXECUTED!
+2011-10-24 - 01:26:35 EXP 996
+2011-10-24 - 01:26:36 AWINFO=<
+2011-10-24 - 01:26:36 AWINFO=DUMMY<
+2011-10-24 - 01:26:36 File DUMMY NOT Found<
+2011-10-24 - 01:26:37 EXP 997
+2011-10-24 - 01:26:42 EXP 998
+2011-10-24 - 01:26:42 :---------------------------------------
+2011-10-24 - 01:26:42 EXP 999
+2011-10-24 - 01:26:43 C2H101W HP OpenView not installed.
+2011-10-24 - 01:26:43 :---------------------------------------
+2011-10-24 - 01:26:43 JAVA 001
+2011-10-24 - 01:26:43 :---------------------------------------
+2011-10-24 - 01:26:43 : JAVA
+2011-10-24 - 01:26:46 J5_32=<
+2011-10-24 - 01:26:46 J5_64=<
+2011-10-24 - 01:26:47 C2H040I CMD 'java' not found in path.
+2011-10-24 - 01:26:48 C2H041I You need to install package '*java' to use cmd 'java'
+2011-10-24 - 01:26:48 C2H043I CMD 'java' NOT EXECUTED!
+2011-10-24 - 01:26:49 C2H040I CMD 'java' not found in path.
+2011-10-24 - 01:26:49 C2H041I You need to install package '*java' to use cmd 'java'
+2011-10-24 - 01:26:49 C2H043I CMD 'java' NOT EXECUTED!
+2011-10-24 - 01:26:49 : JAVA_131_32=NO => UNSUPPORTED
+2011-10-24 - 01:26:50 : JAVA_131_64=NO => UNSUPPORTED
+2011-10-24 - 01:26:50 : JAVA_141_32=NO => UNSUPPORTED
+2011-10-24 - 01:26:50 : JAVA_142_32=YES               
+2011-10-24 - 01:26:50 : JAVA_142_64=NO               
+2011-10-24 - 01:26:50 : JAVA_500_32=NO               
+2011-10-24 - 01:26:50 : JAVA_500_64=NO               
+2011-10-24 - 01:26:51 : JAVA_600_32=NO               
+2011-10-24 - 01:26:51 : JAVA_600_64=NO               
+2011-10-24 - 01:26:51 JAVA 998
+2011-10-24 - 01:26:51 :---------------------------------------
+2011-10-24 - 01:26:51 JAVA 999
+========================================================================================================================
+C2H950I now performing cleanup...(1)
+ps -ef
+ls -la /tmp/c2h/awaw_70256
+C2H090I Duration in seconds: 711
+C2H091I Runtime 00:11:51
+20111024 running run_cfg2html.ksh
+error: skipping http://138.83.10.169/tools/FTR_cfg2html.rpm - transfer failed - Unknown or unexpected error
+Retrieving http://138.83.10.169/tools/FTR_cfg2html.rpm
+No output file found, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+Starting up Cfg2Html -AIX- Version 2.72
+
+  >> Use option '[-x]' for 'Extended' output <<
+
+2011-10-24 - 01:15:04 AW000I OUTDIR=/var/tmp
+2011-10-24 - 01:15:04 AW000I OUTDIR_ENV=
+2011-10-24 - 01:15:04 AW000I TERM=dumb
+2011-10-24 - 01:15:04 AW000I LANG=en_US
+2011-10-24 - 01:15:04 AW000I DISPLAY=
+AWTRACE: CBR 003  (run-once) MYSELF=/infra/opt/cfg2html/bin/cfg2html 0=/infra/opt/cfg2html/bin/cfg2html B= P=70256
+    root 70256 76314  11 01:15:01      -  0:00 /bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e 
+AWTRACE: CBR 004 B= P=70256
+C2H070I aquired lock; continuing
+AWTRACE: CBR 005  70256
+AWTRACE: CCC 001 ls
+AWTRACE: CCC 002 rm
+AWTRACE: CCC 003 xx
+2011-10-24 - 01:15:05 Cfg2Html -AIX- Version 2.72
+
+C2H034W ATTENTION: Version 2.72 of this script is the last to support AIX 5.2 !
+
+C2H035I Note: This Version of AIX has NOT been testet with this version of the script !
+
+WARNING NOT TESTESD ON AIX 5.2
+AWTRACE: CBR 999
+2011-10-24 - 01:15:23 : PRTCONF1
+2011-10-24 - 01:15:28 : PRTCONF2
+
+C2H051W Warning ! You are running a 32-bit-Kernel on a 64-bit-CPU !
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+Starting........: Cfg2Html -AIX- Version 2.72 on an AIX box
+Path to Cfg2Html: /infra/opt/cfg2html/bin/cfg2html
+Path to plugins.: /infra/opt/cfg2html/bin/plugins
+Node............: rcfwsp03
+SysModel........: IBM,7026-H70
+OSLevel.........: 5200-05
+User............: root
+ProcessID.......: 70256
+HTML Output File: ///var/tmp/rcfwsp03.html
+Text Output File: ///var/tmp/rcfwsp03.txt
+Errors logged to: ///var/tmp/rcfwsp03.err
+Started at......: 2011-10-24 - 01:15:02
+Commandline used: -o /var/tmp -e
+Problem         : If Cfg2Html hangs on Hardware, press twice ENTER
+                  or Ctrl-D. Then check or update your Diagnostics!
+WARNING.........: USE AT YOUR OWN RISK!!! :-))
+License.........: Freeware
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+
+-=[ Run-Collection ]=-
+
+
+Collecting: AIX/System ..................................
+Collecting: Kernel ................
+Collecting: Hardware ....
+Collecting: Filesystems, Dump- and Paging-configuration ..................
+Collecting: Devices .............
+Collecting: LVM .......
+Collecting: Users & Groups ..........
+Collecting: Network Settings ....................
+Collecting: Disk Quota .
+Collecting: Current Fragmentation State .
+Collecting: Cron and At .....
+Collecting: Password and Group .
+Collecting: Software .......
+Collecting: Files ....................................................
+Collecting: NIM - Network Installation Management .
+Collecting: LUM - License Use Manager ......
+Collecting: APPLICATIONS .
+Collecting: EXPERIMENTAL .
+== PLUGIN 0 ==
+.
+== lsslot ==
+...
+== aio ==
+.....
+== SDD/SDDPCM ==
+..
+== IBM ESS ==
+...
+== FAStT ==
+
+== EMC PowerPath ==
+.
+== HACMP ==
+
+== gcc ==
+.......
+== AWINFO-v ==
+
+== AWINFO-n ==
+....
+Collecting: HP OpenView .
+Collecting: JAVA .
+== JAVA ==
+
+== Java 1.4.2 32-Bit==
+
+== check Fixes for Java 1.4.2 32-Bit ==
+Instfix RC=249 ==> FIX (IZ23124) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.225 SR11)
+Instfix RC=249 ==> FIX (IZ14148) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.200 SR10)
+Instfix RC=249 ==> FIX (IZ01176) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.175 SR9)
+Instfix RC=249 ==> FIX (IY96843) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.150 SR8)
+Instfix RC=249 ==> FIX (IY91756) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.125 SR7)
+Instfix RC=249 ==> FIX (IY88395) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update 1.4.2.100 SR6)
+Instfix RC=249 ==> FIX (IY84053) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update SR5)
+Instfix RC=249 ==> FIX (IY81443) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update SR4 (REPACKAGED !!))
+Instfix RC=249 ==> FIX (IY77460) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update SR4 (BAD !!))
+Instfix RC=249 ==> FIX (IY75003) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update SR3)
+Instfix RC=249 ==> FIX (IY72469) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update SR2)
+Instfix RC=249 ==> FIX (IY70052) NOT Installed ! (TXT=Java 1.4.2 32-Bit Update)
+Instfix RC=249 ==> FIX (IY54663) NOT Installed ! (TXT=Java 1.4.2 32-Bit Base)
+
+== Java 1.4.2 64-Bit==
+
+== Java 5.0.0 32-Bit==
+
+== Java 5.0.0 64-Bit==
+
+== Java 32/64-Bit==
+
+== Java version==
+..
+
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+C2H950I now performing cleanup...(1)
+2011-10-24 - 01:26:52 PROCID=70256
+    root 70256 76314  73 01:15:01      -  1:41 /bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e 
+======
+======
+ls -la /tmp/c2h/awaw_70256
+C2H090I Duration in seconds: 711
+C2H091I Runtime 00:11:51
+Finished Cfg2Html -AIX- Version 2.72 at 2011-10-24 - 01:26:54. RC=0
+Completed

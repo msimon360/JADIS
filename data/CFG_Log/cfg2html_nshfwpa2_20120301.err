@@ -1,0 +1,85 @@
+/opt/cfg2html/plugins/get_ministat.sh[47]: 6549 Memory fault(coredump)
+stderr output from "ps -efP":
+    ps: Process Resource Manager is not configured
+stderr output from "/opt/cfg2html/plugins/getpwd.hppa":
+    exec_command[8]: 6810 Memory fault(coredump)
+stderr output from "/opt/cfg2html/plugins/getpwd.hppa -g":
+    exec_command[8]: 6819 Memory fault(coredump)
+stderr output from "echo Total Memory:  GB;echo '';/opt/cfg2html/plugins/meminfo.hppa":
+    exec_command[8]: 6839 Memory fault(coredump)
+stderr output from "/usr/sbin/icapmanage -sv":
+    CIM_ERR_INVALID_CLASS: HP_GiCAPManager
+stderr output from "/opt/cfg2html/plugins/dumplvmtab.hppa":
+    exec_command[8]: 13761 Memory fault(coredump)
+stderr output from "vgdisplay -v |grep Name | /opt/cfg2html/plugins/pvgfilter.hppa":
+    exec_command[8]: 13788 Memory fault(coredump)
+stderr output from "lvlnboot -v vg00":
+    lvlnboot: Volume group "/dev/vg00" does not exist in the "/etc/lvmtab" file.
+stderr output from "rpcinfo -u 127.0.0.1 100003":
+    rpcinfo: RPC: Program not registered
+stderr output from "showmount -a":
+    showmount: nshfwpa2: RPC: Program not registered
+stderr output from "/opt/samba/bin/testparm -s":
+    Load smb config files from /etc/opt/samba/smb.conf
+    Processing section "[homes]"
+    Processing section "[tmp]"
+    Loaded services file OK.
+    ERROR: netbios name can be at most 15 chars long, <THIS MACHINES NETBIOS NAME> is 28 chars long. Please correct it.
+    Server role: ROLE_DOMAIN_MEMBER
+stderr output from "su - informix -c "echo Informix Home="":
+    ttytype: couldn't open /dev/tty for reading
+    stty: : Not a typewriter
+    Not a terminal
+    stty: : Not a typewriter
+    stty: : Not a typewriter
+    ${HOME:-.}/.profile[22]: TERM: parameter not set
+stderr output from "su - informix -c "onstat -d"":
+    ttytype: couldn't open /dev/tty for reading
+    stty: : Not a typewriter
+    Not a terminal
+    stty: : Not a typewriter
+    stty: : Not a typewriter
+    ${HOME:-.}/.profile[22]: TERM: parameter not set
+    ksh: onstat:  not found
+20120301 running run_cfg2html.ksh
+ERROR:   "nshfwpa2:/":  The software dependencies for 1 products or
+         filesets cannot be resolved.
+Found hung process 6218 , killing
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Starting          cfg2html/HP-UX version 5.13 on a 9000/800/L3000-7x box
+Path to cfg2Html  /opt/cfg2html/cfg2html_hpux.sh
+Path to plug-ins  /opt/cfg2html/plugins Arch=hppa
+HTML Output File  /var/tmp/nshfwpa2_20120301.html
+Text Output File  /var/tmp/nshfwpa2_20120301.txt
+Errors logged to  /var/tmp/nshfwpa2_20120301.err
+Started at        2012-03-01 01:17:15
+Command line used -o /var/tmp -2%Y%m%d -P
+Problem           If cfg2html hangs on Hardware, press twice ENTER, Ctrl-D or
+                  Crtl-\. Then check your Diagnostics (A.42++ and PHKL_29798)!
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+USE AT YOUR OWN RISK! (for details read /opt/cfg2html/doc/cfg2html.html)
+Online help: run cfg2html_hpux.sh -h for help or look at the ~/doc directory
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+Collecting:  HP-UX/System  ........................
+Collecting:  Hardware  .....Diag..............................................
+Collecting:  Software  .........
+Collecting:  Filesystems, Dump and Swap Configuration  ........
+Collecting:  LVM  ................
+Collecting:  Network Settings/Network Interface Cards  .........
+Collecting:  Network Subsystems  ............................
+Collecting:  Fibre Channel  .......
+Collecting:  Kernel  ..............
+Collecting:  System Enhancements  ......
+Collecting:  Applications And Subsystems  .............
+Collecting:  Symantec Licenses/Symantec Volume Manager (VxVM)  .....
+Collecting:  Oracle  ..
+Collecting:  Informix  ...
+Collecting:  Custom plugins  .................
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Completed

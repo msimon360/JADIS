@@ -1,0 +1,51 @@
+#set -x
+test_file="$1"
+FOUND=false
+let DASDTOTAL=0
+let SANTOTAL=0
+while read line ; do
+  #echo $line
+  case $line in
+    Hardwarepath*LUN* )
+      read line
+      FOUNDHW=true ;;
+    Device*LUN* )
+      read line
+      FOUNDDEV=true ;;
+    -----* )
+      if $FOUNDHW || $FOUNDDEV ; then
+        echo "DASD Total: $DASDTOTAL"
+        echo "SAN  Total: $SANTOTAL"
+        exit 0
+      fi ;;
+    * )
+      if $FOUNDHW ; then
+        VENDOR=`echo $line | cut -d" " -f3 | cut -d "/" -f1`
+        echo "Ven:${VENDOR}"
+        SIZE=`echo $line | cut -d" " -f4 |cut -d"." -f1`
+        #echo $SIZE
+        case $VENDOR in
+          HP|SEAGATE )
+             DASDTOTAL=$(($DASDTOTAL + $SIZE )) ;;
+          EMC|NETAPP )
+             SANTOTAL=$(($SANTOTAL + $SIZE )) ;;
+          * )   echo "I don't know what kind of Disk $VENDOR is." ;;
+        esac
+      fi
+      if $FOUNDDEV ; then
+        VENDOR=`echo $line | sed 's/disk[0-9]* *//;s/\/.*$//'`
+        echo "Ven:${VENDOR}"
+        SIZE=`echo $line | sed 's/.*--  //' |cut -d"." -f1`
+        #echo $SIZE
+        case $VENDOR in
+          HP|SEAGATE )
+             DASDTOTAL=$(($DASDTOTAL + $SIZE )) ;;
+          EMC|NETAPP )
+             SANTOTAL=$(($SANTOTAL + $SIZE )) ;;
+          * )   echo "I don't know what kind of Disk $VENDOR is." ;;
+        esac
+      fi 
+      ;;
+  esac
+done < $test_file
+

@@ -1,0 +1,17 @@
+# websvr returns WebServer address for links to this hosts files
+# This allows JADIS to have content on multiple servers. This is
+# helpful for organizations where servers are supported by different
+# groups each with there own webservers and their own data files.
+#
+function output_header
+{
+  echo -n ",WebSvr"
+}
+
+function output_value
+{
+  logwrite "websvr plugin running" 1
+    echo -n ",${WEBSVR}"
+  logwrite "websvr plugin complete" 1
+  return 0
+}

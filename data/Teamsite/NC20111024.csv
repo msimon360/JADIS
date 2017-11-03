@@ -1,0 +1,7 @@
+HostName,Group,ExternalSerial#,Site,Grid,Enclosure,Admin,Critical,Env,Class,IP,ApplID,Application,AppContacts,OS,OSVer,Model#,RemoteConsoleType,RemoteHost,RemoteIP,REMOTE_CONSOLE,AccessHost,Comments,Partitioned,Virtual,NetWrk,Contract,Monitoring,ID_Admin,Root_owner,Root_shared,Srv_App,Srv_DB,Srv_Web,Srv_DR,Oracle_Cluster?,
+rcfwsp03,Ftr13,,FTW,,,bill.ewen,MC,Prod,Prod,,RTCN,COW,FAB UNIX,AIX,,,,,,,,,,Physical,Core,,,,,,,DB_srv,,,
+sgfwst15,Ftr13,,FTW,,,wayne.ulbrich,MC,Test,nonProd,,SBEN,RETAIL,FAB UNIX,AIX,,,,,,,,Too old for SeOS,,Physical,Core,,,,,,App_srv,,,,
+webftwp01b,Ftr13,10F06FE,FTW,,,matt.vitale,MC,Prod,Prod,,LSWN,0,0,AIX,,,,,,,,,,Virtual,Core,,,,,,,DB_srv,,,
+cxfwgp01,Ftr13,USC41172ED,FTW,,,NCDC_HPUX,NC,Prod,Prod,159.161.125.58,TIVN,TIVOLI,Mary K Glass 813-987-1827,HP-UX,HPUX_11.11,A500,GSP Non-superdome,rccxfwgp02,112.32.90.65,,,,,Physical,Core,,,,,,,,,,
+unxfwi01,Ftr13,USE4947ENX,FTW,1-18/Z,1-18/Z ,NCDC_HPUX,NC,IT,nonProd,144.70.97.187,UNXN,UNIX - DP,NC UNIX,HP-UX,HPUX_11.31,RX6600,MP,unxfwi01-rib,10.72.32.37,,,,,Physical,Core,,,,,No,,,,,
+ewftwp33,Ftr13,,FTW,,,NCDC_LINUX,,Prod,Prod,138.83.147.38,EWBN,MYEWEB,sigrun.ragnarsdottir@vso.verizon.com,Linux,SuSE_10,,,,,,,,,Physical,Core,,,,,,,,Web_srv,,

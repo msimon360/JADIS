@@ -1,0 +1,18 @@
+<PRE>$Id: get_diskfirmware.sh,v 4.11 2010-07-09 07:36:34 ralproth Exp $
+
+Hardwarepath                      Device    Vendor/Product   LUN Cap/GB  FWVer  Usage
+-----------------------------------------------------------------------------------------------
+0/0/1/1.15.0                      c1t15d0   SEAGATE/ST318404LC120 17.0    HP04   LVM/vgaltboot/v1.0
+0/0/2/1.15.0                      c3t15d0   HP/ST373207LC#18 120 17.0    HPC1   LVM/vgroot/v1.0
+0/4/0/0.126.132.19.2.2.5          c9t2d5    EMC/SYMMETRIX    21  8.4     5568   LVM/vgtivoli/v1.0
+0/4/0/0.126.132.19.2.2.6          c9t2d6    EMC/SYMMETRIX    22  8.4     5568   LVM/vgtivoli/v1.0
+0/4/0/0.126.132.19.2.2.7          c9t2d7    EMC/SYMMETRIX    23  8.4     5568   LVM/vgtivoli/v1.0
+0/6/2/0.127.132.19.2.2.5          c11t2d5   EMC/SYMMETRIX    21  8.4     5568   LVM/vgtivoli/v1.0
+0/6/2/0.127.132.19.2.2.6          c11t2d6   EMC/SYMMETRIX    22  8.4     5568   LVM/vgtivoli/v1.0
+0/6/2/0.127.132.19.2.2.7          c11t2d7   EMC/SYMMETRIX    23  8.4     5568   LVM/vgtivoli/v1.0
+-------------------------------------------------------------------------------------------------
+Note: Raw device usage is not shown in the usage column.</PRE>
+
+
+
+

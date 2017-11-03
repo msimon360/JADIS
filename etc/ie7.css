@@ -1,0 +1,47 @@
+/********** IE 7 ONLY **********/
+
+
+
+#SRContent ul {
+
+	padding-left: 0px;
+
+	margin-left: 20px;
+
+}
+
+
+
+/********** IE 6 AND IE 7 **********/
+
+
+
+.curvy p
+
+{
+
+	padding:0px 15px 0px 14px;
+
+	margin:5px 0px 5px 0px;
+
+}
+
+
+
+.SRsubcontent-unit-border
+
+{
+
+	margin: 0px 0px 15px 0px;
+
+}
+
+
+
+#SRNavColumn
+
+{
+
+	margin: 15px 0px 0px 0px;
+
+}

@@ -1,0 +1,109 @@
+/********** IE 6 ONLY **********/
+
+
+
+#SRWrapper,
+
+#SRHeader,
+
+#SRHeaderTopBoxTop,
+
+#SRHeaderTopBoxBottom,
+
+#SRColorBlock,
+
+#SRNavWrapper #SRTopNav,
+
+#SRNavWrapper #SRTopNav ul li a,
+
+#SRContent,
+
+#SRFooter,
+
+#SRFooter2
+
+{
+
+	background-image:none;
+
+}
+
+
+
+.curvy
+
+{
+
+	width:184px;
+
+}
+
+
+
+.curvy p
+
+{
+
+ font-size: 13px;
+
+}
+
+
+
+#SRContent ul {
+
+	padding-left: 0px;
+
+	margin-left: 20px;
+
+}
+
+
+
+dl.SRnav3-grid dt a,
+
+dl.SRnav3-grid dt a:visited,
+
+dl.SRnav3-grid dt a:hover
+
+{
+
+  font-size: 11px;
+
+} 
+
+
+
+/********** IE 6 AND IE 7 **********/
+
+
+
+.curvy p
+
+{
+
+	padding:0px 15px 0px 14px;
+
+	margin:5px 0px 5px 5px;
+
+}
+
+
+
+.SRsubcontent-unit-border
+
+{
+
+	margin: 0px 0px 15px 0px;
+
+}
+
+
+
+#SRNavColumn
+
+{
+
+	margin: 15px 0px 0px 0px;
+
+}

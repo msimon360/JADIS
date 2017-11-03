@@ -1,0 +1,1758 @@
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+Cfg2Html -AIX- Version 2.80
+                                                          ###    #####
+  ####    ####    ####   ######   #####  #    #  #####   #   #  #     #
+ #    #  #       #    #  #          #    #    #  #    # #     # #     #
+ #        ####   #       #####      #    #    #  #    # #     #  ######
+ #            #  #  ###  #          #    # ## #  #####  #     #       #
+ #    #  #    #  #    #  #          #    ##  ##  #       #   #  #     #
+  ####    ####    ####   #          #    #    #  #        ###    #####
+
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+
+
+    AIX/System
+       - System name, nodename, version, machine ID
+       - Machine_Type
+       - Chip_Type
+       - Serial_Number
+       - machine ID
+       - system ID
+       - Display the name of the current host system
+       - Display the name of the current operating system (EXTENDED)
+       - info about root
+       - unsuccessful root logins
+       - Print Configuration
+       - OS Version (Version.Release.Modification.Fix)
+       - OS Technology Level (oslevel -r)
+       - Highest Known OS Technology Level (oslevel -rq)
+       - Current ServicePac (oslevel -s)
+       - Highest Known ServicePac (oslevel -sq)
+       - SDD: lslpp mpio
+       - SDD: lslpp .sdd
+       - OS Maintenance Level (instfix)
+       - OS TL higher
+       - Hardware Platform Type
+       - Model Architecture
+       - Memory Size (KB/MB/GB)
+       - Memory Size (KBytes/MBytes)
+       - show sys0 attributes
+       - show hdisk for boot logical volume
+       - CPU 32/64 bit
+       - Installed Kernel 32/64 bit
+       - Multi-Processor Capability
+       - Model Implementation
+       - Boot Device List
+       - Machine Model Code
+       - Boot device (booted from)
+       - last reboot
+       - Bindprocessor
+       - CPU's
+       - Info about CPU
+       - CPU's Speed
+       - Display System Rset Contents
+       - Uptime, Who, Load & Sar Cpu
+       - Sar: Buffer Activity
+       - Display Summary of Statistics since boot
+       - Display Fork statistics
+       - Displays the number of Interrupts
+       - List Sum of paging events
+       - Report CPU and I/O statistics
+       - Display the status of MultiPath I/O (MPIO) capable devices
+       - List Kernel Lock Tracing current Status
+       - SUMA Configuration
+       - SUMA Tasks
+       - Filesets locked by EFIX manager (-l)
+       - Filesets locked by EFIX manager (-P)
+       - WLM Workload Manager
+       - SMT Simultaneous Multi-Threading
+       - CPUPSTAT
+       - MPSTAT
+       - LPARSTAT
+       - LPARSTAT -i
+       - LPARSTAT -h
+       - LPARSTAT -H
+    EXPERIMENTAL
+       - Plugin 0
+       - ASYNC I/O
+       - ASYNC I/O minservers
+       - ASYNC I/O maxservers
+       - ASYNC I/O
+       - List aioserver Processes
+       - SDD: lslpp mpio
+       - SDD: lslpp .sdd
+       - which
+       - which
+       - Perl -v info
+       - Perl -V info
+       - Show NTP process
+       - NTP
+       - Proctree
+       - Proctree -a root
+       - Uptime
+       - rUptime
+       - rwho
+       - pmcycles
+       - System Install Time
+       - who -a
+       - who -b
+       - who -r
+       - who -b;who -r
+    JAVA
+       - Java
+       - Java (fullversion)
+    Compiler
+    Test
+       - svmon summary
+
+
+
+---=[ System name, nodename, version, machine ID ]=-----------------------
+Cmd: root@csgftwp09  uname -a
+==== 
+        
+AIX csgftwp09 3 5 00CBD1424C00
+
+
+---=[ Machine_Type ]=-----------------------------------------------------
+Cmd: root@csgftwp09  uname -M
+==== 
+        
+IBM,8204-E8A
+
+
+---=[ Chip_Type ]=--------------------------------------------------------
+Cmd: root@csgftwp09  uname -p
+==== 
+        
+powerpc
+
+
+---=[ Serial_Number ]=----------------------------------------------------
+Cmd: root@csgftwp09  lscfg -vpl sysplanar0 | grep Machine/Cabinet | awk '{print $2,$3}'
+==== 
+        
+Serial No...10BD142
+Serial No...DNWG513
+
+
+---=[ machine ID ]=-------------------------------------------------------
+Cmd: root@csgftwp09  uname -m
+==== 
+        
+00CBD1424C00
+
+
+---=[ system ID ]=--------------------------------------------------------
+Cmd: root@csgftwp09  uname -u
+==== 
+        
+IBM,0210BD142
+
+
+---=[ Display the name of the current host system ]=----------------------
+Cmd: root@csgftwp09  hostname
+==== 
+        
+csgftwp09
+
+
+---=[ Display the name of the current operating system (EXTENDED) ]=------
+Cmd: root@csgftwp09  uname -n
+==== 
+        
+csgftwp09
+
+
+---=[ info about root ]=--------------------------------------------------
+Cmd: root@csgftwp09  finger root
+==== 
+        
+Login name: root      
+Directory: /                            Shell: /usr/bin/ksh
+No Plan.
+
+
+---=[ unsuccessful root logins ]=-----------------------------------------
+Cmd: root@csgftwp09  lssec -f/etc/security/lastlog -s root -a unsuccessful_login_count
+==== 
+        
+root unsuccessful_login_count=0
+
+
+---=[ Print Configuration ]=----------------------------------------------
+Cmd: root@csgftwp09  prtconf
+==== 
+        
+System Model: IBM,8204-E8A
+Machine Serial Number: 10BD142
+Processor Type: PowerPC_POWER6
+Processor Implementation Mode: POWER 6
+Processor Version: PV_6_Compat
+Number Of Processors: 4
+Processor Clock Speed: 3503 MHz
+CPU Type: 64-bit
+Kernel Type: 64-bit
+LPAR Info: 3 csgftwp09_vc1
+Memory Size: 8192 MB
+Good Memory Size: 8192 MB
+Platform Firmware level: EL340_061
+Firmware Version: IBM,EL340_061
+Console Login: enable
+Auto Restart: true
+Full Core: true
+ 
+Network Information
+        Host Name: csgftwp09
+        IP Address: 138.83.154.65
+        Sub Netmask: 255.255.254.0
+        Gateway: 138.83.154.1
+        Name Server: 138.83.131.154
+        Domain Name: northcentralnetworks.com
+ 
+Paging Space Information
+        Total Paging Space: 3072MB
+        Percent Used: 1%
+ 
+Volume Groups Information
+============================================================================== 
+rootvg:
+PV_NAME           PV STATE          TOTAL PPs   FREE PPs    FREE DISTRIBUTION
+hdisk1            active            269         77          09..00..00..14..54
+hdisk2            active            269         257         54..50..45..54..54
+============================================================================== 
+ 
+============================================================================== 
+ 
+appvg:
+PV_NAME           PV STATE          TOTAL PPs   FREE PPs    FREE DISTRIBUTION
+hdisk4            active            539         435         108..04..107..108..108
+hdisk5            active            134         134         27..27..26..27..27
+hdisk6            active            539         435         108..04..107..108..108
+hdisk7            active            539         474         108..43..107..108..108
+hdisk8            active            539         451         108..20..107..108..108
+hdisk9            active            539         305         89..00..00..108..108
+hdisk10           active            134         134         27..27..26..27..27
+hdisk11           active            539         315         99..00..00..108..108
+============================================================================== 
+ 
+INSTALLED RESOURCE LIST
+
+The following resources are installed on the machine.
++/- = Added or deleted from Resource List.
+*   = Diagnostic support not available.
+        
+  Model Architecture: chrp
+  Model Implementation: Multiple Processor, PCI bus
+        
++ sys0                                                        System Object
++ sysplanar0                                                  System Planar
+* vio0                                                        Virtual I/O Bus
+* vscsi0           U8204.E8A.10BD142-V3-C31-T1                Virtual SCSI Client Adapter
+* hdisk11          U8204.E8A.10BD142-V3-C31-T1-L880000000000  Virtual SCSI Disk Drive
+* hdisk10          U8204.E8A.10BD142-V3-C31-T1-L8c0000000000  Virtual SCSI Disk Drive
+* hdisk9           U8204.E8A.10BD142-V3-C31-T1-L8a0000000000  Virtual SCSI Disk Drive
+* hdisk8           U8204.E8A.10BD142-V3-C31-T1-L860000000000  Virtual SCSI Disk Drive
+* hdisk7           U8204.E8A.10BD142-V3-C31-T1-L890000000000  Virtual SCSI Disk Drive
+* hdisk6           U8204.E8A.10BD142-V3-C31-T1-L850000000000  Virtual SCSI Disk Drive
+* hdisk5           U8204.E8A.10BD142-V3-C31-T1-L8b0000000000  Virtual SCSI Disk Drive
+* hdisk4           U8204.E8A.10BD142-V3-C31-T1-L870000000000  Virtual SCSI Disk Drive
+* hdisk3           U8204.E8A.10BD142-V3-C31-T1-L840000000000  Virtual SCSI Disk Drive
+* hdisk2           U8204.E8A.10BD142-V3-C31-T1-L820000000000  Virtual SCSI Disk Drive
+* hdisk1           U8204.E8A.10BD142-V3-C31-T1-L810000000000  Virtual SCSI Disk Drive
+* hdisk0           U8204.E8A.10BD142-V3-C31-T1-L830000000000  Virtual SCSI Disk Drive
+* ent1             U8204.E8A.10BD142-V3-C22-T1                Virtual I/O Ethernet Adapter (l-lan)
+* ent0             U8204.E8A.10BD142-V3-C21-T1                Virtual I/O Ethernet Adapter (l-lan)
+* vsa0             U8204.E8A.10BD142-V3-C0                    LPAR Virtual Serial Adapter
+* vty0             U8204.E8A.10BD142-V3-C0-L0                 Asynchronous Terminal
++ L2cache0                                                    L2 Cache
++ mem0                                                        Memory
++ proc0                                                       Processor
++ proc2                                                       Processor
++ proc4                                                       Processor
++ proc6                                                       Processor
+
+
+---=[ OS Version (Version.Release.Modification.Fix) ]=--------------------
+Cmd: root@csgftwp09  oslevel
+==== 
+        
+5.3.0.0
+
+
+---=[ OS Technology Level (oslevel -r) ]=---------------------------------
+Cmd: root@csgftwp09  oslevel -r
+==== 
+        
+5300-09
+
+
+---=[ Highest Known OS Technology Level (oslevel -rq) ]=------------------
+Cmd: root@csgftwp09  oslevel -rq
+==== 
+        
+Known Recommended Maintenance Levels
+------------------------------------
+5300-09
+5300-08
+5300-07
+5300-06
+5300-05
+5300-04
+5300-03
+5300-02
+5300-01
+5390-00
+
+
+---=[ Current ServicePac (oslevel -s) ]=----------------------------------
+Cmd: root@csgftwp09  oslevel -s
+==== 
+        
+5300-09-02-0849
+
+
+---=[ Highest Known ServicePac (oslevel -sq) ]=---------------------------
+Cmd: root@csgftwp09  oslevel -sq
+==== 
+        
+Known Service Packs
+-------------------
+5300-09-02-0849
+5300-09-01-0847
+5300-09-00-0000
+5300-08-05-0846
+5300-08-04-0844
+5300-08-03-0831
+5300-08-02-0822
+5300-08-01-0819
+5300-07-07-0846
+5300-07-06-0844
+5300-07-05-0831
+5300-07-04-0818
+5300-07-03-0811
+5300-07-02-0806
+5300-07-01-0748
+5300-06-10-0846
+5300-06-09-0844
+5300-06-08-0831
+5300-06-07-0818
+5300-06-06-0811
+5300-06-05-0806
+5300-06-04-0748
+5300-06-03-0732
+5300-06-02-0727
+5300-06-01-0722
+5300-05-CSP-0000
+5300-05-06-0000
+5300-05-05-0000
+5300-05-04-0000
+5300-05-03-0000
+5300-05-02-0000
+5300-05-01-0000
+5300-04-CSP-0000
+5300-04-03-0000
+5300-04-02-0000
+5300-04-01-0000
+5300-03-CSP-0000
+
+
+---=[ SDD: lslpp mpio ]=--------------------------------------------------
+Cmd: root@csgftwp09  lslpp -lc | grep mpio
+==== 
+        
+/usr/lib/objrepos:devices.common.IBM.mpio.rte:5.3.9.2::COMMITTED:F:MPIO Disk Path Control Module:
+/etc/objrepos:devices.common.IBM.mpio.rte:5.3.9.2::COMMITTED:F:MPIO Disk Path Control Module:
+
+
+---=[ SDD: lslpp .sdd ]=--------------------------------------------------
+Cmd: root@csgftwp09  lslpp -lc | grep .sdd
+==== 
+        
+n/a or not configured!
+
+
+---=[ OS Maintenance Level (instfix) ]=-----------------------------------
+Cmd: root@csgftwp09  instfix -i |grep ML
+==== 
+        
+    All filesets for 5.3.0.0_AIX_ML were found.
+    All filesets for 5300-01_AIX_ML were found.
+    All filesets for 5300-02_AIX_ML were found.
+    All filesets for 5300-03_AIX_ML were found.
+    All filesets for 5300-04_AIX_ML were found.
+    All filesets for 5300-05_AIX_ML were found.
+    All filesets for 5300-06_AIX_ML were found.
+    All filesets for 5300-07_AIX_ML were found.
+    Not all filesets for 5300-08_AIX_ML were found.
+    All filesets for 5300-09_AIX_ML were found.
+
+
+---=[ OS TL higher ]=-----------------------------------------------------
+Cmd: root@csgftwp09  oslevel -g
+==== 
+        
+Fileset                                 Actual Level        Maintenance Level
+-----------------------------------------------------------------------------
+bos.rte                                 5.3.9.0             5.3.0.0
+
+
+---=[ Hardware Platform Type ]=-------------------------------------------
+Cmd: root@csgftwp09  bootinfo -T
+==== 
+        
+rspc
+
+
+---=[ Model Architecture ]=-----------------------------------------------
+Cmd: root@csgftwp09  bootinfo -p
+==== 
+        
+chrp
+
+
+---=[ Memory Size (KB/MB/GB) ]=-------------------------------------------
+Cmd: root@csgftwp09  echo 8388608 KB / 8192 MB / 8 GB
+==== 
+        
+8388608 KB / 8192 MB / 8 GB
+
+
+---=[ Memory Size (KBytes/MBytes) ]=--------------------------------------
+Cmd: root@csgftwp09  echo "8388608 KB / 8192 MB"
+==== 
+        
+8388608 KB / 8192 MB
+
+
+---=[ show sys0 attributes ]=---------------------------------------------
+Cmd: root@csgftwp09  lsattr -El sys0 -a realmem
+==== 
+        
+realmem 8388608 Amount of usable physical memory in Kbytes False
+
+
+---=[ show hdisk for boot logical volume ]=-------------------------------
+Cmd: root@csgftwp09  lslv -m hd5
+==== 
+        
+hd5:N/A
+LP    PP1  PV1               PP2  PV2               PP3  PV3
+0001  0001 hdisk1            
+
+
+---=[ CPU 32/64 bit ]=----------------------------------------------------
+Cmd: root@csgftwp09  bootinfo -y
+==== 
+        
+64
+
+
+---=[ Installed Kernel 32/64 bit ]=---------------------------------------
+Cmd: root@csgftwp09  bootinfo -K
+==== 
+        
+64
+
+
+---=[ Multi-Processor Capability ]=---------------------------------------
+DUMMY: (( 1 == 0 )) && echo No || echo Yes
+======
+        
+Yes
+
+
+---=[ Model Implementation ]=---------------------------------------------
+Cmd: root@csgftwp09  lscfg | grep Implementation | cut -d: -f2 | tr -d ' '
+==== 
+        
+MultipleProcessor,PCIbus
+
+
+---=[ Boot Device List ]=-------------------------------------------------
+Cmd: root@csgftwp09  bootlist -m normal -o
+==== 
+        
+hdisk1 blv=hd5
+
+
+---=[ Machine Model Code ]=-----------------------------------------------
+Cmd: root@csgftwp09  bootinfo -m
+==== 
+        
+134217804
+
+
+---=[ Boot device (booted from) ]=----------------------------------------
+Cmd: root@csgftwp09  bootinfo -b
+==== 
+        
+hdisk1
+
+
+---=[ last reboot ]=------------------------------------------------------
+Cmd: root@csgftwp09  last reboot | head -5
+==== 
+        
+reboot    ~                                   Sep 08 23:25 
+reboot    ~                                   May 22 01:26 
+reboot    ~                                   Apr 21 18:22 
+reboot    ~                                   Aug 14 02:18 
+reboot    ~                                   Jul 17 02:43 
+
+
+---=[ Bindprocessor ]=----------------------------------------------------
+Cmd: root@csgftwp09  bindprocessor -q
+==== 
+        
+The available processors are:  0 1 2 3 4 5 6 7
+
+
+---=[ CPU's ]=------------------------------------------------------------
+Cmd: root@csgftwp09  echo 'CPU's:' 4 of type: PowerPC_POWER6
+==== 
+        
+CPUs: 4 of type: PowerPC_POWER6
+
+
+---=[ Info about CPU ]=---------------------------------------------------
+Internal-Function: cpu_info
+==================
+        
+CPU's: 4 of type: PowerPC_POWER6
+
+
+---=[ CPU's Speed ]=------------------------------------------------------
+Internal-Function: cpu_speed
+==================
+        
+3503 MHz
+
+
+---=[ Display System Rset Contents ]=-------------------------------------
+Cmd: root@csgftwp09  lsrset -av
+==== 
+        
+T  Name               Owner     Group     Mode    CPU  Memory
+r  sys/sys0           root      system    r-r-r-    8    8192 
+     CPU: 0-7
+     MEM: 0
+
+r  sys/node.01.00000  root      system    r-r-r-    8    8192 
+     CPU: 0-7
+     MEM: 0
+
+r  sys/mem.00000      root      system    r-r-r-    0    8192 
+     CPU: &lt;empty&gt;
+     MEM: 0
+
+r  sys/cpu.00000      root      system    r-r-r-    1       0 
+     CPU: 0
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00001      root      system    r-r-r-    1       0 
+     CPU: 1
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00002      root      system    r-r-r-    1       0 
+     CPU: 2
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00003      root      system    r-r-r-    1       0 
+     CPU: 3
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00004      root      system    r-r-r-    1       0 
+     CPU: 4
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00005      root      system    r-r-r-    1       0 
+     CPU: 5
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00006      root      system    r-r-r-    1       0 
+     CPU: 6
+     MEM: &lt;empty&gt;
+
+r  sys/cpu.00007      root      system    r-r-r-    1       0 
+     CPU: 7
+     MEM: &lt;empty&gt;
+
+
+---=[ Uptime, Who, Load & Sar Cpu ]=--------------------------------------
+Cmd: root@csgftwp09  w ; sar 1
+==== 
+        
+  01:15AM   up 194 days,   1:50,  0 users,  load average: 2.33, 2.32, 2.37
+User     tty          login@       idle      JCPU      PCPU what
+
+AIX csgftwp09 3 5 00CBD1424C00    03/21/12
+
+System configuration: lcpu=8 ent=4.00 mode=Uncapped 
+
+01:15:30    %usr    %sys    %wio   %idle   physc   %entc
+01:15:31       3       5       0      92    0.32     8.0
+
+
+---=[ Sar: Buffer Activity ]=---------------------------------------------
+Cmd: root@csgftwp09  sar -b
+==== 
+        
+
+AIX csgftwp09 3 5 00CBD1424C00    03/21/12
+
+System configuration: lcpu=8 ent=4.00 mode=Uncapped 
+
+00:00:00 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+00:05:00       0       0       0       0       0       0       0       0
+00:10:00       0       0       0       0       0       0       0       0
+00:15:00       0       0       0       0       0       0       0       0
+00:20:00       0       0       0       0       0       0       0       0
+00:25:00       0       0       0       0       0       0       0       0
+00:30:00       0       0       0       0       0       0       0       0
+00:35:00       0       0       0       0       0       0       0       0
+00:40:00       0       0       0       0       0       0       0       0
+00:45:00       0       0       0       0       0       0       0       0
+00:50:00       0       0       0       0       0       0       0       0
+00:55:00       0       0       0       0       0       0       0       0
+01:00:00       0       0       0       0       0       0       0       0
+01:05:00       0       0       0       0       0       0       0       0
+01:10:00       0       0       0       0       0       0       0       0
+01:15:00       0       0       0       0       0       0       0       0
+
+Average        0       0       0       0       0       0       0       0
+
+
+---=[ Display Summary of Statistics since boot ]=-------------------------
+Cmd: root@csgftwp09  vmstat
+==== 
+        
+
+System configuration: lcpu=8 mem=8192MB ent=4.00
+
+kthr    memory              page              faults              cpu          
+----- ----------- ------------------------ ------------ -----------------------
+ r  b   avm   fre  re  pi  po  fr   sr  cy  in   sy  cs us sy id wa    pc    ec
+ 2  1 921888 13654   0   0   0   5   16   0  27 6167 1277 61 35  3  0  0.03   0.6
+
+
+---=[ Display Fork statistics ]=------------------------------------------
+Cmd: root@csgftwp09  vmstat -f
+==== 
+        
+            109616828 forks
+
+
+---=[ Displays the number of Interrupts ]=--------------------------------
+Cmd: root@csgftwp09  vmstat -i
+==== 
+        
+priority level    type   count module(handler)
+    0       2   hardware 29329640 i_mpc_int_handler(1543520.16)
+    0  589825   hardware     0 /usr/lib/drivers/planar_pal_chrp(3f1b3c0.16)
+    1  655360   hardware     0 /usr/lib/drivers/vconsdd(40f0938.16)
+    3  655381   hardware 97733632 /usr/lib/drivers/vioentdd(3f5e960.16)
+    3  655382   hardware 39644988 /usr/lib/drivers/vioentdd(3f5e960.16)
+    3  655391   hardware 330794227 /usr/lib/drivers/vscsi_initdd(3f862d0.16)
+
+
+---=[ List Sum of paging events ]=----------------------------------------
+Cmd: root@csgftwp09  vmstat -s
+==== 
+        
+          34074444341 total address trans. faults
+             97919962 page ins
+            202445980 page outs
+                    0 paging space page ins
+                    0 paging space page outs
+                    0 total reclaims
+           4660927439 zero filled pages faults
+               116494 executable filled pages faults
+            272317742 pages examined by clock
+                  569 revolutions of the clock hand
+             90448354 pages freed by the clock
+            238178196 backtracks
+                    0 free frame waits
+                    0 extend XPT waits
+             17169830 pending I/O waits
+            300365929 start I/Os
+            155413930 iodones
+          21415139952 cpu context switches
+            468172877 device interrupts
+           1092948533 software interrupts
+           8029731072 decrementer interrupts
+             30789571 mpc-sent interrupts
+             30787492 mpc-received interrupts
+             17264475 phantom interrupts
+                    0 traps
+         103423096192 syscalls
+
+
+---=[ Report CPU and I/O statistics ]=------------------------------------
+Cmd: root@csgftwp09  iostat
+==== 
+        
+
+System configuration: lcpu=8 drives=12 ent=4.00 paths=12 vdisks=1
+
+tty:      tin         tout    avg-cpu: % user % sys % idle % iowait physc % entc
+          0.0          0.3               61.4  35.4    3.0      0.1   0.0    0.6
+
+Disks:        % tm_act     Kbps      tps    Kb_read   Kb_wrtn
+hdisk1           0.8     112.7      18.4   529225759  1361304792
+hdisk10          0.0       0.0       0.0      18030         0
+hdisk0           0.1       8.2       0.6   10873338  127184312
+hdisk9           0.0       7.7       0.3   88497806  40435904
+hdisk8           0.0       0.0       0.0      18074         8
+hdisk7           0.0       1.2       0.3      18114  19897236
+hdisk5           0.0       0.0       0.0      18030         0
+hdisk6           0.0       0.7       0.1    6098702   6175336
+hdisk3           0.0       1.8       0.0      90622  29374632
+hdisk2           0.0       0.0       0.0     223262         0
+hdisk11          0.0       0.0       0.0      19135      2336
+hdisk4           0.0       8.0       0.3   123516126  10578240
+
+
+---=[ Display the status of MultiPath I/O (MPIO) capable devices ]=-------
+Cmd: root@csgftwp09  lspath
+==== 
+        
+Enabled hdisk0  vscsi0
+Enabled hdisk1  vscsi0
+Enabled hdisk2  vscsi0
+Enabled hdisk3  vscsi0
+Enabled hdisk4  vscsi0
+Enabled hdisk5  vscsi0
+Enabled hdisk6  vscsi0
+Enabled hdisk7  vscsi0
+Enabled hdisk8  vscsi0
+Enabled hdisk9  vscsi0
+Enabled hdisk10 vscsi0
+Enabled hdisk11 vscsi0
+
+
+---=[ List Kernel Lock Tracing current Status ]=--------------------------
+Cmd: root@csgftwp09  locktrace -l
+==== 
+        
+lock tracing disabled for all classes
+
+
+---=[ SUMA Configuration ]=-----------------------------------------------
+Cmd: root@csgftwp09  suma -c
+==== 
+        
+        FIXSERVER_PROTOCOL=http
+        DOWNLOAD_PROTOCOL=ftp
+        DL_TIMEOUT_SEC=180
+        DL_RETRY=1
+        MAX_CONCURRENT_DOWNLOADS=5
+        HTTP_PROXY=
+        HTTPS_PROXY=
+        FTP_PROXY=
+        SCREEN_VERBOSE=LVL_INFO
+        NOTIFY_VERBOSE=LVL_INFO
+        LOGFILE_VERBOSE=LVL_VERBOSE
+        MAXLOGSIZE_MB=1
+        REMOVE_CONFLICTING_UPDATES=yes
+        REMOVE_DUP_BASE_LEVELS=yes
+        REMOVE_SUPERSEDE=yes
+        TMPDIR=/var/suma/tmp
+        FIXSERVER_URL=www14.software.ibm.com/webapp/set2/fixget
+
+
+---=[ SUMA Tasks ]=-------------------------------------------------------
+Cmd: root@csgftwp09  suma -l
+==== 
+        
+n/a or not configured!
+
+
+---=[ Filesets locked by EFIX manager (-l) ]=-----------------------------
+Cmd: root@csgftwp09  emgr -l
+==== 
+        
+There is no efix data on this system.
+
+
+---=[ Filesets locked by EFIX manager (-P) ]=-----------------------------
+Cmd: root@csgftwp09  emgr -P
+==== 
+        
+There is no efix data on this system.
+
+
+---=[ WLM Workload Manager ]=---------------------------------------------
+Cmd: root@csgftwp09  wlmstat
+==== 
+        
+WLM must be started.
+
+
+---=[ SMT Simultaneous Multi-Threading ]=---------------------------------
+Cmd: root@csgftwp09  smtctl
+==== 
+        
+
+This system is SMT capable.
+SMT is currently enabled.
+SMT boot mode is not set.
+SMT threads are bound to the same virtual processor.
+
+proc0 has 2 SMT threads.
+Bind processor 0 is bound with proc0
+Bind processor 1 is bound with proc0
+
+
+proc2 has 2 SMT threads.
+Bind processor 2 is bound with proc2
+Bind processor 3 is bound with proc2
+
+
+proc4 has 2 SMT threads.
+Bind processor 4 is bound with proc4
+Bind processor 5 is bound with proc4
+
+
+proc6 has 2 SMT threads.
+Bind processor 6 is bound with proc6
+Bind processor 7 is bound with proc6
+
+
+---=[ CPUPSTAT ]=---------------------------------------------------------
+Cmd: root@csgftwp09  cpupstat -vi 0
+==== 
+        
+0 WLM classes have single CPU rsets with CPU ID 0.
+0 processes have single CPU rset attachments with CPU ID 0.
+0 processes are bound to bind ID 7.
+
+
+---=[ MPSTAT ]=-----------------------------------------------------------
+Cmd: root@csgftwp09  mpstat
+==== 
+        
+
+System configuration: lcpu=8 ent=4.0 mode=Uncapped 
+
+cpu  min  maj  mpc  int   cs  ics   rq  mig lpa sysc us sy wt id   pc  %ec  lcs
+  0 21194520376 12642342 25171604 7357551692 21446465322 6365186024    3 94781759 100 77215937446 61 37  0  2 0.02  0.5 1069156520
+  1 9439470106 3855353 9203157 906562944 1417392006 752012062    0 87283641 100 16047683889 70 25  0  5 0.00  0.1 948834719
+  2 2424227538 433546 4805244 355790420 456126011 148816254    2 18250374 100 7581239093 57 41  0  2 0.00  0.0 390437398
+  3 89830175 25189 4433256 183957679 20318178 9884601    0 865461 100 231015245 40 34  0 26 0.00  0.0 187165001
+  4 662705862 150748 4622475 249746701 142612632 49351476    0 5120904 100 1691384322 56 38  0  6 0.00  0.0 266573967
+  5 11206074 3355 4408979 175983861 5352507 3482607    0 167662 100 38528631 21 27  0 52 0.00  0.0 176857848
+  6 231679657 57786 4529437 204163014 43686105 16625497    0 1674340 100 601758673 54 35  0 12 0.00  0.0 211935491
+  7 4936419 1514 4402911 174366291 3061449 2125554    0 212053 100 15719581 12 28  0 60 0.00  0.0 175082071
+  U    -    -    -    -    -    -    -    -   -    -  -  -  0 99 3.97 99.4    -
+ALL 34058576207 17169833 61577063 9608122602 23535014210 7347484075    5 208356194 100 103423266880  0  0  0 99 0.03  0.6 3426043015
+
+
+---=[ LPARSTAT ]=---------------------------------------------------------
+Cmd: root@csgftwp09  lparstat
+==== 
+        
+
+System configuration: type=Shared mode=Uncapped smt=On lcpu=8 mem=8192 psize=8 ent=4.00 
+
+%user  %sys  %wait  %idle physc %entc  lbusy  vcsw phint
+----- ----- ------ ------ ----- ----- ------ ----- -----
+ 61.5  35.4    0.1    3.0  0.03   0.6    1.8 3426043305 17264511 
+
+
+---=[ LPARSTAT -i ]=------------------------------------------------------
+Cmd: root@csgftwp09  lparstat -i
+==== 
+        
+Node Name                                  : csgftwp09
+Partition Name                            : csgftwp09_vc1
+Partition Number                           : 3
+Type                                       : Shared-SMT
+Mode                                       : Uncapped
+Entitled Capacity                          : 4.00
+Partition Group-ID                         : 32771
+Shared Pool ID                             : 0
+Online Virtual CPUs                        : 4
+Maximum Virtual CPUs                       : 8
+Minimum Virtual CPUs                       : 1
+Online Memory                              : 8192 MB
+Maximum Memory                             : 16384 MB
+Minimum Memory                             : 512 MB
+Variable Capacity Weight                   : 128
+Minimum Capacity                           : 0.50
+Maximum Capacity                           : 8.00
+Capacity Increment                         : 0.01
+Maximum Physical CPUs in system            : 8
+Active Physical CPUs in system             : 8
+Active CPUs in Pool                        : 8
+Shared Physical CPUs in system             : 8
+Maximum Capacity of Pool                   : 800
+Entitled Capacity of Pool                  : 600
+Unallocated Capacity                       : 0.00
+Physical CPU Percentage                    : 100.00%
+Unallocated Weight                         : 0
+
+
+---=[ LPARSTAT -h ]=------------------------------------------------------
+Cmd: root@csgftwp09  lparstat -h
+==== 
+        
+
+System configuration: type=Shared mode=Uncapped smt=On lcpu=8 mem=8192 psize=8 ent=4.00 
+
+%user  %sys  %wait  %idle physc %entc  lbusy  vcsw phint  %hypv hcalls
+----- ----- ------ ------ ----- ----- ------ ----- ----- ------ ------
+ 61.5  35.4    0.1    3.0  0.03   0.6    1.8 3426043877 17264521    0.0  66277 
+
+
+---=[ LPARSTAT -H ]=------------------------------------------------------
+Cmd: root@csgftwp09  lparstat -H
+==== 
+        
+
+System configuration: type=Shared mode=Uncapped smt=On lcpu=8 mem=8192 psize=8 ent=4.00 
+
+           Detailed information on Hypervisor Calls
+
+Hypervisor        Number of    %Total Time   %Hypervisor   Avg Call    Max Call
+  Call              Calls         Spent      Time Spent    Time(ns)    Time(ns)
+
+remove                 4067            0.0           8.2        899        2000
+read                   7810            0.0           3.7        211        1312
+nclear_mod                0            0.0           0.0          1           0
+page_init              6884            0.0          25.4       1656       14875
+clear_ref                 0            0.0           0.0          1           0
+protect                   0            0.0           0.0          1           0
+put_tce                  19            0.0           0.0        930        1593
+xirr                     22            0.0           0.1       2833        7125
+eoi                      17            0.0           0.0        312         593
+ipi                       0            0.0           0.0          1           0
+cppr                     82            0.0           0.1        324         625
+asr                       0            0.0           0.0          1           0
+others                28268            0.0          14.5        229         781
+enter                 17484            0.0          34.3        880        4718
+cede                    138            0.0           4.8      15735      521250
+migrate_dma               0            0.0           0.0          1           0
+put_rtce                  0            0.0           0.0          1           0
+confer                    0            0.0           0.0          1           0
+prod                      6            0.0           0.0       1156        2812
+get_ppp                 377            0.0           5.2       6135       11437
+set_ppp                   0            0.0           0.0          1           0
+purr                      0            0.0           0.0          1           0
+pic                     377            0.0           0.6        703        1250
+bulk_remove             781            0.0           2.6       1474        5343
+send_crq                  7            0.0           0.1       5941        8093
+copy_rdma                 0            0.0           0.0          1           0
+get_tce                   0            0.0           0.0          1           0
+send_logical_lan         46            0.0           0.4       3803        9125
+add_logicl_lan_buf       15            0.0           0.0        937        2281
+--------------------------------------------------------------------------------
+
+
+---=[ Plugin 0 ]=---------------------------------------------------------
+Cmd: root@csgftwp09  /infra/opt/cfg2html/bin/plugins/c2h_plugin_0
+==== 
+        
+### Running Plugin clock_plugin.sh
+Clock Info
+
+TZ=EST5EDT
+
+### Running Plugin cluster_plugin.sh
+Cluster Configuration
+
+cluster:none
+
+### Running Plugin db_plugin.sh
+DB Info
+
+DB=none
+
+### Running Plugin disk_plugin.sh
+Disk Information 3rd Party
+
+
+### Running Plugin diskspace_plugin.sh
+Disk Space Totals
+
+This plugin not ready for AIX.
+
+### Running Plugin http_plugin.sh
+HTTPD
+
+WEB=IHS/6.1.0.0
+
+### Running Plugin ipsec_plugin.sh
+IPsec Report
+
+
+### Running Plugin netbackup_plugin.sh
+NetBackup S/W Details
+
+NBU Version:
+======= /usr/openv/netbackup/bin/bp =======
+@(#) NetBackup_6.5.4 1450039678
+
+Contents of file: bp.conf
+# BP.CONF - NetBackup Configuration File
+
+# bp.conf now has 50 server options and 39 Client options.
+# I thought it best if we started to set them up in categories as we also now
+# can in this file.  &#92;# comments out the line as in most shell commands.
+
+#------------------------------------
+# Access Configuration
+#------------------------------------
+
+SERVER = ebuftwspa01
+SERVER = ebuftwspa01-ebu
+SERVER = ebuftwspa11-ebu
+SERVER = ebuftwspa12-ebu
+SERVER = ebuftwspa11
+SERVER = ebuftwspa12
+MEDIA_SERVER = csgftwp09
+MEDIA_SERVER = ebuftwspa11-ebu
+MEDIA_SERVER = ebuftwspa12-ebu
+MEDIA_SERVER = ebuftwspa01-ebu
+
+#------------------------------------
+# Firewall Rules
+#------------------------------------
+
+CONNECT_OPTIONS = ebuftwspa01 0
+
+#------------------------------------
+# Client Configuration
+#------------------------------------
+
+CLIENT_NAME = csgftwp09c
+
+
+#------------------------------------
+# GDM Configuration
+#------------------------------------
+
+MASTER_OF_MASTERS = ebuftwspa88
+KNOWN_MASTER = ebuftwspa01
+KNOWN_MASTER = ebuftwspa01
+
+#------------------------------------
+# Troubleshooting Log Levels
+#------------------------------------
+
+BPDBM_VERBOSE = 0
+BPSCHED_VERBOSE = 0
+BPTM_VERBOSE = 0
+VAULT_VERBOSE = 0
+
+#------------------------------------
+# Media Server Configuration
+#------------------------------------
+
+# NBU65_HOSTNAME = csgftwp09
+# NBU65_PRIVATE_NAME = csgftwp09c
+# NBU65_PRIVATE_IP = 112.42.48.107
+# NBU65_CONF_FLOATING_MASTER = ebuftwspa01
+# NBU65_VOLUME_DATABASE_HOST = ebuftwspa01
+# NBU65_CONF_PRIMARY_MASTER = ebuftwspa01
+# NBU65_CONF_SECONDARY_MASTER = ebuftwspa01-ebu
+# NBU65_INSTALL_PATH = /apps/opt/openv
+# NBU65_LICENSE_COUNT = 1
+# NBU65_LICENSE_1 = OEXP-XDRY-SNYT-P8O4-3XPP-PPP3-RPCC-PPO6-PRPO-P
+# NBU65_OVERRIDE_DNS = ON
+# NBU65_OVERRIDE_ANCHOR = TRUE
+# NBU65_CONNECT_OPTION_COUNT = 1
+# NBU65_CONNECT_OPTION_1 = ebuftwspa01
+# NBU65_CONNECT_OPTION_TYPE_1 = 0
+# NBU65_MEDIA_SERVER_COUNT = 3
+# NBU65_MEDIA_SERVER_1 = ebuftwspa01
+# NBU65_MEDIA_SERVER_2 = ebuftwspa11
+# NBU65_MEDIA_SERVER_3 = ebuftwspa12
+# NBU65_MASTER_OF_MASTERS = ebuftwspa88
+# NBU65_KNOWN_MASTER_COUNT = 0
+# NBU65_KNOWN_MASTER_1
+# NBU65_LOG_DIRECTORY = /apps/etc/logs
+# NBU65_DEBUG_DIRECTORY = /apps/etc/logs
+# NBU65_LOGS = "bpcd bptm bprd bpsched"
+# NBU65_DEBUG = "reqlib daemon"
+# NBU65_OVERRIDE_PRIVATE
+# NBU65_OVERRIDE_VERSION
+# NBU65_KNOWN_PRIVATE_MEDIA_SERVER_COUNT = 3
+# NBU65_PRIVATEMEDIA_NAME_1 = ebuftwspa11-ebu
+# NBU65_PRIVATEMEDIA_IP_1 = 138.83.128.71
+# NBU65_PRIVATEMEDIA_NAME_2 = ebuftwspa12-ebu
+# NBU65_PRIVATEMEDIA_IP_2 = 138.83.128.72
+# NBU65_PRIVATEMEDIA_NAME_3 = ebuftwspa01-ebu
+# NBU65_PRIVATEMEDIA_IP_3 = 138.83.128.70
+
+Contents of exclude file(s)
+
+### Running Plugin package_plugin.sh
+SystemV Package List
+
+LImq-km         Patrol_KM_for_MQSeries                 (Unix) 4.7.10-4.1
+LIpatrol        BMC Patrol                 (AIX_5x) 3.7.40-aix-7.6
+LIvzptrl        vzpatrol account BMC Patrol                 (unix) 1.4
+VZEAC           eTrust Access Control                 (RISC_AIX_5.x) 12.0a-AIX5
+VZEOLOOP        Install setup for VZEOLOOP version: r00v00l27e                 (RS6000_AIX5.1) r00v00l27e
+VZEOPUTIL       VZ CSGW EO Util Project North for version: r00v00l36i                 (RS6000_AIX5.1) r00v00l36i
+VZadvise        ADVISE                 (SPARC_Sol_8,SPARC_Sol_9,SPARC_Sol_10,HP-UX_11.00,HP-UX_11.11,RISC_AIX_5.1,RISC_AIX_5.2,RISC_AIX_5.3) 2.0
+VZbstone        Best/1 7.4.10 binary package for AIX 5.3 32 or 64-bit                 (AIX_53_32,AIX_53_64) 7.4.10-AIX53-1.1
+VZbstone0       Best/1 7.4.10 Agent Patch(009) package for AIX                 (AIX) 7.4.10-AIX-009-1.0
+VZbstone1       Best1 support scripts updates                 (ANY) scripts-1.0
+VZcsgas         Install setup for VZcsgas version: r00v00l36d                 (RS6000_AIX5.1) r00v00l36d
+VZcsgcert       Install setup for CSGW cacerts for WAS                 (RS6000_AIX5.1) r00v00l36d
+VZcsghlth       Application Install setup for CSGW Health Check                 (RS6000_AIX5.1) 3.10b2
+VZcsglp         Install setup for VZcsglp version: r00v00l36c                 (RS6000_AIX5.1) r00v00l36c
+VZcsgvih        WAS VIRTUAL HOST                 (PSeries-AIX) r00v00l11e
+VZcsgwasp       Profiles,link,wsadmin                 (PSeries-AIX) r00v00l11c
+VZcsgwcem       Install setup for CSGW CEM ssl config for WAS                 (RS6000_AIX5.1) r00v00l24n
+VZcsgwlog       Csgw transaction logger; version r00v00l11e                 (RS6000_AIX5.1) r00v00l11e
+VZcsgwsvr       Install setup for Server CsgwServer version: r00v00l11d                 (RS6000_AIX5.1) r00v00l11d
+VZcspcssh       Csgw_2_Cmps_Openssh                 (PSeries-AIX) r00v00l28b
+VZcspmqsl       MQ SSL repository for CSGW qmgrs; version r00v00l28b                 (RS6000_AIX5.1) r00v00l28b
+VZdirssi        VZ/OSEIS Standard Dirs, Links and SSI                 (SPARC_Sol_8,SPARC_Sol9,SPARC_Sol10,HP-UX_11.00,HP-UX_11.11,HP-UX_11.23,HP-UX_11
+VZecc           EMC Master Agent Package                 (RISC_AIX) 5.2-IB1.1
+VZfixlog        VZ Fixlogs Configuration                 (SPARC_Sol_8,Sol_9,Sol_10,HP-UX_11.00,11.11,11.23,11iv3,RISC_AIX_4.3.3,5.1,5.2,5.3) 5.2
+VZihs           IBMHTTP Server                 (AIX5.x) 6.1FP21-IB1
+VZihscsg        IBM HTTPD Server 6.1  configs for CSGW                 (AIX5.x) 2.1.1-CSGW-IB1
+VZihscst        IBM HTTPD Server 6.1  configs for CSGW2                 (AIX5.x) 2.1.1-CSGW2-IB1
+VZihsscr        IBM HTTPD Server administration scripts                 (AIX5.x) 2.8-IB4
+VZinstlr        VZ automated bundle installer                 (OSEIS_supp_env) 1.10
+VZmqm           MQSeries_Server_6.0.2.0                 (AIX) 6.0.2.0-IB5
+VZnetboc        Veritas_Netbackup_Client                 (RS6000) RS6000_6.5.4-IB1.0
+VZsecure        Security Log Gathering                 (SPARC_Sol_8,HP-UX_11.00,HP-UX_11.11,RISC_AIX_4.3.3,RISC_AIX_5.1,RISC_AIX_5.2) 1.0
+VZsecure0       Security Log Gathering                 (SPARC_Sol_8,SPARC_Sol_9,HP-UX_11.00,HP-UX_11.11,HP-UX_11.23,RISC_AIX_5.1,RISC_AIX_5.2) 1.0
+VZwebsphr       64 bit WebSphere Application Server 6.1.0.5 BASE+ND for AIX (64 bit)                 (AIX) 6.1.0.5-BASE_ND-AIX642.2
+
+### Running Plugin root_mail_plugin.sh
+Root Mail
+
+root_mail:root
+
+### Running Plugin rpm_plugin.sh
+RPM Packages
+
+AIX-rpm-5.3.7.0-2
+cfg2html-aix-2.80.05-2
+FTR_cfg2html-8.13-8
+
+### Running Plugin seos_plugin.sh
+SeOS E-Trust Data
+
+CA Access Control seversion v12.0.1.1262 - Display module's version
+
+### Running Plugin ssh_plugin.sh
+SSH
+
+ssh:4.7p1,
+
+### Running Plugin team_check.sh
+UNIX Team Accounts
+
+Team Members Total: 10
+Team Members Found: 10
+All Team Accounts Found
+
+### Running Plugin vm_plugin.sh
+Virtual Mach Info
+
+machtype=Physical
+
+### Plugins complete
+
+
+---=[ ASYNC I/O ]=--------------------------------------------------------
+Cmd: root@csgftwp09  lsattr -El aio0
+==== 
+        
+autoconfig defined STATE to be configured at system restart True
+fastpath   enable  State of fast path                       True
+kprocprio  39      Server PRIORITY                          True
+maxreqs    4096    Maximum number of REQUESTS               True
+maxservers 10      MAXIMUM number of servers per cpu        True
+minservers 1       MINIMUM number of servers                True
+
+
+---=[ ASYNC I/O minservers ]=---------------------------------------------
+Cmd: root@csgftwp09  lsattr -Rl aio0 -a minservers
+==== 
+        
+1...1000 (+1)
+
+
+---=[ ASYNC I/O maxservers ]=---------------------------------------------
+Cmd: root@csgftwp09  lsattr -Rl aio0 -a maxservers
+==== 
+        
+1...1000 (+1)
+
+
+---=[ ASYNC I/O ]=--------------------------------------------------------
+Cmd: root@csgftwp09  aioo -a
+==== 
+        
+n/a or not configured!
+
+
+---=[ List aioserver Processes ]=-----------------------------------------
+Cmd: root@csgftwp09  ps -ef | grep aioserver | grep -v grep
+==== 
+        
+n/a or not configured!
+
+
+---=[ SDD: lslpp mpio ]=--------------------------------------------------
+Cmd: root@csgftwp09  lslpp -lc | grep mpio
+==== 
+        
+/usr/lib/objrepos:devices.common.IBM.mpio.rte:5.3.9.2::COMMITTED:F:MPIO Disk Path Control Module:
+/etc/objrepos:devices.common.IBM.mpio.rte:5.3.9.2::COMMITTED:F:MPIO Disk Path Control Module:
+
+
+---=[ SDD: lslpp .sdd ]=--------------------------------------------------
+Cmd: root@csgftwp09  lslpp -lc | grep .sdd
+==== 
+        
+n/a or not configured!
+
+
+---=[ which ]=------------------------------------------------------------
+Cmd: root@csgftwp09  which which
+==== 
+        
+/usr/bin/which
+
+
+---=[ which ]=------------------------------------------------------------
+Cmd: root@csgftwp09  which which_fileset
+==== 
+        
+/usr/sbin/which_fileset
+
+
+---=[ Perl -v info ]=-----------------------------------------------------
+Cmd: root@csgftwp09  perl -v
+==== 
+        
+
+This is perl, v5.8.2 built for aix-thread-multi
+(with 3 registered patches, see perl -V for more detail)
+
+Copyright 1987-2003, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using `man perl' or `perldoc perl'.  If you have access to the
+Internet, point your browser at http://www.perl.com/, the Perl Home Page.
+
+
+---=[ Perl -V info ]=-----------------------------------------------------
+Cmd: root@csgftwp09  perl -V
+==== 
+        
+Summary of my perl5 (revision 5.0 version 8 subversion 2) configuration:
+  Platform:
+    osname=aix, osvers=5.2.0.0, archname=aix-thread-multi
+    uname='aix animals 2 5 000709cf4c00 '
+    config_args=''
+    hint=previous, useposix=true, d_sigaction=define
+    usethreads=define use5005threads=undef useithreads=define usemultiplicity=define
+    useperlio=define d_sfio=undef uselargefiles=define usesocks=undef
+    use64bitint=undef use64bitall=undef uselongdouble=undef
+    usemymalloc=n, bincompat5005=undef
+  Compiler:
+    cc='cc_r', ccflags ='-D_ALL_SOURCE -D_ANSI_C_SOURCE -D_POSIX_SOURCE -qmaxmem=16384 -qnoansialias -DUSE_NATIVE_DLOPEN -DNEED_PTHREAD_INIT -q32 -D_L
+    optimize='-O',
+    cppflags='-D_ALL_SOURCE -D_ANSI_C_SOURCE -D_POSIX_SOURCE -qmaxmem=16384 -qnoansialias -DUSE_NATIVE_DLOPEN -DNEED_PTHREAD_INIT -D_ALL_SOURCE -D_ANS
+    ccversion='5.0.2.0', gccversion='', gccosandvers=''
+    intsize=4, longsize=4, ptrsize=4, doublesize=8, byteorder=4321
+    d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=8
+    ivtype='long', ivsize=4, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8
+    alignbytes=8, prototype=define
+  Linker and Libraries:
+    ld='ld', ldflags =' -brtl -b32 -bmaxdata:0x80000000'
+    libpth=/lib /usr/lib /usr/ccs/lib
+    libs=-lbind -lnsl -ldbm -ldl -lld -lm -lpthreads -lc_r -lcrypt -lbsd -lPW
+    perllibs=-lbind -lnsl -ldl -lld -lm -lpthreads -lc_r -lcrypt -lbsd -lPW
+    libc=/lib/libc.a, so=a, useshrplib=true, libperl=libperl.a
+    gnulibc_version=''
+  Dynamic Linking:
+    dlsrc=dl_aix.xs, dlext=so, d_dlsymun=undef, ccdlflags='-bE:/usr/opt/perl5/lib/5.8.2/aix-thread-multi/CORE/perl.exp -bE:/usr/opt/perl5/lib/5.8.2/ai
+    cccdlflags=' ', lddlflags='-bhalt:4 -bM:SRE -bI:$(PERL_INC)/perl.exp -bE:$(BASEEXT).exp -bnoentry -lpthreads -lc_r'
+
+
+Characteristics of this binary (from libperl): 
+  Compile-time options: MULTIPLICITY USE_ITHREADS USE_LARGE_FILES PERL_IMPLICIT_CONTEXT
+  Locally applied patches:
+        SUIDPERLIO1 - fix PERLIO_DEBUG buffer overflow (CAN-2005-0156)
+        SPRINTF0 - fixes for sprintf formatting issues - CVE-2005-3962
+        REGCOMP0 - buffer overflow in regexp engine for UTF8 (CVE-2007-5116)
+  Built under aix
+  Compiled at Dec  5 2007 16:08:49
+  @INC:
+    /usr/opt/perl5/lib/5.8.2/aix-thread-multi
+    /usr/opt/perl5/lib/5.8.2
+    /usr/opt/perl5/lib/site_perl/5.8.2/aix-thread-multi
+    /usr/opt/perl5/lib/site_perl/5.8.2
+    /usr/opt/perl5/lib/site_perl
+    .
+
+
+---=[ Show NTP process ]=-------------------------------------------------
+Cmd: root@csgftwp09  ps -ef | grep ntp | grep -v grep
+==== 
+        
+    root 225482 184452   0   Sep 08      -  8:55 /usr/sbin/xntpd 
+
+
+---=[ NTP ]=--------------------------------------------------------------
+Cmd: root@csgftwp09  ntpq -pn
+==== 
+        
+     remote           refid      st t when poll reach   delay   offset    disp
+==============================================================================
+*138.83.131.154  144.70.5.142     2 u   46   64  377     0.72   -0.522    0.32
++144.70.4.140    144.70.5.142     2 u   12   64  377     1.62   -0.378    0.24
+
+
+---=[ Proctree ]=---------------------------------------------------------
+Cmd: root@csgftwp09  proctree
+==== 
+        
+110736   /usr/sbin/syncd 60
+405708   PatrolAgent -p 12000
+   123078   /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+   376964   /opt/BMCS/mq/bin/mmaelsr BMC.LISTENER CSGFTWP09A
+      245794   mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.QMGR.EVENT
+      352434   mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.PERFM.EVENT
+      397368   mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.CHANNEL.EVENT
+      450654   mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.LOGGER.EVENT
+   368836   /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+   381182   /opt/BMCS/mq/bin/mmaslsr BMC.LISTENER CSGFTWP09A
+      401464   mmaevtmn CSGFTWP09A BMC.LISTENER.STAT.SUB SYSTEM.ADMIN.STATISTICS.QUEUE
+   413758   /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+   598254   /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+127092   /usr/ccs/bin/shlap64
+139400   /usr/lib/errdemon
+184452   /usr/sbin/srcmstr
+   143404   /usr/sbin/portmap
+   192670   /usr/sbin/aixmibd
+   225482   /usr/sbin/xntpd
+   229576   /usr/sbin/snmpmibd
+   233716   /usr/sbin/inetd
+   237764   /usr/sbin/hostmibd
+   291042   /usr/sbin/muxatmd
+   712790   /bin/ksh /var/itlm/tlmagent
+      360604   /var/itlm/tlmagent.bin
+   446502   /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+   471096   /usr/sbin/sshd `
+   532484   /usr/sbin/rsct/bin/vac5/IBM.CSMAgentRMd
+   536582   /usr/sbin/rsct/bin/IBM.ServiceRMd
+   602166   /usr/sbin/rsct/bin/IBM.DRMd
+151806   pofCmdProc
+168018   /usr/sbin/uprintfd
+295114   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+   188634   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+   205030   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+   303180   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+200854   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+212992   /usr/sbin/cron
+   934126   /bin/bsh /usr/lib/sa/sa1 300 12
+      716916   /usr/lib/sa/sadc 300 12 /var/adm/sa/sa21
+   860374   sh -c /infra/opt/cfg2html/bin/run_cfg2html &gt; /infra/opt/cfg2html/log/cfg2html.l
+      761890   /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+         266308   sed 
+s/&amp;/&#92;&amp;amp;/g
+s/&lt;/&#92;&amp;lt;/g
+s/&gt;/&#92;&amp;gt;/g
+s/&#92;&#92;/&#92;&amp;#92;/g
+
+         311442   /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+         364734   /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+            585728   proctree
+         901368   /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+286920   amqzxma0 -m CSGFTWP09A
+   217266   /usr/mqm/bin/amqzfuma -m CSGFTWP09A
+   250010   amqzmuc0 -m CSGFTWP09A
+   254086   amqzmur0 -m CSGFTWP09A
+   258176   /usr/mqm/bin/amqrrmfa -m CSGFTWP09A -t2332800 -s2592000 -p2592000 -g5184000 -c3
+   262274   /usr/mqm/bin/amqzdmaa -m CSGFTWP09A
+   270470   /usr/mqm/bin/amqzmgr0 -m CSGFTWP09A
+      315546   /usr/mqm/bin/runmqchi -m CSGFTWP09A -r
+         426182   /usr/mqm/bin/runmqchl -c CSGW.IVAPP.W2.CH     -m CSGFTWP09A                    
+      319644   /usr/mqm/bin/amqpcsea CSGFTWP09A
+   282788   amqzlaa0 -mCSGFTWP09A -fip0
+   786458   amqzlaa0 -mCSGFTWP09A -fip266
+221216   random
+274460   /bin/ksh /apps/opt/bmc/PATROL/lib/bin/patrolexec.sh
+   581722   sleep 60
+327688   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+331950   /apps/opt/mqm/bin/runmqlsr -t tcp -m CSGFTWP09A -p 1414
+   417998   /usr/mqm/bin/amqrmppa -m CSGFTWP09A                                      
+348346   /usr/bin/ksh /apps/opt/bmc/PATROL/lib/bin/PatrolQueue.sh
+   631032   sleep 5
+372862   /apps/opt/ECC/exec/mstragent
+   385168   /apps/opt/ECC/exec/mstragent -s
+430236   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+   753888   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+   806962   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+   921702   /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+442576   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+454838   /apps/opt/seos/bin/seosd
+589918   /apps/opt/seos/bin/seoswd AGENT
+   475216   
+487668   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+495862   /usr/sbin/getty /dev/console
+499714   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+565336   /apps/opt/seos/bin/selogrd
+577580   /apps/opt/seos/bin/seagent SEOSD
+622650   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+704648   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+708640   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+790580   /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+839682   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+938176   /usr/bin/ksh /apps/opt/bmc/PATROL/lib/bin/AutoCron.sh
+   848040   sleep 5
+856172   /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+880644   /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+909338   /opt/CA/SharedComponents/ca_lic/lic98fds
+917684   /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+
+
+---=[ Proctree -a root ]=-------------------------------------------------
+Cmd: root@csgftwp09  proctree -a root
+==== 
+        
+1    /etc/init
+   212992    /usr/sbin/cron
+      934126    /bin/bsh /usr/lib/sa/sa1 300 12
+         716916    /usr/lib/sa/sadc 300 12 /var/adm/sa/sa21
+      860374    sh -c /infra/opt/cfg2html/bin/run_cfg2html &gt; /infra/opt/cfg2html/log/cfg2html.l
+         761890    /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+            901370    sed 
+s/&amp;/&#92;&amp;amp;/g
+s/&lt;/&#92;&amp;lt;/g
+s/&gt;/&#92;&amp;gt;/g
+s/&#92;&#92;/&#92;&amp;#92;/g
+
+            585738    /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+               266324    proctree -a root
+            299166    /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+            569372    /usr/bin/ksh93 /infra/opt/cfg2html/bin/cfg2html -o /var/tmp -e
+   917684    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   909338    /opt/CA/SharedComponents/ca_lic/lic98fds
+   880644    /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+   856172    /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+   839682    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   790580    /apps/opt/WebSphere/AppServer/java/bin/java -Declipse.security -Dwas.status.soc
+   184452    /usr/sbin/srcmstr
+      712790    /bin/ksh /var/itlm/tlmagent
+         360604    /var/itlm/tlmagent.bin
+      602166    /usr/sbin/rsct/bin/IBM.DRMd
+      536582    /usr/sbin/rsct/bin/IBM.ServiceRMd
+      532484    /usr/sbin/rsct/bin/vac5/IBM.CSMAgentRMd
+      471096    /usr/sbin/sshd `
+      446502    /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+      291042    /usr/sbin/muxatmd
+      237764    /usr/sbin/hostmibd
+      233716    /usr/sbin/inetd
+      229576    /usr/sbin/snmpmibd
+      225482    /usr/sbin/xntpd
+      192670    /usr/sbin/aixmibd
+      143404    /usr/sbin/portmap
+   708640    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   704648    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   348346    /usr/bin/ksh /apps/opt/bmc/PATROL/lib/bin/PatrolQueue.sh
+      631032    sleep 5
+   622650    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   589918    /apps/opt/seos/bin/seoswd AGENT
+      475216    
+   577580    /apps/opt/seos/bin/seagent SEOSD
+   565336    /apps/opt/seos/bin/selogrd
+   499714    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   495862    /usr/sbin/getty /dev/console
+   487668    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   454838    /apps/opt/seos/bin/seosd
+   442576    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   430236    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+      753888    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+      806962    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+      921702    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW.conf -k star
+   372862    /apps/opt/ECC/exec/mstragent
+      385168    /apps/opt/ECC/exec/mstragent -s
+   327688    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   295114    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+      188634    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+      205030    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+      303180    /apps/opt/IBMHTTPD/bin/httpd -f /apps/opt/IBMHTTPD/conf/httpd.CSGW2.conf -k sta
+   221216    random
+   200854    /usr/bin/ssh -F /apps/nnos/csgw/etc/ssh2/nlqftwvpd01.northcentralnetworks.com.1
+   168018    /usr/sbin/uprintfd
+   151806    pofCmdProc
+   139400    /usr/lib/errdemon
+   127092    /usr/ccs/bin/shlap64
+   110736    /usr/sbin/syncd 60
+   405708    PatrolAgent -p 12000
+      123078    /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+      376964    /opt/BMCS/mq/bin/mmaelsr BMC.LISTENER CSGFTWP09A
+         245794    mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.QMGR.EVENT
+         352434    mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.PERFM.EVENT
+         397368    mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.CHANNEL.EVENT
+         450654    mmaevtmn CSGFTWP09A BMC.LISTENER.SUB SYSTEM.ADMIN.LOGGER.EVENT
+      368836    /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+      381182    /opt/BMCS/mq/bin/mmaslsr BMC.LISTENER CSGFTWP09A
+         401464    mmaevtmn CSGFTWP09A BMC.LISTENER.STAT.SUB SYSTEM.ADMIN.STATISTICS.QUEUE
+      413758    /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+      598254    /opt/BMCS/mq/bin/MMA_Client -p /opt/BMCS/mq/bin
+   286920    amqzxma0 -m CSGFTWP09A
+      217266    /usr/mqm/bin/amqzfuma -m CSGFTWP09A
+      250010    amqzmuc0 -m CSGFTWP09A
+      254086    amqzmur0 -m CSGFTWP09A
+      258176    /usr/mqm/bin/amqrrmfa -m CSGFTWP09A -t2332800 -s2592000 -p2592000 -g5184000 -c3
+      262274    /usr/mqm/bin/amqzdmaa -m CSGFTWP09A
+      270470    /usr/mqm/bin/amqzmgr0 -m CSGFTWP09A
+         315546    /usr/mqm/bin/runmqchi -m CSGFTWP09A -r
+            426182    /usr/mqm/bin/runmqchl -c CSGW.IVAPP.W2.CH     -m CSGFTWP09A                    
+         319644    /usr/mqm/bin/amqpcsea CSGFTWP09A
+      282788    amqzlaa0 -mCSGFTWP09A -fip0
+      786458    amqzlaa0 -mCSGFTWP09A -fip266
+   274460    /bin/ksh /apps/opt/bmc/PATROL/lib/bin/patrolexec.sh
+      581722    sleep 60
+   331950    /apps/opt/mqm/bin/runmqlsr -t tcp -m CSGFTWP09A -p 1414
+      417998    /usr/mqm/bin/amqrmppa -m CSGFTWP09A                                      
+   938176    /usr/bin/ksh /apps/opt/bmc/PATROL/lib/bin/AutoCron.sh
+      848040    sleep 5
+180314    rdpgc
+176222    nfsSM
+172118    kbiod
+163954    rtcmd
+147552    dog
+135266    rgsr
+131144    j2pg
+106590    n4bg
+102476    lvmbb
+94254    armtrace_kproc
+90156    wlmsched
+86058    gil
+81960    netm
+77862    wait
+73764    wait
+69666    wait
+65568    wait
+61470    wait
+57372    wait
+53274    wait
+49176    xmgc
+45078    pilegc
+40980    psgc
+36882    memgrdd
+32784    memp_rbd
+28686    xmfreed
+24588    psmd
+20490    vmptacrt
+16392    lrud
+12294    sched
+8196    wait
+
+
+---=[ Uptime ]=-----------------------------------------------------------
+Cmd: root@csgftwp09  uptime
+==== 
+        
+  01:15AM   up 194 days,   1:51,  0 users,  load average: 2.81, 2.44, 2.41
+
+
+---=[ rUptime ]=----------------------------------------------------------
+Cmd: root@csgftwp09  ruptime
+==== 
+        
+ruptime: no hosts!?!
+
+
+---=[ rwho ]=-------------------------------------------------------------
+n/a or not configured!
+
+
+---=[ pmcycles ]=---------------------------------------------------------
+Cmd: root@csgftwp09  pmcycles -dm
+==== 
+        
+CPU 0 runs at 3503 MHz
+CPU 1 runs at 3503 MHz
+CPU 2 runs at 3503 MHz
+CPU 3 runs at 3503 MHz
+CPU 4 runs at 3503 MHz
+CPU 5 runs at 3503 MHz
+CPU 6 runs at 3503 MHz
+CPU 7 runs at 3503 MHz
+The decrementer runs at 512.0 MHz (1.95 ns per tick)
+
+
+---=[ System Install Time ]=----------------------------------------------
+Cmd: root@csgftwp09  lslpp -hc bos.rte|sort
+==== 
+        
+#Path:Fileset:Level:PTF Id:Action:Status:Date:Time
+/etc/objrepos:bos.rte:5.3.0.10::COMMIT:COMPLETE:03/31/09:07;25;35
+/usr/lib/objrepos:bos.rte:5.3.0.10::COMMIT:COMPLETE:03/31/09:07;25;35
+/usr/lib/objrepos:bos.rte:5.3.7.0::COMMIT:COMPLETE:03/31/09:10;40;20
+/usr/lib/objrepos:bos.rte:5.3.9.0::COMMIT:COMPLETE:03/31/09:10;40;51
+
+
+---=[ who -a ]=-----------------------------------------------------------
+   .        system boot Sep  8 23:25         
+   .        run-level 2 Sep  8 23:25         
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+srcmstr   -     .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+   .            .       Sep  8 23:25      .  
+cron      -     .       Sep  8 23:25      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:25      .  
+LOGIN     - vty0        Sep  8 23:28     3:21
+uprintfd  -     .       Sep  8 23:25      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:28      .  
+   .            .       Sep  8 23:30      .  
+csgwcmps  -     .       Jan  5 01:33      .  
+csgwcmps  -     .       Jan  5 01:34      .  
+csgwcmps  -     .       Jan  5 01:34      .  
+csgwcmps  -     .       Jan  5 01:33      .  
+csgwcmps  -     .       Jan  5 01:33      .  
+csgwcmps  -     .       Jan  5 01:33      .  
+csgwcmps  -     .       Jan  5 01:34      .  
+csgwcmps  -     .       Jan  5 01:33      .  
+csgwcmps  -     .       Jan  5 01:34      .  
+csgwcmps  -     .       Jan  5 01:34      .  
+   .            .       Sep  8 23:28      .  
+   .        pts/0       Mar 19 00:06     old 
+   .        pts/1       Mar  1 13:35     old 
+   .        pts/2       Dec 22 22:34     old 
+   .        pts/3       Sep 30 14:22     old 
+
+
+---=[ who -b ]=-----------------------------------------------------------
+   .        system boot Sep  8 23:25                     
+
+
+---=[ who -r ]=-----------------------------------------------------------
+   .        run-level 2 Sep  8 23:25       2    0    S
+
+
+---=[ who -b;who -r ]=----------------------------------------------------
+   .        system boot Sep  8 23:25                     
+   .        run-level 2 Sep  8 23:25       2    0    S
+
+See IBMs Java page: <A HREF=http://www.ibm.com/developerworks/java/jdk/aix/service.html> http://www.ibm.com/developerworks/java/jdk/aix/service.html </A>
+
+== check Fixes for Java 1.4.2 32-Bit ==
+
+FIX IZ70828 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.335 SR13FP4
+
+FIX IZ65489 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.320 SR13FP3
+
+FIX IZ62265 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.305 SR13FP2
+
+FIX IZ56705 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.290 SR13FP1
+
+FIX IZ47402 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.275 SR13
+
+FIX IZ33546 NOT installed !! Missing Java 1.4.2 32-Bit Update 1.4.2.250 SR12
+
+FIX IZ23124 installed. You are using Java 1.4.2 32-Bit Update 1.4.2.225 SR11
+
+== check Fixes for Java 5.0.0 32-Bit ==
+
+FIX IZ76420 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.305 SR11FP2
+
+FIX IZ70125 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.290 SR11FP1
+
+FIX IZ64936 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.275 SR11
+
+FIX IZ55273 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.250 SR10
+
+FIX IZ48295 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.235 SR9-SSU
+
+FIX IZ39401 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.225 SR9
+
+FIX IZ29993 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.210 SR8a
+
+FIX IZ27812 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.200 SR8
+
+FIX IZ18002 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.175 SR7
+
+FIX IZ07645 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.160 SR6
+
+FIX IZ02874 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.130 SR5a
+
+FIX IY96845 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.125 SR5
+
+FIX IY94334 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.100 SR4
+
+FIX IY90809 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.76 n/a
+
+FIX IY90224 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.75 SR3
+
+FIX IY88729 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.51 n/a
+
+FIX IY83355 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.50 SR2
+
+FIX IY82213 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.25 SR1
+
+FIX IY80649 NOT installed !! Missing Java 5.0.0 32-Bit Update 5.0.0.10 n/a
+
+
+---=[ Java ]=-------------------------------------------------------------
+Cmd: root@csgftwp09  java -version
+==== 
+        
+java version "1.4.2"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2)
+Classic VM (build 1.4.2, J2RE 1.4.2 IBM AIX build ca142-20080515 (SR11) (JIT enabled: jitc))
+
+
+---=[ Java (fullversion) ]=-----------------------------------------------
+Cmd: root@csgftwp09  java -fullversion
+==== 
+        
+java full version "J2RE 1.4.2 IBM AIX build ca142-20080515 (SR11)"
+
+: xlc not found wx= rc=1
+
+: gcc not found wx= rc=1
+
+
+---=[ svmon summary ]=----------------------------------------------------
+Cmd: root@csgftwp09  svmon -O summary=basic,unit=auto
+==== 
+        
+-------------------------------------------------------------------------------
+               size       inuse        free         pin     virtual  available
+memory        8.00G       7.94G       65.9M       1.56G       3.52G      2.88G
+pg space      3.00G       10.8M
+
+               work        pers        clnt       other
+pin           1.22G          0K          0K     343.85M
+in use        3.52G          0K       4.42G
+
+
+
+Created 2012-03-21 - 01:16:20 with  Cfg2Html -AIX- Version 2.80 (c) 2005-2008 by Andreas Wizemann, 2000-2002 by Gert Leerdam, SysSupp; 
+

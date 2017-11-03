@@ -1,0 +1,22 @@
+#!/bin/ksh
+#
+# <name>
+#
+# This script ...
+#
+
+function output_source
+{
+  echo "<source file line>"
+  # here is an example
+  #echo "cfg2html,${DATADIR}/cfg2html/cfg2html_%H_%YYY%m%d.html,cfg2html.key"
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "<name> plugin running" 1
+  # run stuff to get a source
+  logwrite "<name> plugin complete" 1
+}
+# EOF

@@ -1,0 +1,31 @@
+#
+# test_console outputs Console_Status
+# value [unk|up|down|failed]
+#
+# This script tries to connect to the console, if defined
+# in the previous Summary File
+#
+function output_header
+{
+  echo "Console_Status"
+}
+
+function output_value
+{
+  logwrite "test_console plugin running" 1
+  FIELD="unk"
+  # if the Default Flag is set output defaults
+  if [ "${OUTPUT_DEFAULT}x" = "truex" ];then
+    echo "${FIELD}"
+    return
+  fi
+  # This
+  # some values you may use are
+  # ${hostname}
+  # ${ruser[$x]}
+  # ${TIMEOUT}
+  # ${ACCESS}
+  # ${OS}
+  echo "${FIELD}"
+  logwrite "test_console plugin complete" 1
+}

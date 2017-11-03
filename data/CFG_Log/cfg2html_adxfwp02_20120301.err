@@ -1,0 +1,90 @@
+which: no hwinfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+which: no lsdev in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+
+sfdisk: ERROR: sector 0 does not have an msdos signature
+Disk /dev/sdd doesn't contain a valid partition table
+Disk /dev/sdh doesn't contain a valid partition table
+Disk /dev/dm-10 doesn't contain a valid partition table
+Disk /dev/dm-14 doesn't contain a valid partition table
+Disk /dev/dm-15 doesn't contain a valid partition table
+Disk /dev/dm-16 doesn't contain a valid partition table
+Disk /dev/dm-18 doesn't contain a valid partition table
+Disk /dev/dm-19 doesn't contain a valid partition table
+Disk /dev/dm-20 doesn't contain a valid partition table
+Disk /dev/dm-21 doesn't contain a valid partition table
+Disk /dev/dm-22 doesn't contain a valid partition table
+Disk /dev/dm-23 doesn't contain a valid partition table
+/usr/bin/cfg2html-linux: line 1989: [: missing `]'
+sk /dev/sdh doesn't contain a valid partition table
+    Disk /dev/dm-10 doesn't contain a valid partition table
+    Disk /dev/dm-14 doesn't contain a valid partition table
+    Disk /dev/dm-15 doesn't contain a valid partition table
+    Disk /dev/dm-16 doesn't contain a valid partition table
+    Disk /dev/dm-18 doesn't contain a valid partition table
+    Disk /dev/dm-19 doesn't contain a valid partition table
+    Disk /dev/dm-20 doesn't contain a valid partition table
+    Disk /dev/dm-21 doesn't contain a valid partition table
+    Disk /dev/dm-22 doesn't contain a valid partition table
+    Disk /dev/dm-23 doesn't contain a valid partition table
+stderr output from "/sbin/fdisk -l|sed 's/8e \ Unknown/8e \ LVM/g'":
+    Disk /dev/sdd doesn't contain a valid partition table
+    Disk /dev/sdh doesn't contain a valid partition table
+    Disk /dev/dm-10 doesn't contain a valid partition table
+    Disk /dev/dm-14 doesn't contain a valid partition table
+    Disk /dev/dm-15 doesn't contain a valid partition table
+    Disk /dev/dm-16 doesn't contain a valid partition table
+    Disk /dev/dm-18 doesn't contain a valid partition table
+    Disk /dev/dm-19 doesn't contain a valid partition table
+    Disk /dev/dm-20 doesn't contain a valid partition table
+    Disk /dev/dm-21 doesn't contain a valid partition table
+    Disk /dev/dm-22 doesn't contain a valid partition table
+    Disk /dev/dm-23 doesn't contain a valid partition table
+stderr output from "cat /var/lib/multipath/bindings":
+    cat: /var/lib/multipath/bindings: No such file or directory
+stderr output from "vgdisplay -v | awk -F' +' '/PV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -v | awk -F' +' '/LV Name/ {print $4}'":
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "vgdisplay -v":
+        Finding all volume groups
+        Finding volume group "vgdata"
+        Finding volume group "vgroot"
+stderr output from "PVDisplay":
+        Using physical volume(s) on command line
+        Using physical volume(s) on command line
+        Using physical volume(s) on command line
+        Using physical volume(s) on command line
+stderr output from "/sbin/ldconfig -vN":
+    /sbin/ldconfig: Cannot stat /usr/X11R6/lib/libGLU.so: No such file or directory
+    /sbin/ldconfig: Cannot stat /usr/lib/libGLU.so: No such file or directory
+stderr output from "/usr/openv/netbackup/bin/bpclntcmd -pn":
+    expecting response from server ebuftwspa01
+stderr output from "cfg2html_plugin":
+    which: no pkginfo in (/infra/opt/cfg2html/bin:/sbin:/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/sbin:/opt/omni/bin:/opt/omni/sbin)
+    /etc/cfg2html/plugindir/package_plugin.sh: line 12: -x: command not found

@@ -1,0 +1,81 @@
+##
+## This script check that the /usr/seos link exists and points to valid binaries
+## if not it tries to find where seos is installed and make the link
+## It also reports if SeOS is not installed or not running
+
+#set -x
+ruser=root
+TRY_PATH="/apps/opt/seos /opt/CA/eTrustAccessControl /apps/opt/CA/eTrustAccessControl"
+
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        #echo "  Waiting $count more seconds for completion."
+        sleep 6
+        let count="count - 6"
+      else
+        #echo "! Failed to complete after $1 seconds."
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+
+for hostname in $(cat hostlist );do
+  echo "#### $hostname"
+  SEOS=""
+  # Frist see if seosd is running
+  ssh -o BatchMode=yes ${ruser}@${hostname} \
+    "ps -fu root" 2>/dev/null  | grep seosd > /tmp/seos$$ 2>&1 &
+  if bg_not_complete_before_timeout 10; then
+    echo "failed to connect to ${hostname} after 10 sec"
+    kill $!
+  else # data returned
+    #cat /tmp/seos$$  ## DEBUG
+    if grep seosd /tmp/seos$$ > /dev/null 2>&1 ; then
+      RPATH=`sed 's/.* \//\//;s/\/bin\/seosd.*$//' /tmp/seos$$`
+      echo "SeOS is running from $RPATH"
+      # Make the link
+      ssh -o BatchMode=yes ${ruser}@${hostname} \
+        "rm /usr/seos" 2>/dev/null
+      ssh -o BatchMode=yes ${ruser}@${hostname} \
+        "ln -s $RPATH /usr/seos" 2>/dev/null
+    else
+      echo "SeOS is not running"
+      for RPATH in $TRY_PATH ; do
+        ssh -o BatchMode=yes ${ruser}@${hostname} \
+          "${RPATH}/bin/seversion" > /tmp/seos$$ 2>&1 &
+        if bg_not_complete_before_timeout 10; then
+          echo "failed to connect to ${hostname} after 10 sec"
+          kill $!
+        else # data returned
+          if grep -i "seversion " /tmp/seos$$ > /dev/null 2>&1 ; then
+            echo "SeOS is installed in $RPATH"
+            # Make the link
+            ssh -o BatchMode=yes ${ruser}@${hostname} \
+              "rm /usr/seos" 2>/dev/null
+            ssh -o BatchMode=yes ${ruser}@${hostname} \
+              "ln -s $RPATH /usr/seos" 2>/dev/null
+            continue
+          else
+            echo "I could not find SeOS in $RPATH"
+          fi
+        fi
+      done
+    fi
+  fi
+  rm /tmp/seos$$
+  # Show the link
+  ssh -o BatchMode=yes ${ruser}@${hostname} \
+    "ls -l /usr/seos" 2>/dev/null
+done
+

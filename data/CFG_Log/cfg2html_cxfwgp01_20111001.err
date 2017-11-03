@@ -1,0 +1,127 @@
+/opt/cfg2html/plugins/get_ministat.sh[47]: 26461 Memory fault(coredump)
+olrad:ERROR:Command only for internal use
+/opt/cfg2html/cfg2html_hpux.sh[1983]: cmversion:  not found
+opt/cfg2html/plugins/getpwd.hppa":
+    exec_command[8]: 26978 Memory fault(coredump)
+stderr output from "/opt/cfg2html/plugins/getpwd.hppa -g":
+    exec_command[8]: 26990 Memory fault(coredump)
+stderr output from "echo Total Memory:  GB;echo '';/opt/cfg2html/plugins/meminfo.hppa":
+    exec_command[8]: 27011 Memory fault(coredump)
+stderr output from "smhstartconfig":
+    exec_command[8]: smhstartconfig:  not found
+stderr output from "/opt/sfm/bin/sfmconfig -w -q":
+    /opt/sfm/bin/sfmconfig: illegal option -- w
+stderr output from "olrad -q":
+    olrad:ERROR:Command only for internal use
+stderr output from "/opt/cfg2html/plugins/dumplvmtab.hppa":
+    exec_command[8]: 6063 Memory fault(coredump)
+stderr output from "vgdisplay -v |grep Name | /opt/cfg2html/plugins/pvgfilter.hppa":
+    exec_command[8]: 6089 Memory fault(coredump)
+stderr output from "lvlnboot -v vg00":
+    lvlnboot: Volume group "/dev/vg00" does not exist in the "/etc/lvmtab" file.
+stderr output from "/usr/sbin/setoncenv -l nfs":
+    setoncenv variable_name value
+    	 variable_name
+    		 AUTOFS 
+    		 AUTOMOUNT 
+    		 NFS_CLIENT 
+    		 NFS_SERVER 
+    		 NISPLUS_CLIENT 
+    		 NISPLUS_SERVER 
+    		 NIS_CLIENT 
+    		 NIS_MASTER_SERVER 
+    		 NIS_SLAVE_SERVER 
+    		 PCNFS_SERVER 
+    		 START_MOUNTD 
+    
+    	 value (i.e.) 
+    		 1 
+    		 0 
+    
+stderr output from "SCM_collector":
+    SCM_collector[3]: mxnode:  not found
+    SCM_collector[5]: mxuser:  not found
+    SCM_collector[7]: mxauth:  not found
+    SCM_collector[9]: mxtool:  not found
+stderr output from "/usr/sbin/vxlicrep -e":
+    exec_command[8]: /usr/sbin/vxlicrep:  not found
+stderr output from "su - informix -c "echo Informix Home="":
+    ttytype: couldn't open /dev/tty for reading
+    stty: : Not a typewriter
+    Not a terminal
+    stty: : Not a typewriter
+    stty: : Not a typewriter
+stderr output from "su - informix -c "onstat -d"":
+    ttytype: couldn't open /dev/tty for reading
+    stty: : Not a typewriter
+    Not a terminal
+    stty: : Not a typewriter
+    stty: : Not a typewriter
+    ksh: onstat:  not found
+stderr output from "cmquerycl -v":
+    cmquerycl  : Unable to find any configuration information
+stderr output from "cmviewcl -v -f line 2>/dev/null || cmviewcl -v":
+    Error: Permission denied to 127.0.0.1
+    cmviewcl  : Cannot view the cluster configuration. Either this node is not configured in a cluster, or else there is some obstacle to viewing the configuration. Check the syslog file for more information.  For a list of possible causes, see the ServiceGuard manual for cmviewcl.
+stderr output from "/usr/sbin/cmviewconf":
+    cmviewconf: Binary file does not exist.
+stderr output from "cfg2html_plugin":
+    WARNING: An attempt to get the network host entry for "cxttgp02"
+             failed.  This may result in denial of access to users and
+             agents at this host.  Check the spelling of this name, then
+             your "/etc/hosts" file, or your "/etc/resolv.conf" file and
+             DNS resolver configuration.  The nslookup program may be
+             helpful in isolating this problem.
+    WARNING: An attempt to get the network host entry for "cxttgp02"
+             failed.  This may result in denial of access to users and
+             agents at this host.  Check the spelling of this name, then
+             your "/etc/hosts" file, or your "/etc/resolv.conf" file and
+             DNS resolver configuration.  The nslookup program may be
+             helpful in isolating this problem.
+20111001 running run_cfg2html.ksh
+ERROR:   "cxfwgp01:/":  You do not have the required permissions to
+         select this target.  Check permissions using the "swacl"
+         command or see your system administrator for assistance.  Or,
+         to manage applications designed and packaged for nonprivileged
+         mode, see the "run_as_superuser" option in the "sd" man page.
+ERROR:   More information may be found in the daemon logfile on this
+         target (default location is
+         cxfwgp01:/var/adm/sw/swagentd.log).
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Starting          cfg2html/HP-UX version 5.13 on a 9000/800/A500-5X box
+Path to cfg2Html  /opt/cfg2html/cfg2html_hpux.sh
+Path to plug-ins  /opt/cfg2html/plugins Arch=hppa
+HTML Output File  /var/tmp/cxfwgp01.html
+Text Output File  /var/tmp/cxfwgp01.txt
+Errors logged to  /var/tmp/cxfwgp01.err
+Started at        2011-10-01 01:15:03
+Command line used -o /var/tmp -P
+Problem           If cfg2html hangs on Hardware, press twice ENTER, Ctrl-D or
+                  Crtl-\. Then check your Diagnostics (A.42++ and PHKL_29798)!
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+USE AT YOUR OWN RISK! (for details read /opt/cfg2html/doc/cfg2html.html)
+Online help: run cfg2html_hpux.sh -h for help or look at the ~/doc directory
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+Collecting:  HP-UX/System  ........................
+Collecting:  Hardware  .....Diag............................................
+Collecting:  Software  .........
+Collecting:  Filesystems, Dump and Swap Configuration  .........
+Collecting:  LVM  ...............
+Collecting:  Network Settings/Network Interface Cards  .........
+Collecting:  Network Subsystems  ..............................
+Collecting:  Fibre Channel  ......
+Collecting:  Kernel  ..........
+Collecting:  System Enhancements  .....
+Collecting:  Applications And Subsystems  ...............
+Collecting:  Symantec Licenses/Symantec Volume Manager (VxVM)  ...
+Collecting:  Informix  ...
+Collecting:  Serviceguard ()  .........
+Collecting:  Custom plugins  ..................
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Completed

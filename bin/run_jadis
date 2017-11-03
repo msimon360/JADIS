@@ -1,0 +1,281 @@
+#!/bin/ksh
+#
+# Title:         run_jadis (based on gather_data.ksh by Mark Simon
+#                which was based on gen_sysinfo_idx by Peter Lundquist)
+# Author:        Mark Simon
+################################################################
+#
+#   run_jadis collects files from remote systems and generates
+#   files based on commands run aginst the list of hosts.
+#   run_jadis is designed to be run from root's (or an admin account)
+#   daily from cron
+#   Here is a sample cron enrty
+# # Gather JADIS Files and Generate Reports
+# 0 4 * * * /apps/opt/JADIS/bin/run_jadis > /apps/opt/JADIS/logs/gather_data.log 2>&1
+#
+################################################################
+# Modification History:
+# 20120203 Major rewrite, Master/Slave processes run plugins
+# 20120103 Fixed OS and OSVer not cleared in function copy_files (Mts)
+# 20091021 Removed references to RUSER and used ruser[$x] from remote.lis (Mts)
+# 20091014 Made a run_auto_update function, run if access = ssh or rsh. (Mts)
+# 3.00 20090522 Remove all report generation. rename to run_jadis(Mts)
+# 2.09 20090410 Gen lists sys.<user>.*rsh (Mts)
+# 2.08 20090225 Fix bug head->tail in download check (Mts)
+# 2.07 20090218 Reversed sort on Model list in footer (Mts)
+# 2.06 20090217 Fix for html without TOC (Mts)
+# 2.05 20090210 cleaned up HTML with CSS, added version to output (Mts)
+# 01-27-2009 Many fixes found in fresh install, added link to Model (Mts)
+# 10-13-2008 added SRCDIR, gunzip, (Mts)
+# 08-10-2008 changed link to dynamic Data Request Form, added
+#             bg_not_complete_before_timeout function to prevent
+#             hangs on ssh commands
+# 08-26-2008 Added link to Data Request Form (Mts)
+# 06-24-2008 Added ACCESS column (Mts)
+# 04-24-2008 Added idle servers (Mts)
+# 04-17-2008 Change MODEL names to uppercase. (Mts)
+# 03-25-2008 Changed temp files to use process ID (Mts)
+# 03-13-2008 New CSS working, adding command line options. (Mts)
+# 03-03-2008 Added convert non-html files to html (Mts)
+# 02-25-2008 Major CSS update to aprox Verizon House Layout (Mts)
+# 02-25-2008 Added SERIAL # or SYSTEM ID to Model count (Mts)
+#             Added missing to host count.
+# 02-04-2008 Fixed problem with permissions and Model. (Mts)
+# 01-31-2008 Added convert to frames. (Mts)
+# 01-10-2008 Moved to omzrsi, changed directories.
+# 09-27-2007 Added test for ssh via sysadm account for servers
+#             where root ssh is disabled. Local copy no longer
+#             needed. Moved chmod, chown out of loop. Changed
+#             chmod, chown to use find. (Mts)
+# 09-26-2007 Modifications to get Model from cfg2html on Itanium
+#             Added local copy for central server (Mark Simon)
+# 09-25-2007 Changed Title to Verizon (Mark Simon)
+# 08-09-2006 Changed ftp section to scp due to server hardening
+# 04-05-2004 Change background color from lightblue to white
+# 11-19-2003 Modifications to fix display of workstation model
+#             Add cascading style sheet properties
+# 10-26-2003 Modifications to archival/removal routines
+# 10-20-2003 Added symlinks to hostname.sysinfo.latest.html
+# 07-10-2003 Corrected chmod from 555 to 644
+# 07-09-2003 Updated SIDIR to reflect new directory
+# 07-08-2003 Changed font from "Arial" to "Arial, Sans-Serif"
+# 06-20-2003 Added redirects for errors to /dev/null
+# 06-19-2003 Date created
+################################################################
+
+function usage
+{
+  echo "Usage: run_jadis [-f] [-h] [-H hostlist] [-m] [-r]"
+  echo "-f Force new summary file creation"
+  echo "-h Help, this text"
+  echo "-H <hostlist> list of hosts to run against" 
+  echo "-m Master process"
+  echo "-r Report only, do not gather new files"
+}
+
+function initialize
+{
+# Cannot use logwrite until LOGLEVEL is set
+let LOGLEVEL=1
+logwrite "Initializing Variables" 1
+ 
+#  Source SITE CUSTOM file  #
+#  The following are needed in the Site Custom File
+#TIMEOUT - Timeout value for remote commands
+
+SSH="ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no"
+BASE=`dirname $1`
+if [ "${BASE}x" = ".x" ];then
+  BASE="`pwd`"
+fi
+BASE=`dirname $BASE`
+. $BASE/etc/JADIS.ini
+
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/seos/bin:/bin:/usr/bin:/etc:/usr/sbin:/usr/ucb:/home/v807156/bin:/usr/bin/X11:/sbin:/usr/seos/bin:.:$BASE/bin:$BASE/cgi-bin
+export PATH
+
+today=`date +'%Y%m%d'`
+
+THISHOST=`hostname | cut -d"." -f1`
+
+# initialize remote file list
+init_rfiles
+logwrite "Initializing Variables complete" 1
+return 0
+}
+
+
+function init_rfiles # Added OS in ver 6.0
+{
+  logwrite "Initializing Remote File List" 1
+  # Read the Remote file list into arrays
+  PFS="${IFS}"
+  IFS=,
+  x=0
+  cat $RFLIST | while read ros[$x] source[$x] rfile[$x] ldir[$x] ruser[$x];  do
+    x=$((${x}+1))
+  done
+  NUMSOURCE=$x
+  IFS="${PFS}"
+  logwrite "Initializing Remote File List - complete" 1
+}
+
+function print_rfiles
+{
+  logwrite "Printing Remote Files" 1
+  x=0
+  while [ $x < $NUMSOURCE ]; do
+    print "${source[$x]} ${rfile[$x]} ${ldir[$x]} ${ruser[$x]}"
+    x=$((${x}+1))
+  done 
+  logwrite "Printing Remote Files - complete" 1
+}
+
+function logwrite
+{
+  MSG="${1}"
+  let LEVEL=$2
+  # Write a formatted string to the logfile
+  DATESTAMP=`date +"%Y%m%d %H:%M"`
+  if (( $LEVEL < $LOGLEVEL )); then
+    #echo "##LOG:${DATESTAMP}: ${MSG}" >> $LOGFILE
+    # For debugging write to Standard Error
+    echo "##LOG:${DATESTAMP}: ${MSG}" >2
+  fi
+  return 0
+}
+
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        logwrite "  Waiting $count more seconds for completion." 1
+        sleep 6
+        let count="count - 6"
+      else
+        logwrite "! Failed to complete after $1 seconds." 1
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+
+function init_data_list # Need to add OS
+{
+  logwrite "Init Data Sources List" 1
+  # Read the Remote file list into arrays
+  PFS="${IFS}"
+  IFS=,
+  x=0
+  cat $DLIST | while read source[$x] ldir[$x] datatype[$x];  do
+    ldir[$x]=`dirname ${ldir[$x]}`
+    x=$((${x}+1))
+  done
+  NUMSOURCE=$x
+  IFS="${PFS}"
+  logwrite "Init Data Sources List complete" 1
+}
+
+#### MAIN script ####
+LOGFILE=/tmp/run_jadis.log
+initialize $0
+# Get command line options
+while [ $# -gt 0 ]; do
+  case $1 in
+    -f )  FORCE_CSV=force_new_csv
+          shift;;
+    -h )  usage; exit 0
+          ;;
+    -\? )  usage; exit 0
+          ;;
+    -H )  shift
+          THISLIST=$1
+          shift;;
+    -m )  JADISMSTR="true"
+          shift;;
+    -r )  REPORT_ONLY=report_only
+          shift;;
+    -t )  TEAMDOC=true
+          shift;;
+    * )
+       echo "Option $1 not recognized, exiting.";usage;exit 1
+       ;;
+  esac
+done
+
+if [ "${THISLIST}x" = "x" ];then
+  THISLIST=${JADISLIST}
+  logwrite "No Host List given. Defaulting to ${JADISLIST}" 1
+fi
+if (( $LOGLEVEL > 0 )); then
+  mv $LOGFILE ${LOGDIR}/run_jadis_${THISLIST}.log
+fi
+LOGFILE=${LOGDIR}/run_jadis_${THISLIST}.log
+
+#
+# If there is a settings file for this list source it
+#
+if [ -r ${TOPDIR}/etc/JADIS_${THISLIST}.ini ]; then
+  . ${TOPDIR}/etc/JADIS_${THISLIST}.ini
+fi
+
+# Declare Global Variables that will be changed in functions
+ACCESS="unk"
+
+# Determin if this is the Master Process
+if [ "${JADISMSTR}" = "true" ]; then
+  logwrite "This process ${THISHOST}_${THISLIST} is the JADIS master" 1
+  # source Master Plugins and call functions
+  for master_file in `ls ${PLUGINS}/M* ` ; do
+    if [ -x ${master_file} ];then
+      . ${master_file}
+      ## ENHANCMENT - gather_source should return the date of the source
+      ## if it is not newer than the latest Summary File do not add
+      ## output_source to source.lis
+      gather_source
+      output_source >> ${TMP}/source.lis
+    fi
+  done # processing Master Plugins
+  # end Master Process
+else # Slave Process
+  logwrite "This process ${THISHOST}_${THISLIST} is not the JADIS master" 1
+  # source Host Plugins and build header
+  STATFILE=${DATADIR}/Status/${THISHOST}_${THISLIST}_status${today}.csv
+  echo -n "Hostname" > ${STATFILE}
+  for host_file in `ls ${PLUGINS}/H* ` ; do
+    if [ -x ${host_file} ];then
+      . ${host_file}
+      output_header >> ${STATFILE}
+    fi
+  done # processing Host Plugins for headers
+  echo "" >> ${STATFILE}
+  # Loop for all hosts in Host List
+  NUM_HOSTS=`wc -l ${LISTDIR}/${THISLIST} | cut -d" " -f1`
+  let HCOUNT=0
+  logwrite "Processing Hostlist ${THISLIST} with $NUM_HOSTS entries" 1
+  for hostname in `cat ${LISTDIR}/${THISLIST} `; do
+    let x=0
+    OUTPUT_DEFAULT="false"
+    echo -n "${hostname}" >> ${STATFILE}
+    let HCOUNT=${HCOUNT}+1
+    logwrite "Running Host Plugins for $hostname host $HCOUNT of $NUM_HOSTS" 1
+    # source Host Plugins and output_value
+    for host_file in `ls ${PLUGINS}/H*`; do
+      if [ -x ${host_file} ];then
+        . ${host_file}
+        output_value >> ${STATFILE}
+      fi
+    done # processing Host Plugins for values
+    echo "" >> $STATFILE
+  done # processing Hostlist
+  touch ${TMP}/${THISHOST}_${THISLIST}_complete
+fi # Slave Process
+exit 0

@@ -1,0 +1,39 @@
+#!/bin/ksh
+#
+# gen_csv
+#
+# This script runs the gen_data.pl script with the options to create a
+# comma seperated value (csv) file of all hosts and all parameters
+# parsed from the SysInfo files. It is ment to be run daily from cron.
+# The gen_data.pl cgi script then uses the csv file to run interactive
+# reports.
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "gen_csv plugin running" 1
+  # Must use a temp file for output so gen_data does not open the empty file
+  TMPFILE=${TMP}/sysinfo_${today}.csv
+  OUTFILE=${TOPDIR}/summary_files/sysinfo_${today}.csv
+
+  logwrite "# Generate datafile $OUTFILE" 1
+  # If run with the -f option remove the current csv file to force generation.
+  if [ "${FORCE_CSV}" != "true" ]; then
+    rm $OUTFILE ${TOPDIR}/summary_files/sysinfo_latest.csv
+  fi
+
+  ${TOPDIR}/cgi-bin/gen_data.pl -b -c -H sys.all -p all -o csv > \
+    ${TMPFILE} 2> ${TOPDIR}/logs/gen_data.log
+  mv ${TMPFILE} ${OUTFILE}
+  chmod 644 ${OUTFILE}
+  # Make a link for use by gen_data.pl
+  ln -fs ${OUTFILE} ${TOPDIR}/summary_files/sysinfo_latest.csv
+  chmod 644 ${TOPDIR}/summary_files/sysinfo_latest.csv
+  logwrite "gen_csv plugin complete" 1
+}
+# EOF

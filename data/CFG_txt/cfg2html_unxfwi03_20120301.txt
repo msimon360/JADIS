@@ -1,0 +1,193 @@
+       - Full list of I/O health status
+       - Short list of I/O health status
+       - List the stale entries present in the system
+       - Physical Memory Overview
+       - Console Keyboard Layout
+       - Diagnostics Tool Statistics
+       - Installed Hardware (cstm)
+       - Additional CPU Information
+       - Local Hardware Domains
+       - EMS Event Log
+       - Required/Optional Software for System Fault Management (SFM)
+       - CIM Binaries and their Patchlevel
+       - Installed CIM A.02.07.04 Providers
+       - Details of the SFM Provider Module
+       - CIM Configuration
+       - CIM Users and Authentication
+       - CIM Trusts/Certificates
+       - CIM Indication Handlers
+       - CIM Indication Subscriptions
+       - CIM Indication Filters
+       - EVWEB Log Viewer
+       - EVWEB Event Viewer
+       - EVWEB Subscriptions
+       - SFM - list of operational status
+       - SFM - filters present in the repository
+       - Last lines of the SFM log
+       - SMH Startup Configuration
+       - Quick Check of SMH
+       - WBEM OS Info
+       - EMS Hardware Monitors
+       - EMS/STM Version
+       - EMS Hardware Monitor Setup
+       - EMS Down States
+       - Current SFM Diagnostics Mode
+       - GiCAP Status
+       - Disk Firmware Collect with Hardware Path
+       - Disk Firmware Collect with Device Files
+       - SureStore E Disk Array XP Disk Mechanisms
+       - SureStore E Disk Array XP Identification Information
+       - SureStore E Disk Array XP (Continuous Access and Business Copy)
+       - XP LUNs visible/not mapped
+       - SureStore E Disk Array XP (Port Summary)
+       - SureStore E Disk Array XP (LUNs Summary)
+       - Serial Attached SCSI (SAS) Mass Storage
+       - Ultra320 SCSI Controller/MPT Driver
+       - HP SmartArray RAID Controller Family
+       - OLA/R Status (8 Slots)
+       - OLRAD Scripts
+       - gWLM Status
+    Software ---- 
+       - Registered Depots
+       - Installed Software
+       - Installed Filesets
+       - Software Installation Date
+       - Last Software Jobs
+       - Installed Products
+       - Unconfigured/Corrupted Software
+       - Patches and Patch Statistic
+    Filesystems, Dump and Swap Configuration ---- 
+       - Filesystems and Usage
+       - Filesystem Settings
+       - Mountpoints (fstab)
+       - Active Local Mountpoints (sorted)
+       - Swap Info
+       - Dump Configuration
+    LVM ---- 
+       - LVM Volumegroup and Filesystem Quick Overview
+       - LVM Overview
+       - LVM Tab Dump
+       - Detailed Volumegroups
+       - VG Group Device Files
+       - Physical Volume Group Filter
+       - Auto VG Activation (/etc/lvmrc)
+       - Boot LVs (lvlnboot)
+       - Detailed Mirror/UX Overview/Mismatch
+       - Physical Devices used for LVM
+       - Boot Information/LIF
+       - Boot Device Configuration Table
+       - LVM/VG Limits
+       - EFI Filesystem Layout
+       - IO Statistics (iostat)
+       - IO Statistics (sar)
+    Network Settings/Network Interface Cards ---- 
+       - NIC Description
+       - NIC Overview
+       - NIC Details
+       - Netconf Settings
+       - Autoport Aggregation
+       - Routing Tables
+       - TCP/IP Stack and Protocol Statistics
+       - Number of TCP/IP Sockets in the same State
+    Network Subsystems ---- 
+       - Nettl Status
+       - Nettl Conf Settings
+       - Networking Daemon Patchlevel
+       - Internet
+       - Internet
+       - Files in /usr/lib/security (PAM Kerberos)
+       - PAM Configuration
+       - Internet
+       - DNS and Names
+       - Sendmail Versions
+       - Detailed Sendmail Configuration
+       - Sendmail Aliases local
+       - Sendmail Mailertable
+       - NFS
+       - NFSD and BIOD utilization
+       - NSFD responds to RPC requests
+       - Mounted NFS File Systems
+       - Detailed NFS Settings
+       - NFS Statistics
+       - RPC
+       - IPC Status
+       - XNTP Time Protocol Daemon
+    Fibre Channel ---- 
+       - Fibrechannel Interface Information
+       - FCMS Util Revision
+       - Detailed TD List
+       - Detailed FCD List
+    Kernel ---- 
+       - Last 150 lines of dmesg(1m)
+       - Kernel paging events
+       - Status Kernel Processes
+       - Kernel Parameter from /stand/system
+       - Current Kernel Parameters
+       - All kctune(1) System Parameter
+       - Nonstandard kctune(1) System Parameter
+       - Available Kernel Configuration
+       - Query of the Kernel Resources
+       - Kernel Modules
+       - Kernel Modules Alarms
+       - Current Device Drivers
+       - ARIES Emulator Patch Level
+    System Enhancements ---- 
+       - SAM version
+       - update-ux Version
+       - SSH
+       - Special Group Attributes
+       - async Device Driver
+    Applications And Subsystems ---- 
+       - Files in /usr/local/bin
+       - Files in /usr/lbin
+       - Installed Performance Software
+       - Ignite/UX - Print_Manifest
+       - Dynamic Root Disks
+       - PRM - Resource Process Manager
+       - Printer Spooler and Printers
+    Symantec Licenses/Symantec Volume Manager (VxVM) ---- 
+       - Symantec License Keys
+       - VxFS Kernel Modules
+       - VxFS Subtype
+       - VxFS/VxVM installed Software
+    Custom plugins ---- 
+       - Clock Info
+       - Cluster Configuration
+       - DB Info
+       - Disk Information 3rd Party
+       - Disk Space Totals
+       - Local files
+       - HTTPD
+       - IPsec Report
+       - NetBackup S/W Details
+       - SystemV Package List
+       - Root Mail
+       - SeOS E-Trust Data
+       - SSH
+       - Software Access Control Lists
+       - System Info
+       - UNIX Team Accounts
+       - Virtual Mach Info
+
+
+Hint: Use /opt/cfg2html/contrib/check_errors_hpux.sh to check your systems for misconfiguration and errors
+
+
+---=[ Model ]=----------------------------------------------------------------
+
+Modelstring:    ia64 hp server rx6600 (no description)
+Number of CPUs: 4
+CPU capable:    64 bits
+CPU Speed:      399 MHz
+
+
+---=[ uname and hostname ]=---------------------------------------------------
+
+HP-UX unxfwi03 B.11.31 U ia64 1430401381 unlimited-user license
+HP-UX 32/64 = 64 bits
+
+Domainname  = 
+Hostname    = unxfwi03
+
+
+---=[ POSIX Standards/Settings ]=----------------

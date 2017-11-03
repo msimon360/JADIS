@@ -1,0 +1,170 @@
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+                                                 #####
+ ######  #          #    #####    ####    ####  #     #
+ #       #          #    #    #  #    #  #            #
+ #####   #          #    #    #  #        ####   #####
+ #       #          #    #    #  #            # #
+ #       #          #    #    #  #    #  #    # #
+ ######  ######     #    #####    ####    ####  #######
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+
+    HP-UX/System ---- 
+       - Model
+       - PA-RISC Type (11.x)
+       - Supported Bits (32/64)
+       - uname and hostname
+       - POSIX Standards/Settings
+       - Locale
+       - /etc/PATH
+       - /etc/MANPATH
+       - Soft User limits
+       - Hard User limits
+       - Uptime, Load and SAR
+       - Hierarchical Process View
+       - Process View, incl. PRM Groups
+       - Top 25 CPU Processes
+       - Top 25 Memory Processes
+       - Top output
+       - Buffer Activity
+       - VM-Statistics
+       - Reboots
+       - Crontab and AT scheduler
+       - inittab
+       - Runlevel Settings
+       - User accounts
+       - Groups
+    Hardware ---- 
+       - Hardware with H/W-Path
+       - Physical Memory
+       - Console Keyboard Layout
+       - Diagnostics Tool Statistics
+       - Installed Hardware (cstm)
+       - Last PDCINFO Tombstone
+       - Previous PDCINFO Tombstone
+       - EMS Event Log
+       - Predictive Configuration
+       - EMS Hardware Monitors
+       - EMS Hardware Monitor Setup
+       - EMS Down States
+       - CIM Providers: Module Status
+       - Disk Firmware Revision
+       - L+N Class Elroy Check
+       - EMC Diskarray Configuration
+       - SureStore E Disk Array XP Disk Mechanisms
+       - SureStore E Disk Array XP Identification Information
+       - SureStore E Disk Array XP (Continuous Access and Business Copy)
+       - XP LUNs visible/not mapped
+       - SureStore E Disk Array XP (Port Summary)
+       - SureStore E Disk Array XP (LUNs Summary)
+       - HP SureStore 12 AutoRAID
+       - HP SureStore FC60 Disk Array
+       - VA Topology
+    Software ---- 
+       - Registered Depots
+       - Installed Software
+       - Software Installation Date
+       - Last Software Jobs
+       - Installed Products
+       - Unconfigured/Corrupted Software
+       - Patches and Patch Statistic
+       - Installed Codewords
+    Filesystems, Dump- and Swapconfiguration ---- 
+       - Filesystems and Usage
+       - Filesystem Settings
+       - Mountpoint (fstab)
+       - Active Local Mountpoints
+       - NFS Filesystems
+       - Swap Info
+       - Dump Configuration
+       - HFS Superblocks
+    LVM ---- 
+       - LVM Volumegroup and Filesystem Quick Overview
+       - LVM Overview
+       - LVM Tab Dump
+       - Detailed Volumegroups
+       - VG Group Device Files
+       - PVG-Filter
+       - Auto VG Activation (/etc/lvmrc)
+       - Boot LVs (lvlnboot)
+       - Detailed Mirror/UX Overview/Mismatch
+       - Physical Devices used for LVM
+       - Bootinformation/LIF
+       - Boot Device Configuration Table
+       - IO Statistics (iostat)
+       - IO Statistics (sar)
+    Network Settings/Network Interface Cards ---- 
+       - NIC Description
+       - NIC Overview
+       - NIC Details
+       - Netconf Settings
+       - LAN Core Patch Level
+       - Routing Tables
+       - TCP/IP Stack and Protocol Statistics
+       - Number of TCP/IP Sockets in the same State
+    Network Subsystems ---- 
+       - Gate Daemon Settings
+       - Networking Daemon Patchlevel
+       - BOOTP Daemon Configuration
+       - Internet Daemon Configuration
+       - Internet Daemon Security
+       - Files in /usr/lib/security (PAM Kerberos)
+       - PAM Configuration
+       - Internet Daemon Services
+       - DNS and Names
+       - Sendmail Versions
+       - Detailed Sendmail Configuration
+       - Sendmail Aliases local
+       - NFS settings
+       - NFSD and BIOD utilisation
+       - NSFD responds to RPC requests
+       - Mounted NFS File Systems
+       - NFS Automounter Settings
+       - NFS Automounter MAPS
+       - NFS Statistics
+       - NFS Core Patch Level
+       - RPC
+       - IPC Status
+       - XNTP Time Protocol Daemon
+       - FTP Login Shells
+       - Simple Network Management Protocol (SNMP)
+    Fibre Channel ---- 
+       - Fibre Channel Driver
+       - Fibre Channel Card Statistics (old Adapter)
+       - Fibrechannel Interface Information
+       - FCMS Util Revision
+       - Detailed TD List
+    Kernel ---- 
+       - Last 150 lines of dmesg(1m)
+       - Kernel paging events
+       - Status Kernel Processes
+       - Kernel Parameter from /stand/system
+       - Current Kernel Parameters
+       - kmtune(1) System Parameter
+       - Kernel Module Configuration
+       - Current Device Drivers
+       - HP-UX Core Patch Level
+    Systemenhancements ---- 
+       - SAM version
+       - Special Group Attributes
+    Applications And Subsystems ---- 
+       - Files in /usr/local/bin
+       - Files in /usr/lbin
+       - iFOR
+       - Installed Performance Software
+       - Ignite/UX - Print_Manifest
+       - Make_Recovery Sessions
+       - Printer Spooler and Printers
+       - JetDirect
+    Veritas Licenses/Veritas Volume Manager (VxVM) ---- 
+    Serviceguard () ---- 
+       - Real Serviceguard Version
+       - Serviceguard Configuration
+       - Serviceguard Nodes and Packages
+       - Serviceguard Cluster Configuration Information
+       - Serviceguard Scancl Detailed Node Configuration
+       - Files in  (Default=/etc/cmcluster)
+       - Serviceguard Network Subnets
+       - Serviceguard Sockets

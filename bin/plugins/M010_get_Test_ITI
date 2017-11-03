@@ -1,0 +1,79 @@
+#!/bin/ksh
+#
+# get_ITI
+#
+# This script calls get_NCDC_ITI on nctss (b7vftwspa02) which uses inq program
+# to gather ITI records. It then adds any hosts found in the ITI file
+# that are not already in the Master Host List
+#
+
+function output_source
+{
+  # <enhancement> add logic here to only add source if updated
+  echo "ITI,${DATADIR}/ITI/ITI_NCDC_%YYY%m%d.csv,CSV"
+}
+
+function gather_source 
+{
+logwrite "get_ITI plugin running" 1
+DATESTAMP=`date +"%Y%m%d"`
+OUTFILE=${DATADIR}/ITI/ITI_NCDC_${DATESTAMP}.csv
+
+ssh v807156@b7vftwspa02 '/home/v807156/get_TEST_ITI' > ${TMP}/ITI.out$$ 2>/dev/null
+
+# This is the original header output by qinv
+#HostName,Application,IP,ServerAccessMethodType,RemoteIP,RemoteConnectionType,SupportGroup,Address,City,State,Grid,Location,ExternalSerialNumber,OS,AliasNodeName,Portfolio,AgentDeployed,ServerAccessMethodHost,RemoteHostName,RemotePort,VID,ServerStatus,VipsServerSupportLevel,Environment,RemoteUser,ApplID,Hardware_ID,Make,Model,DNSSuffix,MASK,Gateway,DNS1,DNS2,DNS3,VirtualIP,OSVersion,MissionCritical,Platform
+
+# This outputs the header expected by JADIS
+echo "HostName,Application,IP,ServerAccessMethodType,RemoteIP,RemoteConsoleType,Admin,Address,City,State,Grid,Site,ExternalSerial#,OS,AliasNodeName,Portfolio,AgentDeployed,AccessHost,RemoteHost,RemotePort,VID,ServerStatus,VipsServerSupportLevel,Env,RemoteUser,ApplID,Hardware_ID,Vendor,Model#,DNSSuffix,MASK,Gateway,DNS1,DNS2,DNS3,VirtualIP,OSVer,Critical,Platform" \
+  > ${OUTFILE}
+
+# Translate fields to normalized formats
+# BE CAREFUL order matters
+# output file skipping the header
+tail -n +2 ${TMP}/ITI.out$$ | while read line; do
+  # Change hostname to lowercase
+  name=`echo $line | cut -d"," -f1 | tr '[:upper:]' '[:lower:]'`
+  rest=`echo $line | cut -d"," -f2`
+  line=`echo ${name},${rest}`
+  # Change comma to space, then | to comma.
+  line=`echo $line | sed 's/,/ /g;s/|/,/g'`
+  line=`echo $line | sed 's/HP\-COMPAQ/HP/g'`
+  line=`echo $line | sed 's/DELL/Dell/g'`
+  line=`echo $line | sed 's/VMWAREVirtualPlatform/VMware/ig'`
+  line=`echo $line | sed 's/VMWARE/VMware/ig'`
+  line=`echo $line | sed 's/HPVirtualMachine/HPVM/g'`
+  line=`echo $line | sed 's/GSP Non-superdome/GSP/g'`
+  line=`echo $line | sed 's/Mission Critical/MC/g'`
+  line=`echo $line | sed 's/Non-MC/NC/g'`
+  line=`echo $line | sed 's/FTW\-DR/GO/g'`
+  line=`echo $line | sed 's/Rochester/RDC/g'`
+  line=`echo $line | sed 's/Production/Prod/g'`
+  line=`echo $line | sed 's/Disaster Recovery/DR/g'`
+  line=`echo $line | sed 's/ Terminal Server//g'`
+  line=`echo $line | sed 's/Development/Dev/g'`
+  line=`echo $line | sed 's/User Acceptance Test \- NonProduction/UAT/g'`
+  line=`echo $line | sed 's/User Acceptance Test \- NonProd/UAT/g'`
+  line=`echo $line | sed 's/red.*[a4567890])/Linux/g;s/ //g'`
+  line=`echo $line | sed 's/suse.*level/Linux/g;s/ //g'`
+  line=`echo $line | sed 's/Windows.*Edition/Windows/g;s/ //g'`
+  line=`echo $line | sed 's/ Virtual Platform//g'`
+  line=`echo $line | sed 's/REDHATLINUX/Linux/g'`
+  line=`echo $line | sed 's/LINUX/Linux/g'`
+  line=`echo $line | sed 's/aix/AIX/g'`
+  line=`echo $line | sed 's/sunos/SunOS/ig'`
+  line=`echo $line | sed 's/centos.*)/centos/ig'`
+  line=`echo $line | sed 's/hp-ux/HP-UX/g'`
+  line=`echo $line | sed 's/ProdCLECTestEnvironment/CLEC/g'`
+  line=`echo $line | sed 's/\.northcentralnetworks\.com//g'`
+  echo $line
+done >> ${OUTFILE}
+rm ${TMP}/ITI.out$$
+
+# Add hosts to the Master List
+tail -n +2 ${OUTFILE} | cut -d"," -f1 | cut -d"." -f1 |\
+  sed 's/[ \t]*//' | tr A-Z a-z >> ${TMP}/hostlist$$
+logwrite "get_ITI plugin complete" 1
+return 0
+}
+# EOF

@@ -1,0 +1,23 @@
+#!/bin/ksh
+#
+# cleanup
+# This script cleans up the mess all the other scripts left behind
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "cleanup plugin running" 1
+  # cleanup temporary files
+  # including source.lis
+  rm -f ${TMP}/* 
+  rm -f ${LISTDIR}/Collector_* > /dev/null 2>&1
+  rm -f ${ALLHOSTLST} > /dev/null 2>&1
+  touch ${ALLHOSTLST}
+  logwrite "cleanup plugin complete" 1
+}
+# EOF

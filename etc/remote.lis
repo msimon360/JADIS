@@ -1,0 +1,5 @@
+HP-UX,SysInfo,/infra/support/sysinfo/data/sysinfo_%H_%YYY%m%d.html,/infra/opt/jadis_dev/JADIS/data/SysInfo,root
+HP-UX,SI_Log,/infra/support/sysinfo/data/sysinfo_%H_%YYY%m%d.output,/infra/opt/jadis_dev/JADIS/data/SI_Log,root
+AIX HP-UX Linux SunOS,cfg2html,/infra/opt/cfg2html/data/cfg2html_%H_%YYY%m%d.html,/infra/opt/jadis_dev/JADIS/data/cfg2html,root
+AIX HP-UX Linux SunOS,CFG_Log,/infra/opt/cfg2html/data/cfg2html_%H_%YYY%m%d.err,/infra/opt/jadis_dev/JADIS/data/CFG_Log,root
+AIX HP-UX Linux SunOS,CFG_txt,/infra/opt/cfg2html/data/cfg2html_%H_%YYY%m%d.txt,/infra/opt/jadis_dev/JADIS/data/CFG_txt,root

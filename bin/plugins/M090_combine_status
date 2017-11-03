@@ -1,0 +1,25 @@
+#!/bin/ksh
+#
+# combine_status 
+#
+# This script Combines the Status Files from all Collectors
+#
+
+function output_source
+{
+  # Output Source File Entry
+  echo "Status,${DATADIR}/Status/status%YYY%m%d.csv,CSV"
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "combine_status plugin running" 1
+  cd ${DATADIR}/Status
+  head -qn 1 *_status${today}.csv | head -n 1 > status${today}.csv
+  for FN in `ls *_status${today}.csv`; do
+    tail -n +2 $FN >> status${today}.csv
+  done
+  logwrite "combine_status plugin complete" 1
+}
+# EOF

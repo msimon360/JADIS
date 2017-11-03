@@ -1,0 +1,55 @@
+set -x
+ruser=root
+x=1
+HOSTLIST="dn3ftwp01"
+
+#nxfwqp02
+#ewftwp33
+#aavfwpv12
+#lnxfwi02
+#saftwp28
+
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        #echo "  Waiting $count more seconds for completion."
+        sleep 6
+        let count="count - 6"
+      else
+        #echo "! Failed to complete after $1 seconds."
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+
+for hostname in $HOSTLIST ; do
+
+SEOS=""
+ssh -o BatchMode=yes ${ruser}@${hostname} \
+  "PATH=$PATH:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin;seversion" > /tmp/seos$$ 2>&1 &
+    if bg_not_complete_before_timeout 10; then
+      echo "failed to connect to ${hostname} after 10 sec"
+      kill $!
+    else
+      if grep -i "seversion " /tmp/seos$$ >/dev/null ; then
+      #if grep -i "seversion " /tmp/seos$$ ; then
+        SEOS=`grep -i "seversion " /tmp/seos$$ | head -1 | \
+          sed 's/^.*seversion //i;s/ .*//' `
+      fi
+    fi
+    echo "$hostname $SEOS"
+    grep -i "seversion " /tmp/seos$$ | head -1
+    cat /tmp/seos$$  ## DEBUG
+    rm /tmp/seos$$
+done
+exit

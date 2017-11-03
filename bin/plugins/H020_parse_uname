@@ -1,0 +1,47 @@
+#parse_uname returns OS and OSVer
+#
+function output_header
+{
+  echo -n ",OS,OSVer"
+}
+
+function output_value
+{
+    logwrite "parse_uname plugin running" 1
+    OS="unk"
+    OSVer="unk"
+    # if the Default Flag is set output defaults
+    if [ "${OUTPUT_DEFAULT}x" = "truex" ];then
+      echo -n ",${OS},${OSVer}"
+      return
+    fi
+    # Get uname -a and parse
+    #print "Checking uname string"
+    touch ${TMP}/uname$$
+    TEST=${ACCESS}
+    case $ACCESS in
+      ssh)
+        ${SSH} ${ruser[$x]}@${hostname} \
+          "uname -a" > ${TMP}/uname$$ 2>&1 &
+        if bg_not_complete_before_timeout ${TIMEOUT}; then
+          kill $!
+          echo -n "unk junk unk" > ${TMP}/uname$$
+        fi
+      ;;
+      rsh)
+        rsh ${hostname} -l ${ruser[$x]} \
+          "uname -a" > ${TMP}/uname$$ 2>&1 &
+        if bg_not_complete_before_timeout ${TIMEOUT}; then
+          kill $!
+          echo -n "unk junk unk" > ${TMP}/uname$$
+        fi
+      ;;
+    esac
+    if grep -i "${hostname} " ${TMP}/uname$$ >/dev/null ; then
+      OS=`grep -i "${hostname}" ${TMP}/uname$$ | cut -d" " -f1`
+      OSVer=`grep -i "${hostname}" ${TMP}/uname$$ | cut -d" " -f3`
+    fi
+    echo -n ",${OS},${OSVer}"
+    rm ${TMP}/uname$$
+    logwrite "parse_uname plugin complete" 1
+}

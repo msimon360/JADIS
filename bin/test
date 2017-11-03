@@ -1,0 +1,36 @@
+##
+## This script check that the /usr/seos link exists and points to valid binaries
+## if not it tries to find where seos is installed and make the link
+## It also reports if SeOS is not installed or not running
+
+#set -x
+ruser=root
+TRY_PATH="/apps/opt/seos /opt/CA/eTrustAccessControl /apps/opt/CA/eTrustAccessControl"
+
+function bg_not_complete_before_timeout
+{
+  # the return values are reversed as this function
+  # is true if the background job is NOT complete
+  # don't let the double negative fool you :-)
+  sleep 1
+  if ps -p $! | grep $! >> /dev/null; then
+    let count="$1"
+    while ps -p $! | grep $! >> /dev/null; do
+      if (( $count > 0 )); then
+        #echo "  Waiting $count more seconds for completion."
+        sleep 6
+        let count="count - 6"
+      else
+        #echo "! Failed to complete after $1 seconds."
+        return 0
+      fi
+    done
+    return 1
+  fi
+  return 1
+}
+
+while read hostname ; do
+  echo "#### $hostname"
+done < hostlist
+

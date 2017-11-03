@@ -1,0 +1,23 @@
+#
+# This script copies files to remote hosts and runs them
+# NOTE: This script is sourced by the gather_data script
+# not run so all VARs are available, also an exit here will
+# exit the data collection script that calls it so, that is
+# a bad idea.
+#
+# You can use this as a template to run any script by naming
+# it auto_update, making it executable, putting it in this directory
+# remember it will run on all servers of any OS.
+# The script that is copied is run in a shell so it should have an exit.
+#
+from_file=${TOPDIR}/etc/update_files/fix_ECC_HP-UX.sh
+#
+case $ACCESS in
+  ssh)
+    to_file="/tmp/fix_ECC_HP-UX.sh"
+    scp -B $from_file ${RUSER}@${hostname}:$to_file
+    ssh -o BatchMode=yes ${RUSER}@${hostname} '/tmp/fix_ECC_HP-UX.sh'
+  ;;
+esac
+#
+set +x

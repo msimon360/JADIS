@@ -1,0 +1,88 @@
+#!/usr/bin/sh
+
+# Title:         run_sysinfo
+# Author:        Peter Lundquist
+# Organization:  HP Customer Support
+#                Lead ASE, EDS/WorldCom account
+# Date created:  04-03-2003
+# Date modified: 05-02-2003
+#	Minor adjustments before initial deployment
+# Date modified: 07-02-2003
+#	Redirect stderr to output file
+# Date modified: 08-09-2006
+#	Commented out ftp section due to server hardening
+# 2008-04-12 Commented out unused vars (Mts)
+# 2009-05-28 Added multipath checks, SysInfo update (Mts)
+#
+#   run_sysinfo executes the SysInfo script,
+#   and transfers the output to a server,
+#   where the output is intended to be archived and viewed on a website.
+#   run_sysinfo is designed to be run from root's cron once daily.
+#   It will only run SysInfo once every 2 weeks.
+
+# Temp directory to put local output files
+# Exported because it is also used in SysInfo
+SYSINFO_LOGDIR=${SYSINFO_LOGDIR:-"/tmp"} export SYSINFO_LOGDIR
+
+# check temp file to see if it's been run in the last 2 weeks; if so, exit
+[[ -n $(find ${SYSINFO_LOGDIR}/.run_sysinfo -mtime -14 2>/dev/null) ]] && exit
+
+# define variables
+DEPOT_SERVER=schnoppi:/depot/VzB
+
+# Installation directory of SysInfo product on local system
+SYSINFO_INSTALLDIR=/usr/bin
+
+# Basename of all output files
+HOSTNAME=`hostname | cut -d"." -f1`
+SYSINFO_BASENAME=sysinfo_${HOSTNAME}_$(date +'%Y%m%d')
+SYSINFO_LOGFILE=${SYSINFO_LOGDIR}/${SYSINFO_BASENAME}.output
+touch $SYSINFO_LOGFILE
+
+DPPHOME=`finger -m dpphpux | grep "^Directory:" | \
+  sed 's/^Directory: *//;s/ .*$//'`
+
+PATH_LIST="/apps/support/sysinfo /tools/sysadm /home/tools/sysadm $DPPHOME"
+
+for CUST_PATH in $PATH_LIST; do
+  if [[ -x ${CUST_PATH}/bin/run_all_chk ]]; then
+    CUST_SCRIPT=${CUST_PATH}/bin/run_all_chk
+    break
+  fi
+done
+
+# Custom Data File
+DATA_LIST="${CUST_PATH}/data/adhoc.txt /var/adm/sysadm_data"
+for CUST_DATA in $DATA_LIST; do
+  if [[ -f $CUST_DATA ]]; then
+    true
+    break
+  fi
+done
+
+# remove left over files from previous runs
+rm -f ${SYSINFO_LOGDIR}/sysinfo_${HOSTNAME}* 2>/dev/null
+
+# Make sure SysInfo is the latest version
+/usr/sbin/swinstall -x mount_all_filesystems=false -s ${DEPOT_SERVER} SysInfo >>\
+ $SYSINFO_LOGFILE 2>&1
+
+
+# run SysInfo
+if [[ "${SYSINFO_REL}" > "3.15" ]]; then
+  ${SYSINFO_INSTALLDIR}/SysInfo -HaTs -c ${CUST_SCRIPT} -C ${CUST_DATA} >>\
+    ${SYSINFO_LOGFILE} 2>&1
+else
+  ${SYSINFO_INSTALLDIR}/SysInfo -HaT >> ${SYSINFO_LOGFILE} 2>&1
+fi
+
+# for SysInfo >= 6.21 append log
+cat /var/adm/SysInfo.log >> ${SYSINFO_LOGFILE}
+
+# Make sure files are readable by dpphpux
+chmod 666 /tmp/sysinfo*
+
+# update temp file with current date
+touch ${SYSINFO_LOGDIR}/.run_sysinfo
+
+exit 0

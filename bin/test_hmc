@@ -1,0 +1,13 @@
+#!/bin/ksh
+set -x
+
+HOST=infwscibm01
+PASS="Ra!n2day"
+
+expect -c "set timeout 50;\
+spawn ssh hsmroot@${HOST} \"lshmc -v\";\
+expect *Password:*;\
+send -- $PASS\r;\
+interact;"
+echo "Finished job on $HOST"
+

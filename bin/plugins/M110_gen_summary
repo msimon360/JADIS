@@ -1,0 +1,23 @@
+#!/bin/ksh
+#
+# gen_summary
+#
+# This script runs the gen_data.pl script with the options to create
+# A Summary Webpage.
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "gen_summary plugin running" 1
+  ${TOPDIR}/cgi-bin/gen_data.pl -b -o hsum \
+    -p "${SUMMARY_FIELDS}" \
+    2> ${TOPDIR}/logs/gen_summary.log | \
+    tail -n +2 > ${TOPDIR}/summary.html
+  logwrite "gen_summary plugin complete" 1
+}
+# EOF

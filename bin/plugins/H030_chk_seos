@@ -1,0 +1,43 @@
+# chk_seos returns SeOS revision
+#
+function output_header
+{
+  echo -n ",SeOS"
+}
+
+function output_value
+{
+  logwrite "chk_seos plugin running" 1
+  SEOS="_none"
+  # if the Default Flag is set output defaults
+  if [ "${OUTPUT_DEFAULT}x" = "truex" ];then
+    echo -n ",${SEOS}"
+    return 0
+  fi
+  # Check SeOS Software
+  touch ${TMP}/seos$$
+  case $ACCESS in
+    ssh)
+      ${SSH} ${ruser[$x]}@${hostname} \
+        "PATH=$PATH:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin;seversion" > ${TMP}/seos$$ 2>&1 &
+      if bg_not_complete_before_timeout ${TIMEOUT}; then
+        kill $!
+      fi
+    ;;
+    rsh)
+      rsh ${hostname} -l ${ruser[$x]} \
+        "PATH=$PATH:/usr/seos/bin:/apps/opt/seos/bin:/opt/CA/eTrustAccessControl/bin;seversion" > ${TMP}/seos$$ 2>&1 &
+      if bg_not_complete_before_timeout ${TIMEOUT}; then
+        kill $!
+      fi
+    ;;
+  esac
+  if grep -i "seversion " ${TMP}/seos$$ >/dev/null ; then
+        SEOS=`grep -i "seversion " ${TMP}/seos$$ | head -1 | \
+          sed 's/^.*seversion //i;s/ .*//' `
+  fi
+  rm ${TMP}/seos$$
+  echo -n ",${SEOS}"
+  logwrite "chk_seos plugin complete" 1
+  return 0
+}

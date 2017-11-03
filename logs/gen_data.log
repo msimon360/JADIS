@@ -1,0 +1,228 @@
+/infra/opt/jadis_dev/JADIS/data/Teamsite/NC20120321.csv
+Key:Group
+Key:ExternalSerial#
+Key:Site
+Key:Grid
+Key:Enclosure
+Key:Admin
+Key:Critical
+Key:Env
+Key:Class
+Key:IP
+Key:ApplID
+Key:Application
+Key:AppContacts
+Key:OS
+Key:OSVer
+Key:Model#
+Key:RemoteConsoleType
+Key:RemoteHost
+Key:RemoteIP
+Key:REMOTE_CONSOLE
+Key:AccessHost
+Key:Comments
+Key:Partitioned
+Key:Virtual
+Key:NetWrk
+Key:Contract
+Key:Monitoring
+Key:ID_Admin
+Key:Root_owner
+Key:Root_shared
+Key:Srv_App
+Key:Srv_DB
+Key:Srv_Web
+Key:Srv_DR
+Key:Oracle_Cluster?
+/infra/opt/jadis_dev/JADIS/data/Status/status20120321.csv
+Key:Access
+Key:IP
+Key:OS
+Key:OSVer
+Key:SeOS
+Key:SSH
+Key:WebSvr
+/infra/opt/jadis_dev/JADIS/data/ITI/ITI_NCDC_20120321.csv
+Key:Application
+Key:IP
+Key:ServerAccessMethodType
+Key:RemoteIP
+Key:RemoteConsoleType
+Key:Admin
+Key:Address
+Key:City
+Key:State
+Key:Grid
+Key:Site
+Key:ExternalSerial#
+Key:OS
+Key:AliasNodeName
+Key:Portfolio
+Key:AgentDeployed
+Key:AccessHost
+Key:RemoteHost
+Key:RemotePort
+Key:VID
+Key:ServerStatus
+Key:VipsServerSupportLevel
+Key:Env
+Key:RemoteUser
+Key:ApplID
+Key:Hardware_ID
+Key:Vendor
+Key:Model#
+Key:DNSSuffix
+Key:MASK
+Key:Gateway
+Key:DNS1
+Key:DNS2
+Key:DNS3
+Key:VirtualIP
+Key:OSVer
+Key:Critical
+Key:Platform
+/infra/opt/jadis_dev/JADIS/data/asset_mgmt/Asset_mgmt.csv
+Key:City
+Key:Address
+Key:Group
+Key:ExternalSerial#
+Key:Grid
+Key:Env
+Key:Vendor
+Key:OS
+Key:OSVer
+Key:OS_bits
+Key:Model#
+Key:Hardware_ID
+Key:CPU_cores
+Key:Memory
+Key:DAS_Tot
+Key:Installed
+Key:Comments
+Key:cfg2html
+Key:Enclosure
+Key:CFGver
+Key:Cluster
+Key:CPU_bits
+Key:CPU_cores
+Key:CPU_cores
+Key:CPU_Speed
+Key:CPU_Speed
+Key:CPU_Rev
+Key:CPU_Type
+Key:DAS_Tot
+Key:DB
+Key:ExternalSerial#
+Key:FTR_cfg_rev
+Key:FWRev
+Key:Memory
+Key:Model#
+Key:Model#
+Key:OS_bits
+Key:OS
+Key:OSVer
+Key:PART#
+Key:Patch
+Key:SAN_EMC
+Key:SAN_HDS
+Key:SAN_Tot
+Key:SAN_Vend
+Key:SAN_Vend
+Key:SAN_VSU
+Key:SSH
+Key:TEAM
+Key:TZ
+Key:UPTIME
+Key:Vendor
+Key:WEB
+## Starting gen_data.pl ver 6.00.00
+## Loading CSV File /infra/opt/jadis_dev/JADIS/summary_files/sysinfo_20120321.csv 
+## Output Header
+## Process List
+Working on /infra/opt/jadis_dev/JADIS/lists/sys.all
+
+Host:a7app01
+ 1 of 28
+
+Host:a7server
+ 2 of 28
+
+Host:aavfwp01
+ 3 of 28
+
+Host:adslnms
+ 4 of 28
+
+Host:adxfwp01
+ 5 of 28
+
+Host:adxfwp02
+ 6 of 28
+
+Host:adxfwp03
+ 7 of 28
+
+Host:appdev01
+ 8 of 28
+
+Host:argon
+ 9 of 28
+
+Host:busropv04
+ 10 of 28
+
+Host:csgftwp09
+ 11 of 28
+
+Host:cxfwgp01
+ 12 of 28
+
+Host:ebcfwp01
+ 13 of 28
+
+Host:elidcs2
+ 14 of 28
+
+Host:ewftwp33
+ 15 of 28
+
+Host:ftpsdwhprd-cg4
+ 16 of 28
+
+Host:inftwxenh1
+ 17 of 28
+
+Host:lnxfwi01
+ 18 of 28
+
+Host:nshfwpa2
+ 19 of 28
+
+Host:nyrofcsol29
+ 20 of 28
+
+Host:omefwp01
+ 21 of 28
+
+Host:rcfwsp05
+ 22 of 28
+
+Host:scrambler
+ 23 of 28
+
+Host:unxfwi03
+ 24 of 28
+
+Host:wbnfwpd1
+ 25 of 28
+
+Host:webftwp01b
+ 26 of 28
+
+Host:wkbfwpa1
+ 27 of 28
+
+Host:xrmfwp06
+ 28 of 28
+## Output Footer
+## gen_data.pl Complete

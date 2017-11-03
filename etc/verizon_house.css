@@ -1,0 +1,289 @@
+<style type="text/css">
+  * {margin:0;padding:0}
+  body{margin:0;padding:0}
+  p {margin:0 0 1em 0;padding:0}
+  h1{margin:0 0 0 0;padding:0}
+  form {margin:0;padding:0}
+  input {font-family: Arial; font-size:9pt; }
+  td {font-family: Courier; font-size:9pt; color: #0060C0; }
+  th {font-family: Arial; font-size:9pt; text-align:left; }
+  A:link { text-decoration: none; }
+  A:visited { text-decoration: none; }
+  A:hover { text-decoration: underline; }
+  body {background:#FFF url(/JADIS/icons/grad_bg.jpg) repeat-x 0px 28px;
+  font-family:arial, sans-serif; line-height=105%; }
+
+hr { 
+color: #D00000;
+height: 6px;
+}
+
+hr.bottom_line {
+ position:relative;
+ top: -4.5em;
+ height:17px;
+}
+
+hr#bottom {
+ position:relative;
+ top: -2.5em;
+}
+
+hr#model {
+ position:relative;
+ top: 0em;
+ height:28px;
+}
+
+hr#mainbottom {
+ position:relative;
+ top: -4.5em;
+ height:17px;
+}
+
+p#totalplatforms {
+ position:relative;
+ top: -5em;
+}
+
+table.header {
+border-width: 0px;
+border-style: none;
+border-color: #D0D0D0;
+border-collapse: collapse;
+}
+
+table.header th {
+border-width: 0px;
+line-height=105%;
+margin: 0;
+border-style: none;
+border-color: #D0D0D0;
+}
+
+table.header td {
+border-width: 0px;
+margin: 0;
+border-style: solid;
+border-color: #D0D0D0;
+}
+
+/* Striping */
+
+tr.alternate {
+background-color: #D0D0D0;
+}
+
+/* Sort Headers */
+
+th.table-sortable {
+background-color: transparent;
+background-image: url("/JADIS/icons/sortable.gif");
+background-position:top left;
+background-repeat:no-repeat;
+color: white;
+}
+
+th.table-sorted-asc {
+background-color: #B00000;
+background-image: url("/JADIS/icons/sorted_up.gif");
+background-position:top left;
+background-repeat:no-repeat;
+}
+
+th.table-sorted-desc {
+background-color: #B00000;
+background-image: url("/JADIS/icons/sorted_dn.gif");
+background-position:top left;
+background-repeat:no-repeat;
+}
+
+/* Filter Headers */
+
+th.filterable {
+padding: 0px 0px 0px 19px;
+}
+
+th.filter {
+position: relative;
+background-image: url("/JADIS/icons/divider_nav.gif");
+background-position:bottom right;
+background-repeat:no-repeat;
+padding: 2em 0px 4px 2px;
+}
+
+th.firstcell {
+padding-left: 0px;
+background-padding-left: 5px;
+}
+
+th.firstfilter {
+padding: 2em 0 0 0px ;
+}
+
+/* This should turn the header background dark red
+when a col is filtered, but it's not working */
+
+th.table-filtered {
+background-color: #B00000;
+}
+
+/ Divs */
+
+div.header {
+position:relative;
+width:90%;
+/* height:94px; */
+left:5%;
+float: top;
+margin:0 0 0 0;
+font-size:9pt;
+color: #0060C0;
+align: center;
+valign: center;
+}
+
+div.footer {
+position:relative;
+width:90%;
+left:5%;
+z-index:1;
+top: -4em;
+float:bottom;
+margin:0 0 0 0;
+}
+
+div.pagefooter {
+position:relative;
+float: left;
+width:100%;
+font-size:9pt;
+text-indent: 5%;
+color: white;
+margin:0 0 0 0;
+padding:0 0 0 0;
+background-color: #D00000;
+\* border:0.1em solid #0ff; *\
+}
+
+div.reportfooter {
+ position:relative;
+ top: -3.5em;
+ width:100%;
+ font-size:9pt;
+ text-indent: 5%;
+ color: #0060C0;
+\* border:0.1em solid #0ff; *\
+}
+
+div.outer {
+position:relative;
+z-index:2;
+padding:4em 0 3em 0;
+width:89%;
+left:0;
+font-size:9pt;
+margin:0 auto 3em auto;
+border-top:4px solid #D00000;
+\* border:0.1em solid #0ff; *\ 
+}
+
+div.model {
+position:relative;
+z-index:2;
+top: -3em;
+padding:3em 0 0 0;
+width:89%;
+font-size:9pt;
+margin:0 0 0 0;
+\* border:0.1em solid #0ff; *\
+}
+
+div.model_head {
+position:relative;
+z-index:0;
+top: 0;
+height: 2em;
+background-color: #D00000;
+}
+
+div.innera {
+z-index:3;
+overflow-y:auto;
+width:100%;
+height: 25em;
+margin: 0 0 0 0;
+scrollbar-track-color: #EEE;
+\* border:0.1em solid #ff0; *\
+}
+
+div.bott_left {
+position:relative;
+float:left;
+width:200px;
+z-index:2;
+top: -3em;
+padding-left:5%;
+\* border:0.1em solid #ff0; *\
+}
+
+div.bott_right {
+position:relative;
+float:left;
+padding-right: 10%;
+width:200px;
+top: -4em;
+z-index:1;
+font-size:9pt;
+\* border:0.1em solid #0f0; *\
+}
+
+div.last_line {
+position:relative;
+top: -4em;
+left:0;
+width: 100%;
+height:1.0em;
+margin:0 0 0 0;
+background-color: #D00000;
+}
+
+div.rpt_last_line {
+position:absolute;
+z-index:0;
+top: 26.5em;
+left:0;
+width: 100%;
+height:1.0em;
+margin:0 0 0 0;
+background-color: #D00000;
+}
+
+.outer table {
+border-collapse: collapse;
+border-style: none;
+}
+
+.outer thead tr {
+position:absolute;
+top:0;
+height:2.0em;
+font-size:9pt;
+}
+
+.model thead tr {
+position:absolute;
+top:0;
+height:2.0em;
+font-size:9pt;
+}
+
+.outer tfoot td {
+position:absolute;
+width: 100%;
+color:white;
+background: transparent;
+bottom: 1em;
+}
+
+</style>

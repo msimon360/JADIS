@@ -1,0 +1,198 @@
+
+=======  02/02/11 03:15:01 EST  BEGIN swinstall SESSION
+         (non-interactive) (jobid=cxfwgp01-0637)
+
+       * Session started for user "root@cxfwgp01".
+         
+       * Beginning Selection
+       * Target connection succeeded for "cxfwgp01:/".
+       * Source connection succeeded for
+         "cxfwgp01:/apps/opt/depots/hp/11xx/tools".
+       * Source:
+         cxfwgp01:/apps/opt/depots/hp/11xx/tools
+       * Targets:                cxfwgp01:/
+       * Software selections:
+             NC_SysInfo.NC-Provided-Scripts,r=A.07.06,a=HP-UX_B.11.31_IA/PA
+           + SysInfo.SYS-INFO,r=A.06.24,v=HP
+       * A "+" indicates an automatic selection due to dependency or
+         the automatic selection of a patch or reference bundle.
+       * Selection succeeded.
+         
+         
+       * Beginning Analysis and Execution
+       * Session selections have been saved in the file
+         "/vzenghpux/.sw/sessions/swinstall.last".
+       * "cxfwgp01:/":  There will be no attempt to mount filesystems
+         that appear in the filesystem table.
+       * "cxfwgp01:/":  2 filesets have the selected revision already
+         installed.
+       * Analysis and Execution succeeded.
+         
+         
+NOTE:    More information may be found in the agent logfile using the
+         command "swjob -a log cxfwgp01-0637 @ cxfwgp01:/".
+
+=======  02/02/11 03:15:39 EST  END swinstall SESSION (non-interactive)
+         (jobid=cxfwgp01-0637)
+
+
+=======  02/02/11 03:15:40 EST  BEGIN swinstall SESSION
+         (non-interactive) (jobid=cxfwgp01-0638)
+
+       * Session started for user "root@cxfwgp01".
+         
+       * Beginning Selection
+       * Target connection succeeded for "cxfwgp01:/".
+       * Source connection succeeded for
+         "cxfwgp01:/apps/opt/depots/hp/11xx/tools".
+       * Source:
+         cxfwgp01:/apps/opt/depots/hp/11xx/tools
+       * Targets:                cxfwgp01:/
+       * Software selections:
+             SysInfo.SYS-INFO,r=A.06.24,v=HP
+       * Selection succeeded.
+         
+         
+       * Beginning Analysis and Execution
+       * Session selections have been saved in the file
+         "/vzenghpux/.sw/sessions/swinstall.last".
+       * "cxfwgp01:/":  There will be no attempt to mount filesystems
+         that appear in the filesystem table.
+       * "cxfwgp01:/":  1 filesets have the selected revision already
+         installed.
+       * Analysis and Execution succeeded.
+         
+         
+NOTE:    More information may be found in the agent logfile using the
+         command "swjob -a log cxfwgp01-0638 @ cxfwgp01:/".
+
+=======  02/02/11 03:16:07 EST  END swinstall SESSION (non-interactive)
+         (jobid=cxfwgp01-0638)
+
+/usr/bin/SysInfo[39]: gzip:  not found.
+sysinfo.ksh completed
+
+ @@@@             @@@@@
+@                   @                       
+@     @   @  @@@    @   @@   @ @@@@  @@@@ 
+ @@@@  @ @  @       @   @ @  @ @    @    @
+     @  @    @@@    @   @  @ @ @@@  @    @
+     @  @       @   @   @   @@ @    @    @
+ @@@@   @    @@@  @@@@@ @    @ @     @@@@
+
+Copyright 1999-2010 Hewlett-Packard Company.
+All rights reserved.
+
+SysInfo 6.24 by HP Services
+
+Configuration data for cxfwgp01
+Collected on Wed Feb  2 03:16:08 EST 2011
+
+
+Output file is /apps/support/sysinfo/data/sysinfo_cxfwgp01_20110202.html
+Gathering lvlnboot data...
+Running HPUX 11.11
+/usr/bin/SysInfo[38]: /usr/contrib/bin/machinfo:  not found.
+This is a PA-RISC system
+Volume Manager(s): Logical Volume Manager (LVM)
+
+Checking for config file - system_db
+  Found config file = /usr/bin/system_db
+Checking for serial number...USC41172ED
+Launching ioscan
+Finished ioscan
+Gathering bdf information...OK...
+Launching LVM scan; this could take a while...
+  Processing Volume Groups...
+  Processing logical volumes.........................................
+  Processing physical volumes...................
+Finished LVM scan
+Checking to see if we're running in a partition; Not in partition
+Checking for diagmond and cstm...Found diagmond...Found cstm...
+  Is diagmond daemon running....diagmond daemon is running.
+  Checking cstm version...found A.65.00
+SysInfo will wait up to 600 seconds to allow cstm to finish and then will resume processing..
+CSTM has completed. SysInfo will now resume processing.
+Collecting system data...
+  Gathering system memory information...
+  Gathering system uptime information...
+  Gathering last patch information...
+  Looking for the Root Volume Group.../dev/vgroot
+  Looking for the root dump device.../dev/vgroot/lvswapA 
+  Checking to see if the system is a Trusted System...No
+  Determining kernel size...
+  Gathering dump data...
+    SAVECRASH is undefined
+    CRASHCONF_ENABLED is enabled
+Collecting H/W partitionable complex information.../usr/sbin/parstatus not found
+Collecting Virtual Partition information......no VPAR's found
+Collecting kernel data.............................
+Collecting /stand/bootconf data...
+Scanning network cards...
+Scanning filesystems.........................
+Retrieving io_scan data 
+Collecting ICOD/ICAP information...ICOD not found
+Collecting SCSI bus data using mptconfig...No mpt devices found...
+Collecting Fibre Channel device information....
+Collecting Secure Path information...autopath not found...spmgr not found...
+Collecting SmartArray RAID card data...No SmartArray devices found...
+Collecting SAS Array RAID card data...Cannot find command /opt/sas/bin/saslist...Not collecting SAS data...
+Collecting Online Addition/Replacement of PCI IO cards...
+Retrieving io_scan data 
+Scanning physical disks...Processing 37 disks..........................
+Getting lvlnboot data 
+Getting physical disks that are not in a VG.......................................
+Checking for EVA Information...No EVA Luns discovered...
+Checking for XP Disk Array Information......Cannot find any XP disks...
+Retrieving lvm_scan data 
+Scanning volume groups..........
+Scanning VG configuration backup files.......
+Generating map files for all volume groups........
+Checking volume group configuration backups.......
+Checking for inactive volume groups........
+Checking for volume groups that don't exist in the /etc/lvmtab file........
+Verifying that /, /stand, /opt, /tmp, /usr, /var, and /home are in /dev/vgroot...
+  The /stand file system is not in /dev/vgroot
+Generating LIF listing for boot disks.
+Retrieving lvm_scan data 
+Scanning logical volumes.........................................
+Generating VG to physical disk mappings........
+Generating LVOL to physical disk mappings......................................
+Collecting software data 
+Collecting registered software depots 
+Checking for incompletely installed software 
+Checking system security  
+Checking for System Fault Management...Running...
+Checking system diagnostics ..
+Checking Ignite-UX.
+Checking for Dynamic Root Disk...Not found...
+Checking to see if ServiceGuard is installed.
+Checking to see if Omniback/Data Protector is installed and running...not installed...
+Collecting NNM information
+  NNM is not installed
+Collecting OVO/OMU information
+  OVO is not installed
+Collecting Glance/MeasureWare/Perfview information. 
+Checking system logfiles 
+Executing custom script /apps/support/sysinfo/bin/run_all_chk
+WARNING: An attempt to get the network host entry for "cxttgp02"
+         failed.  This may result in denial of access to users and
+         agents at this host.  Check the spelling of this name, then
+         your "/etc/hosts" file, or your "/etc/resolv.conf" file and
+         DNS resolver configuration.  The nslookup program may be
+         helpful in isolating this problem.
+Errors and/or Warnings were found. Please check output file /apps/support/sysinfo/data/sysinfo_cxfwgp01_20110202.html
+Gathering configuration files...
+ Tar'ed and gzipped output config file is /tmp/sysinfo_cxfwgp01_20110202.html_config_files.tar.gz
+  Adding SysInfo output file /apps/support/sysinfo/data/sysinfo_cxfwgp01_20110202.html...
+  Adding configuration files in /etc...
+  Adding /stand/bootconf...
+  Adding /stand/system...
+  Adding /var/adm/inetd.sec...
+  Saving printer information to /var/sam/lp...
+   There is no printer information in /var/sam/lp...
+
+Done writing config file.
+
+End SysInfo 6.24 
+

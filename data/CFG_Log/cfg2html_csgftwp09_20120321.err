@@ -1,0 +1,443 @@
+2012-03-21 - 01:15:00 Cfg2Html -AIX- Version 2.80
+User.......: root
+Node.......: csgftwp09
+ProcID.....: 761890
+TERM.......: dumb
+SYSLANG....: C
+LANG.......: en_US
+DISPLAY....: 
+MYSELF.....: /infra/opt/cfg2html/bin/cfg2html
+PLUGINS....: /infra/opt/cfg2html/bin/plugins
+PWD........: /
+PATH.......: /infra/opt/cfg2html/bin:/usr/bin:/etc:/usr/sbin:/usr/ucb:/usr/bin/X11:/sbin:/usr/java14/jre/bin:/usr/java14/bin
+OUTDIR.....: /var/tmp
+OUTDIR_ENV.: 
+%%% env %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+_=/bin/env
+SIGSTP=18
+TZ=EST5EDT
+SIGNEXIT=0
+SIGINT=2
+LANG=en_US
+SHELL=/usr/bin/ksh
+WSM_CGI_DIR=
+PWD=/
+HOME=/
+LC__FASTMSG=true
+LOGIN=root
+PATH=/infra/opt/cfg2html/bin:/usr/bin:/etc:/usr/sbin:/usr/ucb:/usr/bin/X11:/sbin:/usr/java14/jre/bin:/usr/java14/bin
+LOCPATH=/usr/lib/nls/loc
+LOGNAME=root
+RES_TIMEOUT=2 # DNS timeout 
+AUTHSTATE=compat
+SIGTERM=15
+USER=root
+WSM_WS_CMD="startsrc -s http4websm"
+WSM_DOC_DIR="/usr/websm/http/com.ibm.websm.http.server_1.0.0"
+TERM=dumb
+RES_RETRY=2 # DNS retries 
+ODMDIR=/etc/objrepos
+SIGHUP=1
+_AST_FEATURES=UNIVERSE - att
+NLSPATH=/usr/lib/nls/msg/%L/%N:/usr/lib/nls/msg/%L/%N.cat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+OSLEVEL_S=5300-09-02-0849
+You are at TECHNOLOGY  LEVEL 09
+You are at SERVICE PACK 02
+C2H037I Note: This script has not been fully tested on AIX 5.3 TL 09 !
+C2H037I Please report any bugs
+
+C2H038I Your OSLEVEL_S=5300-09-02-0849
+C2H020I ulimit -d was 131072 now set to 524288
+C2H021I ulimit -c is 2097151
+C2H021I ulimit -f is unlimited
+C2H021I ulimit -m is 32768
+C2H021I ulimit -n is 2000
+C2H021I ulimit -s is 32768
+C2H021I ulimit -t is unlimited
+C2H030I sysinfo file 'c2h_sysinfo' found.
+C2H030W Warning, the c2hcfg file 'c2h_cfg' is missing. Using internal defaults
+C2H030I Note, the c2hinfo file '.c2h_info' not found.
+Dir '/local/bin' NOT found. Could NOT be added
+Dir '/local/sbin' NOT found. Could NOT be added
+Dir '/usr/bin' found. Will be added
+Dir '/usr/sbin' found. Will be added
+Dir '/local/gnu/bin' NOT found. Could NOT be added
+Dir '/usr/ccs/bin' found. Will be added
+Dir '/local/X11/bin' NOT found. Could NOT be added
+Dir '/usr/openwin/bin' NOT found. Could NOT be added
+Dir '/usr/dt/bin' NOT found. Could NOT be added
+Dir '/usr/proc/bin' NOT found. Could NOT be added
+Dir '/usr/ucb' found. Will be added
+Dir '/local/misc/openv/netbackup/bin' NOT found. Could NOT be added
+DT-0 2012-03-21 - 01:15:08
+: PROC_Type=PowerPC_POWER6
+: POWER5=NO
+: POWER6=YES
+: POWER7=NO
+: SysModel=IBM,8204-E8A
+: PROC_Type2=PowerPC_POWER6
+: CPU_Type=64-bit
+: KERNEL_Type=64-bit
+: 64BIT=YES
+DT-1 2012-03-21 - 01:15:09
+>>>> output > /var/tmp/csgftwp09_csm.info LVL=1
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_csm.info
+DT-2 2012-03-21 - 01:15:09
+: TERM => BATCH
+: IACT => NON-INTERACTIV
+: xxxx => cfg2html
+EXTENDED START
+EXTENDED STOP
+========================================================================================================================
+stderr output from "prtconf":
+    0516-010 : Volume group must be varied on; use varyonvg command.
+ 
+%%% bos.rte.install 5.3.9.2 %%%%%%%%%
+>>>> output > /var/tmp/csgftwp09_aix.info LVL=1
+2012-03-21 - 01:15:19 AIX_HOTFIX 001
+2012-03-21 - 01:15:19 AIX_HOTFIX 998
+2012-03-21 - 01:15:19 SYSTEM 082
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_aix.info
+2012-03-21 - 01:15:19 SYSTEM 100
+2012-03-21 - 01:15:23 SYSTEM 110
+CPU: NO_OF_CPU=4
+CPU: CPU_TYPE=PowerPC_POWER6
+CPU: CPU_TYPE2=type        PowerPC_POWER6 Processor type        False
+2012-03-21 - 01:15:30 SYSTEM 120
+2012-03-21 - 01:15:30 start sar
+%%%%% w ; sar -start- %%%%%%%%%
+%%%%% w ; sar -end- %%%%%%%%%%%
+2012-03-21 - 01:15:32 end sar
+2012-03-21 - 01:15:32 SYSTEM 130
+2012-03-21 - 01:15:32 start vmstat
+2012-03-21 - 01:15:33 end vmstat
+2012-03-21 - 01:15:35 SYSTEM 150
+C2H200I SUMA available
+========================================================================================================================
+stderr output from "suma -c":
+    perl: warning: Setting locale failed.
+    perl: warning: Please check that your locale settings:
+    	LC_ALL = (unset),
+    	LC__FASTMSG = "true",
+    	LANG = "en_US"
+        are supported and installed on your system.
+    perl: warning: Falling back to the standard locale ("C").
+ 
+========================================================================================================================
+stderr output from "suma -l":
+    perl: warning: Setting locale failed.
+    perl: warning: Please check that your locale settings:
+    	LC_ALL = (unset),
+    	LC__FASTMSG = "true",
+    	LANG = "en_US"
+        are supported and installed on your system.
+    perl: warning: Falling back to the standard locale ("C").
+ 
+2012-03-21 - 01:15:36 SYSTEM 160
+2012-03-21 - 01:15:41 : AIX/System <<<
+2012-03-21 - 01:15:41 :---------------------------------------
+2012-03-21 - 01:15:41 SYSTEM 998
+2012-03-21 - 01:15:41 :---------------------------------------
+2012-03-21 - 01:15:41 :---------------------------------------
+2012-03-21 - 01:15:41 EXP 001
+2012-03-21 - 01:15:41 :---------------------------------------
+2012-03-21 - 01:15:41 : EXPERIMENTAL >>>
+%%%%% Device Check 2145(SVC),2105(ESS) -start- %%%%%%%%%
+VSCSI devices found
+%%%%% Device Check 2145(SVC),2105(ESS) -end- %%%%%%%%%%%
+2012-03-21 - 01:15:42 EXP 300
+%%%%% plugin -start- %%%%%%%%%
+C2H704I Plugin 'c2h_plugin_0' has EXECUTE Bit ON.
+C2H706I START Plugin 'c2h_plugin_0'.
+========================================================================================================================
+stderr output from "/infra/opt/cfg2html/bin/plugins/c2h_plugin_0":
+    cat: cannot open /usr/openv/netbackup/exclude*
+ 
+C2H707I END   Plugin 'c2h_plugin_0'.
+C2H706I START Plugin 'c2h_plugin_1'.
+C2H707I END   Plugin 'c2h_plugin_1'.
+%%%%% plugin -end- %%%%%%%%%%%
+2012-03-21 - 01:15:46 EXP 400
+%%%%% aio -start- %%%%%%%%%
+========================================================================================================================
+stderr output from "aioo -a":
+    Could not load program aioo:
+    Symbol resolution failed for aioo because:
+    	Symbol aio_cntl (number 19) is not exported from dependent
+    	  module /unix.
+    Examine .loader section symbols with the 'dump -Tv' command.
+ 
+%%%%% aio -end- %%%%%%%%%%%
+2012-03-21 - 01:15:49 EXP 500
+%%%%% SDD/SDDPCM -start- %%%%%%%%%
+2012-03-21 - 01:15:50 EXP 510
+SDD sdd_rc=1 sdd_old=Not Installed
+2012-03-21 - 01:15:50 EXP 520
+SDDPCM pcm_rc=1 sdd_pcm=Not Installed
+2012-03-21 - 01:15:51 EXP 530
+C2H275W HOSTATTACHMENT NOT installed RC=1
+2012-03-21 - 01:15:51 EXP 540
+C2H253I neither SDD nor SDDPCM installed
+%%%%% SDD/SDDPCM -end- %%%%%%%%%%%
+2012-03-21 - 01:15:51 EXP 600
+%%%%% HACMP -start- %%%%%%%%%
+C2H280W HACMP cltopinfo Not Found !
+%%%%% HACMP -end- %%%%%%%%%%%
+2012-03-21 - 01:15:51 EXP 600
+%%%%% which -start- %%%%%%%%%
+C2H000I Fileset 'bos.content_list' missing ! Please install before using 'which_fileset'
+%%%%% which -end- %%%%%%%%%%%
+2012-03-21 - 01:15:52 EXP 700
+%%%%% geninv -start- %%%%%%%%%
+
+AWDBG001I wait geninv PID=913428 RC=127
+AWDBG000I checking for DSN_geninv
+%%%%% geninv -end- %%%%%%%%%%%
+2012-03-21 - 01:15:52 EXP 800
+%%%%% lswpar -start- %%%%%%%%%
+%%%%% lswpar -end- %%%%%%%%%%%
+2012-03-21 - 01:15:52 EXP 810
+%%%%% Perl -start- %%%%%%%%%
+========================================================================================================================
+stderr output from "perl -v":
+    perl: warning: Setting locale failed.
+    perl: warning: Please check that your locale settings:
+    	LC_ALL = (unset),
+    	LC__FASTMSG = "true",
+    	LANG = "en_US"
+        are supported and installed on your system.
+    perl: warning: Falling back to the standard locale ("C").
+ 
+========================================================================================================================
+stderr output from "perl -V":
+    perl: warning: Setting locale failed.
+    perl: warning: Please check that your locale settings:
+    	LC_ALL = (unset),
+    	LC__FASTMSG = "true",
+    	LANG = "en_US"
+        are supported and installed on your system.
+    perl: warning: Falling back to the standard locale ("C").
+ 
+%%%%% Perl -end- %%%%%%%%%%%
+2012-03-21 - 01:15:54 EXP 820
+%%%%% NTP -start- %%%%%%%%%
+%%%%% NTP -end- %%%%%%%%%%%
+2012-03-21 - 01:15:55 EXP 993
+2012-03-21 - 01:15:57 EXP 994
+2012-03-21 - 01:15:59 EXP 995
+2012-03-21 - 01:16:00 EXP 996
+2012-03-21 - 01:16:01 EXP 997
+2012-03-21 - 01:16:02 : EXPERIMENTAL <<<
+2012-03-21 - 01:16:02 :---------------------------------------
+2012-03-21 - 01:16:02 EXP 998
+2012-03-21 - 01:16:02 :---------------------------------------
+>>>> output > /var/tmp/csgftwp09_java.info LVL=1
+== check Fixes for Java 1.4.2 32-Bit ==
+
+C2H803W Note: You are running a 64-Bit Kernel but your Java 1.4.2 is 32-Bit
+
+C2H809I Consider installing 64-Bit Version of Java 1.4.2
+== check Fixes for Java 5.0.0 32-Bit ==
+
+C2H803W Note: You are running a 64-Bit Kernel but your Java 5.0.0 is 32-Bit
+
+C2H809I Consider installing 64-Bit Version of Java 5.0.0
+
+C2H802W Java6 NOT Installed on this system !
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_java.info
+2012-03-21 - 01:16:05 :---------------------------------------
+2012-03-21 - 01:16:05 Compiler 001
+2012-03-21 - 01:16:05 :---------------------------------------
+2012-03-21 - 01:16:05 : Compiler >>>
+== Compiler info ==
+2012-03-21 - 01:16:05 Compiler 010
+== ibm c ==
+%%%%% ibm c -start- %%%%%%%%%
+%%%%% xlc -start- %%%%%%%%%
+: xlc not found wx= rc=1
+%%%%% xlc -end- %%%%%%%%%%%
+%%%%% ibm c -end- %%%%%%%%%%%
+2012-03-21 - 01:16:06 Compiler 020
+== gcc ==
+%%%%% gcc -start- %%%%%%%%%
+: gcc not found wx= rc=1
+%%%%% gcc -end- %%%%%%%%%%%
+2012-03-21 - 01:16:06 GCC 001
+>>>> output > /var/tmp/csgftwp09_gcc.info LVL=1
+2012-03-21 - 01:16:06 GCC 011
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_gcc.info
+2012-03-21 - 01:16:06 GCC 012
+2012-03-21 - 01:16:06 XLC 001
+>>>> output > /var/tmp/csgftwp09_xlc.info LVL=1
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_xlc.info
+2012-03-21 - 01:16:09 : Compiler <<<
+2012-03-21 - 01:16:09 :---------------------------------------
+2012-03-21 - 01:16:09 Compiler 998
+2012-03-21 - 01:16:10 :---------------------------------------
+2012-03-21 - 01:16:10 TEST 000
+2012-03-21 - 01:16:10 :---------------------------------------
+2012-03-21 - 01:16:10 TEST 001
+2012-03-21 - 01:16:10 :---------------------------------------
+2012-03-21 - 01:16:10 : Test >>>
+%% PS4 +  %%%%%%%%%%
+%% Settings  h %%%%%%%%%%
+%% Settings1 h %%%%%%%%%%
+2012-03-21 - 01:16:11 TEST 050 Devices
+VDISK devices found
+VSCSI adapter found
+VBUS  devices found
+VETH  devices found
+VSA   devices found
+2012-03-21 - 01:16:12 TEST 100 VIO
+2012-03-21 - 01:16:12 TEST 101 VIO
+2012-03-21 - 01:16:12 ping_test 001
++++ ping_test VIO IP 0.0.0.0 / HOST-NAME
+2012-03-21 - 01:16:12 ping_test 998
+2012-03-21 - 01:16:12 TEST 102 VIO
+2012-03-21 - 01:16:12 ping_test 001
++++ ping_test VIO IP 0.0.0.0 / HOST-NAME
+2012-03-21 - 01:16:12 ping_test 998
+2012-03-21 - 01:16:12 TEST 200 HMC
+2012-03-21 - 01:16:12 TEST 201 HMC
+2012-03-21 - 01:16:12 ping_test 001
++++ ping_test HMC IP 10.100.100.198 / HMCRZB
+2012-03-21 - 01:16:15 ping_test 998
+2012-03-21 - 01:16:15 TEST 300 SVC
+2012-03-21 - 01:16:15 TEST 301 SVC
+2012-03-21 - 01:16:15 ping_test 001
++++ ping_test SVC IP 10.100.100.116 / SVC
+2012-03-21 - 01:16:19 ping_test 998
+>>>> output > /var/tmp/csgftwp09_svc.info LVL=1
+2012-03-21 - 01:16:19 SVC_FIX 001
+2012-03-21 - 01:16:19 SVC_FIX 998
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_svc.info
+2012-03-21 - 01:16:19 TEST 500 GPFS
+>>>> output > /var/tmp/csgftwp09_gpfs.info LVL=1
+<<<< output > /var/tmp/csgftwp09.err was /var/tmp/csgftwp09_gpfs.info
+2012-03-21 - 01:16:19 : Test <<<
+2012-03-21 - 01:16:19 :---------------------------------------
+2012-03-21 - 01:16:19 TEST 998
+2012-03-21 - 01:16:19 :---------------------------------------
+2012-03-21 - 01:16:20 TEST 999
+========================================================================================================================
+C2H950I now performing cleanup...(1)
+Wed Mar 21 01:16:20 EDT 2012
+Wed Mar 21 01:16:20 EDT 2012
+20120321 running run_cfg2html
+package FTR_cfg2html-8.13-8 is already installed
+Retrieving http://138.83.10.169/tools/FTR_cfg2html.rpm
+No output file found, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+Starting up Cfg2Html -AIX- Version 2.80
+AWDBG100I CFG_TEST=yes
+AWDBG100I TESTOPT=
+
+  WARNING: -e for 'Extended' output currently NOT fully tested ! USE ON YOUR OWN RISK ! 
+
+C2H070I acquired lock; continuing
+2012-03-21 - 01:15:00 Cfg2Html -AIX- Version 2.80
+
+C2H037I Note: This script has not been fully tested on AIX 5.3 TL 09 !
+C2H037I Please report any bugs
+
+C2H038I Your OSLEVEL_S=5300-09-02-0849
+C2H037I Supported OS "5.3.0.0" 
+C2H030I sysinfo file 'c2h_sysinfo' found.
+======================================================================
+COMPANY:        Frontier Communications
+SITE:           FTW
+CONTACT:        ncdc.aix@ftr.com
+URL:            http://ncdcwss.northcentralnetworks.com/sites/unix/
+
+
+======================================================================
+C2H030W Warning, the c2hcfg file 'c2h_cfg' is missing. Using internal defaults
+AWTRACE: CFG_SAMP 000
+AWTRACE: CFG_SAMP 999
+C2H030I Note, the c2hinfo file '.c2h_info' not found.
+AWTRACE: CBR 999
+Wed Mar 21 01:15:06 EDT 2012 waiting for BG005
+Wed Mar 21 01:15:06 EDT 2012
+Wed Mar 21 01:15:06 EDT 2012 waiting for BG002
+Wed Mar 21 01:15:08 EDT 2012
+
+2012-03-21 - 01:15:08 C2H000I File DSN_prtconf available
+
+2012-03-21 - 01:15:08 C2H000I File DSN_prtconf available
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+Starting........: Cfg2Html -AIX- Version 2.80 on an AIX box
+Path to Cfg2Html: /infra/opt/cfg2html/bin/cfg2html
+Path to plugins.: /infra/opt/cfg2html/bin/plugins
+Node............: csgftwp09
+SysModel........: IBM,8204-E8A
+OSLevel.........: 5300-09
+ServicePac......: 5300-09-02-0849
+User............: root
+ProcessID.......: 761890
+HTML Output File: ///var/tmp/csgftwp09.html
+Text Output File: ///var/tmp/csgftwp09.txt
+Errors logged to: ///var/tmp/csgftwp09.err
+Started at......: 2012-03-21 - 01:15:00
+Commandline used: -o /var/tmp -e
+Problem         : If Cfg2Html hangs on Hardware, press twice ENTER
+                  or Ctrl-D. Then check or update your Diagnostics!
+WARNING.........: USE AT YOUR OWN RISK!!! :-))
+License.........: Freeware
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+
+-=[ Run-Collection ]=-
+
+Collecting: AIX/System ........
+AWTRACE EXTENDED START
+.
+AWTRACE EXTENDED STOP
+.................................................... done.
+Collecting: EXPERIMENTAL ...........
+2012-03-21 - 01:15:52 C2H000I File DSN_geninv available
+2012-03-21 - 01:15:52 waiting for BG process: geninv
+Wed Mar 21 01:15:52 EDT 2012
+Wed Mar 21 01:15:52 EDT 2012
+
+AWDBG001I wait geninv PID=913428 RC=127
+2012-03-21 - 01:15:52 AWDBG001I running geninv -l
+Wed Mar 21 01:15:52 EDT 2012
+2012-03-21 - 01:15:52 C2H000I File DSN_geninv available
+Wed Mar 21 01:15:52 EDT 2012
+............... done.
+Collecting: JAVA .
+C2H803W Note: You are running a 64-Bit Kernel but your Java 1.4.2 is 32-Bit
+
+C2H809I Consider installing 64-Bit Version of Java 1.4.2
+
+C2H803W Note: You are running a 64-Bit Kernel but your Java 5.0.0 is 32-Bit
+
+C2H809I Consider installing 64-Bit Version of Java 5.0.0
+
+C2H802W Java6 NOT Installed on this system !
+.. done.
+Collecting: Compiler . done.
+Collecting: Test ..
+2012-03-21 - 01:16:11 Check for DEVICES ==
+
+2012-03-21 - 01:16:11 Check for VIO-Server ==
+2012-03-21 - 01:16:12 ping_test: skipping host_ip is 0.0.0.0 ! Typ=VIO Name=HOST-NAME
+2012-03-21 - 01:16:12 ping_test: skipping host_ip is 0.0.0.0 ! Typ=VIO Name=HOST-NAME
+
+2012-03-21 - 01:16:12 Check for HMC ==
+2012-03-21 - 01:16:15 ping_test: HMC HMCRZB IP 10.100.100.198 is unreachable! RC=1
+
+2012-03-21 - 01:16:15 Check for SVC ==
+2012-03-21 - 01:16:18 ping_test: SVC SVC IP 10.100.100.116 is unreachable! RC=1
+
+2012-03-21 - 01:16:19 Check for GPFS
+ done.
+
+
+--=[ http://cfg2html.sourceforge.net ]=------------------------------------------------
+C2H950I now performing cleanup...(1)
+2012-03-21 - 01:16:20 Final wait for BG processes
+Wed Mar 21 01:16:20 EDT 2012 waiting for ALL
+Wed Mar 21 01:16:20 EDT 2012
+Finished Cfg2Html -AIX- Version 2.80 at 2012-03-21 - 01:16:20. RC=0
+Completed

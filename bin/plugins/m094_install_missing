@@ -1,0 +1,28 @@
+#!/bin/ksh
+#
+# install_missing
+#
+# This script pulls all hosts from the Log file that did not have
+# cfg2html files and trys to install and run cfg2html
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "install_missing plugin running" 1
+  # pull all hosts that did not have cfg2html files
+
+  # copy the cfg2html distribution
+
+  # untar the distribution
+
+  # run the installer
+
+  # Log success or failure
+  logwrite "install_missing plugin complete" 1
+}
+# EOF

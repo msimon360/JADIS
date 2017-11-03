@@ -1,0 +1,29 @@
+Hostname,Access,IP,OS,OSVer,SeOS,SSH,WebSvr
+a7app01,ssh,10.160.66.51,HP-UX,B.11.00,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+a7server,ssh,10.160.66.50,HP-UX,B.11.00,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+aavfwp01,ssh,144.70.110.11,HP-UX,B.11.31,v12.53.0.1517,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+adslnms,none,10.160.90.104,unk,unk,_none,unk,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+adxfwp01,ssh,138.83.135.95,Linux,2.6.9-89.ELsmp,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+adxfwp02,ssh,138.83.135.96,Linux,2.6.9-89.ELsmp,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+adxfwp03,ssh,138.83.135.150,Linux,2.6.9-89.ELsmp,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+appdev01,noDNS,0.0.0.0,unk,unk,_none,unk,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+argon,none,209.74.63.148,unk,unk,_none,unk,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+busropv04,ssh,10.164.66.186,Linux,2.6.18-194.el5,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+csgftwp09,ssh,138.83.154.65,AIX,3,v12.0.1.1262,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+cxfwgp01,ssh,159.161.125.58,HP-UX,B.11.11,v12.53.0.1517,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+ebcfwp01,ssh,138.83.10.202,Linux,2.6.18-128.el5,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+elidcs2,ssh,10.161.65.41,HP-UX,B.11.00,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+ewftwp33,ssh,138.83.147.38,Linux,2.6.16.54-0.2.5-smp,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+ftpsdwhprd-cg4,ssh,138.83.142.108,Linux,2.6.9-78.0.17.ELhugemem,v12.01.02.963,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+inftwxenh1,ssh,138.83.142.147,Linux,2.6.18-92.1.1.el5xen,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+lnxfwi01,ssh,138.83.10.169,Linux,2.6.18-128.el5,v12.53.0.1517,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+nshfwpa2,ssh,138.83.140.125,HP-UX,B.11.23,v12.0.1.1262,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+nyrofcsol29,ssh,10.164.66.168,SunOS,5.9,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+omefwp01,ssh,144.70.194.130,HP-UX,B.11.11,v12.53.0.1517,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+rcfwsp05,ssh,159.161.123.208,AIX,2,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+scrambler,ssh,10.160.65.201,SunOS,5.8,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+unxfwi03,ssh,144.70.97.189,HP-UX,B.11.31,_none,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+wbnfwpd1,ssh,144.70.110.106,HP-UX,B.11.31,v12.0.1.1262,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+webftwp01b,ssh,144.70.97.96,AIX,2,v12.0.1.1262,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+wkbfwpa1,ssh,138.83.8.56,Linux,2.6.9-78.0.13.ELlargesmp,v12.01.01.814,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV
+xrmfwp06,ssh,144.70.194.110,HP-UX,B.11.11,v12.0.1.1262,ssh -q -o BatchMode=yes -o StrictHostKeyChecking=no,lnxfwi01.northcentralnetworks.com/JADIS_DEV

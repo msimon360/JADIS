@@ -1,0 +1,1288 @@
+#!/usr/bin/perl -w
+
+# Revision History
+# 06.00 20120321 Major re-write (Mts)
+#       20111001 Added -h for help ch0anged hostlist to -H (Mts)
+#       20101118 Adding Summary on multiple fields (Mts)
+# 04.00 20090916 Removed Frameset files. (Mts)
+# 03.01 20090519 Added Summary Output (Mts)
+# 03.00 20090515 Now works from list of sources (Mts)
+# 01.03 20090202 Fixed default sort for Status, Access cols. (Mts)
+# 01.02 20080820 Added parse_speed to convert GHz to MHz. (Mts)
+# 01.01 20080814 This is the first production ready version. (Mts)
+#
+# (Mts) Mark T Simon
+#
+#use strict;
+#use sigtrap;
+#use diagnostics;
+use Getopt::Long qw(:config no_ignore_case);
+use File::Spec;
+use Text::CSV;
+# Commented out Switch, it is not compatable with Apache mod_perl
+#use Switch;
+use CGI qw/:standard :html3/ ;
+use lib "/infra/opt/JADIS/cgi-bin/plugins";
+do "convr_patch.pl";
+do "CPU_Speed.pl";
+do "parse_patch.pl";
+do "aix_oslevel.pl";
+
+##
+## This perl script parses a data files based on keys
+## It was designed to pull parameters out of an HTML file
+## output by the SysInfo script on HP. Key files can be
+## written so it can parse other files as well.
+## It combines all the info into a Summary file and
+## then generates reports based on that file.
+##
+
+sub init_vars { # Initialize Variables
+  ## get SITE CUSTOM ##
+  #
+  # Determine location of JADIS ini file
+  my $vol;
+  my $dir;
+  my $file;
+  my $currentfile;
+  my $inifile;
+  my @dirs;
+  $currentfile = File::Spec->rel2abs( $0 );
+  ($vol, $dir, $file) = File::Spec->splitpath( $currentfile );
+  @dirs = File::Spec->splitdir( $dir );
+  pop(@dirs);
+  pop(@dirs);
+  push(@dirs,"etc");
+  $dir = File::Spec->catdir(@dirs);
+  $etcdir = $dir;
+  $inifile = File::Spec->catfile( "",$dir,"JADIS.ini");
+
+  ## Exec a shell, source the ini file and capture its environment
+  chomp(@newenv = qx( . $inifile; env) );
+  foreach (@newenv) {
+    ($k,$v) = split "=",$_,2;
+    $ENV{$k}=$v;
+  }
+  # Set variables from the Environment
+  $version = $ENV{VERSION};
+  $topdir = $ENV{TOPDIR};
+  $datadir = $ENV{DATADIR};
+  $listdir = $ENV{LISTDIR};
+  #$logdir = $ENV{LOGDIR};
+  #$plugins = $ENV{PLUGINS};
+  #$index = $ENV{INDEX};
+  $modlis = $ENV{MODLIS};
+  #$allhostlst = $ENV{ALLHOSTLST};
+  $datalist = $ENV{DLIST};
+  $paramlist = $ENV{PLIST};
+  $websvr = $ENV{WEBSVR};
+  $titlepg = $ENV{TITLEPG};
+  $docloc = $ENV{DOCLOC};
+  #$loglevel = $ENV{LOGLEVEL};
+  $permonth = $ENV{PERMONTH};
+  $jadislist = $ENV{JADISLIST};
+  #
+  ## End SITE CUSTOM ##
+
+  ## Read command line or Set defaults 
+  my %opts;
+  my $params;
+  my $sec;
+  my $min;
+  my $hour;
+  my $mday;
+  my $mon;
+  my $year;
+  my $wday;
+  my $yday;
+  my $isdst;
+  my $i=0;
+  my $b=0;
+  my $junk;
+  my $rest;
+  my @csv_param_list = ();
+
+  ($sec,$min,$hour,$mday,$mon,$year,$wday,
+  $yday,$isdst)=localtime(time);
+  $year = $year+1900;
+  $mon = $mon+1;
+  $month_string = sprintf "%02d", ( $mon);
+  $mdate_string = sprintf "%02d", ($mday);
+  $os = "";
+  $button = "none";
+  #$current_csvfile = $topdir."/summary_files/sysinfo_latest.csv";
+  ##print $csvfile."\n";
+  @param_list = ();
+  # load the data sources array
+  &load_sources($datalist);
+  # load the model/document array
+  &load_doclist($modlis);
+  # load the parameter array
+  &load_params($paramlist);
+
+  # Get command line options
+  GetOptions(\%opts, 'h' => \$h , 'H=s', 'l=s', 'o=s', 'p=s', 'i' => \$i , 'b' => \$b , 'c' => \$c, 'n' => \$NOCSV );
+  $host_list = $opts{'H'} || $jadislist;
+  $listdir   = $opts{'l'} || $listdir;
+  $output  = $opts{'o'} || 'html';
+  $params   = $opts{'p'} || 'all';
+  #print $params; #DEBUG
+  ##print "==============================================\n";
+
+  die "usage: parse_data.pl [hibcn] [-H host_list] [-l listdir]
+        [-o output_format] [-p parameters]
+	-h print this help file
+        -i interactive
+        -b batch
+        -c use csv file if it exists or write it if is does not
+        -n do not use csv file
+           host_list is a file containing hostnames, one per line, to report on
+           listdir is the directory to look in for the host_list file
+           output_format is one of [text|html|csv]
+           parameters are a space seperated string, use \"\", of parameters to report on\n" if ($h);
+  $batch = $b;
+  $interactive = $i;
+
+  # If the csv flag is set look for a csv file with the current date
+  # or generate one if it does not exist.
+  #$csv = $c;
+  #if ( $csv ){
+    my $datestamp = sprintf "%04d%02d%02d",( $year,$mon,$mday);
+    my $current_csvfile = $topdir."/summary_files/sysinfo_".$datestamp.".csv";
+    my $filename = $topdir."/summary_files/sysinfo_????????.csv";
+    my $format = $topdir."/summary_files/sysinfo_%YYY%m%d.csv";
+    $csv_current;
+    $csvfile = &get_newest_file($filename,$format);
+    if ( $csvfile eq $current_csvfile ){
+      $csv_current = "true";
+    }
+  #}
+  # If the No CSV flag is set do not load the csv file.
+  #if ( $NOCSV ){
+  #  $csvfile = "none";
+  #}
+
+  #&load_parser($keyfile);
+  %summary = ();
+  %dataoutput = (
+	'hostname' => { 'parameter' => 'value'}
+	);
+  
+format STDOUT =
+@<< @<<<<<<<<<<<<<<<	@<< @<<<<<<<<<<<<<<<
+$firstcolnum, $fisrtcolname, $secondcolnum, $secondcolname
+.
+
+
+  ## Read params passed by webform or set defaults
+
+  if  ($interactive || $batch ) {
+    # This is for testing
+    $cgi = new CGI;
+    }
+  else
+  {
+    $cgi = new CGI;
+    # redirect STDERR to keep from filling up Apache logs
+    # To debug comment out the lext line and check /var/log/http
+    open STDERR, ">>/dev/null";
+
+  ## bundle up form submissions into a param_list array
+    $params = "";
+    foreach $field (sort ($cgi->param)) {
+      $_=$field;
+      if(/param/) {
+          foreach $value ($cgi->param($field)) {
+             $params = $params." ".$value;
+          }
+          $params = substr($params,1,);
+      }
+      elsif (/hostlist/) {
+        foreach $value ($cgi->param($field)) {
+        $host_list=$value;
+        }
+      }
+      elsif (/source/) {
+        foreach $value ($cgi->param($field)) {
+	  $csvfile=$topdir."/summary_files/".$value;
+	}
+      }
+      elsif (/button/) {
+        foreach $value ($cgi->param($field)) {
+	  $button=$value;
+	}
+      }
+    }
+  }
+  for ($button){
+    if (/Export to Excel/) {
+      $output= "excel";
+    }
+  }
+  # Moved the parameter expansion after the CGI form read
+  # so Keyfile date matches csvfile date selected
+#    foreach $source (keys %sources ) {
+#      $keyfile = $sources{$source}[1];
+#      #print "$keyfile\n"; #DEBUG
+#      chomp $keyfile;
+#      if ($keyfile eq 'CSV' ){
+#        if ( $params =~ /all/ ){
+#          $keyfile = $sources{$source}[0];
+#          #print "$keyfile\n"; #DEBUG
+#          $keyfile =~ s/%YYY/$year/;
+#          $keyfile =~ s/%y/20$year/;
+#          $keyfile =~ s/%m/$month_string/;
+#          $keyfile =~ s/%d/$mdate_string/;
+#          print STDERR "$keyfile\n";
+#          open(KEY,$keyfile) || die "cannot open $keyfile for read";
+#          $line = <KEY>;
+#          close (KEY);
+#          ##print "Raw Line:".$line."\n"; ## DEBUG
+#          chomp $line;
+#          ($junk, $rest) = split /\,\s*/, $line, 2;
+#          ##print "Junk:".$junk."Rest:".$rest."\n"; ## DEBUG
+#          @csv_param_list = split ',', $rest ;
+#          foreach $value (@csv_param_list){
+#            #print STDERR "Key:".$value."\n";
+#            push (@param_list, $value);
+#          }
+#        }
+#      }
+#      elsif ($keyfile eq 'DATA' ){
+#        if ( $params =~ /all/ ){
+#          print STDERR "Key:".$source."\n";
+#          push (@param_list, "$source");
+#        }
+#      }
+#      else {
+#        if ($params =~ /all/ ){
+#          print STDERR "Key:".$source."\n";
+#          push (@param_list, "$source");
+#        }
+#        $keyfile = $etcdir.$sources{$source}[1];
+#        chomp $keyfile;
+#        open(KEY,$keyfile) || die "cannot open $keyfile for read";
+#        while ($line = <KEY>) {
+#          ($param, $rest) = split /:\s*/, $line, 2;
+#          if ($params =~ /all/ ){
+#            print STDERR "Key:".$param."\n";
+#            push (@param_list, "$param");
+#          }
+#          @fields = split ',', $rest; 
+#          $datapoints{$param} =  [ @fields ];
+#          #print "#####################"; #DEBUG
+#          #print $datapoints{$param}[3]; #DEBUG
+#        }
+#        close (KEY);
+#      }
+#    }
+    if ( $params ne "all" ){
+      @param_list = split(/ /, $params);
+      #print @param_list ; # DEBUG
+      #print $params."\n"; # DEBUG
+    }
+    else {
+     foreach $param (@all_params){
+       push (@param_list, $param);
+     }
+    }
+  # The next four lines sort the params list into unique valaues
+#  @in = @param_list;
+#  undef %saw;
+#  @saw{@in} = ();
+#  @param_list = sort keys %saw;
+  #print @param_list."\n"; # DEBUG
+  #for $param (@param_list){
+  #print "Parm:".$param."\n"; # DEBUG
+  #}
+}
+
+sub load_params { # Load Parameters from file
+my $keyfile = shift;
+open(InFILE,$keyfile) || die "cannot open $keyfile for read\n";
+while (<InFILE>) {
+  chomp;
+  s/#.*//; # Remove comments
+  s/^\s+//; # Remove opening whitespace
+  s/\s+$//;  # Remove closing whitespace
+  next unless length;
+  ($param, $width, $dbor) = split ',', $_;
+  ##print "Param:".$param."Width:".$width."DBOR:".$dbor."\n"; ## DEBUG
+  $all_params{$param} =  [ $width, $dbor ];
+  }
+}
+
+
+sub get_newest_file { # Get File Containing Newest Date in Filename
+  # infile = a string to ls for
+  # formstr = a format to parse the date from the filename
+  # modifies newestfile
+  my $infile = shift;
+  my $formstr = shift;
+  my $name;
+  my $newfiledate ;
+  my $oldfiledate = "18000101";
+  my @a = <${infile}>;
+  foreach $name (@a){
+   #print $name."\n"; ## DEBUG
+   $newfiledate = &parse_filename($formstr, $name);
+   print "New:".$newfiledate." Old:".$oldfiledate."\n"; ## DEBUG
+   if ( $newfiledate gt $oldfiledate){
+     $newestfile = $name;
+     print "Newest:".$newestfile."\n"; ## DEBUG
+     # If the per_month flag is set delete all but the newest file for each month
+     if ( $permonth ){
+       if ( substr($oldfiledate,0,6) eq substr($newfiledate,0,6)){
+         #print substr($oldfiledate,0,6);  # DEBUG
+         #print " matches ";  # DEBUG
+         #print substr($newfiledate,0,6);  # DEBUG
+         #print "\n";  # DEBUG
+         unlink ($oldname);
+         print STDERR "### Delete $oldname \n";  # LOG
+       }
+     }
+     $oldfiledate = $newfiledate;
+   }
+   $oldname=$name;
+ }
+ return $newestfile;
+}
+
+#sub get_site_custom { # Get Common Site Variables
+#  # Parse a ksh style init file in an array
+#  my $file = shift;
+#  open(CONFIG,$file) or die "can't open $file: $!";
+#  while (<CONFIG>) {
+#    chomp;
+#    s/#.*//; # Remove comments
+#    s/^\s+//; # Remove opening whitespace
+#    s/\s+$//;  # Remove closing whitespace
+#    next unless length;
+#    my ($key, $value) = split(/\s*=\s*/, $_, 2);
+#    $config{$key} = $value;
+#  }
+#  close(CONFIG);
+#  #print "Completed get_site_custom\n"
+#}
+
+sub load_sources { ## load list of data sources
+my $keyfile = shift;
+open(InFILE,$keyfile) || die "cannot open $keyfile for read\n";
+while (<InFILE>) {
+  chomp;
+  s/#.*//; # Remove comments
+  s/^\s+//; # Remove opening whitespace
+  s/\s+$//;  # Remove closing whitespace
+  next unless length;
+  ($source, $spath, $skey) = split ',', $_;
+  ##print "Source:".$source."Path:".$spath."Key:".$skey."\n"; ## DEBUG
+  $sources{$source} =  [ $spath, $skey ];
+  }
+  close (InFILE);
+}
+
+sub load_parser {  ## load hash to parse data
+my $keyfile = shift;
+open(InFILE,$keyfile) || die "cannot open $keyfile for read\n";
+while (<InFILE>) {
+  chomp;
+  s/#.*//; # Remove comments
+  s/^\s+//; # Remove opening whitespace
+  s/\s+$//;  # Remove closing whitespace
+  next unless length;
+  ($param, $rest) = split /:\s*/, $_, 2;
+  ##print "param $param REST $rest";
+  @fields = split ',', $rest; 
+  $datapoints{$param} =  [ @fields ];
+  #print "##############################\n"; # DEBUG
+  #print "PARM:".$param." Sort:".$datapoints{$param}[3]."\n"; # DEBUG
+  }
+close (InFILE);  
+#print "Loaded keyfile ".$keyfile; ## DEBUG
+}
+
+sub init_host { # Initalize empty array for all hosts
+  my $hostfile = shift;
+  open(InFILE,$hostfile) || die "cannot open $hostfile for read\n";
+  while (<InFILE>) {
+    chomp;
+    foreach $param ( @all_params) {
+      $dataoutput{$hostname}{$param} = "unk";
+    }
+  }
+  close (InFILE);
+}
+
+sub load_doclist { ## load the table for model documents
+  my $modfile = shift;
+  my $modstring;
+  my  $doc;
+  open(IN,$modfile) || die "cannot open $modlis for read\n";
+  while (<IN>) {
+    chomp;
+    s/#.*//; # Remove comments
+    s/^\s+//; # Remove opening whitespace
+    s/\s+$//;  # Remove closing whitespace
+    next unless length;
+    ($modstring, $doc) = split / /;
+    chop $modstring;
+    chop $doc;
+    $modeldocs{$modstring} = $doc;
+  }
+  close (IN);
+#  foreach $modstring ( keys %modeldocs ) {
+#    print "String".$modstring." Doc ".$modeldocs{$modstring};   
+#  }
+}
+
+sub load_csv {  ## load the csv file into array
+  my $line_num = 1 ;
+  my @fields;
+  my @param_list;
+  my $hostname;
+  my $csv = Text::CSV->new();
+  my $line;
+
+  open(IN,$csvfile) || die "cannot open $csvfile for read\n";
+  while ($line = <IN>) {
+    chop $line;
+    my $status = $csv->parse($line);
+    if ( $line_num == 1 ){
+      @param_list = $csv->fields();
+      #@param_list = split ',';
+      ##print @param_list;
+      shift (@param_list);
+      $line_num++;
+    }
+    else {
+      @fields = $csv->fields($line);
+      #@fields = split ',';
+      $hostname = shift(@fields);
+      #&init_host($hostname);
+      foreach $param (@param_list){
+	$dataoutput{$hostname}{$param} = shift(@fields);
+         #print $hostname." ".$param." ".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+         ##$junk = <>;
+      }
+    }
+  }
+  close(IN);
+}
+
+
+sub parse_file {  ## parse a data file
+  #print "In parse_file for Host:".$hostname." Source:".$source."\n"; ## DEBUG
+  $hostname = shift;
+  $source = shift;
+  my $newestfile = '';
+  my $newfiledate = '';
+  my $oldfiledate = '';
+  my $oldname = '';
+  my $infile = $sources{$source}[0];
+  my $outfile = "";
+  my $formstr = $infile;
+  $formstr =~ s/%H/$hostname/;
+  $infile =~ s/%H/$hostname/;
+  $infile =~ s/%YYY/????/;
+  $infile =~ s/%m/??/;
+  $infile =~ s/%d/??/;
+  #print "File Match:".$infile."\n"; ## DEBUG
+  $infile = &get_newest_file($infile,$formstr);
+  if ( $infile eq "" ){
+    return;
+  }
+  my $keyfile = $sources{$source}[1];
+  #print "Datafile:".$infile." Key:".$keyfile."\n";  ## DEBUG
+  my $linenum = 1;
+  undef %datapoints;
+
+  # If keyfile = CSV set key to hostname and transform to parse_csv
+  for ($keyfile ) {
+    if (/CSV/) {
+      $datapoints{"CSV"}[0] = "\^".$hostname.",";
+      $datapoints{"CSV"}[1] = "&parse_csv";
+      $datapoints{"CSV"}[2] = "_N/A";
+      $datapoints{"CSV"}[3] = "default";
+    }
+    elsif (/DATA/) {
+      $datestring = &parse_filename($formstr,$infile);
+      $dataoutput{$hostname}{$source} = $datestring;
+      ##print "In DATA for ".$hostname.$source.$datestring."\n"; ## DEBUG
+      return
+    }
+    else {
+      &load_parser ( $etcdir.$keyfile );
+    }
+  }
+  ##print $infile; ## DEBUG
+  print STDERR "### In parse_file:".$infile."\n"; ## LOG
+  # Open the data file and read
+  open(IN,$infile) || return ;
+  # If the file opens get it's date
+  $datestring = &parse_filename($formstr,$infile);
+  #print "File:".$infile." Date:".$datestring."\n"; ## DEBUG
+  $dataoutput{$hostname}{$source} = $datestring;
+  
+  if ($source eq "SysInfo"){
+    $outfile = $infile;
+    $outfile =~ s/^.*\///;
+    $outfile = "/tmp/".$outfile."$$";
+    open(OUT,">".$outfile) or die "Unable to open $outfile: $!";
+    print STDERR "Writing new sysinfo file $outfile\n";
+  }
+  # set these vars for SysInfo files
+  $end_div="";
+  $no_div="true";
+  if ($source eq "cfg2html" || $source eq "cfg2html2"){
+    @os_list = ("AIX","HP-UX","linux","HMC","Tandem","SunOS");
+    #print "check os in cfg2html"; ## DEBUG
+    LINE: while (<IN>) {
+      #print "Checking line ".$linenum." for OS\n"; ## DEBUG
+      if ($linenum == 40 ){
+        last LINE;
+      }
+      foreach my $os_key ( @os_list ) {
+        if (/$os_key/){
+          print STDERR "Found ".$os_key." in ".$infile."\n";
+          $keyfile=$os_key."_".$keyfile;
+          &load_parser ( $etcdir.$keyfile );
+          print STDERR "Keyfile is now ".$keyfile."\n";
+          $os = $os_key;
+          last LINE;
+        }
+      }
+    } 
+    close (IN);
+    open(IN,$infile) || return ;
+  }
+  #
+  @lines = <IN>;
+  # Parse the file line by line
+  while (@lines){
+    $_ = shift (@lines);
+    if ($linenum == 1 ){
+      $lineone = $_;
+      $linenum++;
+    }
+    $linein = $_; # Copy line to local variable
+    # For each parameter in the keyfile
+    foreach $param ( keys %datapoints ) {
+      $_ = $linein; # restore $_ for each param
+      ##print "Parm:".$param."\n"; ## DEBUG
+      # See if the Match string is found on this line
+      if (/$datapoints{$param}[0]/){
+        ##print "Raw line:$_"."\n"; ## DEBUG
+        ##print "$datapoints{$param}[1]"."\n"; ## DEBUG
+        # Set the source parameter to the file date
+        $dataoutput{$hostname}{$source} = $datestring;
+	# When a line matches see if the transform action is a subroutine
+        if ($datapoints{$param}[1] =~ /\&/){
+          #print STDERR "Calling sub $datapoints{$param}[1]\n"; ## DEBUG
+          #print STDERR @lines."\n"; ## DEBUG
+	  #print STDERR "Raw line:$_"."\n"; ## DEBUG
+          print STDERR $param." Was:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+  	  $dataoutput{$hostname}{$param} = eval $datapoints{$param}[1];
+          #print STDERR "Status:".$@."\n"; ## DEBUG
+          print STDERR $param." Now:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+          #print STDERR @lines."\n"; ## DEBUG
+        }
+        else
+        {
+  	# If not a subroutine then evaluate it
+          ##print "Eval $datapoints{$param}[1] on line\n"; ## DEBUG
+          # Replace quotes with space to keep eval happy
+            eval s/\'/ /g;
+          # Replace < with space to keep eval happy
+            eval s/\"/ /g;
+            eval s/\</ /g;
+            eval s/\>/ /g;
+          # This is so an unknown value will not overwrite a good one
+            eval s/unknown/ /ig;
+            eval s/unk/ /ig;
+          ##print "Transformed line:$_".":\n"; ## DEBUG
+          ##print "Eval string:".$datapoints{$param}[1]."\n"; ## DEBUG
+  	  eval $datapoints{$param}[1];
+  	  # Replace comma with space to keep CSV fields
+  	  eval s/\,/ /g;
+          ##print "Output:".$_.":\n"; ## DEBUG
+          print STDERR "Was:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+          $dataoutput{$hostname}{$param} = $_ unless ($_ =~ /^\s*$/);
+          print STDERR $param." Now:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+        }
+        ##print $dataoutput{$hostname}{$param}; ## DEBUG
+  	chomp ($dataoutput{$hostname}{$param});
+        ##$junk = <>; ## DEBUG
+      } # if a match is found
+    } # Loop for each Parameter to match
+    if ($source eq "SysInfo"){
+      # Use a variable so no ending DIV is printed unless a starting DIV is added first
+      if ($no_div eq "true"){
+        if (/DIV STYLE/){
+	  print STDERR "HTML already contains DIVs\n";
+	  $no_div="false";
+	  print OUT $_;
+	}
+	elsif (/\>Table Of Contents\</){
+  	  print STDERR "found begining of TOC\n"; # LOG
+  	  print OUT "<DIV STYLE=\"position:relative; float:left; padding-left:2em; height=35em; width=18%; overflow:auto\">\n";
+  	  print OUT $_;
+  	  $end_div="</DIV>\n";
+  	}
+        elsif (/=== END Table Of Contents ===/){
+  	  print STDERR "found end of TOC\n"; # LOG
+  	  print OUT $_;
+  	  print OUT "</DIV>\n";
+  	  print OUT "<DIV STYLE=\"position:relative; float:left; padding-left:2em; width:72%; height:35em; overflow:auto\">\n";
+  	}
+        elsif (/<\/BODY>/){
+          print STDERR "found end of BODY\n";
+        }
+        elsif (/<\/HTML>/i){
+          print STDERR "found end of HTML\n";
+        }
+        elsif (/End SysInfo [0-9]/){
+          print STDERR "found end of SysInfo\n";
+          print OUT $_;
+          print OUT $end_div;
+          print OUT "</BODY></HTML>\n";
+        }
+        else{
+  	  print OUT $_;
+        }
+      } # if no DIV markers in input file
+      else{
+	print OUT $_;
+      }
+    } # if source is SysInfo
+  } # Finished reading file
+  close(IN);
+  if ($source eq "SysInfo"){
+    close(OUT);
+    my @args=("cp",$outfile,$infile);
+    system(@args) == 0 or print STDERR "failed to copy $outfile to $infile \n";
+    unlink($outfile);
+  }
+}
+
+sub parse_filename { # Get the date string from a filename
+  $formstr = shift;
+  $filename = shift;
+  my @symbols = ("%YYY","%y","%m","%d");
+  my $datestring = '';
+  #print $filename."\n"; ## DEBUG
+  #print "FormStr:".$formstr."\n"; ## DEBUG
+  # If there is no date in the filename use the timestamp of the file
+  if (( $formstr =~ m/%YYY|%y/)&&( $formstr =~ m/%m/)&&( $formstr =~ m/%d/)){ 
+    foreach $symbol (@symbols) {
+      $pos = index ($formstr,$symbol);
+      if ($pos > 0){
+        #print $filename." ".$pos." ".length($symbol)."\n"; # DEBUG
+        $value = substr($filename,$pos,length($symbol));
+        #print $symbol." = ".$value."\n"; ## DEBUG
+        if ($symbol eq "%y"){
+          $value = "20".$value;
+        }
+        $datestring = $datestring.$value;
+      }
+    }
+  }else{
+    $filedate = (stat($filename))[9];
+    $datestring = (localtime($filedate))[6];
+    #print $datestring;  ## DEBUG
+    $datestring = $datestring.(localtime($filedate))[5];
+    $datestring = $datestring.(localtime($filedate))[4];
+  }
+  #print "Date:".$datestring."\n"; # DEBUG
+  return $datestring;
+}
+
+sub extract_filename { # Given a format and date generate a filename
+  $formstr = shift;
+  $date_string = shift;
+  if ($date_string =~ /not_found/){
+    return "not_found";
+  }
+  my $year  = substr($date_string,0,4);
+  my $month = substr($date_string,4,2);
+  my $day   = substr($date_string,6,2);
+  my $filename = $formstr;
+  #print "$filename $date_string $year $month $day \n"; # DEBUG
+  $filename =~ s/%YYY/$year/;
+  $filename =~ s/%y/20$year/;
+  $filename =~ s/%m/$month/;
+  $filename =~ s/%d/$day/;
+  #print "$filename $topdir \n"; # DEBUG
+  $filename =~ s:$topdir:/JADIS:;
+  return $filename;
+}
+
+sub parse_csv { # Pasre data from a csv file 
+  my $line = $_;
+  my $x = 0;
+
+  #print "CSV Header:".$lineone."\n"; ## DEBUG
+  #print "CSV Data:".$line."\n"; ## DEBUG
+  chomp $line;
+  chomp $lineone;
+  my $csv = Text::CSV->new();
+  my $status = $csv->parse($lineone);
+  my @params = $csv->fields();
+  ##my @params = split ',', $lineone;
+  $status = $csv->parse($line);
+  my @values = $csv->fields();
+  ##my @values = split ',', $line;
+  foreach $param (@params) {
+    # Prevent error from changing udef value
+    $values[$x] =~ s/\,/\./g if defined($values[$x]);
+    # This is so an unknown value will not overwrite a good one
+    $values[$x] =~ s/unknown/ /ig if defined($values[$x]);
+    $values[$x] =~ s/unk/ /ig if defined($values[$x]);
+    #print "Parm:".$params[$x]."Val:".$values[$x]."\n"; ## DEBUG
+    print STDERR "Was:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+    # This should get rid of uninitialized value errors in the log
+    if (defined($values[$x])){
+      $dataoutput{$hostname}{$param} = $values[$x] unless ($values[$x]  =~ /^\s*$/);
+    }
+    print STDERR $param." Now:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+    $x++;
+  }
+}
+
+sub print_output { # Print output in chosen format
+  my $tvalue;
+  ## my $junk;
+  ## print "junk to continue";
+  ## $junk = <STDIN>;
+  my $param;
+  my $source_file;
+  for ($output){
+    if (/text/){
+      print "HOST: $hostname \n";
+        #print @param_list; #DEBUG
+        #print "Output\n"; #DEBUG
+      foreach $param ( @param_list) {
+	  print $param.": ".$dataoutput{$hostname}{$param}."\n"
+	}
+    }
+    elsif (/summary|hsum/){
+      #print "Load Summary\n"; ## DEBUG
+      #print @param_list; ## DEBUG
+      foreach $param ( @param_list) {
+        if ($param =~ /:/) {
+          $value="";
+          @combo = split ':',$param ;
+          foreach $combo_param (@combo) {
+            $value = $value." ".$dataoutput{$hostname}{$combo_param};
+            #print "PARM:".$combo_param."\n"; ## DEBUG
+            #print "VALUE:".$value."\n"; ## DEBUG
+          }
+          $value = substr $value, 1;
+        }else{
+	  $value = $dataoutput{$hostname}{$param};
+        }
+        #print "HOST:".$hostname."\n"; ## DEBUG
+        #print "PARM:".$param."\n"; ## DEBUG
+        #print "VALUE:".$dataoutput{$hostname}{$param}."\n"; ## DEBUG
+        $summary{$param}{$value}++;
+        #print "Parm:".$param." Value:".$value." Count:".$summary{$param}{$value}."\n"; ## DEBUG
+      }
+    }
+    elsif (/html/){
+      # Changed to use new gen_host.pl script 20120113 Mts
+         print "<tr>\n<td><a href=\"/JADIS/cgi-bin/gen_host.pl?hostname=".$hostname."\" target=\"_blank\">".$hostname."</a></td>\n";
+#      $formstr = $sources{"SysInfo"}[0];
+#      $formstr =~ s/%H/$hostname/;
+#      $value=$dataoutput{$hostname}{"SysInfo"};
+#      $source_file = &extract_filename($formstr, $value);
+#      if ($source_file eq "not_found" ){
+#        print "<tr>\n<td>".$hostname."</td>\n";
+#      }else{
+#        print "<tr>\n<td><a href=\"".$source_file."\" target=\"_blank\">".$hostname."</a></td>\n";
+#      }
+      foreach $param ( @param_list ) {
+        $value='';
+	$value=$dataoutput{$hostname}{$param};
+	chomp($value);
+        #print "Param".$param;
+	## Replace this logic with
+	## if gen_<param>.pl script is executable then
+	## value = gen_<param>.pl $value
+	## for model it would output a link to the model doc
+	## for AppID it would output a page of info for the App
+	## etc.
+        if ($param =~ /Model/){
+          $tvalue = $value;
+          foreach $modstring (sort keys %modeldocs ) {
+            ##print "Value:".$value." String:".$modstring."  \n";
+            if ($value =~ /$modstring/i){
+                $tvalue = "<a href=\"".$docloc.$modeldocs{$modstring}."\" target=\"_blank\">".$value."</a>";
+		last;
+            }
+          }
+          $value = $tvalue;
+        }
+        foreach $source (keys %sources ) {
+          if ($param =~ /$source/){
+	    $formstr = $sources{$source}[0];
+            $formstr =~ s/%H/$hostname/;
+	    #print "Date:".$value." Format:".$formstr."\n"; # DEBUG
+            $source_file = &extract_filename($formstr, $value);
+	    $value = "<a href=".$source_file." target=\"_blank\">".$value."</a>";
+	  }
+
+        }
+        print "<td>".$value."</td>\n";
+      }
+      print "</tr>\n";
+    }
+    elsif (/csv|excel/){
+        print "\n";
+        print "$hostname";
+      foreach $param ( @param_list ) {
+        #print "\n".$param."\n"; ## DEBUG
+        print ",".$dataoutput{$hostname}{$param};
+      }
+    }
+    else { print "I don't know how to format $output in body yet.\n";
+      exit 1;
+    }
+  }
+}
+
+sub process_sources { ## Process all Source files
+  foreach $source (keys %sources ) {
+    my $keyfile = $sources{$source}[1];
+    for ($keyfile ) {
+      if (/CSV/) {
+      # Load into Source Array
+      }
+      else{
+      # Parse Source file and Load into Source Array
+      }
+    }
+    &compare_values;
+  }
+}
+
+sub compare_values{  ## Compare Source Array values to Host Array values
+#For each [hostaname][parameter] the source value is compared to the Host value
+#and the following actions are taken;
+#Note: unk,not_found,unknown are treated as blanks
+#
+#o if the source value is undefined, next
+#o if the source value matches the master, next
+#o if the source value is blank, report difference, next
+#o if the master is blank report difference, write the source value in the master, next
+#o if the source is the DBOR, report difference, write the source value in the master, next
+#o else report difference, next
+#
+#After all source data files have been processed the new master data file
+#(summary_<date>.csv) is generated. Blank values are replaced with unk.
+#
+
+}
+
+sub process_list { ## Process list of hosts
+  my $infile = shift;
+  my $count = 0;
+  my $total = 0;
+  print STDERR "Working on ".$infile."\n"; ## LOG
+  open(HOST_LIST,$infile) || die "cannot open $infile for read";
+  my(@lines) = <HOST_LIST>;
+  my %hashtemp = map { $_ => 1 } @lines;
+  @lines = sort keys %hashtemp;
+  $total = @lines;
+  foreach $hostname (@lines){{ # loop thru list
+    $count++;
+    #print ">>>>>>".$hostname."\n"; ## DEBUG
+    next if ($hostname =~ /^#/ );
+    print STDERR "\nHost:".$hostname." ".$count." of ".$total."\n"; ## LOG
+    chomp($hostname);
+    if ( ! -e $csvfile ){
+      #print "No CSV File"; ## DEBUG
+      &init_host($hostname);
+      foreach $source (keys %sources ) {
+        print STDERR "\nParse ".$hostname." Source ".$source."\n";  ## LOG
+        &parse_file($hostname,$source);
+      }
+    };
+    }continue{
+    $_ = $hostname;
+    if (! /^#/ ){
+      if (! exists $dataoutput{$hostname} ){
+        &init_host($hostname);
+      }
+      &print_output;
+      }
+    }
+  }
+  close(HOST_LIST);
+}
+
+sub choose_list { ## Select a host list to process
+   #$host_list = "sys.new";
+   #return;
+   my $listdir = shift;
+   chdir $listdir;
+   $listname = " ";
+   $listnum = 0;
+   my @listlist;
+   while ($listname = <sys.*>){
+     $listlist[$listnum] = "$listname";
+     $listnum++;
+   }
+   # Add one more entry in case there is an odd number of files
+   # so the write will not fail on uninitalized data
+   $listlist[$listnum] = " ";
+   for ($i = 0; $i < $listnum; $i += 2) {
+      $firstcolnum = $i;
+      $fisrtcolname = $listlist[$i];
+      $secondcolnum = $i +1;
+      $secondcolname = $listlist[$i + 1];
+      write;
+   }
+   print "Pick a file from the list above.";
+   print "Just enter the number.";
+   $choice = <STDIN>;
+   chop($choice);
+   $host_list = $listlist[$choice];
+}
+
+sub output_header { # Output file header
+  for ($output){
+    if (/text/){
+        print "Data Output for $host_list\n";
+    }
+    elsif (/summary/){
+      print "Data Summary for $host_list\n\n";
+    }
+    elsif (/excel/){
+      print "Content-type: application/octet-stream\n";
+      print "Content-disposition: attachment;filename=\"JADIS.csv\"\n\n";
+      print "Hostname";
+      foreach $param ( @param_list ) {
+        print ",".$param;
+      }
+    }
+    elsif (/hsum/){
+      ## print HTML Header File
+      my $summary_title = $titlepg;
+      $summary_title =~ s/\"//g;
+      print $cgi->header( -type => 'text/html' );
+        print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\" xml:lang=\"en-US\">
+<head>
+<meta http-equiv=\"Content-Type\" content=\"text/html\"; charset=\"iso-8859-1\"></meta>
+<title>Summary HP-UX Systems</title>
+<script src=\"/JADIS/etc/table.js\" type=\"text/javascript\" ></script>
+<link rel=\"stylesheet\" media=\"all\" type=\"text/css\" href=\"/JADIS/etc/default_summary.css\" />
+</head>";
+
+        print "<body>
+<div class=\"header\">
+<table class=\"header\">
+   <tr>
+        <th width=20% style='background:white;padding:.75pt .75pt .75pt .75pt'>
+        <p align=\"middle\">
+        <a HREF=\"http://ncdcwss.northcentralnetworks.com/sites/unix/\">
+        <img src=\"/JADIS/icons/frontierLogo_RGB.gif\" border=0 alt=\"Frontier\" align=\"middle\" height=\"30px\"/>
+        </a>
+        </p>
+        </th>
+        <th width=\"10%\">
+        <p align=\"middle\">
+        <img src=\"/JADIS/icons/sign_divider.gif\" border=\"0\" align=\"middle\"/>
+        </p>
+        </th>
+        <th width=60% style=\"white-space: nowrap;\">
+        <p align=\"middle\">
+        <font color=\"#D00000\" size=\"5\">Summary Data for </font>
+        <font color=\"#D00000\" size=\"5\"> $summary_title </font>
+        </p>
+        </th>
+        <th width=10%>
+        <a HREF=\"http://$websvr/JADIS/index.html\">
+        <img src=\"/JADIS/icons/btn_default.gif\" border=0 alt=\"Default Report\" align=\"middle\"/></a>
+        </th>
+        <th width=10%>
+        <a HREF=\"http://$websvr/JADIS/cgi-bin/gen_req.pl\">
+        <img src=\"/JADIS/icons/btn_custom.gif\" border=0 alt=\"Generate a Custom Report\" align=\"middle\"/></a>
+        </th>
+        <th>&nbsp;</th>
+   </tr>
+   <tr><th>&nbsp;</th></tr>
+   <tr><th>&nbsp;</th></tr>
+   <tr><th>&nbsp;</th></tr>
+   <tr><th>&nbsp;</th></tr>
+</table>
+</div>";
+
+    }
+    elsif (/html/){
+        $titlepg =~ s/\"//g;
+	$filter = "<th class=\"filter\"><input name=\"filter\" size=\"8\" onkeyup=\"Table.filter(this,this)\"></input></th>\n";
+        ## print HTML Header File
+        print $cgi->header( -type => 'text/html' );
+#       print start_html(-title=>"Data Report ".$titlepg, 
+#	 -author=>'mark.simon@verizon.com',
+#	 -script=>{-type=>'text/javascript',
+#	    -src=>'/JADIS/etc/table.js'},
+#	 -style=>{ -src=>'/JADIS/etc/default_house.css'},
+#         -head=>meta({-http_equiv => 'Content-Type',
+#	   -charset => 'iso-8859-1', -content => 'text/html'}));
+        print "\n";
+        print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+<HTML xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\" xml:lang=\"en-US\">
+<HEAD>
+<META http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
+<TITLE>${titlepg}</TITLE>
+<SCRIPT src=\"/JADIS/etc/table.js\"></SCRIPT>
+<LINK rel=\"stylesheet\" media=\"all\" type=\"text/css\" href=\"/JADIS/etc/default_house.css\" >
+</HEAD><BODY>";
+
+        print "
+<div class=\"header\">
+<table class=\"header\">
+   <tr>
+        <th width=20% style='background:white;padding:.75pt .75pt .75pt .75pt'>
+        <p align=\"middle\">
+        <a HREF=\"http://ncdcwss.northcentralnetworks.com/sites/unix/\">
+        <img src=\"/JADIS/icons/frontierLogo_RGB.gif\" border=0 alt=\"Frontier\" align=\"middle\" height=\"32px\"/>
+        </p>
+        </th>
+        <th width=\"10%\">
+        <p align=\"middle\">
+        <img src=\"/JADIS/icons/sign_divider.gif\" border=\"0\" align=\"middle\"/>
+        </p>
+        </th>
+        <th width=70% style=\"white-space: nowrap;\">
+        <p align=\"middle\">
+        <font color=\"#D00000\" size=\"5\">System Data for </font>
+        <font color=\"#D00000\" size=\"5\">$titlepg</font>
+        </p>
+        </th>
+        <th width=10%>
+        <a HREF=\"http://$websvr/JADIS/summary.html\">
+        <img src=\"/JADIS/icons/btn_summary.gif\" border=\"0\" alt=\"Summary Report\" align=\"middle\"/></a>
+        </th>
+        <th width=10%>
+        <a HREF=\"http://$websvr/JADIS/cgi-bin/gen_req.pl\">
+        <img src=\"/JADIS/icons/btn_custom.gif\" border=0 alt=\"Generate a Custom Report\" align=\"middle\"/></a>
+        </th>
+	<th>&nbsp;</th>
+   </tr>
+   <tr>
+	<th colspan=\"3\" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Header Text to Sort, Enter Text in Boxes to Filter, Filter Counts at Bottom.</th>
+   </tr>
+</table>
+</div>
+<div class=\"outer\">
+<div class=\"innera\">
+<TABLE id=\"t1\" class=\"table-autosort:0 table-autofilter table-stripeclass:alternate table-filtered-rowcount:t1filtercount table-rowcount:t1allcount\" width=\"100%\">\n";
+
+        print "<thead>\n";
+	$filter_row = "<tr>
+	   <th class=\"filter firstcell\">
+	   <img src=\"/JADIS/icons/divider_nav.gif\" align=\"left\" height=\"24px\"/>
+	     &nbsp;&nbsp;&nbsp;
+	   <input name=\"filter\" size=\"8\" onkeyup=\"Table.filter(this,this)\"></input>
+	   </th>\n";
+
+	$header_row =  "<tr valign=\"top\"><th class=\"filterable table-sortable:default firstcell\">
+               <img src=\"/JADIS/icons/divider_nav.gif\" align=\"left\" height=\"24px\"/>
+               <img src=\"/JADIS/icons/divider_nav.gif\" align=\"right\" height=\"24px\"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hostname&nbsp;&nbsp;&nbsp;</th>\n";
+        foreach $param ( @param_list ) {
+          # This is not working
+          #if ( ! defined $datapoints{$param}[3] ){
+          #  $datapoints{$param}[3] = "default";
+          #}
+          #print "SORT:".$datapoints{$param}[3]."\n"; # DEBUG
+	  chomp ($datapoints{$param}[3]);
+	  $header_row = $header_row."<th class=\"filterable table-sortable:".($datapoints{$param}[3] || "default")."\"><img src=\"/JADIS/icons/divider_nav.gif\" align=\"right\" height=\"24px\"/>".$param."</th>\n";
+	  $filter_row = "$filter_row"."$filter";
+        }
+        print $filter_row;
+        print "</tr>\n";
+        print $header_row;
+        print <<"EOF";
+</tr>
+</thead>
+<tfoot>
+<tr>
+  <td colspan="16"><font color="black" >
+  <b><span id="t1filtercount">
+  </span></b>&nbsp;of <b>
+  <span id="t1allcount">
+  </span></b>&nbsp;rows match filter(s)</font></td>
+</tr>
+</tfoot>
+<tbody>
+EOF
+    }
+    elsif (/csv/){
+      print "Hostname";
+      foreach $param ( @param_list ) {
+      print ",".$param;
+      }
+    }
+    else { print "I don't know how to format $output in header yet.\n";
+      exit 1;
+    }
+  }
+}
+
+# usage: $string = prettydate( [$time_t] ); 
+# omit parameter for current time/date 
+sub prettydate {  # Convert Date/Time into usable string
+   @_ = localtime(shift || time); 
+   return(sprintf("%02d:%02d %02d/%02d/%04d", @_[2,1], $_[4]+1, $_[3], $_[5]+1900)); 
+}
+
+sub output_footer { # Output file footer
+    my $datestring = prettydate(); 
+    my $k1; # Key to parameters
+    my $k2; # Key to values
+    
+  for ($output){ 
+    if (/text/){
+        print "\n";
+    }
+    elsif (/summary/){
+      ##print "Print Summary\n"; ## DEBUG
+format SUMMARY =
+@<<<<<<<<<<<<<<<<<<<<<<<<        @>>>>>>
+$out1, $out2
+.
+select(STDOUT);
+$~ = "SUMMARY";
+      for $k1 ( sort keys %summary ) {
+        $out1 = $k1;
+        $out2 = "count";
+        write;
+        print "==============================     =====\n";
+        $total = 0;
+	for $k2 ( sort keys %{$summary{ $k1 }} ) {
+          $out1 = $k2;
+	  $out2 = $summary{ $k1 }{ $k2 };
+          write;
+          $total = $total + $out2;
+        }
+        print "==============================     =====\n";
+        $out1 = "Total";
+        $out2 = $total;
+        write;
+        print "\n";
+      }
+    }
+    elsif (/hsum/){
+      ##print "Print Summary\n"; ## DEBUG
+      my $count = 0; # count of unique values for a parameter
+      my $total = 0; # total of hosts for a parameter
+      my $p2; # Print version of k2
+      print "<div class=\"sumouter\">\n";
+      for $k1 ( sort keys %summary ) {
+	# Start a new Table for each Parameter
+        print "<div class=\"summary\">\n<div class=\"model\">\n";
+        print "<div class=\"innerb\">\n";
+        print "<table class=\"summary table-autosort:0 table-stripeclass:alternate\" >\n";
+        print "<col align=\"left\" />\n";
+        print "<col align=\"right\" />\n";
+        print "<thead>\n";
+        print "<tr>\n<th class=\"firstcell table-sortable:ignorecase\">\n";
+        print "<B>".$k1."</B></th>\n";
+        print "<th class=\"table-sortable:numeric\">Count</th></tr>\n</thead>\n<tbody>\n";
+        $count = 0;
+        $total = 0;
+	for $k2 ( sort keys %{$summary{ $k1 }} ) {
+	  $p2 = $k2;
+	  $p2 =~ s/ /\&nbsp\;/;
+	  ##print "\t". $k2."\t". $summary{ $k1 }{ $k2 }."\n"; ## DEBUG
+          print "<tr><td>".$p2."</td><td>".$summary{ $k1 }{ $k2 }."</td></tr>\n";
+          $count++;
+	  $total = ($total + $summary{ $k1 }{ $k2 });
+        }
+        print "</tbody><tfoot>\n";
+        print "<tr><td>Unique&nbsp;".$count."</td>";
+        print "<td><b>Total&nbsp;".$total."</b></td></tr>\n";
+        print "</tfoot></table></div></div></div>\n";
+      }
+      print <<"      EOF";
+      </div>
+      <div class="summaryfooter">
+      Updated $datestring by JADIS ver $version
+      </div>
+      </body>
+      </html>
+      EOF
+      print "\n";
+    } # End for hsum
+    elsif (/excel/){
+        print "\n";
+    }
+    elsif (/html/){
+        ## print HTML Footer File
+print <<"EOF";
+</tbody>
+</table>
+</div>
+</div>
+<div class="rpt_last_line">
+&nbsp;
+</div>
+<div class="reportfooter">
+Updated $datestring by JADIS ver $version
+</div>
+</body>
+</html>
+EOF
+    }
+  }
+}
+#### MAIN ####
+## Call all sub routines
+# init_host_array  (hostname,param,value)
+# load_summary into host_array
+# if the summary is current and the force flag is not set goto [gen_report]
+#
+#Each source data file in turn is read into a source array. For each [hostaname][parameter] the source value is compared to the master value and the following actions are taken;
+#Note: unk,not_found,unknown are treated as blanks
+#
+#o	if the source value is undefined, next
+#o	if the source value matches the master, next
+#o	if the source value is blank, report difference, next
+#o	if the master is blank report difference, write the source value in the master, next
+#o	if the source is the DBOR, report difference, write the source value in the master, next
+#o	else report difference, next
+#
+#.	After all source data files have been processed the new master data file (summary_<date>.csv) is generated. Blank values are replaced with unk.
+#
+#[gen_report]
+umask 022;
+&init_vars();
+print STDERR "## Starting gen_data.pl ver ".$version."\n"; ## LOG
+if ($interactive){ 
+  &choose_list($listdir);
+}
+# Initalize Host Array
+&init_host($listdir."/".$host_list);
+# Load the newest Summary if one exists
+if (-e $csvfile ){
+  print STDERR "## Loading CSV File ".$csvfile." \n"; ## LOG
+  &load_csv;
+}
+else {
+  print STDERR "## No CSV File ".$csvfile." \n"; ## LOG
+};
+# If Summary is not current or force flag is set, process sources
+&process_sources;
+### Output Report ###
+print STDERR "## Output Header\n"; ## LOG
+&output_header;
+##$junk = <>;
+print STDERR "## Process List\n"; ## LOG
+&process_list($listdir."/".$host_list);
+print STDERR "## Output Footer\n"; ## LOG
+&output_footer;
+print "\n";
+print STDERR "## gen_data.pl Complete\n"; ## LOG

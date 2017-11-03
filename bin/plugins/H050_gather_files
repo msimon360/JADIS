@@ -1,0 +1,72 @@
+# gather_files does not output a header or value
+# This script collects files from a host
+#
+function output_header
+{
+  true
+}
+
+function output_value
+{
+  logwrite "gather_files plugin running" 1
+  # if the Default or No Copy Flags are set return
+  if [[ "${OUTPUT_DEFAULT}x" = "truex" ]] || \
+     [[ "${JADIS_NOCOPY}x" = "truex" ]];then
+    return
+  fi
+  # Gather data files from a host
+  x=0
+  while [[ $x < $NUMSOURCE ]]; do
+    # see if this source applies to this host OS
+    if `echo "${ros[$x]}" |grep "${OS}" >/dev/null 2>&1` ;then
+      # Replace meta tags with wildcards in the pattern to match
+      RMPAT=`echo ${rfile[$x]} | sed 's/%YYY/????/;s/%m/??/;s/%d/??/'`
+      RMPAT=`echo ${RMPAT} | sed "s/%H/${hostname}/"`
+      echo "lcd ${ldir[$x]}" > ${TMP}/get_${source[$x]}
+      echo "mget ${RMPAT}" >> ${TMP}/get_${source[$x]}
+      echo "bye" >> ${TMP}/get_${source[$x]}
+      echo " " >>  ${TMP}/get_${source[$x]}
+      case $ACCESS in
+        ssh)
+            logwrite "Collecting ${source[$x]} files from ${hostname}" 1
+            # Frist see if we already have the latest file
+            ${SSH} ${ruser[$x]}@${hostname} \
+              "ls ${RMPAT} ${RMPAT}.gz 2>/dev/null" | tail -1 > ${TMP}/rmfile$$
+            RMFILE=`cat ${TMP}/rmfile$$`
+            RMFILE=`basename $RMFILE .gz`
+            cd ${ldir[$x]}
+            if [ -r $RMFILE ]; then # file already here
+              logwrite "$RMFILE already collected" 1
+            else # newest file not downloaded
+              # use sftp to avoid scp1/2 compatability problems
+              logwrite "Copying ${RMPAT} to ${ldir[$x]} with sftp" 1
+              sftp ${ruser[$x]}@${hostname}:${RMPAT} ${ldir[$x]} >/dev/null 2>&1
+            fi # file collected
+        ;;
+        rsh)
+           logwrite "Collecting files from ${hostname} using rcp" 1
+           # Frist see if we already have the files
+           rsh ${hostname} -l ${ruser[$x]} \
+             "ls ${RMPAT} ${RMPAT}.gz" 2>/dev/null | tail -1 > ${TMP}/rmfile$$
+           RMFILE=`cat ${TMP}/rmfile$$`
+           RMFILE=`basename $RMFILE .gz`
+           cd ${ldir[$x]}
+           if [ -r $RMFILE ]; then # file already here
+             logwrite "$RMFILE already collected" 1
+           else # newest file not downloaded
+             logwrite "Copying ${RMPAT}* to ${ldir[$x]} with rcp" 1
+             rcp ${ruser[$x]}@${hostname}:${RMPAT} ${ldir[$x]} >/dev/null 2>&1
+           fi # file collected
+        ;;
+        *)
+          logwrite "Access $ACCESS is an invalid method" 1
+          return
+        ;;
+      esac # Access Method
+    fi # source for this host OS
+    # loop for next source file
+    x=$((${x}+1))
+  done # Loop for all source files 
+  logwrite "gather_files plugin complete" 1
+  return 0
+}

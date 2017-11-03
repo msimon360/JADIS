@@ -1,0 +1,4313 @@
+<HTML><HEAD>
+<TITLE>Sysinfo for xrmfwp06</TITLE>
+</HEAD>
+<BODY BGCOLOR=lightblue>
+<CENTER>
+<A name='TOP'></A>
+<FONT SIZE=6 COLOR=darkblue>
+SysInfo 6.21 by HP Services</FONT><BR>
+<FONT SIZE=6>Configuration Data for
+<FONT COLOR=red>xrmfwp06</FONT></FONT><BR>
+<FONT SIZE=3>Collected on Wed Mar  2 03:15:05 EST 2011</FONT><BR>
+</CENTER><LEFT><BR><BR>
+<FONT SIZE=5><U>Table Of Contents</U></FONT>
+<BR><BR>
+<A HREF='#System'>System Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#ProcessorData'>Processor data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Memory'>Memory Information</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SwapData'>Swap Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DumpDisks'>Dump Disks</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DumpData'>Dump Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Printer'>Printer Information</A><BR>
+<A HREF='#Kernel'>Kernel Parameters</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#AccountingMetrics'>Accounting Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DLKMMetrics'>DLKM Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DiskMetrics'>Disk Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DumpMetrics'>Dump Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FiberChannelMetrics'>Fiber Channel Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FibreChannelMetrics'>Fibre Channel Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FileSystemMetrics'>File System Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#IDDSMetrics'>IDDS Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#LVMMetrics'>LVM Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MemoryMetrics'>Memory Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MemoryWindowsMetrics'>Memory Windows Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MessageMetrics'>Message Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MiscellaneousMetrics'>Miscellaneous Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#NetworkMetrics'>Network Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#ObsoleteMetrics'>Obsolete Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#POSIXAIOMetrics'>POSIX AIO Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#PregionMetrics'>Pregion Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#ProcessMetrics'>Process Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SCSIMetrics'>SCSI Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SCSITapeMetrics'>SCSI Tape Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SemaphoreMetrics'>Semaphore Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SharedMemoryMetrics'>Shared Memory Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SignalsMetrics'>Signals Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SpinlockMetrics'>Spinlock Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#StreamsMetrics'>Streams Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SwapMetrics'>Swap Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#UnallowedMetrics'>Unallowed Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#UnknownMetrics'>Unknown Metrics</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#VASMetrics'>VAS Metrics</A><BR>
+<A HREF='#TAPESANKernel'>TAPE/SAN Kernel Parameters</A><BR>
+<A HREF='#BOOTCONF'>BOOTCONF Data</A><BR>
+<A HREF='#Network'>Network Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#DNS'>DNS Information</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Lanscan'>Lanscan Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceData'>Interface Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan1'>Interface Data for lan1</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan2'>Interface Data for lan2</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan3'>Interface Data for lan3</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan900'>Interface Data for lan900</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan901'>Interface Data for lan901</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan902'>Interface Data for lan902</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan903'>Interface Data for lan903</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#InterfaceDatalan904'>Interface Data for lan904</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#LinkAddLanInt'>Link Aggregate LAN Interface PPA's</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#LinkLanconfig'>Link Aggregate LAN Interface PPA's</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#RoutingTables'>Routing Tables</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#NetworkIntState'>Network Interface State</A><BR>
+<A HREF='#File'>File System Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MountedFile'>Mounted File Systems</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#fstab'>/etc/fstab</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#mnttab'>/etc/mnttab</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#exportfs'>Exported File Systems</A><BR>
+<A HREF='#IO'>I/O Configuration Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#IOFULL'>Full I/O Configuration Data</A><BR>
+<A HREF='#ICOD'>iCOD/iCAP Data</A><BR>
+<A HREF='#MPT'>MPT Device Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MPT'>MPT Device Data for /dev/mpt4</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MPT'>MPT Device Data for /dev/mpt5</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MPT'>MPT Device Data for /dev/mpt6</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MPT'>MPT Device Data for /dev/mpt7</A><BR>
+<A HREF='#FC'>Fibre Channel Device Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FC/dev/fcd0'>Fibre Channel Device Data for /dev/fcd0</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FC/dev/fcd1'>Fibre Channel Device Data for /dev/fcd1</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FC/dev/fcd2'>Fibre Channel Device Data for /dev/fcd2</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#FC/dev/fcd3'>Fibre Channel Device Data for /dev/fcd3</A><BR>
+<A HREF='#Physical'>Physical Disk Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#BootableDisks'>Bootable Disks</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Pmap'>Physical Disk To Logical Volume Mapping</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#PhysDiskRevs'>Physical Disk Revisions</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#BootPath'>Boot Path Settings</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#lvlnboot'>lvlnboot Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#PDNIVG'>Physical disks that are not in a VG</A><BR>
+<A HREF='#Volume'>Volume Group Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Mapfile'>Volume Group Map Files</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#VGCFGBU'>Volume Group Configuration Backups</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#VGINACT'>Inactive Volume Groups</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#VGEXIST'>Volume Groups Not In /etc/lvmtab</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Lifls'>LIFLS for Boot Disks</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#LVOLMOUNTPOINT'>Logical Volumes and Mount Points</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#LVOLEXTENT'>Logical Volumes Extent Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#VGMap'>Volume Group To Physical Disk Mapping</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Lmap'>Logical Volume To Physical Disk Mapping</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Capacity'>Disk Capacity Data</A><BR>
+<A HREF='#SoftwareData'>Software Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Bundles'>Software Bundles</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#Products'>Software Products</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#RegDepots'>Registered software depots</A><BR>
+<A HREF='#SYSACCESS'>System Security Audit</A><BR>
+<A HREF='#DIAGNOSTICS'>System Diagnostics Settings</A><BR>
+<A HREF='#IGNITE'>Ignite-UX Data</A><BR>
+<A HREF='#ISEE'>ISEE Data</A><BR>
+<A HREF='#ServiceGuardData'>Service Guard Data</A><BR>
+<A HREF='#OPENVIEW'>OpenView Software Configuration</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#OMNIBACK'>Omniback/Data Protector Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#NNM'>OpenView Network Node Manager Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#OVO'>OpenView Operations Data</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#GLANCE'>OpenView Performance Data</A><BR>
+<A HREF='#LOGFILES'>System Logfile Information</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SIZESPERMS'>File Sizes and Permissions</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#CRASHDUMPS'>Crash Dumps</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SENDMAIL'>Sendmail</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#SENDMAILQ'>Sendmail Queue</A><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF='#MAILDIR'>Mail Post Office Directory /var/mail</A><BR>
+<A HREF='#ErrWarn'>Error/Warning Summary</A><BR>
+
+<!-- === END Table Of Contents === -->
+
+</PRE>
+<A NAME='System'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>System Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START System === -->
+
+HOSTNAME:          xrmfwp06
+SYSTEM:            9000
+MODEL:             9000/800/rp3440  
+RISC CHIP:         PA 8900
+PA VERSION:        3.2
+SERIAL #:          USE4941DNS
+CUSTOMER NAME:     XRM
+COUNTRY:           Ft Wayne, IN
+SYSTEM ID:         2688319930
+CPU SPEED:         1000.01 MHz
+TOTAL CPUS:        2 processor(s) 
+ACTIVE CPUS:       2 active processor(s) 
+MEMORY:            8190 MB
+HP-UX VERSION:     B.11.11 64 Bit
+USER LICENSE:      unlimited-user license
+LAST BOOT:         Jan 29 19:39 
+UP TIME:           396 days, 7:36 hours
+LAST PATCH:        Nov 13 2009
+TRUSTED SYSTEM:    No
+VOLUME MANAGER:    Logical Volume Manager (LVM)
+
+
+
+<!-- === END Basic System Data === -->
+
+<BR><A HREF='#Top'>TOP</A>
+
+</PRE>
+<A NAME='ProcessorData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Processor data</U></H3>
+<PRE><font size = '4'>
+<!-- === START ProcessorData === -->
+
+       H/W          PDC        Cache Size    TLB Size
+   path  slot    rev level    Inst   Data  Inst   Data
+  -----------------------------------------------------
+   128     0         46.34     768    768   240    240                                              
+   129     0         46.34     768    768   240    240                                              
+
+<!-- === END Processor data === -->
+
+</PRE>
+<A NAME='Memory'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Memory Information</U></H3>
+<PRE><font size = '4'>
+<!-- === START Memory === -->
+
+Basic Memory Description
+    Module Type: MEMORY
+    Total Configured Memory   : 8192 MB
+    Page Size: 4096 Bytes
+    Memory interleaving is supported on this machine and is ON.
+Memory Board Inventory 
+   DIMM Slot      Size (MB)
+   ---------      ---------
+          0A           1024
+          0B           1024
+          1A           1024
+          1B           1024
+          2A           1024
+          2B           1024
+          3A           1024
+          3B           1024
+          4A              0
+          4B              0
+          5A              0
+          5B              0
+   ---------      ---------
+   System Total (MB):  8192
+Memory Error Log Summary 
+    The memory error log is empty.
+Page Deallocation Table (PDT)
+    PDT Entries Used: 0  
+    PDT Entries Free: 3000  
+    PDT Total Size: 3000  
+
+<!-- === END Memory Information === -->
+
+</PRE>
+<A NAME='SwapData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Swap Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START SwapData === -->
+
+  4096 MB on /dev/vgroot/lvswapA with Priority 1
+  6328 MB on memory
+  ----
+ 10424 MB Total 
+
+<!-- === END Swap Data === -->
+
+</PRE>
+<A NAME='DumpDisks'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Dump Disks</U></H3>
+<PRE><font size = '4'>
+<!-- === START DumpDisks === -->
+
+  Dump: lvswapA	on: 	/dev/dsk/c2t0d0, 0
+
+<!-- === END Dump Disks === -->
+
+</PRE>
+<A NAME='DumpData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Dump Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START DumpData === -->
+
+SAVECRASH:                   Undefined
+SAVECRASH DIR:               /var/adm/crash
+SAVECRASH AVAILABLE SPACE:   3838MB
+
+CRASHCONF:              Enabled (referencing /etc/fstab)
+   Replace Option:      CrashConf values REPLACE existing Kernel Definitions.
+   Included Pages:      
+   Excluded Pages:      
+   FSTAB File Entries:  
+   CRASHCONF Configured MEMORY TO DUMP: 1555 MB
+
+KERNEL SIZE:                19141792 Bytes.
+TOTAL MEMORY TO DUMP:          8211 MB
+DUMP DISK CAPACITY:            4096 MB
+
+<!-- === END Dump Data === -->
+
+</PRE>
+<A NAME='Printer'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Printer Information</U></H3>
+<PRE><font size = '4'>
+<!-- === START Printer === -->
+
+no system default destination
+
+<!-- === END Printer Information === -->
+
+
+<!-- === END System Data === -->
+
+
+</PRE>
+<A NAME='Kernel'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Kernel Parameters</U></H3>
+<PRE><font size = '4'>
+<!-- === START Kernel === -->
+</PRE>
+<A NAME='AccountingMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Accounting Metrics</U></H3>
+<PRE><font size = '4'>
+  acctresume            4
+  acctsuspend           2
+
+<!-- === END Accounting Metrics === -->
+
+</PRE>
+<A NAME='DLKMMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>DLKM Metrics</U></H3>
+<PRE><font size = '4'>
+  initmodmax            50
+  modstrmax             500
+
+<!-- === END DLKM Metrics === -->
+
+</PRE>
+<A NAME='DiskMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Disk Metrics</U></H3>
+<PRE><font size = '4'>
+  disksort_seconds      0
+
+<!-- === END Disk Metrics === -->
+
+</PRE>
+<A NAME='DumpMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Dump Metrics</U></H3>
+<PRE><font size = '4'>
+  alwaysdump            1
+  dontdump              0
+
+<!-- === END Dump Metrics === -->
+
+</PRE>
+<A NAME='FiberChannelMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fiber Channel Metrics</U></H3>
+<PRE><font size = '4'>
+  max_fcp_reqs          512
+
+<!-- === END Fiber Channel Metrics === -->
+
+</PRE>
+<A NAME='FibreChannelMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Metrics</U></H3>
+<PRE><font size = '4'>
+  fcp_large_config      0
+
+<!-- === END Fibre Channel Metrics === -->
+
+</PRE>
+<A NAME='FileSystemMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>File System Metrics</U></H3>
+<PRE><font size = '4'>
+  bufpages              (NBUF*2)
+  create_fastlinks      0
+  dbc_max_pct           3
+  dbc_min_pct           2
+  dnlc_hash_locks       512
+  fs_async              0
+  hfs_max_ra_blocks     8
+  hfs_max_revra_blocks  8
+  hfs_ra_per_disk       64
+  hfs_revra_per_disk    64
+  hp_hfs_mtra_enabled   1
+  maxfiles              4096
+  maxfiles_lim          4096
+  nbuf                  0
+  ncdnode               150
+  ncsize                195232
+  nfile                 1200000
+  nflocks               4096
+  ninode                194208
+  vx_fancyra_enable     0
+  vx_ncsize             1024
+  vx_ninode             0
+  vxfs_max_ra_kbytes    1024
+  vxfs_ra_per_disk      1024
+
+<!-- === END File System Metrics === -->
+
+</PRE>
+<A NAME='IDDSMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>IDDS Metrics</U></H3>
+<PRE><font size = '4'>
+  enable_idds           0
+
+<!-- === END IDDS Metrics === -->
+
+</PRE>
+<A NAME='LVMMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>LVM Metrics</U></H3>
+<PRE><font size = '4'>
+  maxvgs                64
+  no_lvm_disks          0
+
+<!-- === END LVM Metrics === -->
+
+</PRE>
+<A NAME='MemoryMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Memory Metrics</U></H3>
+<PRE><font size = '4'>
+  core_addshmem_read    0
+  core_addshmem_write   0
+  max_mem_window        0
+  nsysmap               ((NPROC)>800?2*(NPROC):800)
+  nsysmap64             ((NPROC)>800?2*(NPROC):800)
+  shmem                 1
+  shmmax                34359738368
+  shmmni                712
+  shmseg                208
+
+<!-- === END Memory Metrics === -->
+
+</PRE>
+<A NAME='MemoryWindowsMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Memory Windows Metrics</U></H3>
+<PRE><font size = '4'>
+  max_mem_window        0
+
+<!-- === END Memory Windows Metrics === -->
+
+</PRE>
+<A NAME='MessageMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Message Metrics</U></H3>
+<PRE><font size = '4'>
+  mesg                  1
+  msgmap                4098
+  msgmax                32768
+  msgmnb                65535
+  msgmni                24020
+  msgseg                32767
+  msgssz                128
+  msgtql                4096
+
+<!-- === END Message Metrics === -->
+
+</PRE>
+<A NAME='MiscellaneousMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Miscellaneous Metrics</U></H3>
+<PRE><font size = '4'>
+  default_disk_ir       0
+  dst                   1
+  max_async_ports       50
+  maxusers              3000
+  ncallout              (16+NKTHREAD)
+  nclist                (100+16*MAXUSERS)
+  ndilbuffers           30
+  npty                  256
+  o_sync_is_o_dsync     0
+  scroll_lines          100
+  timezone              420
+  unlockable_mem        20480
+  vps_ceiling           64
+  vps_chatr_ceiling     1048576
+  vps_pagesize          4
+
+<!-- === END Miscellaneous Metrics === -->
+
+</PRE>
+<A NAME='NetworkMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Network Metrics</U></H3>
+<PRE><font size = '4'>
+  nstrtel               256
+  remote_nfs_swap       0
+  sendfile_max          0
+  tcphashsz             0
+
+<!-- === END Network Metrics === -->
+
+</PRE>
+<A NAME='ObsoleteMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Obsolete Metrics</U></H3>
+<PRE><font size = '4'>
+  dskless_node          0
+  iomemsize             40000
+  netisr_priority       -1
+  netmemmax             0
+  page_text_to_local    0
+
+<!-- === END Obsolete Metrics === -->
+
+</PRE>
+<A NAME='POSIXAIOMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>POSIX AIO Metrics</U></H3>
+<PRE><font size = '4'>
+  aio_listio_max        256
+  aio_max_ops           2048
+  aio_physmem_pct       10
+  aio_prio_delta_max    20
+
+<!-- === END POSIX AIO Metrics === -->
+
+</PRE>
+<A NAME='PregionMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Pregion Metrics</U></H3>
+<PRE><font size = '4'>
+  hdlpreg_hash_locks    128
+
+<!-- === END Pregion Metrics === -->
+
+</PRE>
+<A NAME='ProcessMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Process Metrics</U></H3>
+<PRE><font size = '4'>
+  effective_maxpid      ((NPROC<=30000)?30000:(NPROC*5/4))
+  executable_stack      0
+  max_thread_proc       1024
+  maxdsiz               1073741824
+  maxdsiz_64bit         2147483648
+  maxssiz               134217728
+  maxssiz_64bit         1073741824
+  maxtsiz               0x4000000
+  maxtsiz_64bit         0x40000000
+  maxuprc               21618
+  nkthread              (((NPROC*7)/4)+16)
+  nproc                 24020
+  rtsched_numpri        32
+  timeslice             (100/10)
+
+<!-- === END Process Metrics === -->
+
+</PRE>
+<A NAME='SCSIMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>SCSI Metrics</U></H3>
+<PRE><font size = '4'>
+  scsi_max_qdepth       8
+  scsi_maxphys          1048576
+  st_ats_enabled        0
+  st_fail_overruns      0
+  st_large_recs         0
+
+<!-- === END SCSI Metrics === -->
+
+</PRE>
+<A NAME='SCSITapeMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>SCSI Tape Metrics</U></H3>
+<PRE><font size = '4'>
+  st_ats_enabled        0
+  st_fail_overruns      0
+  st_large_recs         0
+
+<!-- === END SCSI Tape Metrics === -->
+
+</PRE>
+<A NAME='SemaphoreMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Semaphore Metrics</U></H3>
+<PRE><font size = '4'>
+  sema                  1
+  semaem                16384
+  semmap                (SEMMNI+2)
+  semmni                6000
+  semmns                12000
+  semmnu                24016
+  semmsl                2048
+  semume                64
+  semvmx                32767
+
+<!-- === END Semaphore Metrics === -->
+
+</PRE>
+<A NAME='SharedMemoryMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Shared Memory Metrics</U></H3>
+<PRE><font size = '4'>
+  core_addshmem_read    0
+  core_addshmem_write   0
+  shmem                 1
+  shmmax                34359738368
+  shmmni                712
+  shmseg                208
+
+<!-- === END Shared Memory Metrics === -->
+
+</PRE>
+<A NAME='SignalsMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Signals Metrics</U></H3>
+<PRE><font size = '4'>
+  ksi_alloc_max         192160
+  ksi_send_max          32
+
+<!-- === END Signals Metrics === -->
+
+</PRE>
+<A NAME='SpinlockMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Spinlock Metrics</U></H3>
+<PRE><font size = '4'>
+  bufcache_hash_locks   128
+  chanq_hash_locks      256
+  ftable_hash_locks     64
+  io_ports_hash_locks   64
+  pfdat_hash_locks      128
+  region_hash_locks     128
+  sysv_hash_locks       128
+  vnode_cd_hash_locks   128
+  vnode_hash_locks      128
+
+<!-- === END Spinlock Metrics === -->
+
+</PRE>
+<A NAME='StreamsMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Streams Metrics</U></H3>
+<PRE><font size = '4'>
+  NSTREVENT             50
+  NSTRPUSH              16
+  NSTRSCHED             0
+  STRCTLSZ              1024
+  STRMSGSZ              65535
+  nstrpty               256
+  streampipes           0
+
+<!-- === END Streams Metrics === -->
+
+</PRE>
+<A NAME='SwapMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Swap Metrics</U></H3>
+<PRE><font size = '4'>
+  allocate_fs_swapmap   0
+  maxswapchunks         16384
+  nswapdev              10
+  nswapfs               10
+  swapmem_on            1
+  swchunk               65536
+
+<!-- === END Swap Metrics === -->
+
+</PRE>
+<A NAME='UnallowedMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Unallowed Metrics</U></H3>
+<PRE><font size = '4'>
+  NSTRBLKSCHED          2
+  bootspinlocks         256
+  desfree               0
+  eisa_io_estimate      0x300
+  file_pad              10
+  hpux_aes_override     0
+  hz                    Unknown
+  lotsfree              0
+  maxqueuetime          0
+  minfree               0
+  nbpg                  Unknown
+  netslop               Unknown
+  nhtbl_scale           0
+  nni                   2
+  vx_maxlink            32767
+
+<!-- === END Unallowed Metrics === -->
+
+</PRE>
+<A NAME='UnknownMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Unknown Metrics</U></H3>
+<PRE><font size = '4'>
+  bcvmap_size_factor    2
+  eqmemsize             15
+  gvid_no_claim_dev     0
+  public_shlibs         1
+  select_enh            0
+  st_san_safe           0
+
+<!-- === END Unknown Metrics === -->
+
+</PRE>
+<A NAME='VASMetrics'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>VAS Metrics</U></H3>
+<PRE><font size = '4'>
+  vas_hash_locks        128
+
+<!-- === END VAS Metrics === -->
+
+ 
+* Drivers and Subsystems
+
+DlkmDrv
+GSCtoPCI
+PCItoPCI
+arp
+asio0
+asp
+autofsc
+beep
+bs_osm
+c720
+c8xx
+cachefsc
+cb
+ccio
+cdfs
+cifs
+ciss
+clone
+core
+cxperf
+dev_config
+dev_olar
+devkrs
+diag0
+diag1
+diag2
+disc3
+dlkm
+dlpi
+dmem
+echo
+evp
+fcT1
+fcT1_cntl
+fcT1_fcp
+fcd
+fcms
+fcp
+fcp_cdio
+fcparray
+fcpdev
+fcpmux
+fddi4
+ffs
+func0
+gelan
+hcd
+hd_fabric
+hid
+hpstreams
+hub
+i2o_cdio
+iether
+igelan
+inet
+iomem
+iop_drv
+ip
+ipmi
+ipmi_psm
+kepd
+klog
+krs
+lan2
+lanmux0
+lasi
+lba
+ldterm
+lpfc
+lpr2
+lpr3
+lv
+lvm
+maclan
+mpt
+netdiag1
+netqa
+nfs_client
+nfs_core
+nfs_server
+nfsm
+nms
+nuls
+olar_psm
+olar_psm_if
+pa_generic_psm
+pa_psm
+pat_psm
+pci
+pckt
+pipedev
+pipemod
+prm
+ptem
+ptm
+pts
+rawip
+rpcmod
+sad
+sapic
+sba
+sc
+sctl
+sdisk
+side
+side_multi
+sio
+stape
+stcpmap
+strlog
+strpty_included
+strtelnet_included
+superio
+tape2
+tape2_included
+target
+tcp
+telm
+tels
+timod
+tirdwr
+tlclts
+tlcots
+tlcotsod
+token_arp
+tun
+udp
+ufs
+uipc
+usbd
+vxfs
+vxportal
+wsio
+
+
+* Kernel Device info
+
+hp_apa
+dump lvol
+
+
+* Tunable parameters
+
+STRMSGSZ        65535
+dbc_max_pct     3
+dbc_min_pct     2
+dnlc_hash_locks 512
+executable_stack 0
+ksi_alloc_max   192160
+max_thread_proc 1024
+maxdsiz         1073741824
+maxdsiz_64bit   2147483648
+maxfiles        4096
+maxfiles_lim    4096
+maxssiz         134217728
+maxssiz_64bit   1073741824
+maxswapchunks   16384
+maxtsiz             	0x4000000
+maxtsiz_64bit       	0x40000000
+maxuprc         21618
+maxusers        3000
+maxvgs          64
+msgmap          4098
+msgmax          32768
+msgmnb          65535
+msgmni          24020
+msgseg          32767
+msgssz          128
+msgtql          4096
+ncsize          195232
+nfile           1200000
+nflocks         4096
+ninode          194208
+nproc           24020
+npty            256
+nstrpty         256
+nstrtel         256
+semmni          6000
+semmns          12000
+semmnu          24016
+semume          64
+shmmax          34359738368
+shmmni          712
+shmseg          208
+swchunk         65536
+unlockable_mem  20480
+vps_ceiling     64
+
+<!-- === END System File Contents === -->
+
+</PRE>
+<A NAME='TAPESANKernel'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>TAPE/SAN Kernel Parameters</U></H3>
+<PRE><font size = '4'>
+<!-- === START TAPESANKernel === -->
+Parameter      Current Value     Planned Value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+st_san_safe         0                 0
+st_ats_enabled      0                 0
+
+<!-- === END Tape/SAN Kernel Parameters === -->
+
+
+<!-- === END Kernel Parameters === -->
+
+</PRE>
+<A NAME='BOOTCONF'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>BOOTCONF Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START BOOTCONF === -->
+
+=== START /stand/bootconf contents ===
+
+
+l  /dev/dsk/c2t0d0
+
+=== END /stand/bootconf contents ===
+
+/stand/bootconf is missing an entry for /dev/dsk/c2t1d0
+/stand/bootconf is INCORRECT and should contain the lines:
+
+   l   /dev/dsk/c2t0d0
+   l   /dev/dsk/c2t1d0
+
+<!-- === END Bootconf Data === -->
+
+</PRE>
+<A NAME='Network'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Network Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START Network === -->
+
+</PRE>
+<A NAME='DNS'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>DNS Information</U></H3>
+<PRE><font size = '4'>
+<!-- === START DNS === -->
+
+DOMAIN NAME:    138.83.131.154
+DNS SERVER:     ftwvdns.northcentralnetworks.com  (138.83.131.154)
+DEFAULT ROUTER: ftwyinaxq-h-144-70-194-0.northcentralnetworks.com  (144.70.194.1)
+
+<!-- === END DNS Information === -->
+
+</PRE>
+<A NAME='Lanscan'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Lanscan Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START Lanscan === -->
+
+Hardware Station        Crd  Hdw   Net-Interface    NM   MAC       HP-DLPI DLPI
+Path     Address        In#  State NamePPA          ID   Type      Support Mjr#
+0/3/1/0/6/0 0x002481D928D2 1    UP    lan1 snap1       2    ETHER       Yes   119
+0/3/1/0/6/1 0x002481D928D3 2    UP    lan2 snap2       3    ETHER       Yes   119
+0/4/1/0/6/0 0x001CC43A3B94 3    UP    lan3 snap3       4    ETHER       Yes   119
+LinkAgg0 0x001F29B7383F 900  UP    lan900 snap900   7    ETHER       Yes   119
+LinkAgg1 0x000000000000 901  DOWN  lan901 snap901   8    ETHER       Yes   119
+LinkAgg2 0x000000000000 902  DOWN  lan902 snap902   9    ETHER       Yes   119
+LinkAgg3 0x000000000000 903  DOWN  lan903 snap903   10   ETHER       Yes   119
+LinkAgg4 0x000000000000 904  DOWN  lan904 snap904   11   ETHER       Yes   119
+
+<!-- === END Lanscan Data === -->
+
+</PRE>
+<A NAME='InterfaceData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START InterfaceData === -->
+
+</PRE>
+<A NAME='InterfaceDatalan1'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan1</U></H3>
+<PRE><font size = '4'>
+<!-- === START InterfaceDatalan1 === -->
+CONFIGURED:           No
+H/W ADDR:             0/3/1/0/6/0
+CARD TYPE:            ETHER
+SPEED:                1000 or 100 or 10 Mbps.
+AUTONEGOTIATION:      On.
+MAC ADDRESS:          0x002481D928D2
+IP ADDRESS:           Not configured
+BROADCAST:            Not configured
+NETMASK:              Not configured
+
+<!-- === END Interface Data for lan1 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan2'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan2</U></H3>
+<PRE><font size = '4'>
+<!-- === START InterfaceDatalan2 === -->
+CONFIGURED:           Yes
+H/W ADDR:             0/3/1/0/6/1
+CARD TYPE:            ETHER
+SPEED:                1000 Full-Duplex.
+AUTONEGOTIATION:      On.
+MAC ADDRESS:          0x002481D928D3
+IP ADDRESS:           112.42.50.103   (xrmfwp06g)
+BROADCAST:            112.42.51.255
+NETMASK:              255.255.254.0
+
+<!-- === END Interface Data for lan2 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan3'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan3</U></H3>
+<PRE><font size = '4'>
+<!-- === START InterfaceDatalan3 === -->
+CONFIGURED:           No
+H/W ADDR:             0/4/1/0/6/0
+CARD TYPE:            ETHER
+SPEED:                1000 or 100 or 10 Mbps.
+AUTONEGOTIATION:      On.
+MAC ADDRESS:          0x001CC43A3B94
+IP ADDRESS:           Not configured
+BROADCAST:            Not configured
+NETMASK:              Not configured
+
+<!-- === END Interface Data for lan3 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan900'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan900</U></H3>
+<PRE><font size = '4'>
+NAME:        LinkAgg0
+MAC ADDRESS: 0x001F29B7383F
+H/W STATE:   UP
+IP ADDRESS:  144.70.194.110
+
+<!-- === END Interface Data for lan900 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan901'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan901</U></H3>
+<PRE><font size = '4'>
+NAME:        LinkAgg1
+MAC ADDRESS: Not configured
+H/W STATE:   DOWN
+
+<!-- === END Interface Data for lan901 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan902'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan902</U></H3>
+<PRE><font size = '4'>
+NAME:        LinkAgg2
+MAC ADDRESS: Not configured
+H/W STATE:   DOWN
+
+<!-- === END Interface Data for lan902 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan903'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan903</U></H3>
+<PRE><font size = '4'>
+NAME:        LinkAgg3
+MAC ADDRESS: Not configured
+H/W STATE:   DOWN
+
+<!-- === END Interface Data for lan903 === -->
+
+</PRE>
+<A NAME='InterfaceDatalan904'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Interface Data for lan904</U></H3>
+<PRE><font size = '4'>
+NAME:        LinkAgg4
+MAC ADDRESS: Not configured
+H/W STATE:   DOWN
+
+<!-- === END Interface Data for lan904 === -->
+
+
+<!-- === END Interface Data === -->
+
+</PRE>
+<A NAME='LinkAddLanInt'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Link Aggregate LAN Interface PPA's</U></H3>
+<PRE><font size = '4'>
+<!-- === START LinkAddLanInt === -->
+1            
+2            
+3            
+900        0 4
+901        
+902        
+903        
+904        
+
+<!-- === END Link Aggregate LAN Interface PPA's === -->
+
+</PRE>
+<A NAME='LinkLanconfig'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Link Aggregate LAN Interface PPA's</U></H3>
+<PRE><font size = '4'>
+<!-- === START LinkLanconfig === -->
+
+<!-- === END /etc/lanmon/lanconfig.ascii === -->
+
+</PRE>
+<A NAME='RoutingTables'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Routing Tables</U></H3>
+<PRE><font size = '4'>
+<!-- === START RoutingTables === -->
+Routing tables
+Destination           Gateway            Flags   Refs Interface  Pmtu
+127.0.0.1             127.0.0.1          UH        0  lo0        4136
+112.42.50.103         112.42.50.103      UH        0  lan2       4136
+144.70.194.110        144.70.194.110     UH        0  lan900     4136
+144.70.194.0          144.70.194.110     U         2  lan900     1500
+112.42.50.0           112.42.50.103      U         2  lan2       1500
+138.83.128.64         112.42.50.1        UG        0  lan2       1500
+127.0.0.0             127.0.0.1          U         0  lo0        4136
+default               144.70.194.1       UG        0  lan900     1500
+
+<!-- === END Routing Tables === -->
+
+</PRE>
+<A NAME='NetworkIntState'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Network Interface State</U></H3>
+<PRE><font size = '4'>
+<!-- === START NetworkIntState === -->
+Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+lan2      1500 112.42.50.0     112.42.50.103   2538416935 0     712131878 0     0   
+lo0       4136 127.0.0.0       127.0.0.1       24640555 0     24640604 0     0   
+lan900    1500 144.70.194.0    144.70.194.110  54942745 0     34413846 0     0   
+
+<!-- === END Network Interface State === -->
+
+
+<!-- === END Network Data === -->
+
+</PRE>
+<A NAME='File'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>File System Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START File === -->
+</PRE>
+<A NAME='MountedFile'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Mounted File Systems</U></H3>
+<PRE><font size = '4'>
+<!-- === START MountedFile === -->
+
+Mounted                                                   Extents
+Filesystem    Type     Kbytes      Used     Avail   %    Fragmented
+ ----------   ----     ------    ------    ------  ---   ----------
+/
+              vxfs    1048576     75064    965960    7       ***
+/stand
+              hfs     1014648     48848    864328    5       n/a
+/var
+              vxfs    6340608   1358592   4945016   21       ***
+/var/adm/crash
+              vxfs    4194304      2197   3930172    0       ***
+/v07
+              vxfs   11534336      3558  11170448    0       ***
+/v06
+              vxfs   20971520    822692  19834012    3       ***
+/v05
+              vxfs   20971520   4918756  15801944   23       ***
+/v04
+              vxfs   20971520  10346012  10459488   49       ***
+/v03
+              vxfs    2097152    984290   1043314   48       ***
+/v02
+              vxfs    2097152     68874   1901516    3       ***
+/v01
+              vxfs    2097152   1189106    851298   58       ***
+/usr
+              vxfs    3670016   1313192   2338464   35       ***
+/u03
+              vxfs    2097152      1614   1964574    0       ***
+/u02
+              vxfs    1048576      1357    981775    0       ***
+/u01
+              vxfs    2097152      1614   1964574    0       ***
+/tmp
+              vxfs    1048576      3856   1037128    0       ***
+/opt
+              vxfs    6340608   2230192   4078360   35       ***
+/home
+              vxfs     212992      9848    202240    4       ***
+/bv1
+              vxfs   15728640     74178  15165266    0       ***
+/av1
+              vxfs    3145728      1871   2947373    0       ***
+/au1
+              vxfs    1048576      1357    981775    0       ***
+/apps
+              vxfs    4194304    107764   3831141    2       ***
+/apps/support
+              vxfs     212992     37722    164329   18       ***
+/apps/opt/seos
+              vxfs     524288    139688    360593   27       ***
+/apps/opt/oracle
+              vxfs    7340032   3191194   3889548   45       ***
+/apps/opt/openv
+              vxfs    3178496    504460   2506956   16        2%
+/apps/opt/espx
+              vxfs     524288    127437    372095   25       ***
+/apps/opt/bmc
+              vxfs     524288    207471    297352   41       ***
+/apps/opt/best1
+              vxfs     524288    125807    374113   25       ***
+
+***  could not get fsadm lock - lost+found/.fsadm not found
+
+
+<!-- === END Mounted File Systems === -->
+
+</PRE>
+<A NAME='fstab'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>/etc/fstab</U></H3>
+<PRE><font size = '4'>
+<!-- === START fstab === -->
+
+/dev/vgroot/lvroot     /              vxfs    delaylog              0   1
+/dev/vgroot/lvstand    /stand         hfs     defaults              0   1
+/dev/vgroot/lvapps     /apps          vxfs    delaylog              0   2
+/dev/vgroot/lvhome     /home          vxfs    delaylog              0   2
+/dev/vgroot/lvopt      /opt           vxfs    delaylog              0   2
+/dev/vgroot/lvtmp      /tmp           vxfs    delaylog              0   2
+/dev/vgroot/lvusr      /usr           vxfs    delaylog              0   2
+/dev/vgroot/lvvar      /var           vxfs    delaylog              0   2
+/dev/vgroot/lvsupport  /apps/support  vxfs    delaylog              0   2
+/dev/vgroot/lvbest1    /apps/opt/best1vxfs    delaylog              0   2
+/dev/vgroot/lvcrash    /var/adm/crash vxfs    delaylog              0   2
+/dev/vgroot/lvespx     /apps/opt/espx vxfs    delaylog              0   2
+/dev/vgroot/lvopenv    /apps/opt/openvvxfs    delaylog              0   2
+/dev/vgroot/lvseos     /apps/opt/seos vxfs    delaylog              0   2
+/dev/vgroot/lvbmc      /apps/opt/bmc  vxfs    delaylog              0   2
+/dev/vgaltboot/lvroot  /broot         ignore  defaults              0   1
+/dev/vgaltboot/lvstand /bstand        ignore  defaults              0   1
+/dev/vgaltboot/lvusr   /busr          ignore  defaults              0   1
+/dev/vgaltboot/lvvar   /bvar          ignore  defaults              0   1
+/dev/vgaltboot/lvopt   /bopt          ignore  defaults              0   1
+/dev/vgaltboot/lvapps  /bapps         ignore  defaults              0   1
+/dev/vgaltboot/lvtmp   /btmp          ignore  defaults              0   1
+/dev/vgaltboot/lvhome  /bhome         ignore  defaults              0   1
+/dev/vgaltboot/lvsupport/bapps/support ignore  defaults              0   1
+/dev/vgaltboot/lvseos  /bapps/opt/seosignore  defaults              0   1
+/dev/vgaltboot/lvopenv /bapps/opt/openvignore  defaults              0   1
+/dev/vgaltboot/lvbmc   /bapps/opt/bmc ignore  defaults              0   1
+/dev/vgaltboot/lvcrash /bvar/adm/crashignore  defaults              0   1
+/dev/vgaltboot/lvespx  /bapps/opt/espxignore  defaults              0   1
+/dev/vgaltboot/lvbest1 /bapps/opt/best1ignore  defaults              0   1
+/dev/vgoracle01/lvoracle/apps/opt/oraclevxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvu01  /u01           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvu02  /u02           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvu03  /u03           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvau1  /au1           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv01  /v01           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv02  /v02           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv03  /v03           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv04  /v04           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv05  /v05           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv06  /v06           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvv07  /v07           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvav1  /av1           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+/dev/vgoracle01/lvbv1  /bv1           vxfs    rw,suid,largefiles,delaylog,datainlog0   2
+
+<!-- === END /etc/fstab === -->
+
+</PRE>
+<A NAME='mnttab'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>/etc/mnttab</U></H3>
+<PRE><font size = '4'>
+<!-- === START mnttab === -->
+
+/dev/vgroot/lvroot      /               vxfs     log                    0    1
+/dev/vgroot/lvstand     /stand          hfs      defaults               0    0
+/dev/vgroot/lvvar       /var            vxfs     delaylog               0    0
+/dev/vgroot/lvcrash     /var/adm/crash  vxfs     delaylog               0    0
+/dev/vgoracle01/lvv07   /v07            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv06   /v06            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv05   /v05            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv04   /v04            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv03   /v03            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv02   /v02            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvv01   /v01            vxfs     delaylog,largefiles    0    0
+/dev/vgroot/lvusr       /usr            vxfs     delaylog               0    0
+/dev/vgoracle01/lvu03   /u03            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvu02   /u02            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvu01   /u01            vxfs     delaylog,largefiles    0    0
+/dev/vgroot/lvtmp       /tmp            vxfs     delaylog               0    0
+/dev/vgroot/lvopt       /opt            vxfs     delaylog               0    0
+/dev/vgroot/lvhome      /home           vxfs     delaylog               0    0
+/dev/vgoracle01/lvbv1   /bv1            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvav1   /av1            vxfs     delaylog,largefiles    0    0
+/dev/vgoracle01/lvau1   /au1            vxfs     delaylog,largefiles    0    0
+/dev/vgroot/lvapps      /apps           vxfs     delaylog               0    0
+/dev/vgroot/lvsupport   /apps/support   vxfs     delaylog               0    0
+/dev/vgroot/lvseos      /apps/opt/seos  vxfs     delaylog               0    0
+/dev/vgoracle01/lvoracle /apps/opt/oracle vxfs     delaylog,largefiles    0    0
+/dev/vgroot/lvopenv     /apps/opt/openv vxfs     delaylog               0    0
+/dev/vgroot/lvespx      /apps/opt/espx  vxfs     delaylog               0    0
+/dev/vgroot/lvbmc       /apps/opt/bmc   vxfs     delaylog               0    0
+/dev/vgroot/lvbest1     /apps/opt/best1 vxfs     delaylog               0    0
+
+<!-- === END /etc/mnttab === -->
+
+</PRE>
+<A NAME='exportfs'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Exported File Systems</U></H3>
+<PRE><font size = '4'>
+<!-- === START exportfs === -->
+
+nothing exported
+
+<!-- === END Exported File Systems === -->
+
+
+<!-- === END File System Data === -->
+
+</PRE>
+<A NAME='IO'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>I/O Configuration Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START IO === -->
+
+              H/W Path       Driver  Identifier String
+              --------       ------  -----------------
+                     0          sba  System Bus Adapter (880)
+                   0/0          lba  Local PCI-X Bus Adapter (783)
+               0/0/1/0          hcd  NEC USB Interface
+             0/0/1/0.1          hub  USB Root Hub
+               0/0/1/1          hcd  NEC USB Interface
+             0/0/1/1.1          hub  USB Root Hub
+               0/0/1/2         ehci  NEC USB Interface
+               0/0/2/0      side_ba  CMD IDE controller
+             0/0/2/0.0         side  IDE Primary Channel
+         0/0/2/0.0.0.0        sdisk  TEAC    DVD-ROM DW-224EV
+         0/0/2/0.0.7.0         sctl  Initiator
+             0/0/2/0.1         side  IDE Secondary Channel
+         0/0/2/0.1.7.0         sctl  Initiator
+                   0/1          lba  Local PCI-X Bus Adapter (783)
+               0/1/1/0         c8xx  SCSI C1010 Ultra160 Wide LVD
+           0/1/1/0.0.0        sdisk  HP 73.4GST373454LC
+           0/1/1/0.1.0        sdisk  HP 73.4GST373454LC
+           0/1/1/0.7.0         sctl  Initiator
+               0/1/1/1         c8xx  SCSI C1010 Ultra160 Wide LVD
+           0/1/1/1.2.0        sdisk  HP 73.4GMAS3735NC
+           0/1/1/1.7.0         sctl  Initiator
+               0/1/2/0       igelan  HP PCI 1000Base-T Core
+                   0/2          lba  Local PCI-X Bus Adapter (783)
+               0/2/1/0          fcd  HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+            0/2/1/0.10      fcd_fcp  FCP Domain
+     0/2/1/0.10.0.33.0     fcd_vbus  FCP Array Interface
+ 0/2/1/0.10.0.33.0.0.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.1.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.2.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.3.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.4.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.5.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.6.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.7.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.8.0        sdisk  EMC     SYMMETRIX
+ 0/2/1/0.10.0.33.0.9.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.10.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.11.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.12.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.13.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.14.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.0.15.0        sdisk  EMC     SYMMETRIX
+     0/2/1/0.10.0.33.3     fcd_vbus  FCP Array Interface
+0/2/1/0.10.0.33.3.11.6        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.3.11.7        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.3.13.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.3.14.0        sdisk  EMC     SYMMETRIX
+0/2/1/0.10.0.33.3.15.0        sdisk  EMC     SYMMETRIX
+    0/2/1/0.10.0.255.2     fcd_vbus  FCP Device Interface
+0/2/1/0.10.0.255.2.1.0         sctl  EMC     SYMMETRIX
+               0/2/1/1          fcd  HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+                   0/3          lba  Local PCI-X Bus Adapter (783)
+               0/3/1/0     PCItoPCI  PCItoPCI Bridge
+           0/3/1/0/4/0          mpt  HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+       0/3/1/0/4/0.7.0         sctl  Initiator
+           0/3/1/0/4/1          mpt  HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+       0/3/1/0/4/1.7.0         sctl  Initiator
+           0/3/1/0/6/0       iether  HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+           0/3/1/0/6/1       iether  HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                   0/4          lba  Local PCI-X Bus Adapter (783)
+               0/4/1/0     PCItoPCI  PCItoPCI Bridge
+           0/4/1/0/4/0          mpt  HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+       0/4/1/0/4/0.7.0         sctl  Initiator
+           0/4/1/0/4/1          mpt  HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+       0/4/1/0/4/1.7.0         sctl  Initiator
+           0/4/1/0/6/0       iether  HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+           0/4/1/0/6/1       iether  HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                   0/6          lba  Local PCI-X Bus Adapter (783)
+               0/6/1/0          fcd  HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+            0/6/1/0.11      fcd_fcp  FCP Domain
+     0/6/1/0.11.0.40.0     fcd_vbus  FCP Array Interface
+ 0/6/1/0.11.0.40.0.0.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.1.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.2.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.3.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.4.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.5.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.6.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.7.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.8.0        sdisk  EMC     SYMMETRIX
+ 0/6/1/0.11.0.40.0.9.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.10.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.11.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.12.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.13.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.14.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.0.15.0        sdisk  EMC     SYMMETRIX
+     0/6/1/0.11.0.40.3     fcd_vbus  FCP Array Interface
+0/6/1/0.11.0.40.3.11.6        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.3.11.7        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.3.13.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.3.14.0        sdisk  EMC     SYMMETRIX
+0/6/1/0.11.0.40.3.15.0        sdisk  EMC     SYMMETRIX
+    0/6/1/0.11.0.255.2     fcd_vbus  FCP Device Interface
+0/6/1/0.11.0.255.2.8.0         sctl  EMC     SYMMETRIX
+               0/6/1/1          fcd  HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+                   0/7          lba  Local PCI-X Bus Adapter (783)
+               0/7/1/0        asio0  PCI SimpleComm (103c1290)
+               0/7/1/1        asio0  PCI Serial (103c1048)
+               0/7/2/0            ?  PCI Display (10025159)
+                     8       memory  Memory
+                    16         ipmi  IPMI Controller
+                   128    processor  Processor
+                   129    processor  Processor
+
+<!-- === END Basic I/O Configuration Data === -->
+
+</PRE>
+<A NAME='IOFULL'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Full I/O Configuration Data</U></H3>
+<PRE><font size = '4'>
+Class       I  H/W Path       Driver    S/W State   H/W Type     Description
+=============================================================================
+root        0                 root      CLAIMED     BUS_NEXUS    
+ioa         0  0              sba       CLAIMED     BUS_NEXUS    System Bus Adapter (880)
+ba          0  0/0            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+usb         0  0/0/1/0        hcd       CLAIMED     INTERFACE    NEC USB Interface
+usbhub      0  0/0/1/0.1      hub       CLAIMED     DEVICE       USB Root Hub
+usb         1  0/0/1/1        hcd       CLAIMED     INTERFACE    NEC USB Interface
+usbhub      1  0/0/1/1.1      hub       CLAIMED     DEVICE       USB Root Hub
+                             /dev/hub
+usb         2  0/0/1/2        ehci      CLAIMED     INTERFACE    NEC USB Interface
+sideba      0  0/0/2/0        side_ba   CLAIMED     INTERFACE    CMD IDE controller
+ext_bus     0  0/0/2/0.0      side      CLAIMED     INTERFACE    IDE Primary Channel
+target      0  0/0/2/0.0.0    tgt       CLAIMED     DEVICE       
+disk        0  0/0/2/0.0.0.0  sdisk     CLAIMED     DEVICE       TEAC    DVD-ROM DW-224EV
+                             /dev/dsk/c0t0d0   /dev/rdsk/c0t0d0
+target      1  0/0/2/0.0.7    tgt       CLAIMED     DEVICE       
+ctl         0  0/0/2/0.0.7.0  sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c0t7d0
+ext_bus     1  0/0/2/0.1      side      CLAIMED     INTERFACE    IDE Secondary Channel
+target      2  0/0/2/0.1.7    tgt       CLAIMED     DEVICE       
+ctl         1  0/0/2/0.1.7.0  sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c1t7d0
+ba          1  0/1            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+ext_bus     2  0/1/1/0        c8xx      CLAIMED     INTERFACE    SCSI C1010 Ultra160 Wide LVD
+target      3  0/1/1/0.0      tgt       CLAIMED     DEVICE       
+disk        1  0/1/1/0.0.0    sdisk     CLAIMED     DEVICE       HP 73.4GST373454LC
+                             /dev/dsk/c2t0d0   /dev/rdsk/c2t0d0
+target      4  0/1/1/0.1      tgt       CLAIMED     DEVICE       
+disk        2  0/1/1/0.1.0    sdisk     CLAIMED     DEVICE       HP 73.4GST373454LC
+                             /dev/dsk/c2t1d0   /dev/rdsk/c2t1d0
+target      5  0/1/1/0.7      tgt       CLAIMED     DEVICE       
+ctl         2  0/1/1/0.7.0    sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c2t7d0
+ext_bus     3  0/1/1/1        c8xx      CLAIMED     INTERFACE    SCSI C1010 Ultra160 Wide LVD
+target      6  0/1/1/1.2      tgt       CLAIMED     DEVICE       
+disk        3  0/1/1/1.2.0    sdisk     CLAIMED     DEVICE       HP 73.4GMAS3735NC
+                             /dev/dsk/c3t2d0   /dev/rdsk/c3t2d0
+target      7  0/1/1/1.7      tgt       CLAIMED     DEVICE       
+ctl         3  0/1/1/1.7.0    sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c3t7d0
+lan         0  0/1/2/0        igelan    CLAIMED     INTERFACE    HP PCI 1000Base-T Core
+ba          2  0/2            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+fc          0  0/2/1/0        fcd       CLAIMED     INTERFACE    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+                             /dev/fcd0
+fcp         0  0/2/1/0.10     fcd_fcp   CLAIMED     INTERFACE    FCP Domain
+ext_bus     8  0/2/1/0.10.0.33.0       fcd_vbus  CLAIMED     INTERFACE    FCP Array Interface
+target      8  0/2/1/0.10.0.33.0.0     tgt       CLAIMED     DEVICE       
+disk        4  0/2/1/0.10.0.33.0.0.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t0d0   /dev/rdsk/c8t0d0
+target      9  0/2/1/0.10.0.33.0.1     tgt       CLAIMED     DEVICE       
+disk        5  0/2/1/0.10.0.33.0.1.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t1d0   /dev/rdsk/c8t1d0
+target     10  0/2/1/0.10.0.33.0.2     tgt       CLAIMED     DEVICE       
+disk        7  0/2/1/0.10.0.33.0.2.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t2d0   /dev/rdsk/c8t2d0
+target     11  0/2/1/0.10.0.33.0.3     tgt       CLAIMED     DEVICE       
+disk        9  0/2/1/0.10.0.33.0.3.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t3d0   /dev/rdsk/c8t3d0
+target     12  0/2/1/0.10.0.33.0.4     tgt       CLAIMED     DEVICE       
+disk       11  0/2/1/0.10.0.33.0.4.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t4d0   /dev/rdsk/c8t4d0
+target     13  0/2/1/0.10.0.33.0.5     tgt       CLAIMED     DEVICE       
+disk       13  0/2/1/0.10.0.33.0.5.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t5d0   /dev/rdsk/c8t5d0
+target     14  0/2/1/0.10.0.33.0.6     tgt       CLAIMED     DEVICE       
+disk       15  0/2/1/0.10.0.33.0.6.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t6d0   /dev/rdsk/c8t6d0
+target     15  0/2/1/0.10.0.33.0.7     tgt       CLAIMED     DEVICE       
+disk       17  0/2/1/0.10.0.33.0.7.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t7d0   /dev/rdsk/c8t7d0
+target     16  0/2/1/0.10.0.33.0.8     tgt       CLAIMED     DEVICE       
+disk       21  0/2/1/0.10.0.33.0.8.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t8d0   /dev/rdsk/c8t8d0
+target     17  0/2/1/0.10.0.33.0.9     tgt       CLAIMED     DEVICE       
+disk       26  0/2/1/0.10.0.33.0.9.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t9d0   /dev/rdsk/c8t9d0
+target     18  0/2/1/0.10.0.33.0.10    tgt       CLAIMED     DEVICE       
+disk       30  0/2/1/0.10.0.33.0.10.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t10d0   /dev/rdsk/c8t10d0
+target     19  0/2/1/0.10.0.33.0.11    tgt       CLAIMED     DEVICE       
+disk       34  0/2/1/0.10.0.33.0.11.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t11d0   /dev/rdsk/c8t11d0
+target     20  0/2/1/0.10.0.33.0.12    tgt       CLAIMED     DEVICE       
+disk       37  0/2/1/0.10.0.33.0.12.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t12d0   /dev/rdsk/c8t12d0
+target     21  0/2/1/0.10.0.33.0.13    tgt       CLAIMED     DEVICE       
+disk       39  0/2/1/0.10.0.33.0.13.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t13d0   /dev/rdsk/c8t13d0
+target     22  0/2/1/0.10.0.33.0.14    tgt       CLAIMED     DEVICE       
+disk       41  0/2/1/0.10.0.33.0.14.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t14d0   /dev/rdsk/c8t14d0
+target     23  0/2/1/0.10.0.33.0.15    tgt       CLAIMED     DEVICE       
+disk       43  0/2/1/0.10.0.33.0.15.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c8t15d0   /dev/rdsk/c8t15d0
+ext_bus     9  0/2/1/0.10.0.33.3       fcd_vbus  CLAIMED     INTERFACE    FCP Array Interface
+target     24  0/2/1/0.10.0.33.3.0     tgt       NO_HW       DEVICE       
+target     25  0/2/1/0.10.0.33.3.11    tgt       CLAIMED     DEVICE       
+disk       19  0/2/1/0.10.0.33.3.11.6  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c9t11d6   /dev/rdsk/c9t11d6
+disk       20  0/2/1/0.10.0.33.3.11.7  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c9t11d7   /dev/rdsk/c9t11d7
+target     26  0/2/1/0.10.0.33.3.13    tgt       CLAIMED     DEVICE       
+disk       24  0/2/1/0.10.0.33.3.13.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c9t13d0   /dev/rdsk/c9t13d0
+target     27  0/2/1/0.10.0.33.3.14    tgt       CLAIMED     DEVICE       
+disk       28  0/2/1/0.10.0.33.3.14.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c9t14d0   /dev/rdsk/c9t14d0
+target     28  0/2/1/0.10.0.33.3.15    tgt       CLAIMED     DEVICE       
+disk       32  0/2/1/0.10.0.33.3.15.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c9t15d0   /dev/rdsk/c9t15d0
+ext_bus    10  0/2/1/0.10.0.255.2      fcd_vbus  CLAIMED     INTERFACE    FCP Device Interface
+target     29  0/2/1/0.10.0.255.2.1    tgt       CLAIMED     DEVICE       
+ctl         8  0/2/1/0.10.0.255.2.1.0  sctl      CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/rscsi/c10t1d0
+fc          1  0/2/1/1        fcd       CLAIMED     INTERFACE    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+                             /dev/fcd1
+ba          3  0/3            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+ba          4  0/3/1/0        PCItoPCI  CLAIMED     BUS_NEXUS    PCItoPCI Bridge
+ext_bus     4  0/3/1/0/4/0    mpt       CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                             /dev/mpt4
+target     30  0/3/1/0/4/0.7  tgt       CLAIMED     DEVICE       
+ctl         4  0/3/1/0/4/0.7.0         sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c4t7d0
+ext_bus     5  0/3/1/0/4/1    mpt       CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                             /dev/mpt5
+target     31  0/3/1/0/4/1.7  tgt       CLAIMED     DEVICE       
+ctl         5  0/3/1/0/4/1.7.0         sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c5t7d0
+lan         1  0/3/1/0/6/0    iether    CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+lan         2  0/3/1/0/6/1    iether    CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+ba          5  0/4            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+ba          6  0/4/1/0        PCItoPCI  CLAIMED     BUS_NEXUS    PCItoPCI Bridge
+ext_bus     6  0/4/1/0/4/0    mpt       CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                             /dev/mpt6
+target     32  0/4/1/0/4/0.7  tgt       CLAIMED     DEVICE       
+ctl         6  0/4/1/0/4/0.7.0         sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c6t7d0
+ext_bus     7  0/4/1/0/4/1    mpt       CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X U320 SCSI 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+                             /dev/mpt7
+target     33  0/4/1/0/4/1.7  tgt       CLAIMED     DEVICE       
+ctl         7  0/4/1/0/4/1.7.0         sctl      CLAIMED     DEVICE       Initiator
+                             /dev/rscsi/c7t7d0
+lan         3  0/4/1/0/6/0    iether    CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+lan         4  0/4/1/0/6/1    iether    CLAIMED     INTERFACE    HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter
+ba          7  0/6            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+fc          2  0/6/1/0        fcd       CLAIMED     INTERFACE    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+                             /dev/fcd2
+fcp         1  0/6/1/0.11     fcd_fcp   CLAIMED     INTERFACE    FCP Domain
+ext_bus    11  0/6/1/0.11.0.40.0       fcd_vbus  CLAIMED     INTERFACE    FCP Array Interface
+target     34  0/6/1/0.11.0.40.0.0     tgt       CLAIMED     DEVICE       
+disk        6  0/6/1/0.11.0.40.0.0.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t0d0   /dev/rdsk/c11t0d0
+target     35  0/6/1/0.11.0.40.0.1     tgt       CLAIMED     DEVICE       
+disk        8  0/6/1/0.11.0.40.0.1.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t1d0   /dev/rdsk/c11t1d0
+target     36  0/6/1/0.11.0.40.0.2     tgt       CLAIMED     DEVICE       
+disk       10  0/6/1/0.11.0.40.0.2.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t2d0   /dev/rdsk/c11t2d0
+target     37  0/6/1/0.11.0.40.0.3     tgt       CLAIMED     DEVICE       
+disk       12  0/6/1/0.11.0.40.0.3.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t3d0   /dev/rdsk/c11t3d0
+target     38  0/6/1/0.11.0.40.0.4     tgt       CLAIMED     DEVICE       
+disk       14  0/6/1/0.11.0.40.0.4.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t4d0   /dev/rdsk/c11t4d0
+target     39  0/6/1/0.11.0.40.0.5     tgt       CLAIMED     DEVICE       
+disk       16  0/6/1/0.11.0.40.0.5.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t5d0   /dev/rdsk/c11t5d0
+target     40  0/6/1/0.11.0.40.0.6     tgt       CLAIMED     DEVICE       
+disk       18  0/6/1/0.11.0.40.0.6.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t6d0   /dev/rdsk/c11t6d0
+target     41  0/6/1/0.11.0.40.0.7     tgt       CLAIMED     DEVICE       
+disk       22  0/6/1/0.11.0.40.0.7.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t7d0   /dev/rdsk/c11t7d0
+target     42  0/6/1/0.11.0.40.0.8     tgt       CLAIMED     DEVICE       
+disk       27  0/6/1/0.11.0.40.0.8.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t8d0   /dev/rdsk/c11t8d0
+target     43  0/6/1/0.11.0.40.0.9     tgt       CLAIMED     DEVICE       
+disk       31  0/6/1/0.11.0.40.0.9.0   sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t9d0   /dev/rdsk/c11t9d0
+target     44  0/6/1/0.11.0.40.0.10    tgt       CLAIMED     DEVICE       
+disk       35  0/6/1/0.11.0.40.0.10.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t10d0   /dev/rdsk/c11t10d0
+target     45  0/6/1/0.11.0.40.0.11    tgt       CLAIMED     DEVICE       
+disk       38  0/6/1/0.11.0.40.0.11.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t11d0   /dev/rdsk/c11t11d0
+target     46  0/6/1/0.11.0.40.0.12    tgt       CLAIMED     DEVICE       
+disk       40  0/6/1/0.11.0.40.0.12.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t12d0   /dev/rdsk/c11t12d0
+target     47  0/6/1/0.11.0.40.0.13    tgt       CLAIMED     DEVICE       
+disk       42  0/6/1/0.11.0.40.0.13.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t13d0   /dev/rdsk/c11t13d0
+target     48  0/6/1/0.11.0.40.0.14    tgt       CLAIMED     DEVICE       
+disk       44  0/6/1/0.11.0.40.0.14.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t14d0   /dev/rdsk/c11t14d0
+target     49  0/6/1/0.11.0.40.0.15    tgt       CLAIMED     DEVICE       
+disk       45  0/6/1/0.11.0.40.0.15.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c11t15d0   /dev/rdsk/c11t15d0
+ext_bus    12  0/6/1/0.11.0.40.3       fcd_vbus  CLAIMED     INTERFACE    FCP Array Interface
+target     50  0/6/1/0.11.0.40.3.0     tgt       NO_HW       DEVICE       
+target     51  0/6/1/0.11.0.40.3.11    tgt       CLAIMED     DEVICE       
+disk       23  0/6/1/0.11.0.40.3.11.6  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c12t11d6   /dev/rdsk/c12t11d6
+disk       25  0/6/1/0.11.0.40.3.11.7  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c12t11d7   /dev/rdsk/c12t11d7
+target     52  0/6/1/0.11.0.40.3.13    tgt       CLAIMED     DEVICE       
+disk       29  0/6/1/0.11.0.40.3.13.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c12t13d0   /dev/rdsk/c12t13d0
+target     53  0/6/1/0.11.0.40.3.14    tgt       CLAIMED     DEVICE       
+disk       33  0/6/1/0.11.0.40.3.14.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c12t14d0   /dev/rdsk/c12t14d0
+target     54  0/6/1/0.11.0.40.3.15    tgt       CLAIMED     DEVICE       
+disk       36  0/6/1/0.11.0.40.3.15.0  sdisk     CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/dsk/c12t15d0   /dev/rdsk/c12t15d0
+ext_bus    13  0/6/1/0.11.0.255.2      fcd_vbus  CLAIMED     INTERFACE    FCP Device Interface
+target     55  0/6/1/0.11.0.255.2.8    tgt       CLAIMED     DEVICE       
+ctl         9  0/6/1/0.11.0.255.2.8.0  sctl      CLAIMED     DEVICE       EMC     SYMMETRIX
+                             /dev/rscsi/c13t8d0
+fc          3  0/6/1/1        fcd       CLAIMED     INTERFACE    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+                             /dev/fcd3
+ba          8  0/7            lba       CLAIMED     BUS_NEXUS    Local PCI-X Bus Adapter (783)
+tty         0  0/7/1/0        asio0     CLAIMED     INTERFACE    PCI SimpleComm (103c1290)
+                             /dev/diag/mux0  /dev/mux0       /dev/tty0p0   
+tty         1  0/7/1/1        asio0     CLAIMED     INTERFACE    PCI Serial (103c1048)
+                             /dev/GSPdiag1   /dev/mux1       /dev/tty1p2   
+                             /dev/diag/mux1  /dev/tty1p0     /dev/tty1p4   
+unknown    -1  0/7/2/0                  UNCLAIMED   UNKNOWN      PCI Display (10025159)
+memory      0  8              memory    CLAIMED     MEMORY       Memory
+ipmi        0  16             ipmi      CLAIMED     INTERFACE    IPMI Controller
+                             /dev/ipmi
+processor   0  128            processor CLAIMED     PROCESSOR    Processor
+processor   1  129            processor CLAIMED     PROCESSOR    Processor
+
+<!-- === END Full I/O Configuration Data === -->
+
+
+<!-- === END I/O Configuration Data === -->
+
+</PRE>
+<A NAME='ICOD'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>iCOD/iCAP Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START ICOD === -->
+
+   iCOD not supported
+
+<!-- === END ICOD Data === -->
+
+</PRE>
+<A NAME='MPT'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>MPT Device Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START MPT === -->
+
+
+==== START Data for /dev/mpt4 ====
+
+ Scan For Devices ...
+
+---- ADAPTER INFORMATION -----------------------------------------------------
+
+ Device File                   : /dev/mpt4
+ Hardware Path                 : 0/3/1/0/4/0
+
+---- BUS PARAMETERS ----------------------------------------------------------
+
+ Initiator SCSI ID             : 7 
+ SCSI Bus Rate                 : Ultra320    
+ SCSI Bus Width                : Wide        
+
+---- CHANNEL CAPABILITIES ----------------------------------------------------
+
+ Req/Ack Offset                : 127         
+ Bus Mode                      : LVD         
+ Quick Arbitration Selection   : Enabled     
+ DT Clocking                   : Enabled     
+ Packetized                    : Enabled     
+
+---- TARGET PARAMETERS -------------------------------------------------------
+ Target   Description        Firmware  In Use     In Use 
+   Id                        Version   Rate       Width 
+------------------------------------------------------------------------------
+          No Targets    
+
+------------------------------------------------------------------------------
+
+<!-- === END MPT Device Data for /dev/mpt4 === -->
+
+
+==== START Data for /dev/mpt5 ====
+
+ Scan For Devices ...
+
+---- ADAPTER INFORMATION -----------------------------------------------------
+
+ Device File                   : /dev/mpt5
+ Hardware Path                 : 0/3/1/0/4/1
+
+---- BUS PARAMETERS ----------------------------------------------------------
+
+ Initiator SCSI ID             : 7 
+ SCSI Bus Rate                 : Ultra320    
+ SCSI Bus Width                : Wide        
+
+---- CHANNEL CAPABILITIES ----------------------------------------------------
+
+ Req/Ack Offset                : 127         
+ Bus Mode                      : LVD         
+ Quick Arbitration Selection   : Enabled     
+ DT Clocking                   : Enabled     
+ Packetized                    : Enabled     
+
+---- TARGET PARAMETERS -------------------------------------------------------
+ Target   Description        Firmware  In Use     In Use 
+   Id                        Version   Rate       Width 
+------------------------------------------------------------------------------
+          No Targets    
+
+------------------------------------------------------------------------------
+
+<!-- === END MPT Device Data for /dev/mpt5 === -->
+
+
+==== START Data for /dev/mpt6 ====
+
+ Scan For Devices ...
+
+---- ADAPTER INFORMATION -----------------------------------------------------
+
+ Device File                   : /dev/mpt6
+ Hardware Path                 : 0/4/1/0/4/0
+
+---- BUS PARAMETERS ----------------------------------------------------------
+
+ Initiator SCSI ID             : 7 
+ SCSI Bus Rate                 : Ultra320    
+ SCSI Bus Width                : Wide        
+
+---- CHANNEL CAPABILITIES ----------------------------------------------------
+
+ Req/Ack Offset                : 127         
+ Bus Mode                      : LVD         
+ Quick Arbitration Selection   : Enabled     
+ DT Clocking                   : Enabled     
+ Packetized                    : Enabled     
+
+---- TARGET PARAMETERS -------------------------------------------------------
+ Target   Description        Firmware  In Use     In Use 
+   Id                        Version   Rate       Width 
+------------------------------------------------------------------------------
+          No Targets    
+
+------------------------------------------------------------------------------
+
+<!-- === END MPT Device Data for /dev/mpt6 === -->
+
+
+==== START Data for /dev/mpt7 ====
+
+ Scan For Devices ...
+
+---- ADAPTER INFORMATION -----------------------------------------------------
+
+ Device File                   : /dev/mpt7
+ Hardware Path                 : 0/4/1/0/4/1
+
+---- BUS PARAMETERS ----------------------------------------------------------
+
+ Initiator SCSI ID             : 7 
+ SCSI Bus Rate                 : Ultra320    
+ SCSI Bus Width                : Wide        
+
+---- CHANNEL CAPABILITIES ----------------------------------------------------
+
+ Req/Ack Offset                : 127         
+ Bus Mode                      : LVD         
+ Quick Arbitration Selection   : Enabled     
+ DT Clocking                   : Enabled     
+ Packetized                    : Enabled     
+
+---- TARGET PARAMETERS -------------------------------------------------------
+ Target   Description        Firmware  In Use     In Use 
+   Id                        Version   Rate       Width 
+------------------------------------------------------------------------------
+          No Targets    
+
+------------------------------------------------------------------------------
+
+<!-- === END MPT Device Data for /dev/mpt7 === -->
+
+
+<!-- === END MPT Device Data === -->
+
+</PRE>
+<A NAME='FC'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Device Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START FC === -->
+
+</PRE>
+<A NAME='FC/dev/fcd0'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Device Data for /dev/fcd0</U></H3>
+<PRE><font size = '4'>
+<!-- === START FC/dev/fcd0 === -->
+
+==== START Data for /dev/fcd0 ====
+  Description:    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+  H/W Path:     0/2/1/0
+
+<!-- === END Basic Data for /dev/fcd0 === -->
+
+<!-- === START Vital Product Data (VPD) for /dev/fcd0 === -->
+                    V I T A L   P R O D U C T   D A T A     
+                    ---------   -------------   -------     
+    
+     Product Description    : HP PCI-X 2.0 Dual Port 4Gb Fibre Channel HBA
+    
+     Part number            : AB379-60101
+    
+     Engineering Date Code  : C-4830
+    
+     Part Serial number     : CN80851TVK
+    
+     Misc. Information      : PW=15W;PCI=66MHZ;PCI-X=266MHZ
+    
+     Mfd. Date              : 4851
+    
+     Mfd. ID                : FC2410401-70  F
+    
+     Check Sum              : 0x65
+    
+     EFI version            : 01.09
+    
+     ROM Firmware version   : 04.00.90
+    
+     BIOS version           : 01.26
+    
+     FCODE version          : 01.17
+    
+     Asset Tag              : NA
+    
+
+<!-- === END Vital Product Data (VPD) for /dev/fcd0 === -->
+
+<!-- === START Info for /dev/fcd0 === -->
+                                     
+  Vendor ID is                        0x001077
+  Device ID is                        0x002422
+  PCI Sub-system Vendor ID is         0x00103c
+  PCI Sub-system ID is                0x0012d7
+  PCI Mode                            PCI-X 133 MHz
+  ISP Code version                    4.0.85
+  ISP Chip version                    3
+  Topology                            PTTOPT_FABRIC
+  Link Speed                          2Gb
+  Local N_Port_id is                  0x12004d
+  Previous N_Port_id is               None
+  N_Port Node World Wide Name         0x5001438003c0ee69
+  N_Port Port World Wide Name         0x5001438003c0ee68
+  Switch Port World Wide Name         0x224d000deca28b40
+  Switch Node World Wide Name         0x2064000dec3c9d01
+  Driver state                        ONLINE
+  Hardware Path is                    0/2/1/0
+  Maximum Frame Size                  2048
+  Driver-Firmware Dump Available      NO
+  Driver-Firmware Dump Timestamp      N/A
+  Driver Version                      @(#) libfcd.a HP Fibre Channel ISP 23xx & 24xx Driver B.11.11.10 /ux/kern/kisu/FCD/src/common/wsio/fcd_init.c:Sep 14 2006,17:45:41
+                                     
+
+<!-- === END Info for /dev/fcd0 === -->
+
+<!-- === START Status for /dev/fcd0 === -->
+    Wed Mar  2 03:16:28 2011
+    Channel Statistics
+    
+    Link Statistics from firmware ...
+    Link Failure count                 0     Loss of Sync count                 0
+    Loss of Signal count               0     Prim seq proto err count           0
+    Invalid Word count                 0     Invalid CRC count                  0
+    
+    
+
+<!-- === END Status for /dev/fcd0 === -->
+
+
+<!-- === END Data for /dev/fcd0 === -->
+
+</PRE>
+<A NAME='FC/dev/fcd1'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Device Data for /dev/fcd1</U></H3>
+<PRE><font size = '4'>
+<!-- === START FC/dev/fcd1 === -->
+
+==== START Data for /dev/fcd1 ====
+  Description:    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+  H/W Path:     0/2/1/1
+
+<!-- === END Basic Data for /dev/fcd1 === -->
+
+<!-- === START Vital Product Data (VPD) for /dev/fcd1 === -->
+                    V I T A L   P R O D U C T   D A T A     
+                    ---------   -------------   -------     
+    
+     Product Description    : HP PCI-X 2.0 Dual Port 4Gb Fibre Channel HBA
+    
+     Part number            : AB379-60101
+    
+     Engineering Date Code  : C-4830
+    
+     Part Serial number     : CN80851TVK
+    
+     Misc. Information      : PW=15W;PCI=66MHZ;PCI-X=266MHZ
+    
+     Mfd. Date              : 4851
+    
+     Mfd. ID                : FC2410401-70  F
+    
+     Check Sum              : 0x65
+    
+     EFI version            : 01.09
+    
+     ROM Firmware version   : 04.00.90
+    
+     BIOS version           : 01.26
+    
+     FCODE version          : 01.17
+    
+     Asset Tag              : NA
+    
+
+<!-- === END Vital Product Data (VPD) for /dev/fcd1 === -->
+
+<!-- === START Info for /dev/fcd1 === -->
+                                     
+  Vendor ID is                        0x001077
+  Device ID is                        0x002422
+  PCI Sub-system Vendor ID is         0x00103c
+  PCI Sub-system ID is                0x0012d7
+  PCI Mode                            PCI-X 133 MHz
+  ISP Code version                    4.0.85
+  ISP Chip version                    3
+  Previous Topology                   UNINITIALIZED
+  Link Speed                          UNKNOWN
+  Local N_Port_id is                  None
+  Previous N_Port_id is               None
+  N_Port Node World Wide Name         0x5001438003c0ee6b
+  N_Port Port World Wide Name         0x5001438003c0ee6a
+  Switch Port World Wide Name         0x0000000000000000
+  Switch Node World Wide Name         0x0000000000000000
+  Driver state                        AWAITING_LINK_UP
+  Hardware Path is                    0/2/1/1
+  Maximum Frame Size                  2048
+  Driver-Firmware Dump Available      NO
+  Driver-Firmware Dump Timestamp      N/A
+  Driver Version                      @(#) libfcd.a HP Fibre Channel ISP 23xx & 24xx Driver B.11.11.10 /ux/kern/kisu/FCD/src/common/wsio/fcd_init.c:Sep 14 2006,17:45:41
+                                     
+
+<!-- === END Info for /dev/fcd1 === -->
+
+<!-- === START Status for /dev/fcd1 === -->
+    Wed Mar  2 03:16:28 2011
+    Channel Statistics
+    
+    Link Statistics from firmware ...
+    Link Failure count                 0     Loss of Sync count                 0
+    Loss of Signal count               0     Prim seq proto err count           0
+    Invalid Word count                 0     Invalid CRC count                  0
+    
+    
+
+<!-- === END Status for /dev/fcd1 === -->
+
+
+<!-- === END Data for /dev/fcd1 === -->
+
+</PRE>
+<A NAME='FC/dev/fcd2'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Device Data for /dev/fcd2</U></H3>
+<PRE><font size = '4'>
+<!-- === START FC/dev/fcd2 === -->
+
+==== START Data for /dev/fcd2 ====
+  Description:    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 1)
+  H/W Path:     0/6/1/0
+
+<!-- === END Basic Data for /dev/fcd2 === -->
+
+<!-- === START Vital Product Data (VPD) for /dev/fcd2 === -->
+                    V I T A L   P R O D U C T   D A T A     
+                    ---------   -------------   -------     
+    
+     Product Description    : HP PCI-X 2.0 Dual Port 4Gb Fibre Channel HBA
+    
+     Part number            : AB379-60101
+    
+     Engineering Date Code  : C-4830
+    
+     Part Serial number     : CN80851TV8
+    
+     Misc. Information      : PW=15W;PCI=66MHZ;PCI-X=266MHZ
+    
+     Mfd. Date              : 4851
+    
+     Mfd. ID                : FC2410401-70  F
+    
+     Check Sum              : 0x78
+    
+     EFI version            : 01.09
+    
+     ROM Firmware version   : 04.00.90
+    
+     BIOS version           : 01.26
+    
+     FCODE version          : 01.17
+    
+     Asset Tag              : NA
+    
+
+<!-- === END Vital Product Data (VPD) for /dev/fcd2 === -->
+
+<!-- === START Info for /dev/fcd2 === -->
+                                     
+  Vendor ID is                        0x001077
+  Device ID is                        0x002422
+  PCI Sub-system Vendor ID is         0x00103c
+  PCI Sub-system ID is                0x0012d7
+  PCI Mode                            PCI-X 133 MHz
+  ISP Code version                    4.0.85
+  ISP Chip version                    3
+  Topology                            PTTOPT_FABRIC
+  Link Speed                          2Gb
+  Local N_Port_id is                  0x13004d
+  Previous N_Port_id is               0x13004d
+  N_Port Node World Wide Name         0x5001438003c0ee3d
+  N_Port Port World Wide Name         0x5001438003c0ee3c
+  Switch Port World Wide Name         0x224d000decb6a340
+  Switch Node World Wide Name         0x2065000dec3c9c01
+  Driver state                        ONLINE
+  Hardware Path is                    0/6/1/0
+  Maximum Frame Size                  2048
+  Driver-Firmware Dump Available      YES
+  Driver-Firmware Dump Timestamp      Sun Oct 17 16:50:11 2010
+  Driver Version                      @(#) libfcd.a HP Fibre Channel ISP 23xx & 24xx Driver B.11.11.10 /ux/kern/kisu/FCD/src/common/wsio/fcd_init.c:Sep 14 2006,17:45:41
+                                     
+
+<!-- === END Info for /dev/fcd2 === -->
+
+<!-- === START Status for /dev/fcd2 === -->
+    Wed Mar  2 03:16:28 2011
+    Channel Statistics
+    
+    Link Statistics from firmware ...
+    Link Failure count                 0     Loss of Sync count                 0
+    Loss of Signal count               0     Prim seq proto err count           0
+    Invalid Word count                 0     Invalid CRC count                  0
+    
+    
+
+<!-- === END Status for /dev/fcd2 === -->
+
+
+<!-- === END Data for /dev/fcd2 === -->
+
+</PRE>
+<A NAME='FC/dev/fcd3'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Fibre Channel Device Data for /dev/fcd3</U></H3>
+<PRE><font size = '4'>
+<!-- === START FC/dev/fcd3 === -->
+
+==== START Data for /dev/fcd3 ====
+  Description:    HP AB379-60101 4Gb Dual Port PCI/PCI-X Fibre Channel Adapter (FC Port 2)
+  H/W Path:     0/6/1/1
+
+<!-- === END Basic Data for /dev/fcd3 === -->
+
+<!-- === START Vital Product Data (VPD) for /dev/fcd3 === -->
+                    V I T A L   P R O D U C T   D A T A     
+                    ---------   -------------   -------     
+    
+     Product Description    : HP PCI-X 2.0 Dual Port 4Gb Fibre Channel HBA
+    
+     Part number            : AB379-60101
+    
+     Engineering Date Code  : C-4830
+    
+     Part Serial number     : CN80851TV8
+    
+     Misc. Information      : PW=15W;PCI=66MHZ;PCI-X=266MHZ
+    
+     Mfd. Date              : 4851
+    
+     Mfd. ID                : FC2410401-70  F
+    
+     Check Sum              : 0x78
+    
+     EFI version            : 01.09
+    
+     ROM Firmware version   : 04.00.90
+    
+     BIOS version           : 01.26
+    
+     FCODE version          : 01.17
+    
+     Asset Tag              : NA
+    
+
+<!-- === END Vital Product Data (VPD) for /dev/fcd3 === -->
+
+<!-- === START Info for /dev/fcd3 === -->
+                                     
+  Vendor ID is                        0x001077
+  Device ID is                        0x002422
+  PCI Sub-system Vendor ID is         0x00103c
+  PCI Sub-system ID is                0x0012d7
+  PCI Mode                            PCI-X 133 MHz
+  ISP Code version                    4.0.85
+  ISP Chip version                    3
+  Previous Topology                   UNINITIALIZED
+  Link Speed                          UNKNOWN
+  Local N_Port_id is                  None
+  Previous N_Port_id is               None
+  N_Port Node World Wide Name         0x5001438003c0ee3f
+  N_Port Port World Wide Name         0x5001438003c0ee3e
+  Switch Port World Wide Name         0x0000000000000000
+  Switch Node World Wide Name         0x0000000000000000
+  Driver state                        AWAITING_LINK_UP
+  Hardware Path is                    0/6/1/1
+  Maximum Frame Size                  2048
+  Driver-Firmware Dump Available      NO
+  Driver-Firmware Dump Timestamp      N/A
+  Driver Version                      @(#) libfcd.a HP Fibre Channel ISP 23xx & 24xx Driver B.11.11.10 /ux/kern/kisu/FCD/src/common/wsio/fcd_init.c:Sep 14 2006,17:45:41
+                                     
+
+<!-- === END Info for /dev/fcd3 === -->
+
+<!-- === START Status for /dev/fcd3 === -->
+    Wed Mar  2 03:16:28 2011
+    Channel Statistics
+    
+    Link Statistics from firmware ...
+    Link Failure count                 0     Loss of Sync count                 0
+    Loss of Signal count               0     Prim seq proto err count           0
+    Invalid Word count                 0     Invalid CRC count                  0
+    
+    
+
+<!-- === END Status for /dev/fcd3 === -->
+
+
+<!-- === END Data for /dev/fcd3 === -->
+
+
+<!-- === END Fibre Channel Device Data === -->
+
+</PRE>
+<A NAME='Physical'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Physical Disk Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START Physical === -->
+
+
+
+ Volume Name                                                   
+
+ -----------                                                   Size
+     LU#   H/W Path                   Vendor  /  Model         (MB)   B
+     ---   -------------------------  ----------------------   ------ -
+ /dev/dsk/c0t0d0            
+     0     0/0/2/0.0.0.0              TEAC D-ROM DW-224EV           0 N
+ /dev/dsk/c2t0d0            
+     1     0/1/1/0.0.0                HP ST373454LC             70007 Y
+ /dev/dsk/c2t1d0            
+     2     0/1/1/0.1.0                HP ST373454LC             70007 Y
+ /dev/dsk/c3t2d0            
+     3     0/1/1/1.2.0                HP MAS3735NC              70007 Y
+ /dev/dsk/c8t0d0            
+     4     0/2/1/0.10.0.33.0.0.0      EMC SYMMETRIX                 2 N
+ /dev/dsk/c8t1d0            
+     5     0/2/1/0.10.0.33.0.1.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t10d0           
+     30    0/2/1/0.10.0.33.0.10.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t11d0           
+     34    0/2/1/0.10.0.33.0.11.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t12d0           
+     37    0/2/1/0.10.0.33.0.12.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t13d0           
+     39    0/2/1/0.10.0.33.0.13.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t14d0           
+     41    0/2/1/0.10.0.33.0.14.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t15d0           
+     43    0/2/1/0.10.0.33.0.15.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t2d0            
+     7     0/2/1/0.10.0.33.0.2.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t3d0            
+     9     0/2/1/0.10.0.33.0.3.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t4d0            
+     11    0/2/1/0.10.0.33.0.4.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t5d0            
+     13    0/2/1/0.10.0.33.0.5.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t6d0            
+     15    0/2/1/0.10.0.33.0.6.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t7d0            
+     17    0/2/1/0.10.0.33.0.7.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t8d0            
+     21    0/2/1/0.10.0.33.0.8.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c8t9d0            
+     26    0/2/1/0.10.0.33.0.9.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c9t11d6           
+     19    0/2/1/0.10.0.33.3.11.6     EMC SYMMETRIX             69937 N
+ /dev/dsk/c9t11d7           
+     20    0/2/1/0.10.0.33.3.11.7     EMC SYMMETRIX             69937 N
+ /dev/dsk/c9t13d0           
+     24    0/2/1/0.10.0.33.3.13.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c9t14d0           
+     28    0/2/1/0.10.0.33.3.14.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c9t15d0           
+     32    0/2/1/0.10.0.33.3.15.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t0d0           
+     6     0/6/1/0.11.0.40.0.0.0      EMC SYMMETRIX                 2 N
+ /dev/dsk/c11t1d0           
+     8     0/6/1/0.11.0.40.0.1.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t10d0          
+     35    0/6/1/0.11.0.40.0.10.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t11d0          
+     38    0/6/1/0.11.0.40.0.11.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t12d0          
+     40    0/6/1/0.11.0.40.0.12.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t13d0          
+     42    0/6/1/0.11.0.40.0.13.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t14d0          
+     44    0/6/1/0.11.0.40.0.14.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t15d0          
+     45    0/6/1/0.11.0.40.0.15.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t2d0           
+     10    0/6/1/0.11.0.40.0.2.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t3d0           
+     12    0/6/1/0.11.0.40.0.3.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t4d0           
+     14    0/6/1/0.11.0.40.0.4.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t5d0           
+     16    0/6/1/0.11.0.40.0.5.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t6d0           
+     18    0/6/1/0.11.0.40.0.6.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t7d0           
+     22    0/6/1/0.11.0.40.0.7.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t8d0           
+     27    0/6/1/0.11.0.40.0.8.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c11t9d0           
+     31    0/6/1/0.11.0.40.0.9.0      EMC SYMMETRIX                 0 N
+ /dev/dsk/c12t13d0          
+     29    0/6/1/0.11.0.40.3.13.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c12t14d0          
+     33    0/6/1/0.11.0.40.3.14.0     EMC SYMMETRIX                 0 N
+ /dev/dsk/c12t15d0          
+     36    0/6/1/0.11.0.40.3.15.0     EMC SYMMETRIX                 0 N
+                                                               ======
+                                              Total (MB)       349899
+B = Bootable Disk
+n/v = Not Valid, n/f = Not Found
+
+
+<!-- === END Basic Physical Disk Data === -->
+
+
+</PRE>
+<A NAME='PhysDiskRevs'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Physical Disk Revisions</U></H3>
+<PRE><font size = '4'>
+                             Rev
+             HW Path        Level         Serial Number      LUN
+   ---------------------    -----    ---------------------   ----
+           0/0/2/0.0.0.0     K.DA                      N/A      0
+             0/1/1/0.0.0     HPC3     3KP05CRF0000753268R7      0
+             0/1/1/0.1.0     HPC3     3KP23QMQ00007623MUBT      0
+             0/1/1/1.2.0     HPC4                 XT026109      0
+
+
+<!-- === END Physical Disk Revisions === -->
+
+</PRE>
+<A NAME='BootableDisks'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Bootable Disks</U></H3>
+<PRE><font size = '4'>
+<!-- === START BootableDisks === -->
+
+Volume Name              H/W Path                           Auto Boot String
+--------------           ------------                       ----------------
+/dev/dsk/c2t0d0          0/1/1/0.0.0                         hpux (;0)/stand/vmunix
+/dev/dsk/c2t1d0          0/1/1/0.1.0                         hpux -lq (;0)/stand/vmunix
+/dev/dsk/c3t2d0          0/1/1/1.2.0                         hpux (;0)/stand/vmunix
+
+<!-- === END Bootable Disks === -->
+
+</PRE>
+<A NAME='BootPath'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Boot Path Settings</U></H3>
+<PRE><font size = '4'>
+<!-- === START BootPath === -->
+
+Primary Boot Path   = 0/1/1/0.0.0
+Alternate Boot Path = 0/1/1/0.1.0
+Autoboot            = ON
+Autosearch          = OFF
+
+<!-- === END Boot Path Settings === -->
+
+
+
+</PRE>
+<A NAME='Pmap'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Physical Disk To Logical Volume Mapping</U></H3>
+<PRE><font size = '4'>
+<!-- === START Pmap === -->
+
+Physical Disk                                Alternate Link
+  Logical Volume             LE        PE       
+---------------------------------------------------------------
+/dev/dsk/c2t0d0                                       None
+  /dev/vgroot/lvstand        64        64       
+  /dev/vgroot/lvswapA        256       256      
+  /dev/vgroot/lvroot         64        64       
+  /dev/vgroot/lvapps         256       256      
+  /dev/vgroot/lvbest1        32        32       
+  /dev/vgroot/lvcrash        256       256      
+  /dev/vgroot/lvespx         32        32       
+  /dev/vgroot/lvhome         13        13       
+  /dev/vgroot/lvopenv        194       194      
+  /dev/vgroot/lvopt          387       387      
+  /dev/vgroot/lvseos         32        32       
+  /dev/vgroot/lvsupport      13        13       
+  /dev/vgroot/lvtmp          64        64       
+  /dev/vgroot/lvusr          224       224      
+  /dev/vgroot/lvvar          387       387      
+  /dev/vgroot/lvbmc          32        32       
+/dev/dsk/c2t1d0                                       None
+  /dev/vgroot/lvstand        64        64       
+  /dev/vgroot/lvswapA        256       256      
+  /dev/vgroot/lvroot         64        64       
+  /dev/vgroot/lvapps         256       256      
+  /dev/vgroot/lvbest1        32        32       
+  /dev/vgroot/lvcrash        256       256      
+  /dev/vgroot/lvespx         32        32       
+  /dev/vgroot/lvhome         13        13       
+  /dev/vgroot/lvopenv        194       194      
+  /dev/vgroot/lvopt          387       387      
+  /dev/vgroot/lvseos         32        32       
+  /dev/vgroot/lvsupport      13        13       
+  /dev/vgroot/lvtmp          64        64       
+  /dev/vgroot/lvusr          224       224      
+  /dev/vgroot/lvvar          387       387      
+  /dev/vgroot/lvbmc          32        32       
+/dev/dsk/c3t2d0                                       None
+  /dev/vgaltboot/lvstand     128       128      
+  /dev/vgaltboot/lvswapA     512       512      
+  /dev/vgaltboot/lvroot      128       128      
+  /dev/vgaltboot/lvusr       448       448      
+  /dev/vgaltboot/lvvar       774       774      
+  /dev/vgaltboot/lvopt       774       774      
+  /dev/vgaltboot/lvapps      512       512      
+  /dev/vgaltboot/lvtmp       128       128      
+  /dev/vgaltboot/lvsupport   26        26       
+  /dev/vgaltboot/lvbmc       64        64       
+  /dev/vgaltboot/lvopenv     387       387      
+  /dev/vgaltboot/lvseos      63        63       
+  /dev/vgaltboot/lvhome      26        26       
+  /dev/vgaltboot/lvcrash     512       512      
+  /dev/vgaltboot/lvespx      64        64       
+  /dev/vgaltboot/lvbest1     64        64       
+/dev/dsk/c9t11d6                                      /dev/dsk/c12t11d6 
+  /dev/vgoracle01/lvoracle   224       224      
+  /dev/vgoracle01/lvu01      64        64       
+  /dev/vgoracle01/lvu02      32        32       
+  /dev/vgoracle01/lvu03      64        64       
+  /dev/vgoracle01/lvau1      32        32       
+  /dev/vgoracle01/lvv01      64        64       
+  /dev/vgoracle01/lvv02      64        64       
+  /dev/vgoracle01/lvv03      64        64       
+  /dev/vgoracle01/lvv04      640       640      
+  /dev/vgoracle01/lvv05      640       640      
+  /dev/vgoracle01/lvv06      297       297      
+/dev/dsk/c9t11d7                                      /dev/dsk/c12t11d7 
+  /dev/vgoracle01/lvv06      343       343      
+  /dev/vgoracle01/lvv07      352       352      
+  /dev/vgoracle01/lvav1      96        96       
+  /dev/vgoracle01/lvbv1      480       480      
+
+<!-- === END Physical Disk To Logical Volume Mapping === -->
+
+</PRE>
+<A NAME='lvlnboot'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>lvlnboot Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START lvlnboot === -->
+
+Boot Definitions for Volume Group /dev/vgroot:
+Physical Volumes belonging in Root Volume Group:
+	/dev/dsk/c2t0d0 (0/1/1/0.0.0) -- Boot Disk
+	/dev/dsk/c2t1d0 (0/1/1/0.1.0) -- Boot Disk
+Boot: lvstand	on: 	/dev/dsk/c2t0d0
+			/dev/dsk/c2t1d0
+Root: lvroot	on: 	/dev/dsk/c2t0d0
+			/dev/dsk/c2t1d0
+Swap: lvswapA	on: 	/dev/dsk/c2t0d0
+			/dev/dsk/c2t1d0
+Dump: lvswapA	on: 	/dev/dsk/c2t0d0, 0
+
+
+<!-- === END lvlnboot Data === -->
+
+</PRE>
+<A NAME='PDNIVG'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Physical disks that are not in a VG</U></H3>
+<PRE><font size = '4'>
+<!-- === START PDNIVG === -->
+
+/dev/dsk/c8t0d0          
+/dev/dsk/c11t0d0         
+
+<!-- === END Physical disks that are not in a VG === -->
+
+
+<!-- === END Physical Disk Data === -->
+
+</PRE>
+<A NAME='Volume'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Volume Group Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START Volume === -->
+
+ Volume               Logical  Physical Physical Extent   MBs of Physical Space
+ Group                Volumes  Volumes  Volumes  Size(MB)  Alloc   Free   Total
+                               Current  Active 
+ ---------            -------  -------- ------   ------    -----   ----   -----
+/dev/vgaltboot          16         1       1       8      36880   33112   69992
+/dev/vgoracle01         14         2       2      32     110592   29248  139840
+/dev/vgroot             16         2       2      16      73792   66176  139968
+                                                           =====   ====   =====
+                                                Totals   221264  128536  349800
+
+<!-- === END Basic Volume Group Data === -->
+
+</PRE>
+<A NAME='Mapfile'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Volume Group Map Files</U></H3>
+<PRE><font size = '4'>
+<!-- === START Mapfile === -->
+
+<!-- === START Map file for /dev/vgaltboot === -->
+VGID a03c81ba4af46de6
+1 lvstand
+2 lvswapA
+3 lvroot
+4 lvusr
+5 lvvar
+6 lvopt
+7 lvapps
+8 lvtmp
+9 lvsupport
+10 lvbmc
+11 lvopenv
+12 lvseos
+13 lvhome
+14 lvcrash
+15 lvespx
+16 lvbest1
+
+<!-- === END Map file for /dev/vgaltboot === -->
+
+<!-- === START Map file for /dev/vgoracle01 === -->
+VGID a03c81ba4af97a89
+1 lvoracle
+2 lvu01
+3 lvu02
+4 lvu03
+5 lvau1
+6 lvv01
+7 lvv02
+8 lvv03
+9 lvv04
+10 lvv05
+11 lvv06
+12 lvv07
+13 lvav1
+14 lvbv1
+
+<!-- === END Map file for /dev/vgoracle01 === -->
+
+<!-- === START Map file for /dev/vgroot === -->
+VGID a03c81ba4af4507d
+1 lvstand
+2 lvswapA
+3 lvroot
+4 lvapps
+5 lvbest1
+6 lvcrash
+7 lvespx
+8 lvhome
+9 lvopenv
+10 lvopt
+11 lvseos
+12 lvsupport
+13 lvtmp
+14 lvusr
+15 lvvar
+16 lvbmc
+
+<!-- === END Map file for /dev/vgroot === -->
+
+
+<!-- === END Volume Group Map Files === -->
+
+</PRE>
+<A NAME='VGCFGBU'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Volume Group Configuration Backups</U></H3>
+<PRE><font size = '4'>
+<!-- === START VGCFGBU === -->
+<!-- === START vgcfgbackup data for /dev/vgaltboot === -->
+VG Name:       vgaltboot
+Backup file:   /etc/lvmconf/vgaltboot.conf
+File Date:     Mar 1 21:00
+
+<!-- === END vgcfgbackup data for /dev/vgaltboot === -->
+
+<!-- === START vgcfgbackup data for /dev/vgoracle01 === -->
+VG Name:       vgoracle01
+Backup file:   /etc/lvmconf/vgoracle01.conf
+File Date:     Mar 1 21:00
+
+<!-- === END vgcfgbackup data for /dev/vgoracle01 === -->
+
+<!-- === START vgcfgbackup data for /dev/vgroot === -->
+VG Name:       vgroot
+Backup file:   /etc/lvmconf/vgroot.conf
+File Date:     Mar 1 21:00
+
+<!-- === END vgcfgbackup data for /dev/vgroot === -->
+
+
+<!-- === END Volume Group Configuration Backups === -->
+
+</PRE>
+<A NAME='VGINACT'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Inactive Volume Groups</U></H3>
+<PRE><font size = '4'>
+<!-- === START VGINACT === -->
+
+All volume groups are activated
+
+<!-- === END Inactive Volume Groups === -->
+
+</PRE>
+<A NAME='VGEXIST'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Volume Groups Not In /etc/lvmtab</U></H3>
+<PRE><font size = '4'>
+<!-- === START VGEXIST === -->
+
+All volume groups exist in the /etc/lvmtab file
+
+<!-- === END Volume Groups Not In /etc/lvmtab === -->
+
+</PRE>
+<A NAME='Lifls'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>LIFLS for Boot Disks</U></H3>
+<PRE><font size = '4'>
+<!-- === START Lifls === -->
+LIFLS for /dev/dsk/c2t0d0:
+
+volume ISL10 data size 7984 directory size 8 02/05/10 16:25:44
+filename   type   start   size     implement  created
+===============================================================
+HPUX       -12928 584     848      0          07/06/08 17:02:23
+ISL        -12800 1432    306      0          02/05/10 16:25:44
+AUTO       -12289 1744    1        0          02/05/10 16:25:44
+PAD        -12290 1752    1580     0          02/05/10 16:25:45
+LABEL      BIN    3336    8        0          09/11/06 11:36:44
+
+<!-- === END LIFLS for /dev/dsk/c2t0d0 === -->
+
+LIFLS for /dev/dsk/c2t1d0:
+
+volume c2t1d0 data size 7984 directory size 8 09/11/06 13:17:40
+filename   type   start   size     implement  created
+===============================================================
+ISL        -12800 584     306      0          02/05/10 16:25:44
+AUTO       -12289 896     1        0          02/05/10 16:25:44
+HPUX       -12928 904     848      0          02/05/10 16:25:44
+PAD        -12290 1752    1580     0          02/05/10 16:25:45
+LABEL      BIN    3336    8        0          09/11/06 13:30:25
+
+<!-- === END LIFLS for /dev/dsk/c2t1d0 === -->
+
+
+<!-- === END LIFLS for Boot Disks === -->
+
+</PRE>
+<A NAME='LVOLMOUNTPOINT'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Logical Volumes and Mount Points</U></H3>
+<PRE><font size = '4'>
+Volume Name                             Mounted On File System
+ --------------                         ----------------------
+/dev/vgaltboot/lvapps                   
+/dev/vgaltboot/lvbest1                  
+/dev/vgaltboot/lvbmc                    
+/dev/vgaltboot/lvcrash                  
+/dev/vgaltboot/lvespx                   
+/dev/vgaltboot/lvhome                   
+/dev/vgaltboot/lvopenv                  
+/dev/vgaltboot/lvopt                    
+/dev/vgaltboot/lvroot                   
+/dev/vgaltboot/lvseos                   
+/dev/vgaltboot/lvstand                  
+/dev/vgaltboot/lvsupport                
+/dev/vgaltboot/lvswapA                  
+/dev/vgaltboot/lvtmp                    
+/dev/vgaltboot/lvusr                    
+/dev/vgaltboot/lvvar                    
+/dev/vgoracle01/lvau1                   /au1
+/dev/vgoracle01/lvav1                   /av1
+/dev/vgoracle01/lvbv1                   /bv1
+/dev/vgoracle01/lvoracle                /apps/opt/oracle
+/dev/vgoracle01/lvu01                   /u01
+/dev/vgoracle01/lvu02                   /u02
+/dev/vgoracle01/lvu03                   /u03
+/dev/vgoracle01/lvv01                   /v01
+/dev/vgoracle01/lvv02                   /v02
+/dev/vgoracle01/lvv03                   /v03
+/dev/vgoracle01/lvv04                   /v04
+/dev/vgoracle01/lvv05                   /v05
+/dev/vgoracle01/lvv06                   /v06
+/dev/vgoracle01/lvv07                   /v07
+/dev/vgroot/lvapps                      /apps
+/dev/vgroot/lvbest1                     /apps/opt/best1
+/dev/vgroot/lvbmc                       /apps/opt/bmc
+/dev/vgroot/lvcrash                     /var/adm/crash
+/dev/vgroot/lvespx                      /apps/opt/espx
+/dev/vgroot/lvhome                      /home
+/dev/vgroot/lvopenv                     /apps/opt/openv
+/dev/vgroot/lvopt                       /opt
+/dev/vgroot/lvroot                      /
+/dev/vgroot/lvseos                      /apps/opt/seos
+/dev/vgroot/lvstand                     /stand
+/dev/vgroot/lvsupport                   /apps/support
+/dev/vgroot/lvswapA                     (swapdisk)
+/dev/vgroot/lvtmp                       /tmp
+/dev/vgroot/lvusr                       /usr
+/dev/vgroot/lvvar                       /var
+
+<!-- === END Logical Volumes and Mount Points === -->
+
+
+</PRE>
+<A NAME='LVOLEXTENT'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Logical Volumes Extent Data</U></H3>
+<PRE><font size = '4'>
+
+                                                                         Bad
+                                   Size   %  Stripes    Mirrors    LV   Block
+ Volume Name                       (MB) Used  # Size    #  Const  State Reloc  Alloc
+ ----- ----- -------   ---------  ----- -----  -----
+/dev/vgaltboot/lvapps             4096         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvbest1             512         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvbmc               512         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvcrash            4096         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvespx              512         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvhome              208         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvopenv            3096         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvopt              6192         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvroot             1024         0    0    0    MWC  syncd  off   s-c  
+/dev/vgaltboot/lvseos              504         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvstand            1024         0    0    0    MWC  syncd  off   s-c  
+/dev/vgaltboot/lvsupport           208         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvswapA            4096         0    0    0    MWC  syncd  off   s-c  
+/dev/vgaltboot/lvtmp              1024         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvusr              3584         0    0    0    MWC  syncd  on    s    
+/dev/vgaltboot/lvvar              6192         0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvau1             1024    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvav1             3072    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvbv1            15360    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvoracle          7168   45%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvu01             2048    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvu02             1024    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvu03             2048    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv01             2048   58%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv02             2048    3%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv03             2048   49%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv04            20480   50%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv05            20480   24%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv06            20480    4%   0    0    0    MWC  syncd  on    s    
+/dev/vgoracle01/lvv07            11264    0%   0    0    0    MWC  syncd  on    s    
+/dev/vgroot/lvapps                4096    3%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvbest1                512   25%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvbmc                  512   41%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvcrash               4096    0%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvespx                 512   26%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvhome                 208    5%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvopenv               3104   17%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvopt                 6192   35%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvroot                1024    7%   0    0    1    MWC  syncd  off   s-c  
+/dev/vgroot/lvseos                 512   28%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvstand               1024    5%   0    0    1    MWC  syncd  off   s-c  
+/dev/vgroot/lvsupport              208   19%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvswapA               4096         0    0    1    MWC  syncd  off   s-c  
+/dev/vgroot/lvtmp                 1024    0%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvusr                 3584   36%   0    0    1    MWC  syncd  on    s    
+/dev/vgroot/lvvar                 6192   22%   0    0    1    MWC  syncd  on    s    
+
+Allocation
+  ns    non-strict                PVG-s  PVG-strict                
+  ns-c  non-strict/contiguous     PVG-c  PVG-strict/contiguous
+  s     strict                    PVG-d  PVG-strict/distributed    
+  s-c   strict/contiguous         PVG-p  PVG-strict/partially-distributed
+
+*** Cannot determine percent used
+
+<!-- === END Logical Volumes Extent Data === -->
+
+</PRE>
+<A NAME='VGMap'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Volume Group To Physical Disk Mapping</U></H3>
+<PRE><font size = '4'>
+<!-- === START VGMap === -->
+
+Volume Group             Physical Disks
+------------------------------------------------
+/dev/vgaltboot           /dev/dsk/c3t2d0
+/dev/vgoracle01          /dev/dsk/c9t11d6
+                         /dev/dsk/c12t11d6
+                         /dev/dsk/c9t11d7
+                         /dev/dsk/c12t11d7
+/dev/vgroot              /dev/dsk/c2t0d0
+                         /dev/dsk/c2t1d0
+
+<!-- === END Volume Group To Physical Disk Mapping === -->
+
+</PRE>
+<A NAME='Lmap'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Logical Volume To Physical Disk Mapping</U></H3>
+<PRE><font size = '4'>
+<!-- === START Lmap === -->
+
+Logical Volume
+ extents  Primary disk     Mirror Disk 1    Mirror Disk 2
+---------------------------------------------------------
+/dev/vgaltboot/lvapps    
+   512    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvbest1    
+    64    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvbmc    
+    64    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvcrash    
+   512    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvespx    
+    64    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvhome    
+    26    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvopenv    
+   387    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvopt    
+   774    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvroot    
+   128    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvseos    
+    63    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvstand    
+   128    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvsupport    
+    26    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvswapA    
+   512    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvtmp    
+   128    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvusr    
+   448    /dev/dsk/c3t2d0                                  
+/dev/vgaltboot/lvvar    
+   774    /dev/dsk/c3t2d0                                  
+/dev/vgoracle01/lvau1    
+    32   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvav1    
+    96   /dev/dsk/c9t11d7                                  
+/dev/vgoracle01/lvbv1    
+   480   /dev/dsk/c9t11d7                                  
+/dev/vgoracle01/lvoracle    
+   224   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvu01    
+    64   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvu02    
+    32   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvu03    
+    64   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv01    
+    64   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv02    
+    64   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv03    
+    64   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv04    
+   640   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv05    
+   640   /dev/dsk/c9t11d6                                  
+/dev/vgoracle01/lvv06    
+   297   /dev/dsk/c9t11d6                                  
+   343   /dev/dsk/c9t11d7                                  
+/dev/vgoracle01/lvv07    
+   352   /dev/dsk/c9t11d7                                  
+/dev/vgroot/lvapps    
+   256    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvbest1    
+    32    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvbmc    
+    32    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvcrash    
+   256    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvespx    
+    32    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvhome    
+    13    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvopenv    
+   194    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvopt    
+   387    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvroot    
+    64    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvseos    
+    32    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvstand    
+    64    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvsupport    
+    13    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvswapA    
+   256    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvtmp    
+    64    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvusr    
+   224    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+/dev/vgroot/lvvar    
+   387    /dev/dsk/c2t0d0  /dev/dsk/c2t1d0                 
+
+<!-- === END Logical Volume To Physical Disk Mapping === -->
+
+</PRE>
+<A NAME='Capacity'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Disk Capacity Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START Capacity === -->
+
+Logical Volume Space  =      184368 MB
+Mirror Space          =       36896 MB
+Other Space Allocated =           0 MB
+                        -----------
+Total Disk Allocated  =      221264 MB
+Unallocated Disk      =      128635 MB
+                        ===========
+Total Physical Disk   =      349899 MB
+
+Checked:
+44 physical volumes
+3 volume groups
+46 logical volumes
+with no stale extents detected.
+
+
+<!-- === END Disk Capacity Data === -->
+
+
+<!-- === END Volume Group Data === -->
+
+</PRE>
+<A NAME='SoftwareData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Software Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START SoftwareData === -->
+
+</PRE>
+<A NAME='Bundles'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Software Bundles</U></H3>
+<PRE><font size = '4'>
+Bundles                Version         Description
+--------------------------------------------------
+
+  B6848BA               1.4.gm.46.13   Ximian GNOME 1.4 GTK+ Libraries for HP-UX 
+  B9073BA               B.11.11.08.01.00.81 HP-UX iCOD Instant Capacity (iCAP) 
+  BUNDLE                B.2009.11.13   Patch Bundle   
+  BUNDLE11i             B.11.11.0306.1 Required Patch Bundle for HP-UX 11i, June 2003 
+  CDE-English           B.11.11.0412   English CDE Environment 
+  FDDI-00               B.11.11.02     PCI FDDI;Supptd HW=A3739A/A3739B;SW=J3626AA 
+  FEATURE11-11          B.11.11.0209.5 Feature Enablement Patches for HP-UX 11i, Sept 2002 
+  FIREFOX               1.5.0.00.02    Firefox for HP-UX 
+  FIREFOXsrc            1.5.0.00.02    Firefox Source distribution 
+  FibrChanl-00          B.11.11.13     PCI/HSC FibreChannel;Supptd HW=A6684A,A6685A,A5158A,A6795A 
+  FibrChanl-01          B.11.11.10     FibreChannel;HW=A6826A,A9782A,A9784A,AB378A/B,AB379A/B,AB465A,AD193A,AD194A 
+  GOLDAPPS11i           B.11.11.0812.479 Applications Patches for HP-UX 11i v1, December 2008 
+  GOLDBASE11i           B.11.11.0812.479 Base Patches for HP-UX 11i v1, December 2008 
+  GTK                   2.6.8.00.01    GTK+ 2.6 The Gnome GUI Runtime  Toolkit 
+  GTKsrc                2.6.8.00.01    Gtk Source distribution 
+  GigEther-00           B.11.11.19     PCI/HSC GigEther;Supptd HW=A4926A/A4929A/A4924A/A4925A;SW=J1642AA 
+  GigEther-01           B.11.11.23     PCI/PCI-X GigEther;Supptd HW=A6794A/A6825A/A6847A/A9782A/A9784A/A7109A/AB465A 
+  HPUX11i-OE-Ent        B.11.11.0612   HP-UX Enterprise Operating Environment Component 
+  HPUXBase64            B.11.11        HP-UX 64-bit Base OS 
+  HPUXBaseAux           B.11.11.0612   HP-UX Base OS Auxiliary 
+  HWEnable11i           B.11.11.0612.458 Hardware Enablement Patches for HP-UX 11i v1, December 2006 
+  IEther-00             B.11.11.13     PCI/PCI-X IEther;Supptd HW=A7011/A7012/AB352/AB290/AB545/AD193/AD194/AD331/AD332 
+  IUX-Recovery          C.7.4.157      Ignite-UX network recovery tool subset 
+  J4240AA               B.11.11.07     Auto-Port Aggregation Software 
+  J4269AA               B.04.00.02     LDAP-UX Integration 
+  Java15JDK             1.5.0.04.00    Java 1.5 JDK for HP-UX 
+  Java15JDKadd          1.5.0.04.00    Java 1.5 JDK -AA addon for HP-UX 
+  Java15JRE             1.5.0.04.00    Java 1.5 JRE for HP-UX 
+  Java15JREadd          1.5.0.04.00    Java 1.5 JRE -AA addon for HP-UX 
+  MOZILLA               1.7.13.01.00   Mozilla for HP-UX 
+  MOZILLAsrc            1.7.13.01.00   Mozilla Source distribution 
+  NParCmds              A.01.03        Enhanced NPartition Commands 
+  OnlineDiag            B.11.11.21.06  HPUX 11.11 Support Tools Bundle, December 2009 
+  OpenSSL               A.00.09.07i.012 Secure Network Communications Protocol 
+  ParMgr                B.12.02.02.02  Partition Manager - HP-UX 
+  RAID-00               B.11.11.01     PCI RAID; Supptd HW=A5856A 
+  RAID-01               B.11.11.0609   RAID SA; Supptd HW=A7143A/A9890A/A9891A 
+  Sendmail-Upgrade      B.11.11.02.005 Sendmail-8.13.3/Identd special release upgrade 
+  ShadowPassword        B.11.11.03     HP-UX 11.11 Shadow Password Bundle 
+  SysFaultMgmt          A.04.02.01.05  HPUX 11.11 System Fault Management 
+  SysMgmtWeb            A.2.2.5        HP-UX Web Based System Management User Interfaces 
+  T1456AA               1.4.2.11.00    Java2 1.4 SDK for HP-UX 
+  T1456AAaddon          1.4.2.11.00    Java2 1.4 SDK -AA addon for HP-UX 
+  T1457AA               1.4.2.11.00    Java2 1.4 RTE for HP-UX 
+  T1457AAaddon          1.4.2.11.00    Java2 1.4 RTE -AA addon for HP-UX 
+  T1458AA               1.4.2.11.00    Java2 1.4 Netscape Plugin for HP-UX 
+  T1471AA               A.04.30.006    HP-UX Secure Shell 
+  T2743AA               A.02.50.00.04  HP Global Workload Manager Agent 
+  TBIRD                 1.5.0.00.02    Thunderbird for HP-UX 
+  TBIRDsrc              1.5.0.00.02    Thunderbird Source distribution 
+  UtilProvider          A.01.04.02.00  HP-UX Utilization Provider 
+  Vz1111Apr2009c0       2009.04.16     Verizon Apr 2009 1111 Core Patch Maintenance Bundle 
+  Vz1111Jul2007c1       A.1.0          Verizon Jul 2007 1111 Core Patch Maintenance Bundle 
+  Vz1111Oct2007c0       A.1.0          Verizon Oct 2007 1111 Core Patch Maintenance Bundle 
+  WBEMSvcs              A.02.07.06     HP WBEM Services for HP-UX 
+  hpuxwsApache          A.2.0.58.00    HP-UX Apache-based Web Server 
+  hpuxwsTomcat          A.5.5.9.03     HP-UX Tomcat-based Servlet Engine 
+  hpuxwsWebmin          A.1.070.08     HP-UX Webmin-based Admin 
+  hpuxwsXml             A.2.00         HP-UX XML Web Server Tools 
+  nParProvider          B.12.01.07.01  nPartition Provider - HP-UX 
+  perl                  D.5.8.8.B      5.8.8 Perl Programming Language 
+  scsiU320-00           B.11.11.0612.01 PCI-X SCSI U320; Supptd HW=A7173A/AB290A 
+  vParProvider          B.11.11.01.03  vPar Provider - HP-UX 
+
+<!-- === END Software Bundles === -->
+
+</PRE>
+<A NAME='Products'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Software Products</U></H3>
+<PRE><font size = '4'>
+Products               Version         Description
+--------------------------------------------------
+
+  Accounting            B.11.11        Accounting     
+  Asian-Core            A.03.00        Asian Core     
+  Asian-PRINTER         A.03.00        Asian Printer  
+  Asian-TERM            A.03.00        Asian TERM     
+  Asian-UTILITY         A.03.00        Asian Utility  
+  AudioSubsystem        B.11.11        HP-UX Audio Subsystem 
+  CDE                   B.11.11        HP-UX CDE User Interface 
+  CIFS-Client           A.02.02.01     HP CIFS Client 
+  CIFS-Development      A.02.03        HP CIFS Server Source Code Files 
+  CIFS-Server           A.02.03        HP CIFS Server (Samba) File and Print Services 
+  CPS                   B.11.11        Compiler Parallel Support Library 
+  Contrib-Tools         B.11.11.21.06  Contributed Tools 
+  Curses-Color          B.11.11        Curses library with color support 
+  DCE-Core              B.11.11        HP DCE/9000 Core Client Software 
+  DigitalVideo          B.11.11        Digital Video Software 
+  DiskQuota             B.11.11        DiskQuota      
+  DistributedPrint      B.11.11        DistributedPrint 
+  EMS-Config            A.04.20.11     EMS Config     
+  EMS-Core              A.04.20.11     EMS Core Product 
+  EMS-DiskMonitor       A.04.20.11     EMS Disk Resource Monitor 
+  EMS-KRMonitor         A.11.11.05     EMS Kernel Resource Monitor 
+  EMS-MIBMonitor        A.04.20.11     EMS MIB Resource Monitor Product 
+  EMS-RdbmsMon          A.04.20.11     EMS Database Monitor 
+  FC-FCD                B.11.11.10     FibreChannel;HW=A6826A,A9782A,A9784A,AB378A/B,AB379A/B,AB465A,AD193A,AD194A 
+  FC-TACHYON-TL         B.11.11.13     PCI/HSC FibreChannel;Supptd HW=A6684A,A6685A,A5158A,A6795A 
+  FCMassStorage         B.11.11        Fibre Channel Mass Storage 
+  FDDI-KRN-COM          B.11.11.01     HP HP-PB/CORE/PCI FDDI Kernel Component 
+  FDDI-PCI              B.11.11.02     HP PCI FDDI Driver 
+  Firefox               1.5.0.00.02    Firefox 1.5    
+  FirefoxSrc            1.5.0.00.02    Firefox 1.5 Source Distribution 
+  GE-DRV                B.11.11.19     HP PCI/GSC Gigabit Ethernet Driver 
+  GLib                  1.2.10.13      GLib utility functions 
+  GSS-API               B.11.11        GSS-API Version 1.0 
+  GTK+                  1.2.10.13      GIMP Toolkit set of widgets for X 
+  Gettext               0.10.39.13     GNU gettext NLS library 
+  Glance                C.04.50.00     HP GlancePlus/UX 
+  Gtk                   2.6.8.00.01    GTK+ 2.6 The Gnome GUI Runtime  Toolkit 
+  GtkSrc                2.6.8.00.01    Gtk 2.6 Source Distribution 
+  HP-APA-FMT            B.11.11.07     HP Auto-Port Aggregation/9000 APA formatter product. 
+  HP-APA-KRN            B.11.11.07     HP Auto-Port Aggregation/9000 APA kernel products. 
+  HP-APA-LM             B.11.11.07     HP Auto-Port Aggregation/9000 LM commands. 
+  HP-APA-RUN            B.11.11.07     HP Auto-Port Aggregation/9000 APA command products. 
+  HP-APA-SAM            B.11.11.07     HP Auto-Port Aggregation/9000 APA SAM product. 
+  HPOvLcore             2.00.000       HP OpenView Core Functionality 
+  HPOvPerf              4.50.000       HP OpenView Performance 
+  I2ORAID               B.11.11.01     I2O RAID Product 
+  IETHER-DRV            B.11.11.13     HP PCI Gigabit Ethernet Driver 
+  IGELAN-DRV            B.11.11.23     HP PCI Gigabit Ethernet Driver 
+  IOTree-Provider       B.11.11.04     CIM/WBEM Provider for PCI Slots 
+  Ignite-UX             C.7.4.157      HP-UX System Installation Services 
+  ImagingSubsystem      B.11.11        HP-UX Image Viewer Subsystem 
+  IntegratedLogin       B.11.11        Integrated Login for HP-UX and DCE 
+  International         B.11.11        International  
+  InternetSrvcs         B.11.11        General network applications and daemons 
+  JFS                   B.11.11        The Base VxFS File System 
+  Jdk14                 1.4.2.11.00    Java2 1.4 SDK  
+  Jdk15                 1.5.0.04.00    Java 1.5 JDK   
+  Jpi14                 1.4.2.11.00    Java2 1.4 Netscape Plugin 
+  Jre14                 1.4.2.11.00    Java2 1.4 RTE  
+  Jre15                 1.5.0.04.00    Java 1.5 JRE   
+  Judy-lib              B.11.11.04.13  Judy Library and Related files 
+  KRB-Support           B.11.11        Kerberos Support for HP-UX and DCE 
+  KRB5-Client           B.11.11        Kerberos V5 Client Version 1.0 
+  KRBS-Support          B.11.11.15     Kerberos Support v1.11 
+  KernDevKit            B.11.11        HP-UX Kernel Developer Kit 
+  Keyshell              B.11.11        Keyshell       
+  LPFC                  B.04.21.05     Light Pulse Adapter Driver 
+  LSSERV                B.11.11        LicensePower/iFOR ARK 
+  LVM                   B.11.11        LVM            
+  LVM-Provider          B.11.11.03     LVM WBEM Provider 
+  LdapUxClient          B.04.00.02     LDAP-UX Client Services 
+  Libiconv              1.6.1.13       Libiconv - Character set conversion library 
+  MSDOS-Utils           B.11.11        MSDOS-Utils    
+  MailUtilities         B.11.11        User mail agents and related tools 
+  MeasureWare           C.04.50.00     MeasureWare Software/UX 
+  MeasurementInt        C.04.50.00     HP-UX Measurement Interface for 11i 
+  Mozilla               1.7.13.01.00   Mozilla 1.7    
+  MozillaSrc            1.7.13.01.00   Mozilla 1.7 Source Distribution 
+  NFS                   B.11.11        ONC/NFS; Network-File System,Information Services,Utilities 
+  NParProvider          B.12.01.07.01  nPartition Provider 
+  NPartition            A.01.03        Enhanced NPartition Commands 
+  Networking            B.11.11        HP-UX_Lanlink_Product 
+  NisLdapServer         B.04.00.02     The NIS/LDAP Gateway (ypldapd) 
+  NonHP-Terminfo        B.11.11        Non HP terminfo files 
+  OBAM                  B.11.00.05.3.06 Object Action Manager user interface framework for HP-UX tools 
+  OE                    B.11.11.0612   HP-UX OE control script product 
+  OS-Core               B.11.11        Core Operating System, plus Software Terms & Conditions 
+  OVSNMPAgent           B.11.11        HP-UX_10.0_SNMP_Agent_Product 
+  OnlineJFS             B.11.11.03.03  Online features of the VxFS File System 
+  PAM-Kerberos          B.11.11.15     PAM-Kerberos Version 1.24 
+  PAM-NTLM              A.02.02.01     HP NTLM Pluggable Authentication Module 
+  PHCO_23263            B.11.11.15     HP AutoRAID Manager cumulative patch 
+  PHCO_23370            1.0            lint(1) library patch 
+  PHCO_23463            1.0            sysdef(1) patch 
+  PHCO_23492            1.0            Kernsymtab Patch 
+  PHCO_23702            1.0            cumulative header file patch for prot.h 
+  PHCO_23909            1.0            cu(1) patch    
+  PHCO_23920            1.0            sfd(1M) patch  
+  PHCO_24396            1.0            /etc/default/tz patch 
+  PHCO_24440            1.0            cumulative cpio(1) patch 
+  PHCO_24456            1.0            st(1m) shared tape administration 
+  PHCO_24477            1.0            sar(1m) patch  
+  PHCO_24846            1.0            ttsyncd(1M) cumulative patch 
+  PHCO_25831            1.0            SCSI Ultra160 driver Online Addition script 
+  PHCO_25841            1.0            Add Rock Ridge extension to mount_cdfs(1M) 
+  PHCO_25979            1.0            vmstat(1) cumulative patch 
+  PHCO_26026            1.0            uptime(1) cumulative patch 
+  PHCO_26061            1.0            Kernel configuration commands patch. 
+  PHCO_26385            1.0            newgrp(1) cumulative patch 
+  PHCO_26453            1.0            GB18030, HKSCS, and UTF8 Greek Euro Locales. 
+  PHCO_26454            1.0            Add GB18030 support to command eucset. 
+  PHCO_26455            1.0            Y2K locale fixes and Greek Euro support. 
+  PHCO_26682            1.0            shutdown(1m) patch 
+  PHCO_26701            1.0            fsck(1M) sync switch patch 
+  PHCO_26898            1.0            compress(1) patch 
+  PHCO_26907            1.0            diff(1) patch  
+  PHCO_26951            1.0            itemap support for FireGL graphics cards 
+  PHCO_27007            1.0            swapinfo(1M) cumulative patch 
+  PHCO_27009            1.0            acctdusg(1m) patch 
+  PHCO_27010            1.0            swapon(1M) patch 
+  PHCO_27035            1.0            shadow.h cumulative patch 
+  PHCO_27036            1.0            pwck cumulative patch 
+  PHCO_27049            1.0            audit(5) man page patch 
+  PHCO_27064            1.0            libpam cumulative patch 
+  PHCO_27100            1.0            HFS mkfs(1M) VxVM Rootability patch 
+  PHCO_27101            1.0            mkboot(1M) VxVM Rootability patch 
+  PHCO_27138            1.0            tail(1) cumulative patch 
+  PHCO_27242            1.0            more(1) cumulative patch. 
+  PHCO_27415            1.0            ls(1) cumulative patch 
+  PHCO_27618            1.0            diskinfo(1M) patch 
+  PHCO_27704            1.0            audisp(1M) cumulative patch 
+  PHCO_27752            1.0            audevent(1M) cumulative patch 
+  PHCO_27758            1.0            gsp parser & DIMM labels 
+  PHCO_27780            1.0            HP-UX Patch Tools 
+  PHCO_27828            1.0            ups_mond(1M) cumulative patch 
+  PHCO_27848            1.0            gprof(1) patch. 
+  PHCO_27884            1.0            /sbin/initcond cumulative patch 
+  PHCO_27909            1.0            security manpages cumulative patch 
+  PHCO_27944            1.0            dc(1) cumulative patch. 
+  PHCO_27950            1.0            tbl(1) cumulative patch. 
+  PHCO_27957            1.0            umount(1M) cumulative patch, Dev IDs Enab 
+  PHCO_27959            1.0            umountall(1M) cumulative patch, Dev IDs enab 
+  PHCO_28160            1.0            install fix for correct $PATH & rc.config.d 
+  PHCO_28167            B.11.11.18     HP Array Manager/60 cumulative patch 
+  PHCO_28243            1.0            crashutil cumulative, CDUMP enablement 
+  PHCO_28605            1.0            libnss_files cumulative patch 
+  PHCO_28633            1.0            ed(1) cumulative patch 
+  PHCO_28672            1.0            diff3(1) cumulative patch. 
+  PHCO_28719            1.0            wall(1M) patch. 
+  PHCO_28773            1.0            dd(1) "--" option UNIX95 Compliance 
+  PHCO_28845            1.0            ioinitrc(1M) cumulative patch 
+  PHCO_28941            1.0            devnm(1M) cumulative patch. 
+  PHCO_29010            1.0            shar(1) patch  
+  PHCO_29040            1.0            cat(1) cumulative patch 
+  PHCO_29098            1.0            scsictl(1M) cumulative patch 
+  PHCO_29310            1.0            vxdump(1M) hang. 
+  PHCO_29352            1.0            sort(1) cumulative patch 
+  PHCO_29382            1.0            uucp(1) cumulative patch 
+  PHCO_29436            1.0            som2elf cumulative patch 
+  PHCO_29622            1.0            Directory patch 
+  PHCO_29689            1.0            IPC commands cumulative patch 
+  PHCO_29816            1.0            rc(1M) scripts cumulative patch 
+  PHCO_29832            1.0            reboot(1M) cumulative patch 
+  PHCO_29903            1.0            iconv cumulative patch 
+  PHCO_29916            1.0            fstyp(1M) cumulative patch 
+  PHCO_29995            1.0            q4 patch version B.11.23d 
+  PHCO_30075            1.0            fuser(1M) cumulative patch:permission change 
+  PHCO_30238            1.0            Americas utf8 locales patch 
+  PHCO_30240            1.0            W. Europe & Middle East utf8 locales patch 
+  PHCO_30241            1.0            Eastern Europe utf8 locales patch 
+  PHCO_30361            1.0            savecrash cumulative, CDUMP enablement 
+  PHCO_30900            1.0            Hebrew ISO8859-8 locale patch 
+  PHCO_30903            1.0            authck cumulative patch 
+  PHCO_31103            1.0            mc(1M) timeout value changes 
+  PHCO_31246            1.0            sed(1) cumulative patch 
+  PHCO_31878            1.0            nPar cmds cumulative patch,IOX,dual cpu 
+  PHCO_31882            1.0            pg(1) cumulative patch 
+  PHCO_31908            1.0            ied(1) patch   
+  PHCO_31923            1.0            libc cumulative header file patch 
+  PHCO_31978            1.0            ps(1) cumulative patch 
+  PHCO_31981            1.0            cut(1) cumulative patch 
+  PHCO_32036            1.0            mkdir(1) cumulative patch 
+  PHCO_32167            1.0            uudecode(1) cumulative patch 
+  PHCO_32466            1.0            top(1) cumulative patch 
+  PHCO_32719            1.0            cumulative 10.20 libc compatibility support 
+  PHCO_33048            1.0            quota(1) patch 
+  PHCO_33136            1.0            ioscan(1M) cumulative patch 
+  PHCO_33203            1.0            fsclean(1M), Dev IDS enable, iSCSI support 
+  PHCO_33205            1.0            mountall, Dev IDs enabler, iSCSI support 
+  PHCO_33213            1.0            /sbin/passwd cumulative patch 
+  PHCO_33216            1.0            pwconv(1M) cumulative patch 
+  PHCO_33221            1.0            /sbin/fs/hfs/bcheckrc patch;iSCSI 
+  PHCO_33226            1.0            bcheckrc_vxfs, iSCSI support 
+  PHCO_33236            1.0            mount_vxfs(1M) cumulative patch, iSCSI 
+  PHCO_33237            1.0            sync switch;invalid sparse inode;iSCSI 
+  PHCO_33327            1.0            Device IDs enab, mount(1M), iSCSI support 
+  PHCO_33478            1.0            pr(1) cumulative patch 
+  PHCO_33558            1.0            Update Release Notes document 
+  PHCO_33582            1.0            iconv(1) cumulative Patch 
+  PHCO_33758            1.0            login(1) cumulative patch 
+  PHCO_33787            1.0            cumulative patch for /sbin/init 
+  PHCO_33967            1.0            envd(1m) cumulative patch 
+  PHCO_34083            1.0            pre_init_rc cumulative patch 
+  PHCO_34127            1.0            script(1) cumulative patch 
+  PHCO_34233            1.0            sccs(1) cumulative patch 
+  PHCO_34545            1.0            su(1) cumulative patch 
+  PHCO_34605            1.0            rad(1M) and hotplugd(1M) cumulative patch 
+  PHCO_34813            1.0            killall(1M) cumulative patch 
+  PHCO_34833            1.0            mv(1) cumulative patch 
+  PHCO_34837            1.0            auto_parms/set_parms/dhcpdb2conf 
+  PHCO_34943            1.0            file(1) cumulative patch 
+  PHCO_34993            1.0            lpspool subsystem cumulative patch 
+  PHCO_35018            1.0            printf(1) cumulative patch 
+  PHCO_35051            1.0            prpwd(4) man page patch 
+  PHCO_35152            1.0            df(1m) cumulative patch 
+  PHCO_35250            1.0            libpam_unix cumulative patch 
+  PHCO_35331            1.0            at/cron/batch cumulative patch 
+  PHCO_35769            1.0            vi(1) cumulative patch 
+  PHCO_35811            1.0            mksf(1M) cumulative patch 
+  PHCO_35845            1.0            fsck_hfs(1M) cumulative patch, iSCSI support 
+  PHCO_35858            1.0            id(1) cumulative patch 
+  PHCO_35875            1.0            sdiff(1) cumulative patch 
+  PHCO_35895            1.0            ioinit(1M) patch 
+  PHCO_35955            1.0            LVM commands cumulative patch 
+  PHCO_35998            1.0            pax(1) cumulative patch 
+  PHCO_35999            1.0            split(1) cumulative patch 
+  PHCO_36000            1.0            make(1) cumulative patch 
+  PHCO_36006            1.0            libsec cumulative patch 
+  PHCO_36082            1.0            libc manpage cumulative patch 
+  PHCO_36083            1.0            last(1) cumulative patch 
+  PHCO_36095            1.0            syslogd(1M) cumulative patch 
+  PHCO_36161            1.0            awk(1) patch   
+  PHCO_36329            1.0            tsconvert cumulative patch 
+  PHCO_36428            1.0            pwgrd(1M) cumulative patch 
+  PHCO_36456            1.0            gcore(1) cumulative patch 
+  PHCO_36465            1.0            passwd(1) cumulative patch 
+  PHCO_36502            1.0            find(1) cumulative patch 
+  PHCO_36503            1.0            localedef(1M) cumulative patch 
+  PHCO_36507            1.0            patch(1) patch 
+  PHCO_36562            1.0            cumulative SAM patch 
+  PHCO_36587            1.0            tar(1) cumulative patch 
+  PHCO_36661            1.0            rm(1) cumulative patch 
+  PHCO_36788            1.0            Locales Patch - Baltic Region/Ukraine/Russia 
+  PHCO_36795            1.0            csh(1) cumulative patch 
+  PHCO_36946            1.0            libxcurses cumulative patch 
+  PHCO_36974            1.0            vPar commands man pages patch 
+  PHCO_37234            1.0            ttytype(1) cumulative patch 
+  PHCO_37240            1.0            Cumulative changes to du(1) 
+  PHCO_37283            1.0            ksh(1) cumulative patch 
+  PHCO_37294            1.0            sh-posix(1) cumulative patch 
+  PHCO_37369            1.0            libc cumulative patch 
+  PHCO_37539            1.0            bdf(1m) cumulative patch 
+  PHCO_37611            1.0            fbackup(1M),frecover(1M) cumulative patch 
+  PHCO_37667            1.0            cp(1) cumulative patch 
+  PHCO_37739            1.0            /sbin/init.d/auditing cumulative patch 
+  PHCO_37813            1.0            logins(1M) cumulative patch 
+  PHCO_37824            1.0            bdiff(1) cumulative patch 
+  PHCO_38226            1.0            Software Distributor Cumulative Patch 
+  PHCO_38307            1.0            pthread library cumulative patch 
+  PHCO_38490            1.0            chmod(1) cumulative patch 
+  PHCO_38492            1.0            ugm cumulative patch 
+  PHCO_38961            1.0            tztab(4) cumulative patch 
+  PHKL_23006            1.0            PC floppy cumulative patch 
+  PHKL_23196            1.0            Fix for locking problem in I/O (GIO) 
+  PHKL_23225            1.0            Fix for dqput() data page fault panic 
+  PHKL_23250            1.0            Fix for memory driver bug 
+  PHKL_23292            1.0            scsi_surface.h header file patch 
+  PHKL_23293            1.0            assert.h header file patch 
+  PHKL_23294            1.0            buf.h header file patch 
+  PHKL_23295            1.0            debug.h header file patch 
+  PHKL_23296            1.0            dnlc.h header file patch 
+  PHKL_23297            1.0            io.h header file patch 
+  PHKL_23298            1.0            ki_iface.h header file patch 
+  PHKL_23299            1.0            pfdat.h header file patch 
+  PHKL_23300            1.0            proc_debug.h header file patch 
+  PHKL_23301            1.0            proc_iface.h header file patch 
+  PHKL_23302            1.0            rw_lock.h header file patch 
+  PHKL_23303            1.0            sem_alpha.h header file patch 
+  PHKL_23304            1.0            sem_beta.h header file patch 
+  PHKL_23305            1.0            sem_sync.h header file patch 
+  PHKL_23306            1.0            sem_utl.h header file patch 
+  PHKL_23307            1.0            spinlock.h header file patch 
+  PHKL_23308            1.0            vas.h header file patch 
+  PHKL_23309            1.0            vfd.h header file patch 
+  PHKL_23310            1.0            vnode.h header file patch 
+  PHKL_23311            1.0            inode.h header file patch 
+  PHKL_23312            1.0            pci.h header file patch 
+  PHKL_23315            1.0            cpu.h header file patch 
+  PHKL_23316            1.0            map.h header file patch 
+  PHKL_23335            1.0            solve inode deadlock with mmap and pagefault 
+  PHKL_23400            1.0            Supply kernel support to manage POSIX IPC 
+  PHKL_23401            1.0            Supply kernel support to manage POSIX IPC 
+  PHKL_23666            1.0            SCSI IO Subsystem Cumulative Patch 
+  PHKL_23810            1.0            Enable SCSI floppy for 64 bit computers 
+  PHKL_24026            1.0            JFS Filesystem swap corruption 
+  PHKL_24056            1.0            copy is unsafe to or near I/O space. 
+  PHKL_24188            1.0            hang in HFS    
+  PHKL_24278            1.0            Softpower enablement for bladed servers 
+  PHKL_24343            1.0            Data Page Fault panic in DNLC 
+  PHKL_24552            1.0            vPar enablement patch 
+  PHKL_24554            1.0            vPar enablement patch 
+  PHKL_24556            1.0            vPar enablement patch 
+  PHKL_24562            1.0            vPar enablement patch 
+  PHKL_24565            1.0            vPar Enablement patch 
+  PHKL_24582            1.0            iCOD Support, Psets Enablement Patch 
+  PHKL_24652            1.0            longjmp() panic due to lookuppn() 
+  PHKL_24730            1.0            PDC fix for future firmware support 
+  PHKL_24751            1.0            preserve IPSW W-bit and GR31 lower bits 
+  PHKL_25123            1.0            pstat_getproc data coherence 
+  PHKL_25238            1.0            11.00 NFS nfsd deadlock 
+  PHKL_25593            1.0            Debugged thread hang 
+  PHKL_25602            1.0            Fix panic in ccio_alloc_shared_mem 
+  PHKL_25993            1.0            thread nostop for NFS, rlimit, Ufalloc fix 
+  PHKL_26104            1.0            VX_FREEZE timeout does not work properly 
+  PHKL_26183            1.0            dyn semaphores; large data space; msgmnb 
+  PHKL_26193            1.0            Interrupt Migration Enablement 
+  PHKL_26197            1.0            Interrupt Migration Enablement 
+  PHKL_26269            1.0            Rock Ridge extension for ISO-9660 
+  PHKL_26502            1.0            Interrupt Migration EP 
+  PHKL_26705            1.0            syslog/console handling,printf panic fix 
+  PHKL_26755            1.0            callout race, disabled timer, early SIGXCPU 
+  PHKL_26834            1.0            Psets Enablement Patch, lwp_stime fix 
+  PHKL_27179            1.0            Corrected reference to thread register state 
+  PHKL_27219            1.0            adjtime(2) support for cpu speeds over 1 GHz 
+  PHKL_27321            1.0            Move KRS availability early in boot (11.11) 
+  PHKL_27498            1.0            Possible HPMC with PCI-to-PCI bridge 
+  PHKL_27532            1.0            ; ServiceGuard/vsar incompatibility removed 
+  PHKL_27682            1.0            diag0 cumulative patch. 
+  PHKL_27688            1.0            Over-temp/LPMC Panic 
+  PHKL_27734            1.0            Data page fault in vx_isumpush() 
+  PHKL_27778            1.0            PCI ExpROM,bridge,BA hints,Lowfat,PIOP,EPIC 
+  PHKL_27918            1.0            EPIC debug info 
+  PHKL_28087            1.0            exec(2) manpage 
+  PHKL_28114            1.0            timeout; ServiceGuard TOC 
+  PHKL_28122            1.0            signals,threads enhancement,Psets Enablement 
+  PHKL_28139            1.0            vPar enablement patch, select, nanosleep 
+  PHKL_28185            1.0            Tunable;vxportal;vx_maxlink;DMAPI NFS hang 
+  PHKL_28237            1.0            vPar enablement, CDUMP enablement patch 
+  PHKL_28323            1.0            vPar enablement patch, ktracer, kgmon -B 
+  PHKL_28326            1.0            PA-8800 PDC Panic 
+  PHKL_28489            1.0            copyin EFAULT, LDCD access type 
+  PHKL_28839            1.0            PA-8800 enablement, p2p_bcopy process hang 
+  PHKL_28842            1.0            lofs_mount     
+  PHKL_29045            1.0            vx_mapbad errors during fsadm -d 
+  PHKL_29115            1.0            JFS Direct I/O cumulative patch 
+  PHKL_29243            1.0            vPar enablement, cumulative patch 
+  PHKL_29300            1.0            IPMI driver port, LUN change,vPar interface 
+  PHKL_29335            1.0            vx_nospace on NFS write. 
+  PHKL_29567            1.0            Doorbell Enablement in OLA/R subsystem. 
+  PHKL_29651            1.0            HW enablement: AGP graphics card support 
+  PHKL_29704            1.0            Psets Enablement, SCHED_NOAGE, FSS 
+  PHKL_29818            1.0            Cumulative DLKM module patch 
+  PHKL_30034            1.0            Psets Enablement Patch; FSS cap 
+  PHKL_30038            1.0            IDE/ATAPI cumulative patch 
+  PHKL_30044            1.0            Memory leak fix for Core Bus ioscan 
+  PHKL_30105            1.0            remove mem module and LPMC syslog msgs 
+  PHKL_30196            1.0            64-bit SHMMAX maximum,enable ShmemExtensions 
+  PHKL_30307            1.0            slpq hash size 
+  PHKL_30366            1.0            JFS3.3;ACL patch 
+  PHKL_30398            1.0            KI FSS ID and KI_rfscall 
+  PHKL_30446            1.0            Interrupt Migration EP 
+  PHKL_30523            1.0            PDC_SCSI_PARMS,iCOD,vPars,IPMI,OLA/R 
+  PHKL_30524            1.0            par fans,cabtype,sinc,hwpath,cell info,vPar 
+  PHKL_30542            1.0            eventport (/dev/poll) pseudo driver 
+  PHKL_30582            1.0            vx_trunc_typed error 
+  PHKL_30590            1.0            application hangs using msg queues 
+  PHKL_30596            1.0            Race in msemaphores 
+  PHKL_30607            1.0            VxVM,EMC,PM,vPar,slpq,KRS,DUMP,LVM,VM,DaS,IF 
+  PHKL_30621            1.0            vm preemption point, async_io, mlock_region 
+  PHKL_30796            1.0            vm preemption point, pdc, vhand, MtIOscan 
+  PHKL_30992            1.0            MO 8k sector size;FIFO;Event Port;perf;shmem 
+  PHKL_31036            1.0            Interrupt Migration EP;IF 
+  PHKL_31212            1.0            System panic on VxFS mount 
+  PHKL_31876            1.0            ttrace-generated cores are undebuggable 
+  PHKL_31994            1.0            Psets Enablement, Deadlock Fix 
+  PHKL_32012            1.0            cumulative shared memory patch 
+  PHKL_32038            1.0            Psets Enablement, Kernel Binding 
+  PHKL_32039            1.0            RTE PSETS      
+  PHKL_32119            1.0            LOFS mount(2)/umount(2) performance; lookup 
+  PHKL_32204            1.0            VM core(4) related changes 
+  PHKL_32375            1.0            Enabling debug of internal BBDS structures 
+  PHKL_32603            1.0            Psets Enablement, pstat Patch; top(1) 
+  PHKL_32647            1.0            Extending Physical I/O Addressing 
+  PHKL_32668            1.0            vPar enablement,DLKM load panic 
+  PHKL_32715            1.0            crash,vpars,timeout;SG TOC,nParCnfg,shutdown 
+  PHKL_33137            1.0            Shared mutex hang; Shared synch perf support 
+  PHKL_33200            1.0            lofs cumulative patch 
+  PHKL_33338            1.0            iCOD,vPars,IPMI,PDCnbcall,OLA/R AB,sx2000 
+  PHKL_33377            1.0            VxFS 3.3 cumulative patch 
+  PHKL_33387            1.0            VM kmem arena fix 
+  PHKL_33408            1.0            RTSCHED performance enablement patch 
+  PHKL_33457            1.0            asyncio driver patch 
+  PHKL_33702            1.0            umount-mkfs panic; HFS mount/umount perf 
+  PHKL_33712            1.0            New audio h/w support + cumulative fixes 
+  PHKL_33843            1.0            ustat(2) performance fix 
+  PHKL_33858            1.0            sar -d         
+  PHKL_34105            1.0            VM /dev/kmem fix 
+  PHKL_34106            1.0            early dump, CDUMP, dump menu, EVA, zero page 
+  PHKL_34110            1.0            execve panic   
+  PHKL_34116            1.0            panic/hang/abort from icache coherency issue 
+  PHKL_34161            1.0            Fibre Channel Mass Storage Patch 
+  PHKL_34173            1.0            select(2) delay, hang 
+  PHKL_34193            1.0            POSIX IPC calls audit, Message Queue update 
+  PHKL_34311            1.0            thread abrt,suspend,DaS,physio,cleanpt 
+  PHKL_34466            1.0            HIDS cumulative patch 
+  PHKL_34552            1.0            SCSI Tape (stape) cumulative 
+  PHKL_34595            1.0            VM NFS umount fix 
+  PHKL_34670            1.0            Standards compliance; C++ warnings; stat.h 
+  PHKL_34738            1.0            signal cumulative patch 
+  PHKL_34805            1.0            JFS3.3 patch; mmap 
+  PHKL_34807            1.0            RTE PSETS, unistd.h C++ warnings 
+  PHKL_34930            1.0            I/O,vPar,CDUMP,IM perf,PCI-X perf, PCI-X2.0 
+  PHKL_35011            1.0            Cumulative USB Driver patch 
+  PHKL_35050            1.0            vPar enablement patch with kwdb support 
+  PHKL_35282            1.0            clock sync err, invalid gethrtime val 
+  PHKL_35293            1.0            AGP, cumulative graphics, multicard 
+  PHKL_35329            1.0            JFS3.3 edquota performance improvement 
+  PHKL_35399            1.0            vPar cumulative patch 
+  PHKL_35422            1.0            GIO Cumulative Patch 
+  PHKL_35564            1.0            mmap(2) fails with ENOMEM, VM vfork(2) fix 
+  PHKL_35693            1.0            netdiag1 MP-driver and default nproc 
+  PHKL_35716            1.0            sem_close(2) Man Page patch 
+  PHKL_35795            1.0            VM vPar Fix for no equivalently mapped space 
+  PHKL_35810            1.0            Buffer cache performance improvement patch 
+  PHKL_35879            1.0            vPars panic;Syscall cumulative;FSS;gethrtime 
+  PHKL_35925            1.0            PCI patch,boot-time HPMC,PCI-X,OLA/R,AGP 
+  PHKL_35933            1.0            Panic extending JFS3.3 filesystem past 128GB 
+  PHKL_35970            1.0            LVM Cumulative Patch 
+  PHKL_36133            1.0            Cumulative VM, Psets, Preemption, PRM, MRG 
+  PHKL_36362            1.0            Make msgmax persistent, fixed krs error 
+  PHKL_36497            1.0            VxFS Patch; vnode 
+  PHKL_36521            1.0            SCSI Ultra160 Cumulative Patch 
+  PHKL_36571            1.0            bootloader VxVM support, fix for A6759A card 
+  PHKL_36700            1.0            support for Oracle Clusterware 
+  PHKL_36763            1.0            PA-8800 Fix Java (64-bit JVM) 
+  PHKL_36766            1.0            read/write patch 
+  PHKL_36774            1.0            mprotect(2) hang panic 
+  PHKL_36806            1.0            AD193A/AD194A Fibre Channel Performance Tune 
+  PHKL_36948            1.0            Pset,slpq,FSS,rtprio,cleanpt,kt cpu usage 
+  PHKL_37029            1.0            audit subsystem cumulative patch 
+  PHKL_37089            1.0            physio() EINVAL, performance degradation fix 
+  PHKL_37309            1.0            pstat data page fault,new STREAMS functions 
+  PHKL_37317            1.0            VM buddy pfn fix 
+  PHKL_37535            1.0            CDFS cumulative patch 
+  PHKL_37544            1.0            SCSI IO Cumulative Patch 
+  PHKL_38430            1.0            vPar,callout, abstime, sync perf, wakeup 
+  PHKL_38736            1.0            select_enh tunable;Buffer Cache Perf 
+  PHKL_39110            1.0            physio(),madvise(),direct IO,VM stale icache 
+  PHKL_39133            1.0            SPP fragmentation;AIO;EVP;ufalloc;dup2 race 
+  PHNE_23289            1.0            mux4.h header file patch 
+  PHNE_28349            1.0            rbootd(1M) cumulative patch 
+  PHNE_29320            1.0            PCI FDDI patch 
+  PHNE_30425            1.0            elm patch      
+  PHNE_30450            1.0            nettl(1M), netfmt(1M) and nettladm(1M) patch 
+  PHNE_32850            1.0            gated (1M) patch 
+  PHNE_33138            1.0            100BT unified driver cumulative patch 
+  PHNE_33480            1.0            talk(1) and talkd(1M) patch 
+  PHNE_33481            1.0            GELAN 1000Base-SX/T B.11.11.14-19 cum. patch 
+  PHNE_34104            1.0            NTP timeservices upgrade plus utilities 
+  PHNE_34304            1.0            mailx(1) patch 
+  PHNE_34427            1.0            LAN product cumulative patch 
+  PHNE_35017            1.0            inetd(1M) cumulative patch 
+  PHNE_35865            1.0            libnss_dns DNS backend patch 
+  PHNE_35939            1.0            Cumulative Mux and Pty Patch 
+  PHNE_35950            1.0            sendmail(1M) 8.9.3 patch 
+  PHNE_36185            1.0            Bind 8.1.2 Patch 
+  PHNE_36196            1.0            telnet kernel, telnetd(1M), telnet(1) patch 
+  PHNE_36211            1.0            r-commands cumulative mega-patch 
+  PHNE_36217            1.0            bootpd(1M)/DHCP, tftp(1) and tftpd(1M) patch 
+  PHNE_36237            1.0            IETHER 1000Base-SX/T B.11.11.0[4-14] patch 
+  PHNE_36441            1.0            Streams Pty cumulative patch 
+  PHNE_36576            1.0            Cumulative STREAMS Patch 
+  PHNE_37445            1.0            IGELAN 1000Base-SX/T B.11.11.[02-26] patch 
+  PHNE_37898            1.0            cumulative ARPA Transport patch 
+  PHNE_38458            1.0            ftpd(1M) and ftp(1) patch 
+  PHNE_39167            1.0            ONC/NFS General Release/Performance Patch 
+  PHSS_23818            1.0            cpp cumulative patch 
+  PHSS_24205            1.0            stdbool.h patch 
+  PHSS_24207            1.0            libm patch     
+  PHSS_25983            1.0            B1000/B2000/C3X00/J5X00/J6000/J7000 5.0 FW 
+  PHSS_26321            1.0            MILLI/ASM cumulative patch 
+  PHSS_26340            1.0            pxdb patch     
+  PHSS_26971            1.0            Japanese TrueType font patch 
+  PHSS_26973            1.0            Korean TrueType fonts patch 
+  PHSS_26975            1.0            Chinese-S TrueType fonts patch 
+  PHSS_26977            1.0            Chinese-T TrueType fonts patch 
+  PHSS_27098            1.0            RAID 4Si Patch 
+  PHSS_27700            1.0            CPSlib Cumulative Patch (OMP V2.0 for 11.11) 
+  PHSS_27858            1.0            OV EMANATE14.2 Agent Consolidated Patch 
+  PHSS_28388            1.0            HP DCE/9000 1.8 Integrated Login cum. patch 
+  PHSS_28519            1.0            OV EMANATE14.2 trap-dest addition by NNM 
+  PHSS_28547            1.0            AudioSubsystem Periodic Patch 
+  PHSS_28856            1.0            OV EMANATE14.2 ifAdminStatus set fix 
+  PHSS_28953            1.0            OV EMANATE14.2 hp_unixagt ping issue fix 
+  PHSS_29031            1.0            Asian Printer/Utility cumulative patch 
+  PHSS_29487            1.0            GSS-API Version 1.0 Cumulative patch 
+  PHSS_31240            1.0            ObAM Cumulative Patch 
+  PHSS_32223            1.0            Shared libF90 B.11.01.18 
+  PHSS_33946            1.0            HP aC++ -AA runtime libraries (aCC A.03.85) 
+  PHSS_34102            1.0            XClients Patch 
+  PHSS_34392            B.11.11.41     Xserver cumulative patch 
+  PHSS_35287            1.0            Support 64-bit version of libhppa 
+  PHSS_36011            1.0            OV MINTc.04.50.00 cumulative patch 
+  PHSS_36286            1.0            KRB5-Client Version 1.0 cumulative patch 
+  PHSS_36394            1.0            CDE Base Periodic Patch 
+  PHSS_36407            1.0            CDE Applications Patch 
+  PHSS_36602            1.0            X11 Font Library Patch 
+  PHSS_37028            1.0            X/Motif Runtime Periodic Patch 
+  PHSS_37224            1.0            X Font Server Patch 
+  PHSS_37957            1.0            LIBCL patch    
+  PHSS_38183            1.0            HP DCE/9000 1.8 DCE Client IPv6 patch 
+  PHSS_39749            1.0            ld(1) and linker tools cumulative patch 
+  PRM-Sw-Gui            C.03.02        Process Resource Manager PRM-Sw-Gui product 
+  PRM-Sw-Krn            C.01.04        Process Resource Manager PRM-Sw-Krn product 
+  PRM-Sw-Lib            C.03.02        Process Resource Manager PRM-Sw-Lib product 
+  PartitionManager      B.12.02.02.02  Partition Manager for HP-UX 
+  PeriphDevWeb          B.11.11.00     HP-UX Peripheral Device Tool 
+  Perl5-32              D.5.8.8.B      32-bit 5.8.8 Perl Programming Language with Extensions 
+  Perl5-64              D.5.8.8.B      64-bit 5.8.8 Perl Programming Language with Extensions 
+  PrinterMgmt           B.11.11        PrinterMgmt    
+  Proc-Resrc-Mgr        C.03.02        Process Resource Manager Proc-Resrc-Mgr product 
+  ProgSupport           B.11.11        ProgSupport    
+  RAIDSA                B.11.11.0609   RAID SA; Supptd HW=A7143A/A9890A/A9891A 
+  SCSI-Passthru         B.11.11        HP SCSI-Passthru Driver 
+  SCSI-Provider         B.11.11.04     CIM/WBEM Provider for SCSI HBA 
+  SFM-CORE              A.04.02.01     HPUX System Fault Management 
+  SFMDB                 A.04.02.01     HP System Management Database (SFMDB) 
+  SMAIL-IDENT           B.11.11.02.005 identd(1M): User Identification protocol 
+  SMAIL-UPGRADE         B.11.11.02.005 sendmail(1M) 813 special release upgrade 
+  SOE                   B.11.11        SOE            
+  SW-DIST               B.11.11.0612.458 HP-UX Software Distributor 
+  Secure_Shell          A.04.30.006    HP-UX Secure Shell 
+  SecurityMon           B.11.11        SecurityMon    
+  ShadowPW              B.11.11.03     HP-UX 11.11 Shadow Password Enablement Product 
+  SourceControl         B.11.11        SourceControl  
+  Spelling              B.11.11        Spelling       
+  Streams               B.11.11        HP-UX_Streams_Product 
+  Streams-TIO           B.11.11        HP-UX_Streams-TIO_Product 
+  Sup-Tool-Mgr          B.11.11.21.06  Support Tools Manager for HPUX systems 
+  SysInfo               A.06.21        HPUX system data collector 
+  SysMgmtHomepage       A.2.2.5        HP-UX System Management Homepage - Web-Based User Interfaces 
+  SystemAdmin           B.11.11        HP-UX System Administration Tools 
+  SystemComm            B.11.11        System Communication utilities - ct,cu,ptydaemon,vt,kermit 
+  Tbird                 1.5.0.00.02    Thunderbird 1.5 
+  TbirdSrc              1.5.0.00.02    Thunderbird 1.5 Source Distribution 
+  TechPrintServ         B.11.11.0412   HP-UX Technical Image Printing Service 
+  TerminalMngr          B.11.11        TerminalMngr   
+  TextEditors           B.11.11        TextEditors    
+  TextFormatters        B.11.11        TextFormatters 
+  UUCP                  B.11.11        Unix to Unix CoPy 
+  Update-UX             B.11.11.0612.458 HP-UX OS Update 
+  Upgrade               B.11.11        Upgrade        
+  UserLicense           B.11.11        HP-UX User License 
+  VParProvider          B.11.11.01.03  vPar Provider  
+  VUEtoCDE              B.11.11        HP VUE to CDE Migration Tools 
+  VzDoc1111Feb2008pa0   B.11.11.0.AA   Verizon February 2008 1111 PA-Risc Documentation 
+  VzDoc1111Jul07c1      B.11.11.c1.AA  Verizon July 2007 1111 Core Patch Documentation 
+  VzDoc1111Oct07c0      B.11.11.c0.AA  Verizon October 2007 1111 Core Patch Documentation 
+  Vz_Support            A.01.00        VZ System Administration tools for HP-UX 11.XX 
+  Vz_SysInfo            A.07.02        Verizon SysInfo Scripts 
+  WBEMP-FCP             B.11.11.04     WBEM Provider: CIM/WBEM Provider for Fibre Channel HBAs 
+  WBEMP-LAN             B.11.11.02     LAN Provider: CIM/WBEM Provider for Ethernet interfaces. 
+  WBEMServices          A.02.07.06     WBEM Services CORE Product for hp 9000 servers 
+  X11                   B.11.11        HP-UX X Window Software 
+  Xserver               B.11.11        HP-UX X Server 
+  gWLM-Agent            A.02.50.00.04  HP Global Workload Manager Agent 
+  hpuxwsAPACHE          A.2.0.58.00    HP-UX Apache-based Web Server 
+  hpuxwsTOMCAT          A.5.5.9.03     HP-UX Tomcat-based Servlet Engine 
+  hpuxwsWEBMIN          A.1.070.08     HP-UX Webmin-based Admin 
+  hpuxwsXML             A.2.00         HP-UX XML Web Server Tools 
+  iCOD                  B.11.11.08.01.00.81 Instant Capacity 
+  openssl               A.00.09.07i.012 Secure Network Communications Protocol 
+  pkgutil               1.06           pkgutil        
+  santools              1.1            Network Appliance, Inc. SAN Host Attach Kit for HP-UX 
+  scsiU320              B.11.11.0612.01 PCI-X SCSI U320; Supptd HW=A7173A/AB290A 
+  utilProvider          A.01.04.02.00  Utilization Provider 
+
+<!-- === END Software Products === -->
+
+</PRE>
+<A NAME='RegDepots'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Registered software depots</U></H3>
+<PRE><font size = '4'>
+
+<!-- === END Registered software depots === -->
+
+
+<!-- === END Software Data === -->
+
+</PRE>
+<A NAME='SYSACCESS'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>System Security Audit</U></H3>
+<PRE><font size = '4'>
+<!-- === START SYSACCESS === -->
+
+File Permissions. Files which should be World and Group Read-Only.
+-rw-r--r--   1 root       root          7106 Feb 28 14:39 /etc/passwd
+-rw-r--r--   1 root       root          3242 Mar  1 11:28 /etc/group
+-rw-r--r--   1 root       sys           3887 Mar  8  2010 /etc/hosts
+-rw-r--r--   1 root       sys          11660 Mar  8  2010 /etc/services
+-rw-r--r--   1 root       sys           5085 Mar  8  2010 /etc/inetd.conf
+
+File Permissions. Files which should be Accessible to Root only.
+-r--r-----   1 bin        bin           5685 Oct  6 09:58 /vzenghpux/.profile
+
+Check for Important Audit Files:
+-rw-rw-r--   1 adm        adm         102960 Mar  1 11:23 /var/adm/wtmp
+-rw-------   1 root       other         5460 Feb 17 20:39 /var/adm/btmp
+-rw-------   1 root       root          7580 Mar  2 00:49 /var/adm/sulog
+ 
+Five Most Recent SUlog entries:
+SU 03/01 00:33 + tty?? root-vzpisds
+SU 03/01 00:50 + tty?? root-vzpisds
+SU 03/02 00:33 + tty?? root-vzpisds
+SU 03/02 00:33 + tty?? root-vzpisds
+SU 03/02 00:49 + tty?? root-vzpisds
+ 
+Running Passwd Check Script
+
+[/tmp/sysinfo.17686.passwd] webadmin:x:40:1::/usr/obam/server/nologindir:/usr/bin/false
+	Login directory not found
+
+[/tmp/sysinfo.17686.passwd] tftp:x:510:1:Trivial FTP user:/usr/tftpdir:false
+	Login directory not found
+	Optional shell file not found
+
+[/tmp/sysinfo.17686.passwd] hatrackr:x:41204:41204:HOA ID:/var/opt/tracker-client:/sbin/sh
+	Login directory not found
+
+<!-- === END Running Passwd Check Script === -->
+
+ 
+Running Group Check Script
+
+
+fct::63:root,dffmsr1,dppseos,tffism1,patrol,caputil,dppvsmt,dppcso1,AutoMon,oracle,informix,sybase,db2as,mqm,opc_op,db2fenc1,db2inst1,nsadmin,nsuser,hatrackr,vzpisds,daemon,bin,sys,adm,uucp,lp,nuucp,hpdb,nobody,www,smbnull,webadmin,iwww,owww,mysql,tftp,cduser,dppespx,weblogic,hpsmh,sshd,vzpatrol,hprspid,cimsrvr
+	patrol - Logname not found in password file
+
+<!-- === END Running Group Check Script === -->
+
+ 
+Dialin/Modem Definitions
+ 
+ 
+
+<!-- === END System Security Audit === -->
+
+</PRE>
+<A NAME='DIAGNOSTICS'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>System Diagnostics Settings</U></H3>
+<PRE><font size = '4'>
+<!-- === START DIAGNOSTICS === -->
+
+Online Diagnostics are Installed: Version: B.11.11.21.06	Status: Running
+
+
+Support Tools Manager: Version : A.65.00
+
+Checking LIF Information (ODE, MAPPER and, MAPFILE):
+/dev/dsk/c2t0d0	Not installed
+/dev/dsk/c2t1d0	Not installed
+
+
+<!-- === END System Diagnostics Settings === -->
+
+</PRE>
+<A NAME='IGNITE'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Ignite-UX Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START IGNITE === -->
+
+Installed:                 Yes
+Version:                   C.7.4.157
+Most recent recovery:      None
+
+
+<!-- === END Ignite-UX Data === -->
+
+</PRE>
+<A NAME='ISEE'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>ISEE Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START ISEE === -->
+
+Installed:              No
+
+<!-- === END ISEE Data === -->
+
+</PRE>
+<A NAME='ServiceGuardData'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Service Guard Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START ServiceGuardData === -->
+
+Installed:       No
+
+ 
+
+<!-- === END Service Guard Data === -->
+
+</PRE>
+<A NAME='OPENVIEW'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>OpenView Software Configuration</U></H3>
+<PRE><font size = '4'>
+<!-- === START OPENVIEW === -->
+</PRE>
+<A NAME='OMNIBACK'></A>
+<H2>
+<P ALIGN=RIGHT><A HREF='#Top'>
+TOP</A></P>
+<FONT COLOR=red>
+Omniback/Data Protector Data</H2>
+</FONT><PRE><font size = '4'>
+   Not installed
+
+<!-- === END Omniback/Data Protector Data === -->
+
+</PRE>
+<A NAME='NNM'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>OpenView Network Node Manager Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START NNM === -->
+<!-- === START Basic Information === -->
+Installed:        No
+
+<!-- === END Basic Information === -->
+
+
+<!-- === END Openview Network Node Manager Data === -->
+
+</PRE>
+<A NAME='OVO'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>OpenView Operations Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START OVO === -->
+<!-- === START Basic Information === -->
+Installed:        No
+
+<!-- === END Basic Information === -->
+
+
+<!-- === END Openview Operations Data === -->
+
+</PRE>
+<A NAME='GLANCE'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>OpenView Performance Data</U></H3>
+<PRE><font size = '4'>
+<!-- === START GLANCE === -->
+<!-- === START Basic Information === -->
+Glance Installed:        Yes
+Measureware Installed:   Yes
+PerfView Installed:      No
+
+<!-- === END Basic Information === -->
+
+<!-- === START GLANCE permissions and versions === -->
+**********************************************************
+*** perfstat for xrmfwp06 on Wed Mar  2 03:19:39 EST 2011 
+*** HP-UX xrmfwp06 B.11.11 U 9000/800 2688319930 unlimited-user license 
+**********************************************************
+
+listing version strings for performance tool files:
+--------------------------------------------------
+
+NOTE:   The following software version information can be compared
+with the version information shown in the /opt/perf/ReleaseNotes file(s).
+
+
+OVPA executables in the directory /opt/perf/bin
+                 ttd  C.04.50.00  10/11/05 HP-UX 11
+            midaemon  C.04.50.57  02/10/07 HP-UX 11
+             scopeux  C.04.50.00  10/11/05 HP-UX 11
+           perfalarm  C.04.50.00  10/11/05 HP-UX 11
+             extract  C.04.50.00  10/11/05 HP-UX 11
+             utility  C.04.50.00  10/11/05 HP-UX 11
+              dsilog  C.04.50.00  10/11/05 HP-UX 11
+             sdlcomp  C.04.50.00  10/11/05 HP-UX 11
+          sdlgendata  C.04.50.00  10/11/05 HP-UX 11
+             sdlutil  C.04.50.00  10/11/05 HP-UX 11
+             perflbd  C.04.50.00  10/11/05 HP-UX 11
+          rep_server  C.04.50.00  10/11/05 HP-UX 11
+            alarmgen  C.04.50.00  10/11/05 HP-UX 11
+          agdbserver  C.04.50.00  10/11/05 HP-UX 11
+             agsysdb  C.04.50.00  10/11/05 HP-UX 11
+
+OVPA libraries in the directory /opt/perf/lib
+           libarm.sl  C.04.50.57  02/10/07 HP-UX 11
+          libnums.sl  C.04.50.57  02/10/07 HP-UX 11                       
+         libscope.sl  C.04.50.00  10/11/05 HP-UX 11
+
+OVPA metric description file in the directory /opt/perf/lib
+             metdesc  C.04.50.00  10/19/05                             
+
+OVPA libraries in the directory /opt/OV/lib
+ libOvScopeAccess.sl  C.04.50.00  10/11/05 HP-UX 11
+
+All critical OVPA files are accessible
+
+OVPA coda executables in the directories /opt/OV/bin  /opt/OV/lbin/perf
+          ovcodautil  10.00.131   HP-UX 11.0 
+             ovbbccb  05.20.050   HP-UX 11.0 
+                coda  10.00.131   HP-UX 11.0 
+
+OVPA coda/BBC libraries in the directory /opt/OV/lib
+         libOvBbc.sl  05.20.050   HP-UX 11.0 
+        libOvCoda.sl  10.00.131   HP-UX 11.0 
+         libOvXpl.sl  02.61.020   HP-UX 11.0 
+
+GlancePlus executables in directory /opt/perf/bin
+              glance  C.04.50.00  10/11/05 HP-UX 11                       
+                 gpm  C.04.50.00  10/11/05 HP-UX 11                       
+
+OVPA Datacomm Type: http 
+ 
+
+************* (end of perfstat -v output) ****************
+
+<!-- === END GLANCE permissions and versions === -->
+
+<!-- === START GLANCE active processes === -->
+**********************************************************
+*** perfstat for xrmfwp06 on Wed Mar  2 03:19:45 EST 2011 
+*** HP-UX xrmfwp06 B.11.11 U 9000/800 2688319930 unlimited-user license 
+**********************************************************
+
+list of performance tool processes:
+----------------------------------
+
+ OVPA status:
+WARNING: scopeux    is not active (OVPA data collector)
+WARNING: midaemon   is not active (Measurement Interface daemon)
+    Running ttd                   (ARM registration daemon) pid 3105 
+
+ OVPA Server status:
+
+WARNING: ovcd is not active ((OV control component)
+WARNING: ovbbccb is not active (BBC5 communication broker)
+WARNING: coda is not active (perf component)
+WARNING: perfalarm is not active (alarm generator)
+
+
+
+******** (end of perfstat output: note above warning) ********
+
+<!-- === END GLANCE active processes === -->
+
+
+<!-- === END Openview Performance Data === -->
+
+
+<!-- === END OpenView Software Configuration === -->
+
+</PRE>
+<A NAME='LOGFILES'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>System Logfile Information</U></H3>
+<PRE><font size = '4'>
+<!-- === START LOGFILES === -->
+
+</PRE>
+<A NAME='SIZESPERMS'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>File Sizes and Permissions</U></H3>
+<PRE><font size = '4'>
+-rw-r--r--   1 root       root        207437 Mar  2 03:18 /var/adm/syslog/syslog.log
+-r--r--r--   1 root       root        198543 Feb 17 20:40 /var/adm/syslog/mail.log
+-rw-------   1 root       other         5460 Feb 17 20:39 /var/adm/btmp
+-rw-rw-r--   1 adm        adm         102960 Mar  1 11:23 /var/adm/wtmp
+-rw-r--r--   1 root       sys         509992 Mar  2 03:15 /var/adm/sw/swagent.log
+-rw-r--r--   1 root       sys          18122 Mar  2 03:15 /var/adm/sw/swagentd.log
+-rw-r--r--   1 root       root         36362 May 19  2010 /var/adm/sw/swconfig.log
+-rw-r--r--   1 root       sys          10769 Nov 13  2009 /var/adm/sw/swcopy.log
+-rw-r--r--   1 root       sys         314469 Mar  2 03:15 /var/adm/sw/swinstall.log
+-rw-r--r--   1 root       sys              0 Nov  6  2009 /var/adm/sw/swmodify.log
+-rw-r--r--   1 root       sys           9156 May 19  2010 /var/adm/sw/swremove.log
+
+<!-- === END File Sizes and Permissions === -->
+
+</PRE>
+<A NAME='CRASHDUMPS'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Crash Dumps</U></H3>
+<PRE><font size = '4'>
+There are files in the Crash Dump directory /var/adm/crash.
+
+<!-- === END Crash Dumps === -->
+
+ 
+=== START Ouput of System DMESG Info ===
+
+
+Mar  2 03:19
+...
+/6/1 iether
+0/4 lba
+0/4/1/0 PCItoPCI
+Initializing the Ultra320 SCSI Controller at 0/4/1/0/4/0. Controller firmware version is 01.03.35.69
+0/4/1/0/4/0 mpt
+SCSI Ultra320 0/4/1/0/4/0 instance 6:       The driver is now online 
+0/4/1/0/4/0.7 tgt
+0/4/1/0/4/0.7.0 sctl
+Initializing the Ultra320 SCSI Controller at 0/4/1/0/4/1. Controller firmware version is 01.03.35.69
+0/4/1/0/4/1 mpt
+SCSI Ultra320 0/4/1/0/4/1 instance 7:       The driver is now online 
+0/4/1/0/4/1.7 tgt
+0/4/1/0/4/1.7.0 sctl
+0/4/1/0/6/0 iether
+0/4/1/0/6/1 iether
+0/6 lba
+fcd: Claimed HP AB379-60101 4Gb Fibre Channel port at hardware path 0/6/1/0 (FC Port 1 on HBA)
+0/6/1/0 fcd
+0/6/1/0.11 fcd_fcp
+0/6/1/0.11.0.40.0 fcd_vbus
+0/6/1/0.11.0.40.0.0 tgt
+0/6/1/0.11.0.40.0.0.0 sdisk
+0/6/1/0.11.0.40.0.1 tgt
+0/6/1/0.11.0.40.0.1.0 sdisk
+0/6/1/0.11.0.40.0.2 tgt
+0/6/1/0.11.0.40.0.2.0 sdisk
+0/6/1/0.11.0.40.0.3 tgt
+0/6/1/0.11.0.40.0.3.0 sdisk
+0/6/1/0.11.0.40.0.4 tgt
+0/6/1/0.11.0.40.0.4.0 sdisk
+0/6/1/0.11.0.40.0.5 tgt
+0/6/1/0.11.0.40.0.5.0 sdisk
+0/6/1/0.11.0.40.0.6 tgt
+0/6/1/0.11.0.40.0.6.0 sdisk
+0/6/1/0.11.0.40.0.7 tgt
+0/6/1/0.11.0.40.0.7.0 sdisk
+0/6/1/0.11.0.40.0.8 tgt
+0/6/1/0.11.0.40.0.8.0 sdisk
+0/6/1/0.11.0.40.0.9 tgt
+0/6/1/0.11.0.40.0.9.0 sdisk
+0/6/1/0.11.0.40.0.10 tgt
+0/6/1/0.11.0.40.0.10.0 sdisk
+0/6/1/0.11.0.40.0.11 tgt
+0/6/1/0.11.0.40.0.11.0 sdisk
+0/6/1/0.11.0.40.0.12 tgt
+0/6/1/0.11.0.40.0.12.0 sdisk
+0/6/1/0.11.0.40.0.13 tgt
+0/6/1/0.11.0.40.0.13.0 sdisk
+0/6/1/0.11.0.40.0.14 tgt
+0/6/1/0.11.0.40.0.14.0 sdisk
+0/6/1/0.11.0.40.0.15 tgt
+0/6/1/0.11.0.40.0.15.0 sdisk
+0/6/1/0.11.0.40.3 fcd_vbus
+0/6/1/0.11.0.40.3.0 tgt
+0/6/1/0.11.0.40.3.11 tgt
+0/6/1/0.11.0.40.3.11.6 sdisk
+0/6/1/0.11.0.40.3.11.7 sdisk
+0/6/1/0.11.0.40.3.13 tgt
+0/6/1/0.11.0.40.3.13.0 sdisk
+0/6/1/0.11.0.40.3.14 tgt
+0/6/1/0.11.0.40.3.14.0 sdisk
+0/6/1/0.11.0.40.3.15 tgt
+0/6/1/0.11.0.40.3.15.0 sdisk
+0/6/1/0.11.0.255.2 fcd_vbus
+0/6/1/0.11.0.255.2.8 tgt
+0/6/1/0.11.0.255.2.8.0 sctl
+fcd: Claimed HP AB379-60101 4Gb Fibre Channel port at hardware path 0/6/1/1 (FC Port 2 on HBA)
+0/6/1/1 fcd
+0/7 lba
+0/7/1/0 asio0
+0/7/1/1 asio0
+8 memory
+16 ipmi
+128 processor
+129 processor
+igelan0: INITIALIZING HP PCI 1000Base-T Core at hardware path 0/1/2/0
+iether1: INITIALIZING HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter at hardware path 0/3/1/0/6/0
+iether2: INITIALIZING HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter at hardware path 0/3/1/0/6/1
+iether3: INITIALIZING HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter at hardware path 0/4/1/0/6/0
+iether4: INITIALIZING HP AB290-60001 PCI/PCI-X 1000Base-T 2-port U320 SCSI/2-port 1000B-T Combo Adapter at hardware path 0/4/1/0/6/1
+
+    System Console is on the Built-In Serial Interface
+Entering cifs_init...
+Initialization finished successfully... slot is 9
+Logical volume 64, 0x3 configured as ROOT
+Logical volume 64, 0x2 configured as SWAP
+Logical volume 64, 0x2 configured as DUMP
+    Swap device table:  (start & size given in 512-byte blocks)
+        entry 0 - major is 64, minor is 0x2; start = 0, size = 8388608
+    Dump device table:  (start & size given in 1-Kbyte blocks)
+        entry 0000000000000000 - major is 31, minor is 0x20000; start = 1051488, size = 4194304
+Starting the STREAMS daemons-phase 1
+Create STCP device files
+Starting the STREAMS daemons-phase 2
+                    $Revision: vmunix:    vw: -proj    selectors: CUPI80_BL2000_1108 -c 'Vw for CUPI80_BL2000_1108 build' -- cupi80_bl2000_1108 'CUPI80_BL2000_1108'  Wed Nov  8 19:24:56 PST 2000 $
+Memory Information:
+    physical page size = 4096 bytes, logical page size = 4096 bytes
+    Physical: 8386560 Kbytes, lockable: 7450528 Kbytes, available: 7430208 Kbytes
+
+Syscall Monitor - ACTIVATED
+0/6/1/0: fcd driver received notification of RISC Parity Error.
+Driver and Firmware will be reset.
+
+0/6/1/0: Fibre Channel Driver received a Fatal Error Notification.
+A possible cause is a Mailbox Command time out.
+Please see Preceding Error messages to isolate the cause.
+Fibre Channel Driver will now perform fatal error handling.
+
+
+=== End of DMESG Output ===
+</PRE>
+<A NAME='SENDMAIL'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Sendmail</U></H3>
+<PRE><font size = '4'>
+</PRE>
+<A NAME='SENDMAILQ'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Sendmail Queue</U></H3>
+<PRE><font size = '4'>
+Sendmail Queue has 104 entries.
+-rw-------   1 root       mail          3412 Dec  2  2007 dflB26Giit027903
+-rw-------   1 root       mail          3412 Dec  2  2007 dflB26JZSv027913
+-rw-------   1 root       mail          3412 Dec  2  2007 dflB26MPYt027983
+-rw-------   1 root       mail          3672 Dec  2  2007 dflB26PGT8027993
+-rw-------   1 root       mail          3412 Dec  8  2007 dflB94i7wQ028240
+-rw-------   1 root       mail          3412 Dec  8  2007 dflB94kw4Y028251
+-rw-------   1 root       mail          3672 Dec  8  2007 dflB94nmV2028320
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97M6QY002485
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97OuIf002494
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97Rn0C003039
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97UdbE003049
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97XWC1003060
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97aMuV003069
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97dDob003081
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97g56V003093
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97iumT003102
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97lmnJ003113
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97odHR003123
+-rw-------   1 root       mail          3412 Dec  9  2007 dflB97rTDM003134
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M42u29027656
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M45lUx027668
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M48bWj027676
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4BSKT027689
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4EIst027697
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4H8uq027709
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4JxPn027717
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4MnRY027730
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4Pe1N027742
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4SUgH027750
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4VKrE027762
+-rw-------   1 root       mail          2768 Jan 21  2008 dfm0M4YB9I027771
+-rw-------   1 root       mail          3099 Jan 21  2008 dfm0M4b4ks027783
+-rw-------   1 root       mail          3099 Jan 21  2008 dfm0M4dsmc027791
+-rw-------   1 root       mail          3099 Jan 21  2008 dfm0M4gjOV027804
+-rw-------   1 root       mail          2625 Nov  6  2009 dfnA6H11ke002611
+-rw-------   1 root       mail          2449 Nov  6  2009 dfnA6H1CP1002614
+-rw-------   1 root       mail            73 Feb 14  2010 dfo1EB1sgb003022
+-rw-------   1 root       mail            75 Feb 16  2010 dfo1GDYF8i003203
+-rw-------   1 root       mail            76 Feb 16  2010 dfo1GKW5Ci013993
+-rw-------   1 root       mail            60 Feb 16  2010 dfo1GKwQxt018715
+-rw-------   1 root       mail            73 Feb 17  2010 dfo1HEI3bh014152
+-rw-------   1 root       mail           453 May 18  2010 dfo4IIkTJx021034
+-rw-------   1 root       mail           438 May 18  2010 dfo4IIkTNE021000
+-rw-------   1 root       mail           441 May 18  2010 dfo4IIkTn0021083
+-rw-------   1 root       mail           566 May 18  2010 dfo4IIkTr3020964
+-rw-------   1 root       mail           536 May 18  2010 dfo4IIkU89021149
+-rw-------   1 root       mail           447 May 18  2010 dfo4IIkW1J021306
+-rw-------   1 root       mail           600 May 18  2010 dfo4IIkWO9021249
+-rw-------   1 root       mail           462 May 18  2010 dfo4IIkWs0021261
+-rw-------   1 root       mail           447 May 18  2010 dfo4IIkWxE021276
+-rw-------   1 root       mail          2497 Oct 17 16:50 dfo9HKoB7F005137
+-rw-------   1 root       mail          3110 Oct 17 16:50 dfo9HKoBUU005140
+-rw-------   1 root       mail           557 Dec  2  2007 qflB26Giit027903
+-rw-------   1 root       mail           557 Dec  2  2007 qflB26JZSv027913
+-rw-------   1 root       mail           557 Dec  2  2007 qflB26MPYt027983
+-rw-------   1 root       mail           558 Dec  2  2007 qflB26PGT8027993
+-rw-------   1 root       mail           557 Dec  8  2007 qflB94i7wQ028240
+-rw-------   1 root       mail           557 Dec  8  2007 qflB94kw4Y028251
+-rw-------   1 root       mail           558 Dec  8  2007 qflB94nmV2028320
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97M6QY002485
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97OuIf002494
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97Rn0C003039
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97UdbE003049
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97XWC1003060
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97aMuV003069
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97dDob003081
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97g56V003093
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97iumT003102
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97lmnJ003113
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97odHR003123
+-rw-------   1 root       mail           557 Dec  9  2007 qflB97rTDM003134
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M42u29027656
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M45lUx027668
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M48bWj027676
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4BSKT027689
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4EIst027697
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4H8uq027709
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4JxPn027717
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4MnRY027730
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4Pe1N027742
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4SUgH027750
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4VKrE027762
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4YB9I027771
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4b4ks027783
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4dsmc027791
+-rw-------   1 root       mail           559 Jan 21  2008 qfm0M4gjOV027804
+-rw-------   1 root       mail           557 Nov  6  2009 qfnA6H11ke002611
+-rw-------   1 root       mail           557 Nov  6  2009 qfnA6H1CP1002614
+-rw-------   1 root       mail           932 Feb 14  2010 qfo1EB1sgb003022
+-rw-------   1 root       mail           932 Feb 16  2010 qfo1GDYF8i003203
+-rw-------   1 root       mail           932 Feb 16  2010 qfo1GKW5Ci013993
+-rw-------   1 root       mail           932 Feb 16  2010 qfo1GKwQxt018715
+-rw-------   1 root       mail           932 Feb 17  2010 qfo1HEI3bh014152
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkTJx021034
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkTNE021000
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkTn0021083
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkTr3020964
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkU89021149
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkW1J021306
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkWO9021249
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkWs0021261
+-rw-------   1 root       mail           642 May 18  2010 qfo4IIkWxE021276
+-rw-------   1 root       mail           634 Oct 17 16:50 qfo9HKoB7F005137
+-rw-------   1 root       mail           634 Oct 17 16:50 qfo9HKoBUU005140
+
+<!-- === END Sendmail Queue === -->
+
+</PRE>
+<A NAME='MAILDIR'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Mail Post Office Directory /var/mail</U></H3>
+<PRE><font size = '4'>
+Found 1 Entries.
+total 1376
+-rw-rw----   1 root       mail        694672 Feb 17 20:40 root
+
+<!-- === END Mail Post Office Directory /var/mail === -->
+
+ 
+ 
+ 
+Sendmail Queue has Entries Older than 2 days.
+drwxr-xr-x   2 root       mail          8192 Feb 17 20:40 .
+-rw-------   1 root       mail          3412 Dec  2  2007 ./dflB26Giit027903
+-rw-------   1 root       mail           557 Dec  2  2007 ./qflB26Giit027903
+-rw-------   1 root       mail          3412 Dec  2  2007 ./dflB26JZSv027913
+-rw-------   1 root       mail           557 Dec  2  2007 ./qflB26JZSv027913
+-rw-------   1 root       mail          3412 Dec  2  2007 ./dflB26MPYt027983
+-rw-------   1 root       mail           557 Dec  2  2007 ./qflB26MPYt027983
+-rw-------   1 root       mail          3672 Dec  2  2007 ./dflB26PGT8027993
+-rw-------   1 root       mail           558 Dec  2  2007 ./qflB26PGT8027993
+-rw-------   1 root       mail          3412 Dec  8  2007 ./dflB94i7wQ028240
+-rw-------   1 root       mail           557 Dec  8  2007 ./qflB94i7wQ028240
+-rw-------   1 root       mail          3412 Dec  8  2007 ./dflB94kw4Y028251
+-rw-------   1 root       mail           557 Dec  8  2007 ./qflB94kw4Y028251
+-rw-------   1 root       mail          3672 Dec  8  2007 ./dflB94nmV2028320
+-rw-------   1 root       mail           558 Dec  8  2007 ./qflB94nmV2028320
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97M6QY002485
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97M6QY002485
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97OuIf002494
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97OuIf002494
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97Rn0C003039
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97Rn0C003039
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97UdbE003049
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97UdbE003049
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97XWC1003060
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97XWC1003060
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97aMuV003069
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97aMuV003069
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97dDob003081
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97dDob003081
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97g56V003093
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97g56V003093
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97iumT003102
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97iumT003102
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97lmnJ003113
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97lmnJ003113
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97odHR003123
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97odHR003123
+-rw-------   1 root       mail          3412 Dec  9  2007 ./dflB97rTDM003134
+-rw-------   1 root       mail           557 Dec  9  2007 ./qflB97rTDM003134
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M42u29027656
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M42u29027656
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M45lUx027668
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M45lUx027668
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M48bWj027676
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M48bWj027676
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4BSKT027689
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4BSKT027689
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4EIst027697
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4EIst027697
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4H8uq027709
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4H8uq027709
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4JxPn027717
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4JxPn027717
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4MnRY027730
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4MnRY027730
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4Pe1N027742
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4Pe1N027742
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4SUgH027750
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4SUgH027750
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4VKrE027762
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4VKrE027762
+-rw-------   1 root       mail          2768 Jan 21  2008 ./dfm0M4YB9I027771
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4YB9I027771
+-rw-------   1 root       mail          3099 Jan 21  2008 ./dfm0M4b4ks027783
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4b4ks027783
+-rw-------   1 root       mail          3099 Jan 21  2008 ./dfm0M4dsmc027791
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4dsmc027791
+-rw-------   1 root       mail          3099 Jan 21  2008 ./dfm0M4gjOV027804
+-rw-------   1 root       mail           559 Jan 21  2008 ./qfm0M4gjOV027804
+-rw-------   1 root       mail          2625 Nov  6  2009 ./dfnA6H11ke002611
+-rw-------   1 root       mail           557 Nov  6  2009 ./qfnA6H11ke002611
+-rw-------   1 root       mail          2449 Nov  6  2009 ./dfnA6H1CP1002614
+-rw-------   1 root       mail           557 Nov  6  2009 ./qfnA6H1CP1002614
+-rw-------   1 root       mail            73 Feb 14  2010 ./dfo1EB1sgb003022
+-rw-------   1 root       mail           932 Feb 14  2010 ./qfo1EB1sgb003022
+-rw-------   1 root       mail            75 Feb 16  2010 ./dfo1GDYF8i003203
+-rw-------   1 root       mail           932 Feb 16  2010 ./qfo1GDYF8i003203
+-rw-------   1 root       mail            76 Feb 16  2010 ./dfo1GKW5Ci013993
+-rw-------   1 root       mail           932 Feb 16  2010 ./qfo1GKW5Ci013993
+-rw-------   1 root       mail            60 Feb 16  2010 ./dfo1GKwQxt018715
+-rw-------   1 root       mail           932 Feb 16  2010 ./qfo1GKwQxt018715
+-rw-------   1 root       mail            73 Feb 17  2010 ./dfo1HEI3bh014152
+-rw-------   1 root       mail           932 Feb 17  2010 ./qfo1HEI3bh014152
+-rw-------   1 root       mail           566 May 18  2010 ./dfo4IIkTr3020964
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkTr3020964
+-rw-------   1 root       mail           438 May 18  2010 ./dfo4IIkTNE021000
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkTNE021000
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkTJx021034
+-rw-------   1 root       mail           453 May 18  2010 ./dfo4IIkTJx021034
+-rw-------   1 root       mail           441 May 18  2010 ./dfo4IIkTn0021083
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkTn0021083
+-rw-------   1 root       mail           536 May 18  2010 ./dfo4IIkU89021149
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkU89021149
+-rw-------   1 root       mail           600 May 18  2010 ./dfo4IIkWO9021249
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkWO9021249
+-rw-------   1 root       mail           462 May 18  2010 ./dfo4IIkWs0021261
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkWs0021261
+-rw-------   1 root       mail           447 May 18  2010 ./dfo4IIkWxE021276
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkWxE021276
+-rw-------   1 root       mail           447 May 18  2010 ./dfo4IIkW1J021306
+-rw-------   1 root       mail           642 May 18  2010 ./qfo4IIkW1J021306
+-rw-------   1 root       mail          2497 Oct 17 16:50 ./dfo9HKoB7F005137
+-rw-------   1 root       mail           634 Oct 17 16:50 ./qfo9HKoB7F005137
+-rw-------   1 root       mail          3110 Oct 17 16:50 ./dfo9HKoBUU005140
+-rw-------   1 root       mail           634 Oct 17 16:50 ./qfo9HKoBUU005140
+
+<!-- === END System Logfile Information === -->
+
+</PRE>
+<A NAME='ErrWarn'></A>
+<P ALIGN=RIGHT><A HREF='#Top'>TOP</A></P>
+<H3><U>Error/Warning Summary</U></H3>
+<PRE><font size = '4'>
+<!-- === START ErrWarn === -->
+WARNING (xrmfwp06): Dump space is underconfigured for a FULL crashdump.
+WARNING (xrmfwp06): Dump space is adequate for the CRASHCONF configuration.
+WARNING xrmfwp06: /stand/bootconf is INCORRECT
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvav1
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvbv1
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvv06
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvv07
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvav1
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvbv1
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvv06
+WARNING (xrmfwp06): EMC with LVM bad block enabled on /dev/vgoracle01/lvv07
+WARNING (xrmfwp06): The /stand file system should be in /dev/vgroot
+WARNING (xrmfwp06): Important file /vzenghpux/.profile has Group or World access.
+WARNING (xrmfwp06): Missing diags on /dev/dsk/c2t0d0.
+WARNING (xrmfwp06): Missing diags on /dev/dsk/c2t1d0.
+WARNING (xrmfwp06): IGNITE make_tape_recovery has not been not run.
+WARNING (xrmfwp06): Logfile /var/adm/wtmp has Group or World WRITE access.  
+ERROR (xrmfwp06): Logfile /var/adm/sw/swreg.log does not exist.
+WARNING (xrmfwp06): There are files in the Crash Dump directory /var/adm/crash.
+-rw-r--r--   1 root       root             2 Nov  6  2009 bounds
+drwxr-xr-x   2 root       sys           4096 Nov  6  2009 lost+found
+
+
+<!-- === END Error/Warning Summary === -->
+
+</BODY></HTML>
+
+End SysInfo 6.21 
+

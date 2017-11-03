@@ -1,0 +1,69 @@
+stderr output from "/infra/opt/cfg2html/bin/plugins/get_sys_info.sh":
+    psrinfo: illegal option -- p
+    usage: 
+    	psrinfo [-v] [processor_id ...]
+    	psrinfo -s processor_id
+    /infra/opt/cfg2html/bin/plugins/get_sys_info.sh[91]: test: argument expected
+    /infra/opt/cfg2html/bin/plugins/get_sys_info.sh[92]: test: argument expected
+    /infra/opt/cfg2html/bin/plugins/get_sys_info.sh[128]: prtdiag:  not found
+    printf:  expected numeric value
+stderr output from "egrep -v '^[#;]|^[ 	]*$' scsi_vhci.conf":
+    egrep: can't open scsi_vhci.conf
+stderr output from "metastat -c":
+    metastat: illegal option -- c
+    usage:	metastat [-s setname] [-i][-p] [-t] [metadevice...]
+stderr output from "dfshares":
+    nfs dfshares:scrambler: RPC: Program not registered
+stderr output from "dfmounts":
+    nfs dfmounts: can't contact server: scrambler: RPC: Program not registered
+    /usr/lib/fs/autofs/dfmounts: No such file or directory
+    /usr/lib/fs/cachefs/dfmounts: No such file or directory
+    /usr/lib/fs/cachefs/dfmounts: No such file or directory
+stderr output from "/infra/opt/cfg2html/bin/plugins/crontab_collect.sh":
+    crontab: you are not a valid user (no entry in /etc/passwd).
+stderr output from "projects -l":
+    projects: illegal option -- l
+    projects: illegal option -- ?
+    Usage: projects [-v] [user]
+stderr output from "cfg2html_plugin":
+    Unable to run zpool list -H: No such file or directory
+20120301 running run_cfg2html
+No update available
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+-------------------------------------------------
+Starting          cfg2html_solaris version 1.6.4 on a SunOS 5.8 SUNW,Sun-Fire
+Path to cfg2html  /infra/opt/cfg2html/bin/cfg2html_solaris
+Path to plugins   /infra/opt/cfg2html/bin/plugins
+HTML Output File  /var/tmp/scrambler_cfg.html
+Text Output File  /var/tmp/scrambler_cfg.txt
+Errors logged to  /var/tmp/scrambler_cfg.err
+Started at        2012-03-01 01:15:00
+-------------------------------------------------
+
+-------------------------------------------------
+
+Collecting:  System Hardware and Operating System Summary  ....
+Collecting:  Disk Device Listing  ..
+Collecting:  MPxIO Configuration  ..
+Collecting:  Solaris Volume Manager (SVM)  ......
+Collecting:  Local File Systems and Swap  ......
+Collecting:  NFS Configuration  .....
+Collecting:  Network Settings  .........
+Collecting:  EEPROM  ....
+Collecting:  Printers  ....
+Collecting:  Cron  ...
+Collecting:  System Log  ..
+Collecting:  Password and Group files  .....
+Collecting:  Software  ...
+Collecting:  Resource Limits  .....
+Collecting:  Services  .......................................................................................................................
+Collecting:  Oracle  ..ksh: /bin/sqlplus:  not found
+.
+Collecting:  VxVM  ..........
+Collecting:  VxFS  ..
+Collecting:  Custom  ...
+-------------------------------------------------
+
+
+Completed

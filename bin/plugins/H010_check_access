@@ -1,0 +1,74 @@
+# check_access returns Access and IP
+#
+function output_header
+{
+  echo -n ",Access,IP"
+}
+
+function output_value
+{
+  logwrite "check_access plugin running" 1
+  ACCESS="unk"
+  # if the Default Flag is set output defaults
+  if [ "${OUTPUT_DEFAULT}x" = "truex" ];then
+    logwrite "${hostname} Default Output Flag is set" 2
+    echo -n ",none,0.0.0.0"
+    return
+  fi
+  # first see if it is online
+  ping ${hostname} -c 3 -i 2 > ${TMP}/ping$$ 2>&1
+  if grep -e unknown ${TMP}/ping$$ > /dev/null;then
+    ACCESS="noDNS"
+    logwrite "${hostname} address not resolved" 2
+    IPADDR="0.0.0.0"
+    #Set the Default flag for all following scripts
+    OUTPUT_DEFAULT="true"
+    echo -n ",${ACCESS},${IPADDR}"
+    return 0
+  else
+    IPADDR=`grep "^PING " ${TMP}/ping$$ | sed 's/^.* (//1;s/).*//'`
+  fi
+  if grep -e "100%" ${TMP}/ping$$ > /dev/null;then
+    ACCESS="down"
+    logwrite "${hostname} does not respond to ping" 2
+    #Set the Default flag for all following scripts
+    OUTPUT_DEFAULT="true"
+    echo -n ",${ACCESS},${IPADDR}"
+    return 0
+  fi
+  # ping succeeded
+  logwrite "${hostname} is up" 2
+  logwrite "trying ssh" 2
+  ${SSH} ${ruser[$x]}@${hostname} 'uname -n' \
+    > ${TMP}/hostname$$ 2>${TMP}/sshout$$ &
+  if bg_not_complete_before_timeout ${TIMEOUT}; then
+    logwrite "ssh failed to connect to ${hostname} after ${TIMEOUT} sec" 2
+    kill $!
+    ACCESS="timeout"
+    #Set the Default flag for all following scripts
+    OUTPUT_DEFAULT="true"
+    # Try rsh for hosts that fail ssh
+    #test_rsh ${hostname}
+  else # ssh completed
+    if grep "Name" ${TMP}/sshout$$ > /dev/null 2>&1; then
+      ACCESS="noDNS"
+      logwrite "${hostname} not in DNS" 2
+      #Set the Default flag for all following scripts
+      OUTPUT_DEFAULT="true"
+    else
+      if grep "^${hostname}" ${TMP}/hostname$$ > /dev/null 2>&1; then
+        # ssh login succeeded
+        ACCESS="ssh"
+          logwrite "ssh login succeeded" 2
+      else # ssh did not return hostname match
+        ACCESS="none"
+        #Set the Default flag for all following scripts
+        OUTPUT_DEFAULT="true"
+        logwrite "${hostname} does not match output of `cat ${TMP}/hostname$$`" 2
+        #test_rsh ${hostname}
+      fi # ssh returns hostname
+    fi # name not in DNS
+  fi # if ssh timeout
+  echo -n ",${ACCESS},${IPADDR}"
+  logwrite "check_access plugin complete" 1
+}

@@ -1,0 +1,46 @@
+#!/bin/ksh
+#
+# wait_for_collectors
+#
+# This script waits for the Slave Collectors and any Remote Collectors
+# defined in the JADIS.init file to complete, or until a time of day
+# defined in the JADIS.init file.
+#
+
+function output_source
+{
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "wait_for_collectors plugin running" 1
+  WAIT=true
+  while [ "${WAIT}x" = "truex" ] ; do
+    (( ALL_DONE=1 ))
+    for SERVER in $RMSERVERS ; do
+      if [[ -r ${TMP}/${SERVER}_complete ]]; then
+        (( ALL_DONE=$ALL_DONE * 1 ))
+      else
+        (( ALL_DONE=$ALL_DONE * 0 ))
+      fi
+    done # loop for all remote servers
+    if (( $ALL_DONE == 1 )) ;then
+      WAIT=false
+    fi
+    CUTOFF_HR=`echo $CUTOFF_TIME | cut -d":" -f1`
+    CUTOFF_MIN=`echo $CUTOFF_TIME | cut -d":" -f2`
+    CURRENT_HR=`date +%H`
+    CURRENT_MIN=`date +%M`
+    if [ $CURRENT_HR -gt $CUTOFF_HR ]; then
+      WAIT=false
+    fi
+    if [ $CURRENT_HR -eq $CUTOFF_HR ] && [ $CURRENT_MIN -gt $CUTOFF_MIN ]; then
+      WAIT=false
+    fi
+    sleep 60
+  done # not so Infinite Loop
+  rm ${TMP}/*_complete
+  logwrite "wait_for_collectors plugin complete" 1
+}
+# EOF

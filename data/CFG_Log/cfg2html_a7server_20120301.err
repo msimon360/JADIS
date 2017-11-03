@@ -1,0 +1,44 @@
+getconf MACHINE_SERIAL: Invalid argument
+grep: can't open (no
+grep: can't open description)
+/opt/cfg2html/cfg2html_hpux.sh[2045]: 14.:  not found
+/opt/cfg2html/cfg2html_hpux.sh[2045]: syntax error at line 2068 : `then' unexpected
+ed
+stderr output from "ps -efP":
+    ps: Process Resource Manager is not configured
+stderr output from "get_LIF":
+    /usr/sbin/setboot: illegal option -- v
+    usage: setboot [-p primary_path] [-a alternate_path] [-b on|off] [-s on|off]
+20120301 running run_cfg2html.ksh
+No output file for this month, will run config script
+Running /infra/opt/cfg2html/cfg2html -o /var/tmp 
+
+
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+Starting          cfg2html/HP-UX version 3.75a on a 9000/803/D320 box
+Path to cfg2Html  /opt/cfg2html/cfg2html_hpux.sh
+Path to plugins   /opt/cfg2html/plugins
+HTML Output File  /var/tmp/a7server.html
+Text Output File  /var/tmp/a7server.txt
+Errors logged to  /var/tmp/a7server.err
+Started at        2012-03-01 01:16:17
+Commandline used  -o /var/tmp -P
+Problem           If cfg2html hangs on Hardware, press twice ENTER, Ctrl-D or
+                  Crtl-\. Then check your Diagnostics (A.42++ and PHKL_29798)!
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+USE AT YOUR OWN RISK! (see /opt/cfg2html/doc/cfg2html.html)
+Online help: run cfg2html_hpux.sh -h for help or see ~/doc directory
+--=[ http://come.to/cfg2html ]=---------------------------------------------
+
+Collecting:  HP-UX/System  ........................
+Collecting:  Hardware  .....Diag......................
+Collecting:  Software  ........
+Collecting:  Filesystems, Dump- and Swapconfiguration  .........
+Collecting:  LVM  ..............
+Collecting:  Network Settings/Network Interface Cards  .........
+Collecting:  Network Subsystems  .......................
+Collecting:  Fibre Channel  ...
+Collecting:  Kernel  ..........
+Collecting:  Systemenhancements  ....
+Collecting:  Applications And Subsystems  .......
+Collecting:  Veritas Licenses/Veritas Volume Manager (VxVM)  .Completed

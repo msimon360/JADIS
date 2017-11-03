@@ -1,0 +1,39 @@
+#!/bin/ksh
+#
+# get_teamdoc
+#
+# This script downloads the Inventory file from the Team Website
+# and formats it into a CSV file
+#
+
+function output_source
+{
+  # <enhancement> add logic here to only add source if updated
+  echo "Teamsite,${DATADIR}/Teamsite/NC%YYY%m%d.csv,CSV"
+  return 0
+}
+
+function gather_source 
+{
+  logwrite "get_teamdoc plugin running" 1
+  TMPFILE=${TMP}/NC${today}.$$
+  OUTFILE=${DATADIR}/Teamsite/NC${today}.csv
+  XLSFILE=${DATADIR}/Teamsite/Team.xls
+  logwrite "# Get Excel Spreadsheet from Team Website" 1
+  wget --no-proxy --tries=1 --user=${TEAM_USER} --password=${TEAM_PASS} \
+    ${EXLFILE} \
+    -O ${XLSFILE} 2>/dev/null
+  logwrite "# Translate Excel file into CSV for columns we want" 1
+  xlt_team_xls.pl ${XLSFILE} \
+    ${TMPFILE}
+  # This is a cludge it should be moved to xlt_team_xls.pl
+  sed 's/ \,/\,/' ${TMPFILE} > \
+    ${OUTFILE}
+  rm ${TMPFILE}
+  chmod 666 ${OUTFILE}
+  # Add Hosts to master list
+  tail -n +2 ${OUTFILE} | cut -d"," -f1 | cut -d"." -f1 |\
+  sed 's/[ \t]*//' | tr A-Z a-z >> ${TMP}/hostlist$$
+  logwrite "get_teamdoc plugin complete" 1
+}
+# EOF
