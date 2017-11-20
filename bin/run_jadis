@@ -1,4 +1,5 @@
-#!/bin/ksh
+#!/bin/bash
+set -x
 #
 # Title:         run_jadis (based on gather_data.ksh by Mark Simon
 #                which was based on gen_sysinfo_idx by Peter Lundquist)
@@ -15,6 +16,7 @@
 #
 ################################################################
 # Modification History:
+# 20171115 Trying to get this working in Vz for JetBlue (Mts)
 # 20120203 Major rewrite, Master/Slave processes run plugins
 # 20120103 Fixed OS and OSVer not cleared in function copy_files (Mts)
 # 20091021 Removed references to RUSER and used ruser[$x] from remote.lis (Mts)
@@ -91,7 +93,7 @@ fi
 BASE=`dirname $BASE`
 . $BASE/etc/JADIS.ini
 
-PATH=/usr/local/bin:/bin:/usr/bin:/usr/seos/bin:/bin:/usr/bin:/etc:/usr/sbin:/usr/ucb:/home/v807156/bin:/usr/bin/X11:/sbin:/usr/seos/bin:.:$BASE/bin:$BASE/cgi-bin
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/seos/bin:/bin:/usr/sbin:/usr/ucb:/usr/bin/X11:/sbin:/usr/seos/bin:.:$BASE/bin:$BASE/cgi-bin
 export PATH
 
 today=`date +'%Y%m%d'`
@@ -186,6 +188,8 @@ function init_data_list # Need to add OS
 
 #### MAIN script ####
 LOGFILE=/tmp/run_jadis.log
+touch $LOGFILE
+
 initialize $0
 # Get command line options
 while [ $# -gt 0 ]; do
